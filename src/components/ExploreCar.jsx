@@ -51,7 +51,7 @@ const colorsX55 = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
 
 export default function ExploreCar() {
   const [activeSeries, setActiveSeries] = useState("BJ Series");
-  const [activeModel, setActiveModel] = useState("BJ40 PLUS");
+  const [activeModel, setActiveModel] = useState("BJ30");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
 
@@ -59,10 +59,10 @@ export default function ExploreCar() {
     setActiveSeries(series);
     // Set default model based on series
     if (series === "BJ Series") {
-      setActiveModel("BJ40 PLUS");
+      setActiveModel("BJ30");
       setSelectedColor(colors[0]);
     } else if (series === "X Series") {
-      setActiveModel("X55 II");
+      setActiveModel("X55");
       setSelectedColorX55(colorsX55[0]);
     } else if (series === "EV Series") {
       setActiveModel("Arcfox A");

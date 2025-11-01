@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
+import AccessoriesTab from "../src/components/AccessoriesTab";
 import "../src/index.css";
 import platinumBlackView1 from "../src/assets/platinum-black-view-1.png";
 import platinumBlackView2 from "../src/assets/platinum-black-view-2.png";
@@ -221,9 +222,9 @@ function App() {
               src={X55Logo}
               alt="BJ40 PLUS Logo"
             />
-            <div className="flex gap-4    ">
+            <div className="flex gap-4 overflow-x-auto scrollbar-hide">
               <button
-                className={`py-2 transition-all    ${
+                className={`py-2 transition-all whitespace-nowrap ${
                   activeTab === "Overview" ? "text-red-600 font-medium" : ""
                 }`}
                 onClick={() => handleTabClick("Overview")}
@@ -231,7 +232,7 @@ function App() {
                 OVERVIEW
               </button>
               <button
-                className={`py-2 transition-all    ${
+                className={`py-2 transition-all whitespace-nowrap ${
                   activeTab === "Pricing" ? "text-red-600 font-medium" : ""
                 }`}
                 onClick={() => handleTabClick("Pricing")}
@@ -239,15 +240,23 @@ function App() {
                 PRICING & SPECS
               </button>
               <button
-                className={`py-2 transition-all    ${
+                className={`py-2 transition-all whitespace-nowrap ${
                   activeTab === "Gallery" ? "text-red-600 font-medium" : ""
                 }`}
                 onClick={() => handleTabClick("Gallery")}
               >
                 GALLERY
               </button>
+              <button
+                className={`py-2 transition-all whitespace-nowrap ${
+                  activeTab === "Accessories" ? "text-red-600 font-medium" : ""
+                }`}
+                onClick={() => handleTabClick("Accessories")}
+              >
+                ACCESSORIES
+              </button>
               <a
-                className="py-3 md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all border border-white hover:border-none rounded-xl"
+                className="py-3 md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all border border-white hover:border-none rounded-xl whitespace-nowrap"
                 href="/book-a-test-drive/index.html"
               >
                 BOOK A TEST DRIVE
@@ -576,6 +585,11 @@ function App() {
                   </div>
                 </>
               )}
+            </div>
+          )}
+          {activeTab === "Accessories" && (
+            <div className="bg-neutral-200">
+              <AccessoriesTab />
             </div>
           )}
         </div>

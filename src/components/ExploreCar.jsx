@@ -299,7 +299,7 @@ export default function ExploreCar() {
           </div>
 
           {/* Content Area */}
-          <div className="p-4 flex justify-center">
+          <div className=" flex justify-center">
             {/* BJ40 PLUS */}
             {activeModel === "BJ40 PLUS" && (
               <div className="mt-10 md:px-8">

@@ -84,7 +84,7 @@ export default function ExploreCar() {
 
   return (
     <div className="App">
-      <div className="mt-10 md:px-8 px-5">
+      <div className="mt-10 md:px-8 px-2">
         <h2 className="text-3xl font-bold text-center">EXPLORE YOUR BAIC</h2>
 
         {/* Series Tabs */}
@@ -123,18 +123,22 @@ export default function ExploreCar() {
           </div>
 
           {/* Model Images Container */}
-          <div className="max-w-6xl m-auto mt-8 px-4">
+          <div className="max-w-6xl m-auto mt-8 ">
             <div className="overflow-x-auto scrollbar-hide">
               <div className="flex gap-6 justify-start md:justify-center">
                 {activeSeries === "BJ Series" && (
                   <>
-                    <div 
-                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
                       onClick={() => handleModelClick("BJ30")}
                     >
-                      <p className={`text-center mb-2 font-semibold text-xl ${
-                        activeModel === "BJ30" ? "text-red-600" : "text-gray-700"
-                      }`}>
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "BJ30"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         BJ30
                       </p>
                       <img
@@ -146,13 +150,17 @@ export default function ExploreCar() {
                         <div className="absolute inset-0 bg-white/70 mt-8"></div>
                       )}
                     </div>
-                    <div 
-                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
                       onClick={() => handleModelClick("BJ40")}
                     >
-                      <p className={`text-center mb-2 font-semibold text-xl ${
-                        activeModel === "BJ40" ? "text-red-600" : "text-gray-700"
-                      }`}>
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "BJ40"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         BJ40
                       </p>
                       <img
@@ -164,13 +172,17 @@ export default function ExploreCar() {
                         <div className="absolute inset-0 bg-white/70 mt-8"></div>
                       )}
                     </div>
-                    <div 
-                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
                       onClick={() => handleModelClick("BJ40 PLUS")}
                     >
-                      <p className={`text-center mb-2 font-semibold text-xl ${
-                        activeModel === "BJ40 PLUS" ? "text-red-600" : "text-gray-700"
-                      }`}>
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "BJ40 PLUS"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         BJ40 PLUS
                       </p>
                       <img
@@ -187,13 +199,17 @@ export default function ExploreCar() {
 
                 {activeSeries === "X Series" && (
                   <>
-                    <div 
-                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
                       onClick={() => handleModelClick("X55")}
                     >
-                      <p className={`text-center mb-2 font-semibold text-xl ${
-                        activeModel === "X55" ? "text-red-600" : "text-gray-700"
-                      }`}>
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "X55"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         X55
                       </p>
                       <img
@@ -205,13 +221,17 @@ export default function ExploreCar() {
                         <div className="absolute inset-0 bg-white/70 mt-8"></div>
                       )}
                     </div>
-                    <div 
-                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
                       onClick={() => handleModelClick("X55 II")}
                     >
-                      <p className={`text-center mb-2 font-semibold text-xl ${
-                        activeModel === "X55 II" ? "text-red-600" : "text-gray-700"
-                      }`}>
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "X55 II"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         X55 II
                       </p>
                       <img
@@ -228,13 +248,17 @@ export default function ExploreCar() {
 
                 {activeSeries === "EV Series" && (
                   <>
-                    <div 
-                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
                       onClick={() => handleModelClick("Arcfox A")}
                     >
-                      <p className={`text-center mb-2 font-semibold text-xl ${
-                        activeModel === "Arcfox A" ? "text-red-600" : "text-gray-700"
-                      }`}>
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "Arcfox A"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         Arcfox A
                       </p>
                       <img
@@ -246,13 +270,17 @@ export default function ExploreCar() {
                         <div className="absolute inset-0 bg-white/70 mt-8"></div>
                       )}
                     </div>
-                    <div 
-                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
                       onClick={() => handleModelClick("Arcfox B")}
                     >
-                      <p className={`text-center mb-2 font-semibold text-xl ${
-                        activeModel === "Arcfox B" ? "text-red-600" : "text-gray-700"
-                      }`}>
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "Arcfox B"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
                         Arcfox B
                       </p>
                       <img

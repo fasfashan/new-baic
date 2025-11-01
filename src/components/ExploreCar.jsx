@@ -122,92 +122,152 @@ export default function ExploreCar() {
             </button>
           </div>
 
-          {/* Model Sub-tabs */}
-          <div className="flex gap-2 justify-center max-w-6xl m-auto mt-4 flex-wrap">
-            {activeSeries === "BJ Series" && (
-              <>
-                <button
-                  className={`py-2 px-6 transition-all font-medium ${
-                    activeModel === "BJ30"
-                      ? "border-b-2 border-red-600 text-red-600"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                  onClick={() => handleModelClick("BJ30")}
-                >
-                  BJ30
-                </button>
-                <button
-                  className={`py-2 px-6 transition-all font-medium ${
-                    activeModel === "BJ40"
-                      ? "border-b-2 border-red-600 text-red-600"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                  onClick={() => handleModelClick("BJ40")}
-                >
-                  BJ40
-                </button>
-                <button
-                  className={`py-2 px-6 transition-all font-medium ${
-                    activeModel === "BJ40 PLUS"
-                      ? "border-b-2 border-red-600 text-red-600"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                  onClick={() => handleModelClick("BJ40 PLUS")}
-                >
-                  BJ40 PLUS
-                </button>
-              </>
-            )}
+          {/* Model Images Container */}
+          <div className="max-w-6xl m-auto mt-8 px-4">
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex gap-6 justify-start md:justify-center">
+                {activeSeries === "BJ Series" && (
+                  <>
+                    <div 
+                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                      onClick={() => handleModelClick("BJ30")}
+                    >
+                      <p className={`text-center mb-2 font-semibold text-xl ${
+                        activeModel === "BJ30" ? "text-red-600" : "text-gray-700"
+                      }`}>
+                        BJ30
+                      </p>
+                      <img
+                        src="/bj40-plus/flame_red/_0.png"
+                        alt="BJ30"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "BJ30" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                    <div 
+                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                      onClick={() => handleModelClick("BJ40")}
+                    >
+                      <p className={`text-center mb-2 font-semibold text-xl ${
+                        activeModel === "BJ40" ? "text-red-600" : "text-gray-700"
+                      }`}>
+                        BJ40
+                      </p>
+                      <img
+                        src="/bj40-plus/flame_red/_0.png"
+                        alt="BJ40"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "BJ40" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                    <div 
+                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                      onClick={() => handleModelClick("BJ40 PLUS")}
+                    >
+                      <p className={`text-center mb-2 font-semibold text-xl ${
+                        activeModel === "BJ40 PLUS" ? "text-red-600" : "text-gray-700"
+                      }`}>
+                        BJ40 PLUS
+                      </p>
+                      <img
+                        src="/bj40-plus/flame_red/_0.png"
+                        alt="BJ40 PLUS"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "BJ40 PLUS" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                  </>
+                )}
 
-            {activeSeries === "X Series" && (
-              <>
-                <button
-                  className={`py-2 px-6 transition-all font-medium ${
-                    activeModel === "X55"
-                      ? "border-b-2 border-red-600 text-red-600"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                  onClick={() => handleModelClick("X55")}
-                >
-                  X55
-                </button>
-                <button
-                  className={`py-2 px-6 transition-all font-medium ${
-                    activeModel === "X55 II"
-                      ? "border-b-2 border-red-600 text-red-600"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                  onClick={() => handleModelClick("X55 II")}
-                >
-                  X55 II
-                </button>
-              </>
-            )}
+                {activeSeries === "X Series" && (
+                  <>
+                    <div 
+                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                      onClick={() => handleModelClick("X55")}
+                    >
+                      <p className={`text-center mb-2 font-semibold text-xl ${
+                        activeModel === "X55" ? "text-red-600" : "text-gray-700"
+                      }`}>
+                        X55
+                      </p>
+                      <img
+                        src="/x55/red_black/_0.png"
+                        alt="X55"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "X55" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                    <div 
+                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                      onClick={() => handleModelClick("X55 II")}
+                    >
+                      <p className={`text-center mb-2 font-semibold text-xl ${
+                        activeModel === "X55 II" ? "text-red-600" : "text-gray-700"
+                      }`}>
+                        X55 II
+                      </p>
+                      <img
+                        src="/x55/red_black/_0.png"
+                        alt="X55 II"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "X55 II" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                  </>
+                )}
 
-            {activeSeries === "EV Series" && (
-              <>
-                <button
-                  className={`py-2 px-6 transition-all font-medium ${
-                    activeModel === "Arcfox A"
-                      ? "border-b-2 border-red-600 text-red-600"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                  onClick={() => handleModelClick("Arcfox A")}
-                >
-                  Arcfox A
-                </button>
-                <button
-                  className={`py-2 px-6 transition-all font-medium ${
-                    activeModel === "Arcfox B"
-                      ? "border-b-2 border-red-600 text-red-600"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                  onClick={() => handleModelClick("Arcfox B")}
-                >
-                  Arcfox B
-                </button>
-              </>
-            )}
+                {activeSeries === "EV Series" && (
+                  <>
+                    <div 
+                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                      onClick={() => handleModelClick("Arcfox A")}
+                    >
+                      <p className={`text-center mb-2 font-semibold text-xl ${
+                        activeModel === "Arcfox A" ? "text-red-600" : "text-gray-700"
+                      }`}>
+                        Arcfox A
+                      </p>
+                      <img
+                        src="/bj40-plus/flame_red/_0.png"
+                        alt="Arcfox A"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "Arcfox A" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                    <div 
+                      className="relative cursor-pointer flex-shrink-0 transition-all" 
+                      onClick={() => handleModelClick("Arcfox B")}
+                    >
+                      <p className={`text-center mb-2 font-semibold text-xl ${
+                        activeModel === "Arcfox B" ? "text-red-600" : "text-gray-700"
+                      }`}>
+                        Arcfox B
+                      </p>
+                      <img
+                        src="/bj40-plus/flame_red/_0.png"
+                        alt="Arcfox B"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "Arcfox B" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Content Area */}

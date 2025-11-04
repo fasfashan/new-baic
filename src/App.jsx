@@ -17,8 +17,8 @@ function App() {
       <Header />
       <VideoHeroSlider />
       <ExploreCar />
-      <AccessoriesSection />
       <AfterSalesSection />
+      <AccessoriesSection />
       <NewsSection />
       <CtaSection />
       <Footer />

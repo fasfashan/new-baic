@@ -45,16 +45,22 @@ const BigMenu = () => {
         brochureLink: "/brochure-x55.pdf",
       },
     ],
-    "EV Series": [
+    Arcfox: [
       {
-        name: "Arcfox A",
+        name: "BJ30",
         image: BJ40, // Using BJ40 as placeholder
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "Arcfox B",
+        name: "BJ40",
         image: BJ40, // Using BJ40 as placeholder
+        exploreLink: "/BJ40/index.html",
+        brochureLink: "/brochure-bj40.pdf",
+      },
+      {
+        name: "BJ40 PLUS",
+        image: BJ40,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
@@ -63,14 +69,14 @@ const BigMenu = () => {
 
   return (
     <div
-      className="border-b pt-10 fixed top-[72px] left-0 right-0 z-40 
+      className="border-b fixed top-[72px] left-0 right-0 z-40 
      border-gray-400 w-full bg-white shadow-lg"
     >
-      <div className="max-w-6xl md:px-8 px-5 m-auto pb-8">
+      <div className="max-w-6xl md:px-8 px-5 m-auto py-8">
         {/* Series Tabs */}
-        <div className="flex flex-col space-y-4 mb-6">
+        <div className="flex gap-8 mb-6 overflow-x-auto scrollbar-hide">
           <button
-            className={`text-left font-semibold text-lg ${
+            className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "BJ Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
                 : "text-gray-700 hover:text-gray-900 pb-2"
@@ -80,7 +86,7 @@ const BigMenu = () => {
             BJ Series
           </button>
           <button
-            className={`text-left font-semibold text-lg ${
+            className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "X Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
                 : "text-gray-700 hover:text-gray-900 pb-2"
@@ -90,14 +96,14 @@ const BigMenu = () => {
             X Series
           </button>
           <button
-            className={`text-left font-semibold text-lg ${
-              activeSeries === "EV Series"
+            className={`font-semibold text-lg whitespace-nowrap ${
+              activeSeries === "Arcfox"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
                 : "text-gray-700 hover:text-gray-900 pb-2"
             }`}
-            onClick={() => handleSeriesClick("EV Series")}
+            onClick={() => handleSeriesClick("Arcfox")}
           >
-            EV Series
+            Arcfox
           </button>
         </div>
 

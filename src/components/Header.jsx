@@ -13,18 +13,55 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [closeTimeout, setCloseTimeout] = useState(null);
 
-  const handleVehicleClick = () => {
-    setIsBigMenuOpen(!isBigMenuOpen);
+  const handleVehicleMouseEnter = () => {
+    // Clear any existing timeout
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+
+    setIsBigMenuOpen(true);
     setIsAccessoriesOpen(false);
     setIsServicesOpen(false);
     setIsDealerOpen(false);
     setIsAboutUsOpen(false);
   };
 
+  const handleVehicleMouseLeave = () => {
+    // Set a delay before closing
+    const timeout = setTimeout(() => {
+      setIsBigMenuOpen(false);
+    }, 150);
+    setCloseTimeout(timeout);
+  };
+
+  const handleBigMenuMouseEnter = () => {
+    // Clear timeout when entering BigMenu
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+  };
+
+  const handleBigMenuMouseLeave = () => {
+    // Close immediately when leaving BigMenu
+    setIsBigMenuOpen(false);
+  };
+
   const handleMobileMenuClick = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+      }
+    };
+  }, [closeTimeout]);
 
   // Handle scroll behavior
   useEffect(() => {
@@ -40,6 +77,11 @@ export default function Header() {
           setIsServicesOpen(false);
           setIsDealerOpen(false);
           setIsAboutUsOpen(false);
+          // Clear timeout when scrolling
+          if (closeTimeout) {
+            clearTimeout(closeTimeout);
+            setCloseTimeout(null);
+          }
         } else {
           // Scrolling up
           setIsVisible(true);
@@ -56,7 +98,7 @@ export default function Header() {
         window.removeEventListener("scroll", controlNavbar);
       };
     }
-  }, [lastScrollY]);
+  }, [lastScrollY, closeTimeout]);
 
   return (
     <>
@@ -73,53 +115,19 @@ export default function Header() {
             </a>
             <ul className="flex gap-4 tracking-wide items-center text-sm">
               {/* Vehicle Menu */}
-              {/* Vehicle Menu */}
-              <li className="relative">
-                <button
-                  className="flex items-center gap-1 hover:text-gray-300 transition-colors"
-                  onClick={handleVehicleClick}
-                >
-                  Vehicle
+              <li
+                className="relative"
+                onMouseEnter={handleVehicleMouseEnter}
+                onMouseLeave={handleVehicleMouseLeave}
+              >
+                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
+                  Model
                   {isBigMenuOpen ? (
                     <ChevronUp className="w-4 h-4" />
                   ) : (
                     <ChevronDown className="w-4 h-4" />
                   )}
                 </button>
-              </li>
-
-              {/* Accessories */}
-              <li
-                className="relative group"
-                onMouseEnter={() => setIsAccessoriesOpen(true)}
-                onMouseLeave={() => setIsAccessoriesOpen(false)}
-              >
-                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
-                  Accessories
-                  {isAccessoriesOpen ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
-                {isAccessoriesOpen && (
-                  <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
-                      <a
-                        href="/accessories/bj40-sunshades"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        BJ40 Accessories
-                      </a>
-                      <a
-                        href="/accessories/x55-sunshades"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        X55 Accessories
-                      </a>
-                    </div>
-                  </div>
-                )}
               </li>
 
               {/* Services Menu */}
@@ -162,48 +170,38 @@ export default function Header() {
                 )}
               </li>
 
-              {/* Dealer Menu */}
+              {/* Accessories */}
               <li
                 className="relative group"
-                onMouseEnter={() => setIsDealerOpen(true)}
-                onMouseLeave={() => setIsDealerOpen(false)}
+                onMouseEnter={() => setIsAccessoriesOpen(true)}
+                onMouseLeave={() => setIsAccessoriesOpen(false)}
               >
                 <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
-                  Dealer
-                  {isDealerOpen ? (
+                  Accessories
+                  {isAccessoriesOpen ? (
                     <ChevronUp className="w-4 h-4" />
                   ) : (
                     <ChevronDown className="w-4 h-4" />
                   )}
                 </button>
-                {isDealerOpen && (
+                {isAccessoriesOpen && (
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
                       <a
-                        href="/find-dealer"
+                        href="/accessories/bj40-sunshades"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Find Dealer
+                        BJ40 Accessories
                       </a>
                       <a
-                        href="/partnership"
+                        href="/accessories/x55-sunshades"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Partnership
+                        X55 Accessories
                       </a>
                     </div>
                   </div>
                 )}
-              </li>
-
-              {/* News & Event */}
-              <li>
-                <a
-                  href="/news/index.html"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  News & Event
-                </a>
               </li>
 
               {/* About Us Menu */}
@@ -222,19 +220,60 @@ export default function Header() {
                 </button>
                 {isAboutUsOpen && (
                   <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
+                    <div className="w-64 bg-white text-black rounded-lg shadow-lg py-2">
                       <a
-                        href="/about-us/index.html"
+                        href="/corporate"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        About us
+                        Corporate
                       </a>
                       <a
-                        href="/career/index.html"
+                        href="/brand"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Career
+                        Brand
                       </a>
+                      <a
+                        href="/news/index.html"
+                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                      >
+                        Publication (News & Event)
+                      </a>
+                      <a
+                        href="/dealer-network"
+                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                      >
+                        Dealer Network
+                      </a>
+
+                      {/* Contact Us with Sub-menu */}
+                      <div className="relative group/contact">
+                        <div className="px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
+                          Contact Us
+                        </div>
+                        <div className="hidden group-hover/contact:block absolute left-full top-0 -ml-2">
+                          <div className="w-64 bg-white text-black rounded-lg shadow-lg py-2 ml-2">
+                            <a
+                              href="/contact/index.html"
+                              className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                            >
+                              Customer Relationship
+                            </a>
+                            <a
+                              href="/social-media"
+                              className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                            >
+                              Social Media
+                            </a>
+                            <a
+                              href="/career/index.html"
+                              className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                            >
+                              Career
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -310,7 +349,14 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      {isBigMenuOpen && isVisible && <BigMenu />}
+      {isBigMenuOpen && isVisible && (
+        <div
+          onMouseEnter={handleBigMenuMouseEnter}
+          onMouseLeave={handleBigMenuMouseLeave}
+        >
+          <BigMenu />
+        </div>
+      )}
       {isMobileMenuOpen && <MobileMenu />}
     </>
   );

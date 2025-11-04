@@ -139,38 +139,6 @@ export default function MobileMenu() {
         </div>
         <hr />
 
-        {/* Accessories Accordion */}
-        <div className="w-full rounded-md">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsAccessoriesOpen(!isAccessoriesOpen)}
-          >
-            <span className="text-lg font-medium">ACCESSORIES</span>
-            {isAccessoriesOpen ? (
-              <ChevronUp className="w-6 h-6" />
-            ) : (
-              <ChevronDown className="w-6 h-6" />
-            )}
-          </div>
-          {isAccessoriesOpen && (
-            <div className="mt-3 ml-4 space-y-2">
-              <a
-                href="/accessories/bj40-sunshades"
-                className="block text-sm text-gray-700 hover:text-red-600"
-              >
-                BJ40 Accessories
-              </a>
-              <a
-                href="/accessories/x55-sunshades"
-                className="block text-sm text-gray-700 hover:text-red-600"
-              >
-                X55 Accessories
-              </a>
-            </div>
-          )}
-        </div>
-        <hr />
-
         {/* Services Accordion */}
         <div className="w-full rounded-md">
           <div
@@ -209,42 +177,36 @@ export default function MobileMenu() {
         </div>
         <hr />
 
-        {/* Dealer Accordion */}
+        {/* Accessories Accordion */}
         <div className="w-full rounded-md">
           <div
             className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsDealerOpen(!isDealerOpen)}
+            onClick={() => setIsAccessoriesOpen(!isAccessoriesOpen)}
           >
-            <span className="text-lg font-medium">DEALER</span>
-            {isDealerOpen ? (
+            <span className="text-lg font-medium">ACCESSORIES</span>
+            {isAccessoriesOpen ? (
               <ChevronUp className="w-6 h-6" />
             ) : (
               <ChevronDown className="w-6 h-6" />
             )}
           </div>
-          {isDealerOpen && (
+          {isAccessoriesOpen && (
             <div className="mt-3 ml-4 space-y-2">
               <a
-                href="/find-dealer"
+                href="/accessories/bj40-sunshades"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
-                Find Dealer
+                BJ40 Accessories
               </a>
               <a
-                href="/partnership"
+                href="/accessories/x55-sunshades"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
-                Partnership
+                X55 Accessories
               </a>
             </div>
           )}
         </div>
-        <hr />
-
-        {/* News & Event */}
-        <a href="/news/index.html" className="text-lg font-medium">
-          NEWS & EVENT
-        </a>
         <hr />
 
         {/* About Us Accordion */}
@@ -263,17 +225,56 @@ export default function MobileMenu() {
           {isAboutUsOpen && (
             <div className="mt-3 ml-4 space-y-2">
               <a
-                href="/about-us/index.html"
+                href="/corporate"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
-                About us
+                Corporate
               </a>
               <a
-                href="/career/index.html"
+                href="/brand"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
-                Career
+                Brand
               </a>
+              <a
+                href="/news/index.html"
+                className="block text-sm text-gray-700 hover:text-red-600"
+              >
+                Publication (News & Event)
+              </a>
+              <a
+                href="/dealer-network"
+                className="block text-sm text-gray-700 hover:text-red-600"
+              >
+                Dealer Network
+              </a>
+
+              {/* Contact Us Sub-section */}
+              <div className="ml-2 mt-2">
+                <div className="text-sm font-medium text-gray-900 mb-1">
+                  Contact Us
+                </div>
+                <div className="ml-2 space-y-1">
+                  <a
+                    href="/contact/index.html"
+                    className="block text-sm text-gray-700 hover:text-red-600"
+                  >
+                    Customer Relationship
+                  </a>
+                  <a
+                    href="/social-media"
+                    className="block text-sm text-gray-700 hover:text-red-600"
+                  >
+                    Social Media
+                  </a>
+                  <a
+                    href="/career/index.html"
+                    className="block text-sm text-gray-700 hover:text-red-600"
+                  >
+                    Career
+                  </a>
+                </div>
+              </div>
             </div>
           )}
         </div>

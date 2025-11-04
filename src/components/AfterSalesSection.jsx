@@ -1,7 +1,7 @@
 export default function AfterSalesSection() {
   return (
     <section
-      className="relative min-h-[500px]  bg-cover bg-center flex items-center justify-center"
+      className="relative min-h-[500px] mt-20  bg-cover bg-center flex items-center justify-center"
       style={{ backgroundImage: "url('/after-sales-bg.jpg')" }}
     >
       {/* Dark Overlay */}

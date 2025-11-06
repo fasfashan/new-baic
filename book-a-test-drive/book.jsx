@@ -61,8 +61,12 @@ function App() {
   const getModelFromURL = () => {
     const params = new URLSearchParams(window.location.search);
     const model = params.get("model");
+    if (model === "bj30") return "BJ30";
+    if (model === "bj40") return "BJ40";
     if (model === "bj40plus") return "BJ40 PLUS";
     if (model === "x55ii") return "X55 II";
+    if (model === "arcfoxa") return "Arcfox A";
+    if (model === "arcfoxb") return "Arcfox B";
     return "BJ40 PLUS"; // default
   };
 
@@ -282,8 +286,12 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                 onChange={(e) => setSelectedModel(e.target.value)}
                 className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3"
               >
+                <option value="BJ30">BJ30</option>
+                <option value="BJ40">BJ40</option>
                 <option value="BJ40 PLUS">BJ40 PLUS</option>
                 <option value="X55 II">X55 II</option>
+                <option value="Arcfox A">Arcfox A</option>
+                <option value="Arcfox B">Arcfox B</option>
               </select>
             </div>
 

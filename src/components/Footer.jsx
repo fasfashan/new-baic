@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="grid md:px-8 px-5 mt-8 gap-y-6 md:gap-y-4 grid-cols-2 md:grid-cols-5 max-w-6xl m-auto">
         {/* Vehicle Column */}
         <div className="flex flex-col space-y-2">
-          <h3 className="text-white text-base font-semibold mb-2">Vehicle</h3>
+          <h3 className="text-white text-base font-semibold mb-2">Model</h3>
           <a
             href="/BJ40/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
@@ -67,24 +67,14 @@ export default function Footer() {
 
         {/* Services Column */}
         <div className="flex flex-col space-y-2">
-          <h3 className="text-white text-base font-semibold mb-2">Services</h3>
+          <h3 className="text-white text-base font-semibold mb-2">
+            After Sales
+          </h3>
           <a
-            href="/aftersales"
+            href="/aftersales/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             Aftersales Program
-          </a>
-          <a
-            href="/emergency-road"
-            className="text-gray-400 text-sm hover:text-white transition-all"
-          >
-            Emergency Road Assistance
-          </a>
-          <a
-            href="/booking-service"
-            className="text-gray-400 text-sm hover:text-white transition-all"
-          >
-            Booking Dealer Services
           </a>
         </div>
 

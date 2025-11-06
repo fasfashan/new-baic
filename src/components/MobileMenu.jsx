@@ -58,7 +58,7 @@ export default function MobileMenu() {
 
   return (
     <>
-      <div className="w-full space-y-4 min-h-screen flex flex-col transition-all z-[60] fixed top-[72px] left-0 right-0 p-5 bg-white overflow-y-auto">
+      <div className="w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 bg-white overflow-y-auto">
         {/* Vehicle Accordion */}
         <div className="w-full rounded-md">
           <div
@@ -141,39 +141,9 @@ export default function MobileMenu() {
 
         {/* Services Accordion */}
         <div className="w-full rounded-md">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsServicesOpen(!isServicesOpen)}
-          >
-            <span className="text-lg font-medium">SERVICES</span>
-            {isServicesOpen ? (
-              <ChevronUp className="w-6 h-6" />
-            ) : (
-              <ChevronDown className="w-6 h-6" />
-            )}
-          </div>
-          {isServicesOpen && (
-            <div className="mt-3 ml-4 space-y-2">
-              <a
-                href="/aftersales"
-                className="block text-sm text-gray-700 hover:text-red-600"
-              >
-                Aftersales Program
-              </a>
-              <a
-                href="/emergency-road"
-                className="block text-sm text-gray-700 hover:text-red-600"
-              >
-                Emergency Road Assistance
-              </a>
-              <a
-                href="/booking-dealer-service/index.html"
-                className="block text-sm text-gray-700 hover:text-red-600"
-              >
-                Booking Dealer Service
-              </a>
-            </div>
-          )}
+          <a className="text-lg" href="/aftersales/index.html">
+            AFTERSALES
+          </a>
         </div>
         <hr />
 
@@ -225,7 +195,7 @@ export default function MobileMenu() {
           {isAboutUsOpen && (
             <div className="mt-3 ml-4 space-y-2">
               <a
-                href="/corporate"
+                href="/about-us/index.html"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
                 Corporate

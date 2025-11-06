@@ -47,20 +47,14 @@ const BigMenu = () => {
     ],
     Arcfox: [
       {
-        name: "BJ30",
+        name: "Arcfox A",
         image: BJ40, // Using BJ40 as placeholder
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ40",
+        name: "Arcfox B",
         image: BJ40, // Using BJ40 as placeholder
-        exploreLink: "/BJ40/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ40 PLUS",
-        image: BJ40,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },

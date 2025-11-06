@@ -208,7 +208,7 @@ function App() {
       <Header />
       <ButtonChat />
       <div className="bg-neutral-400    ">
-        <div className=" py-6 z-10  bg-neutral-100  sticky  top-0 items-center ">
+        <div className=" py-6 z-10  bg-neutral-100  sticky  top-16 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
             <img
               width={200}
@@ -251,7 +251,7 @@ function App() {
               </button>
               <a
                 className="py-3 md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all border border-white hover:border-none rounded-xl whitespace-nowrap"
-                href="/book-a-test-drive/index.html"
+                href="/book-a-test-drive/index.html?model=bj40plus"
               >
                 BOOK A TEST DRIVE
               </a>
@@ -260,7 +260,7 @@ function App() {
         </div>
         <div className="bg-neutral-200">
           {activeTab === "Overview" && (
-            <>
+            <div className=" md:py-16 py-10">
               <div
                 className="h-full  bg-cover bg-center"
                 style={{ backgroundImage: `url(${Foto1})` }}
@@ -349,10 +349,10 @@ function App() {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           )}
           {activeTab === "Pricing" && (
-            <div className="  md:px-8 px-5 max-w-4xl m-auto overflow-hidden bg-neutral-200 pt-4">
+            <div className="py-16  md:px-8 px-5 max-w-4xl m-auto overflow-hidden bg-neutral-200 ">
               <div className="space-y-1 text-center mt-10 ">
                 <div className="flex space-x-3 justify-center">
                   {colors.map((color) => (
@@ -561,13 +561,13 @@ function App() {
             </div>
           )}
           {activeTab === "Accessories" && (
-            <div className="bg-neutral-200">
+            <div className="bg-neutral-200 py-16">
               <AccessoriesTab />
             </div>
           )}
         </div>
       </div>
-      <CTA />
+
       <Footer />
     </>
   );

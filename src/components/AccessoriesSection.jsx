@@ -79,14 +79,6 @@ const AccessoriesSection = () => {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-10">
-          <a
-            href="/accessories"
-            className="inline-block bg-red-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-red-700 transition-colors duration-300"
-          >
-            View All Accessories
-          </a>
-        </div>
       </div>
     </section>
   );

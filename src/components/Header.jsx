@@ -63,28 +63,23 @@ export default function Header() {
     };
   }, [closeTimeout]);
 
-  // Handle scroll behavior
+  // Handle scroll behavior - Close menus on scroll
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== "undefined") {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
-          // Scrolling down & past 100px
-          setIsVisible(false);
-          setIsBigMenuOpen(false); // Close big menu when scrolling down
+          // Scrolling down - close all menus
+          setIsBigMenuOpen(false);
           setIsAccessoriesOpen(false);
           setIsServicesOpen(false);
           setIsDealerOpen(false);
           setIsAboutUsOpen(false);
-          // Clear timeout when scrolling
           if (closeTimeout) {
             clearTimeout(closeTimeout);
             setCloseTimeout(null);
           }
-        } else {
-          // Scrolling up
-          setIsVisible(true);
         }
 
         setLastScrollY(currentScrollY);
@@ -102,11 +97,7 @@ export default function Header() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 items-center bg-black py-4 z-50 transition-transform duration-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
+      <nav className="fixed top-0 left-0 right-0 items-center bg-black py-4 z-50">
         <div className="max-w-6xl md:px-6 px-5 m-auto flex justify-between items-center">
           {/* Logo & Desktop Menu */}
           <div className="hidden md:flex text-white items-center gap-5">
@@ -131,19 +122,13 @@ export default function Header() {
               </li>
 
               {/* Services Menu */}
-              <li
-                className="relative group"
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
-                  Services
-                  {isServicesOpen ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
+              <li className="relative group">
+                <a
+                  href="/aftersales/index.html"
+                  className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2"
+                >
+                  After Sales
+                </a>
                 {isServicesOpen && (
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
@@ -222,7 +207,7 @@ export default function Header() {
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="w-64 bg-white text-black rounded-lg shadow-lg py-2">
                       <a
-                        href="/corporate"
+                        href="/about-us/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
                         Corporate
@@ -349,7 +334,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      {isBigMenuOpen && isVisible && (
+      {isBigMenuOpen && (
         <div
           onMouseEnter={handleBigMenuMouseEnter}
           onMouseLeave={handleBigMenuMouseLeave}

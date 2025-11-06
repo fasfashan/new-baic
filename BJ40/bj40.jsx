@@ -346,6 +346,12 @@ function App() {
                       pilihan sempurna untuk memberikan pengalaman berkendara
                       yang aman dan terjamin, namun tetap menyenangkan.
                     </p>
+                    <a
+                      className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all  hover:border-none rounded-xl whitespace-nowrap"
+                      href="/book-a-test-drive/index.html"
+                    >
+                      BOOK A TEST DRIVE
+                    </a>
                   </div>
                 </div>
               </div>

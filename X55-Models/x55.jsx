@@ -214,7 +214,7 @@ function App() {
       <Header />
       <ButtonChat />
       <div className="bg-neutral-400    ">
-        <div className=" py-6 z-10  bg-neutral-100  sticky  top-0 items-center ">
+        <div className=" py-6 z-10  bg-neutral-100  sticky  top-16 items-center ">
           <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
             <img
               width={100}
@@ -373,6 +373,12 @@ function App() {
                       <li>•Soft-clad interior finish</li>
                       <li>•Spacious and environment - friendly</li>
                     </ul>
+                    <a
+                      className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all  hover:border-none rounded-xl whitespace-nowrap"
+                      href="/book-a-test-drive/index.html"
+                    >
+                      BOOK A TEST DRIVE
+                    </a>
                   </div>
                 </div>
               </div>
@@ -581,6 +587,7 @@ function App() {
               {activeTabGallery === "Video" && (
                 <>
                   <div className="mb-10 m-auto  mt-10">
+                    HUMAN-CENTERED COMFORT
                     <video controls autoPlay src={X55Video}></video>
                   </div>
                 </>
@@ -594,7 +601,7 @@ function App() {
           )}
         </div>
       </div>
-      <CTA />
+
       <Footer />
     </>
   );

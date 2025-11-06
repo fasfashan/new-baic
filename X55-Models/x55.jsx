@@ -373,12 +373,20 @@ function App() {
                       <li>•Soft-clad interior finish</li>
                       <li>•Spacious and environment - friendly</li>
                     </ul>
-                    <a
-                      className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all  hover:border-none rounded-xl whitespace-nowrap"
-                      href="/book-a-test-drive/index.html"
-                    >
-                      BOOK A TEST DRIVE
-                    </a>
+                    <div className="flex gap-4">
+                      <a
+                        className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all  hover:border-none rounded-xl whitespace-nowrap"
+                        href="/book-a-test-drive/index.html"
+                      >
+                        BOOK A TEST DRIVE
+                      </a>
+                      <a
+                        className="py-2.5 px-4 font-medium text-black text-sm text-center bg-white transition-all hover:bg-neutral-100 rounded-xl whitespace-nowrap"
+                        href="/brochure-x55.pdf"
+                      >
+                        DOWNLOAD BROCHURE
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

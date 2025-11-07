@@ -65,7 +65,7 @@ export default function MobileMenu() {
             className="flex justify-between items-center cursor-pointer"
             onClick={() => setIsVehicleOpen(!isVehicleOpen)}
           >
-            <span className="text-lg font-medium">VEHICLE</span>
+            <span className="text-lg font-medium">MODEL</span>
             {isVehicleOpen ? (
               <ChevronUp className="w-6 h-6" />
             ) : (

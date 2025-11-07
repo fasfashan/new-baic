@@ -225,7 +225,7 @@ export default function Header() {
                         Publication (News & Event)
                       </a>
                       <a
-                        href="/dealer-network"
+                        href="/contact/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
                         Dealer Network
@@ -239,7 +239,7 @@ export default function Header() {
                         <div className="hidden group-hover/contact:block absolute left-full top-0 -ml-2">
                           <div className="w-64 bg-white text-black rounded-lg shadow-lg py-2 ml-2">
                             <a
-                              href="/contact/index.html"
+                              href="/"
                               className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                             >
                               Customer Relationship

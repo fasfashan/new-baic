@@ -2,261 +2,303 @@ import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import "../src/index.css";
-import dealerBandung from "../src/assets/dealer-baic-bandung.jpg";
-import dealerBatam from "../src/assets/dealer-baic-batam.jpg";
-import dealerDenpasar from "../src/assets/dealer-baic-denpasar.jpg";
-import dealerPIK2 from "../src/assets/dealer-baic-pik-2.jpg";
-import dealerMedan from "../src/assets/dealer-baic-sujono.jpg";
-import dealerSamarinda from "../src/assets/dealer-baic-samarinda.jpg";
-import dealerBanten from "../src/assets/dealer-baic-gading-serpong.jpg";
-import MapComponent from "../src/components/Maps";
-import backgroundImage from "../src/assets/slide-2.jpg";
-import {
-  FaInstagramSquare,
-  FaWhatsappSquare,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import ButtonChat from "../src/components/ButtonChat";
+import heroImage from "/baic-authorized-dealer.jpg";
+import mapImage from "/baic-map.png";
+import dealerImage from "/baic-dealer.jpg";
+import { Phone, MapPin, Instagram } from "lucide-react";
 function App() {
-  const [dealerFound, setDealerFound] = useState(false);
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCity, setSelectedCity] = useState("All cities");
 
   const dealers = [
     {
       id: 1,
-      telp: "02112345678",
-      phone: "0882125628",
-      province: "KEPULAUAN RIAU",
-      city: "BATAM",
-      name: "Dealer Kepulauan Riau, Batam",
-      services: "Sales, Services, Spareparts & Body & Paint",
+      name: "BAIC Alam Sutera",
+      company: "JHL Auto",
+      services: "Sales, Service, Spareparts",
       address:
-        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
-      whatsappLink: "#",
-      mapLink: "#",
-      image: dealerBatam,
-      lat: -6.2,
-      lng: 106.816666,
-      ptName: "PT LOREM IPSUM",
+        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+      city: "Tangerang",
+      phone: "031 9986 0888",
+      phoneLink: "tel:03199860888",
+      telp: "0811 3133 3000",
+      telpLink: "tel:08113133000",
+      hours: {
+        weekday: "Monday - Friday: 09:00 - 19:00",
+        saturday: "Saturday: 09:00 - 17:00",
+        sunday: "Sunday: 09:00 - 15:00",
+      },
+      whatsappLink: "https://wa.me/6281234567890",
+      mapLink: "https://maps.google.com",
+      instagramLink: "https://instagram.com/baicid",
+      image: dealerImage,
     },
     {
       id: 2,
-      telp: "02112345678",
-      phone: "0882125628",
-      province: "BALI",
-      city: "DENPASAR",
-      name: "Dealer Bali, Denpasar",
-      services: "Sales, Services, Spareparts & Body & Paint",
+      name: "BAIC Alam Sutera",
+      company: "JHL Auto",
+      services: "Sales, Service, Spareparts",
       address:
-        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
-      whatsappLink: "#",
-      mapLink: "#",
-      image: dealerDenpasar,
-      lat: -8.65,
-      lng: 115.216667,
-      ptName: "PT LOREM IPSUM",
+        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+      city: "Tangerang",
+      phone: "031 9986 0888",
+      phoneLink: "tel:03199860888",
+      telp: "0811 3133 3000",
+      telpLink: "tel:08113133000",
+      hours: {
+        weekday: "Monday - Friday: 09:00 - 19:00",
+        saturday: "Saturday: 09:00 - 17:00",
+        sunday: "Sunday: 09:00 - 15:00",
+      },
+      whatsappLink: "https://wa.me/6281234567890",
+      mapLink: "https://maps.google.com",
+      instagramLink: "https://instagram.com/baicid",
+      image: dealerImage,
     },
     {
       id: 3,
-      telp: "02112345678",
-      phone: "0882125628",
-      province: "BANTEN",
-      city: "TANGERANG SELATAN",
-      name: "Dealer Banten, Tangerang Selatan",
-      services: "Sales, Services, Spareparts & Body & Paint",
+      name: "BAIC Jakarta",
+      company: "JHL Auto",
+      services: "Sales, Service, Spareparts",
       address:
-        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
-      whatsappLink: "#",
-      mapLink: "#",
-      image: dealerBanten,
-      lat: -6.290978,
-      lng: 106.718772,
-      ptName: "PT LOREM IPSUM",
+        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+      city: "Jakarta",
+      phone: "031 9986 0888",
+      phoneLink: "tel:03199860888",
+      telp: "0811 3133 3000",
+      telpLink: "tel:08113133000",
+      hours: {
+        weekday: "Monday - Friday: 09:00 - 19:00",
+        saturday: "Saturday: 09:00 - 17:00",
+        sunday: "Sunday: 09:00 - 15:00",
+      },
+      whatsappLink: "https://wa.me/6281234567890",
+      mapLink: "https://maps.google.com",
+      instagramLink: "https://instagram.com/baicid",
+      image: dealerImage,
     },
     {
       id: 4,
-      telp: "02112345678",
-      phone: "0882125628",
-      province: "SUMATERA UTARA",
-      city: "MEDAN",
-      name: "Dealer Sumatera Utara, Medan",
-      services: "Sales, Services, Spareparts & Body & Paint",
+      name: "BAIC Bandung",
+      company: "JHL Auto",
+      services: "Sales, Service, Spareparts",
       address:
-        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
-      whatsappLink: "#",
-      mapLink: "#",
-      image: dealerMedan,
-      lat: 3.595196,
-      lng: 98.672223,
-
-      ptName: "PT LOREM IPSUM",
+        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+      city: "Bandung",
+      phone: "031 9986 0888",
+      phoneLink: "tel:03199860888",
+      telp: "0811 3133 3000",
+      telpLink: "tel:08113133000",
+      hours: {
+        weekday: "Monday - Friday: 09:00 - 19:00",
+        saturday: "Saturday: 09:00 - 17:00",
+        sunday: "Sunday: 09:00 - 15:00",
+      },
+      whatsappLink: "https://wa.me/6281234567890",
+      mapLink: "https://maps.google.com",
+      instagramLink: "https://instagram.com/baicid",
+      image: dealerImage,
     },
     {
       id: 5,
-      telp: "02112345678",
-      phone: "0882125628",
-      province: "JAWA BARAT",
-      city: "BANDUNG",
-      name: "Dealer Jawa Barat, Bandung",
-      services: "Sales, Services, Spareparts & Body & Paint",
+      name: "BAIC Surabaya",
+      company: "JHL Auto",
+      services: "Sales, Service, Spareparts",
       address:
-        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
-      whatsappLink: "#",
-      mapLink: "#",
-      image: dealerBandung,
-      lat: -6.917464,
-      lng: 107.619123,
-      ptName: "PT LOREM IPSUM",
+        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+      city: "Surabaya",
+      phone: "031 9986 0888",
+      phoneLink: "tel:03199860888",
+      telp: "0811 3133 3000",
+      telpLink: "tel:08113133000",
+      hours: {
+        weekday: "Monday - Friday: 09:00 - 19:00",
+        saturday: "Saturday: 09:00 - 17:00",
+        sunday: "Sunday: 09:00 - 15:00",
+      },
+      whatsappLink: "https://wa.me/6281234567890",
+      mapLink: "https://maps.google.com",
+      instagramLink: "https://instagram.com/baicid",
+      image: dealerImage,
     },
     {
       id: 6,
-      telp: "02112345678",
-      phone: "0882125628",
-      province: "DKI JAKARTA",
-      city: "JAKARTA UTARA",
-      name: "Dealer DKI Jakarta, Jakarta Utara",
-      services: "Sales, Services, Spareparts & Body & Paint",
+      name: "BAIC Medan",
+      company: "JHL Auto",
+      services: "Sales, Service, Spareparts",
       address:
-        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
-      whatsappLink: "#",
-      mapLink: "#",
-      image: dealerPIK2,
-      lat: -6.121435,
-      lng: 106.774124,
-      ptName: "PT LOREM IPSUM",
-    },
-    {
-      id: 7,
-      telp: "02112345678",
-      phone: "0882125628",
-      province: "KALIMANTAN TIMUR",
-      city: "SAMARINDA",
-      name: "Dealer Kalimantan Timur, Samarinda",
-      services: "Sales, Services, Spareparts & Body & Paint",
-      address:
-        "Jl. Gading Serpong Boulevard Blok A No.7 Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810",
-      whatsappLink: "#",
-      mapLink: "#",
-      image: dealerSamarinda,
-      lat: -0.5022,
-      lng: 117.1536,
-
-      ptName: "PT LOREM IPSUM",
+        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+      city: "Medan",
+      phone: "031 9986 0888",
+      phoneLink: "tel:03199860888",
+      telp: "0811 3133 3000",
+      telpLink: "tel:08113133000",
+      hours: {
+        weekday: "Monday - Friday: 09:00 - 19:00",
+        saturday: "Saturday: 09:00 - 17:00",
+        sunday: "Sunday: 09:00 - 15:00",
+      },
+      whatsappLink: "https://wa.me/6281234567890",
+      mapLink: "https://maps.google.com",
+      instagramLink: "https://instagram.com/baicid",
+      image: dealerImage,
     },
   ];
 
-  const cities = [...new Set(dealers.map((dealer) => dealer.city))];
-
-  const handleFindDealer = () => {
-    setDealerFound(true);
-  };
+  const cities = [
+    "All cities",
+    ...new Set(dealers.map((dealer) => dealer.city)),
+  ];
 
   const handleCityChange = (e) => {
     setSelectedCity(e.target.value);
-    setDealerFound(true);
   };
 
-  const filteredDealers = dealers.filter(
-    (dealer) => dealer.city === selectedCity
-  );
-  const handleMarkerClick = (city) => {
-    setSelectedCity(city);
-    setDealerFound(true);
-  };
+  const filteredDealers =
+    selectedCity === "All cities"
+      ? dealers
+      : dealers.filter((dealer) => dealer.city === selectedCity);
   return (
     <>
       <Header />
-      <div className="bg-neutral-100 py-4">
-        <h3 className="max-w-6xl m-auto md:px-8 px-5 font-bold">
-          CONTACT DEALER
-        </h3>
+      <ButtonChat />
+
+      {/* Hero Section */}
+      <div className="relative w-full h-[400px] md:h-[500px]">
+        <img
+          src={heroImage}
+          alt="BAIC Authorized Dealer"
+          className="w-full h-full object-cover"
+        />
       </div>
-      <div
-        className="bg-cover bg-center text-center p-8 w-full min-h-screen flex items-center justify-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <h1 className="md:text-6xl text-4xl font-bold text-white">
-          BAIC Authorized Dealer
-        </h1>
+
+      {/* Map Section */}
+      <div className="">
+        <div className="">
+          <img src={mapImage} alt="BAIC Dealer Map" className="w-full " />
+        </div>
       </div>
-      <div className="max-w-6xl m-auto my-10 md:px-8 px-5">
-        <MapComponent onMarkerClick={handleMarkerClick} dealers={dealers} />
-      </div>
-      <div className="py-8 bg-neutral-200">
-        <h2 className="text-2xl font-bold text-center">FIND OUR DEALER</h2>
-        <div className="flex md:flex-nowrap flex-wrap mt-6 max-w-6xl md:px-8 px-5 m-auto justify-between gap-4">
-          <form className="w-full custom-select">
+
+      {/* Select Area & Dealers Section */}
+      <div className="bg-neutral-100 py-12">
+        <div className="max-w-6xl m-auto md:px-8 px-5">
+          <h2 className="text-2xl font-bold mb-6">Select area</h2>
+
+          {/* Filter Dropdown */}
+          <div className="mb-8">
             <select
-              id="cities"
-              className="bg-gray-50 appearance-none shadow-inner border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5"
               value={selectedCity}
               onChange={handleCityChange}
+              className="w-full md:w-64 px-4 py-3 bg-white border border-neutral-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent text-neutral-700"
             >
-              <option value="" disabled>
-                CITY
-              </option>
               {cities.map((city, index) => (
                 <option key={index} value={city}>
                   {city}
                 </option>
               ))}
             </select>
-          </form>
-          <button
-            onClick={handleFindDealer}
-            className="p-2 w-full bg-red-600 text-white rounded-lg"
-          >
-            FIND DEALER
-          </button>
-        </div>
-        {dealerFound && filteredDealers.length > 0 && (
-          <div className="grid md:grid-cols-12 max-w-6xl md:px-8 px-5 m-auto">
+          </div>
+
+          {/* Dealers Grid */}
+          <div className="grid md:grid-cols-3 gap-6">
             {filteredDealers.map((dealer) => (
-              <div key={dealer.id} className="mt-10 col-span-4">
-                <div className=" rounded-lg shadow-lg bg-white p-8  space-y-4 mb-8">
-                  <img src={dealer.image} alt={`blog`} />
-                  <div className="space-y-4 flex flex-col justify-between md:col-span-8 col-span-12">
-                    <h2 className="font-medium text-2xl">{dealer.name}</h2>
-                    <div className="space-y-1">
-                      <h2 className=" font-medium">{dealer.ptName}</h2>
-                      <h2 className="capitalize italic text-red-600 font-medium">
-                        {dealer.services}
-                      </h2>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm">{dealer.address}</p>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm">Telp: {dealer.telp}</p>
-                      <p className="text-sm">Phone: {dealer.phone}</p>
-                      <p className="text-sm">Bussiness Hours:</p>
-                      <p className="text-sm">Monday - Friday: 08:30 - 17:30</p>
-                      <p className="text-sm">
-                        Saturday - Monday: 09:40 - 14:00
+              <div
+                key={dealer.id}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+              >
+                <img
+                  src={dealer.image}
+                  alt={dealer.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-1">{dealer.name}</h3>
+                  <p className="text-sm text-neutral-600 mb-3">
+                    {dealer.company}
+                  </p>
+                  <p className="text-sm text-red-600 italic mb-4">
+                    {dealer.services}
+                  </p>
+
+                  <div className="space-y-3 mb-4">
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-700 mb-1">
+                        ADDRESS
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        {dealer.address}
                       </p>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      <a className="text-4xl" href={dealer.whatsappLink}>
-                        <FaWhatsappSquare className="text-red-500" />
-                      </a>
-                      <a className="text-4xl" href={dealer.whatsappLink}>
-                        <FaMapMarkerAlt className="text-red-500" />
-                      </a>
-                      <a className="text-4xl" href={dealer.whatsappLink}>
-                        <FaInstagramSquare className="text-red-500" />
-                      </a>
+
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-700 mb-1">
+                        BUSINESS HOURS
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        {dealer.hours.weekday}
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        {dealer.hours.saturday}
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        {dealer.hours.sunday}
+                      </p>
                     </div>
+
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-700 mb-1">
+                        CONTACT
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        Telp: {dealer.phone}
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        Phone: {dealer.telp}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <a
+                      href={dealer.whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                    >
+                      <Phone className="w-5 h-5 text-white" />
+                    </a>
+                    <a
+                      href={dealer.mapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                    >
+                      <MapPin className="w-5 h-5 text-white" />
+                    </a>
+                    <a
+                      href={dealer.instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                    >
+                      <Instagram className="w-5 h-5 text-white" />
+                    </a>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        )}
-        {dealerFound && filteredDealers.length === 0 && (
-          <div className="text-center text-red-600 font-bold mt-8">
-            No dealers found for the selected city.
-          </div>
-        )}
+
+          {filteredDealers.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-neutral-600">
+                No dealers found for the selected city.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
+
       <Footer />
     </>
   );

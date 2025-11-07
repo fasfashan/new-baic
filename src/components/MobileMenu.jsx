@@ -213,20 +213,20 @@ export default function MobileMenu() {
                 Publication (News & Event)
               </a>
               <a
-                href="/dealer-network"
+                href="/contact/index.html"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
                 Dealer Network
               </a>
 
               {/* Contact Us Sub-section */}
-              <div className="ml-2 mt-2">
+              <div className=" mt-2">
                 <div className="text-sm font-medium text-gray-900 mb-1">
                   Contact Us
                 </div>
                 <div className="ml-2 space-y-1">
                   <a
-                    href="/contact/index.html"
+                    href=""
                     className="block text-sm text-gray-700 hover:text-red-600"
                   >
                     Customer Relationship

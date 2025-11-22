@@ -491,39 +491,6 @@ export default function ExploreCar() {
                   totalFrames={20}
                 />
 
-                {/* Specifications */}
-                <div className="mt-8 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 max-w-2xl mx-auto">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center">
-                      <p className="text-gray-500 text-sm font-medium mb-1">
-                        Wheelbase
-                      </p>
-                      <p className="text-2xl font-bold text-gray-800">2735</p>
-                      <p className="text-gray-400 text-xs uppercase tracking-wider">
-                        MM
-                      </p>
-                    </div>
-                    <div className="text-center border-l border-r border-gray-300">
-                      <p className="text-gray-500 text-sm font-medium mb-1">
-                        Length
-                      </p>
-                      <p className="text-2xl font-bold text-gray-800">4620</p>
-                      <p className="text-gray-400 text-xs uppercase tracking-wider">
-                        MM
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-500 text-sm font-medium mb-1">
-                        Height
-                      </p>
-                      <p className="text-2xl font-bold text-gray-800">1680</p>
-                      <p className="text-gray-400 text-xs uppercase tracking-wider">
-                        MM
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a

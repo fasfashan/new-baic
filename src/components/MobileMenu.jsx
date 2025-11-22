@@ -1,5 +1,7 @@
 import BJ40 from "../assets/BJ40-plus.png";
+import BJ30 from "../../public/BJ30-header.png";
 import X55 from "../assets/BAIC-X55-II.png";
+import X55Lite from "../../public/X55-lite-header.png";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -16,12 +18,7 @@ export default function MobileMenu() {
     "BJ Series": [
       {
         name: "BJ30",
-        image: BJ40,
-        exploreLink: "/BJ40/index.html",
-      },
-      {
-        name: "BJ40",
-        image: BJ40,
+        image: BJ30,
         exploreLink: "/BJ40/index.html",
       },
       {
@@ -32,26 +29,14 @@ export default function MobileMenu() {
     ],
     "X Series": [
       {
-        name: "X55",
-        image: X55,
+        name: "X55 II Lite",
+        image: X55Lite,
         exploreLink: "/X55-Models/index.html",
       },
       {
-        name: "X55 II",
+        name: "X55 II Prime",
         image: X55,
         exploreLink: "/X55-Models/index.html",
-      },
-    ],
-    "EV Series": [
-      {
-        name: "Arcfox A",
-        image: BJ40,
-        exploreLink: "/BJ40/index.html",
-      },
-      {
-        name: "Arcfox B",
-        image: BJ40,
-        exploreLink: "/BJ40/index.html",
       },
     ],
   };
@@ -95,16 +80,6 @@ export default function MobileMenu() {
                   onClick={() => setActiveSeries("X Series")}
                 >
                   X Series
-                </button>
-                <button
-                  className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
-                    activeSeries === "EV Series"
-                      ? "bg-red-600 text-white"
-                      : "bg-gray-200 text-gray-700"
-                  }`}
-                  onClick={() => setActiveSeries("EV Series")}
-                >
-                  EV Series
                 </button>
               </div>
 

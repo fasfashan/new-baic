@@ -1,5 +1,7 @@
 import BJ40 from "../assets/BJ40-plus.png";
+import BJ30 from "../../public/BJ30-header.png";
 import X55 from "../assets/BAIC-X55-II.png";
+import X55Lite from "../../public/X55-lite-header.png";
 import { useState } from "react";
 
 const BigMenu = () => {
@@ -14,13 +16,7 @@ const BigMenu = () => {
     "BJ Series": [
       {
         name: "BJ30",
-        image: BJ40, // Using BJ40 as placeholder
-        exploreLink: "/BJ40/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ40",
-        image: BJ40, // Using BJ40 as placeholder
+        image: BJ30,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
@@ -33,30 +29,16 @@ const BigMenu = () => {
     ],
     "X Series": [
       {
-        name: "X55",
-        image: X55, // Using X55 II as placeholder
+        name: "X55 II Lite",
+        image: X55Lite,
         exploreLink: "/X55-Models/index.html",
         brochureLink: "/brochure-x55.pdf",
       },
       {
-        name: "X55 II",
+        name: "X55 II Prime",
         image: X55,
         exploreLink: "/X55-Models/index.html",
         brochureLink: "/brochure-x55.pdf",
-      },
-    ],
-    Arcfox: [
-      {
-        name: "Arcfox A",
-        image: BJ40, // Using BJ40 as placeholder
-        exploreLink: "/BJ40/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "Arcfox B",
-        image: BJ40, // Using BJ40 as placeholder
-        exploreLink: "/BJ40/index.html",
-        brochureLink: "/brochure-bj40.pdf",
       },
     ],
   };
@@ -88,16 +70,6 @@ const BigMenu = () => {
             onClick={() => handleSeriesClick("X Series")}
           >
             X Series
-          </button>
-          <button
-            className={`font-semibold text-lg whitespace-nowrap ${
-              activeSeries === "Arcfox"
-                ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : "text-gray-700 hover:text-gray-900 pb-2"
-            }`}
-            onClick={() => handleSeriesClick("Arcfox")}
-          >
-            Arcfox
           </button>
         </div>
 

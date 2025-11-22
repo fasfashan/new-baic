@@ -286,9 +286,7 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Height
                   </p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
-                    MM
-                  </p>
+
                   <p className="text-2xl font-bold text-gray-800">1680</p>
                   <p className="text-gray-400 text-xs uppercase tracking-wider">
                     MM

@@ -583,7 +583,6 @@ export default function ExploreCar() {
                 </div>
               </div>
             )}
-
           </div>
         </div>
       </div>

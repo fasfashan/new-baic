@@ -1,27 +1,28 @@
 import { useState, useEffect, useRef } from "react";
 import BJ40Video from "../assets/BJ40-Video.mp4";
+import BJ30 from "../../public/BJ30Video.mp4";
 import X55Video from "../assets/X55-Video.mp4";
 
 const slides = [
   {
     id: 1,
-    video: BJ40Video,
+    video: BJ30,
     title: "Feel the power. Drive it now",
-    ctaText: "Explore BJ40",
+    ctaText: "Explore BJ30",
     ctaLink: "/BJ40/index.html",
   },
   {
     id: 2,
-    video: X55Video,
+    video: BJ40Video,
     title: "Feel the power. Drive it now",
-    ctaText: "Explore X55 II",
+    ctaText: "Explore BJ40 Plus",
     ctaLink: "/X55-Models/index.html",
   },
   {
     id: 3,
-    video: BJ40Video,
+    video: X55Video,
     title: "Feel the power. Drive it now",
-    ctaText: "Explore X55 II",
+    ctaText: "Explore X55 Prime",
     ctaLink: "/X55-Models/index.html",
   },
 ];
@@ -49,17 +50,6 @@ export default function VideoHeroSlider() {
     setCurrentSlide(index);
   };
 
-  // Auto play functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 6000); // 6 seconds
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentSlide]);
-
   // Handle transition end
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -69,16 +59,32 @@ export default function VideoHeroSlider() {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  // Handle video playback
+  // Handle video playback and auto advance when video ends
   useEffect(() => {
+    const currentVideo = videoRefs.current[currentSlide];
+
+    if (currentVideo) {
+      currentVideo.currentTime = 0;
+      currentVideo.play().catch(console.error);
+
+      // Add event listener for when video ends
+      const handleVideoEnd = () => {
+        setIsTransitioning(true);
+        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+      };
+
+      currentVideo.addEventListener("ended", handleVideoEnd);
+
+      // Cleanup
+      return () => {
+        currentVideo.removeEventListener("ended", handleVideoEnd);
+      };
+    }
+
+    // Pause other videos
     videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === currentSlide) {
-          video.currentTime = 0;
-          video.play().catch(console.error);
-        } else {
-          video.pause();
-        }
+      if (video && index !== currentSlide) {
+        video.pause();
       }
     });
   }, [currentSlide]);
@@ -99,7 +105,6 @@ export default function VideoHeroSlider() {
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay={index === currentSlide}
             muted
-            loop
             playsInline
             preload="metadata"
           >
@@ -108,11 +113,11 @@ export default function VideoHeroSlider() {
           </video>
 
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
 
           {/* Content */}
           <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="text-center text-white px-4 max-w-4xl mx-auto">
+            <div className="text-center  text-white px-4 max-w-4xl mx-auto">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
                 {slide.title}
               </h1>

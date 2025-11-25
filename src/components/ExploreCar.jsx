@@ -31,6 +31,33 @@ const colorToFolderBJ40 = {
   "#00243A": "midnight_blue",
 };
 
+const colorNamesBJ30 = {
+  "#8DB600": "Apple Green",
+  "#87CEEB": "Blue Sky",
+  "#C0C0C0": "Bubble Grey",
+  "#000000": "Jade Black",
+  "#808080": "Matte Grey",
+  "#ffffff": "Snow White",
+};
+
+const colorToFileBJ30 = {
+  "#8DB600": "apple-green.png",
+  "#87CEEB": "blue-sky.png",
+  "#C0C0C0": "bubble-grey.png",
+  "#000000": "jade-black.png",
+  "#808080": "matte-grey.png",
+  "#ffffff": "snow-white.png",
+};
+
+const colorsBJ30 = [
+  "#8DB600",
+  "#87CEEB",
+  "#C0C0C0",
+  "#000000",
+  "#808080",
+  "#ffffff",
+];
+
 const colorNamesX55 = {
   "#464C47": "Platinum Black",
   "#96901D": "Yellow Black",
@@ -53,6 +80,7 @@ export default function ExploreCar() {
   const [activeSeries, setActiveSeries] = useState("BJ Series");
   const [activeModel, setActiveModel] = useState("BJ30");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [selectedColorBJ30, setSelectedColorBJ30] = useState(colorsBJ30[0]);
   const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
 
   const handleSeriesClick = (series) => {
@@ -60,7 +88,7 @@ export default function ExploreCar() {
     // Set default model based on series
     if (series === "BJ Series") {
       setActiveModel("BJ30");
-      setSelectedColor(colors[0]);
+      setSelectedColorBJ30(colorsBJ30[0]);
     } else if (series === "X Series") {
       setActiveModel("X55 II");
       setSelectedColorX55(colorsX55[0]);
@@ -77,6 +105,10 @@ export default function ExploreCar() {
 
   const onColorSelectX55 = (color) => {
     setSelectedColorX55(color);
+  };
+
+  const onColorSelectBJ30 = (color) => {
+    setSelectedColorBJ30(color);
   };
 
   return (
@@ -385,34 +417,41 @@ export default function ExploreCar() {
             {activeModel === "BJ30" && (
               <div className="mt-10 md:px-8">
                 <div className="flex space-x-3 justify-center">
-                  {colors.map((color) => (
+                  {colorsBJ30.map((color) => (
                     <div
                       key={color}
                       className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
-                        selectedColor === color
+                        selectedColorBJ30 === color
                           ? "border-4 outline outline-red-500 border-white transform scale-110"
                           : "border-2"
                       }`}
                       style={{ backgroundColor: color }}
-                      onClick={() => onColorSelect(color)}
+                      onClick={() => onColorSelectBJ30(color)}
                     ></div>
                   ))}
                 </div>
 
-                <Car360Viewer
-                  modelKey="bj40-plus"
-                  colorKey={colorToFolderBJ40[selectedColor]}
-                  colorName={colorNamesBJ40[selectedColor]}
-                  totalFrames={36}
-                />
+                {/* Side View Image */}
+                <div className="mt-8 flex justify-center">
+                  <img
+                    src={`/BJ30/${colorToFileBJ30[selectedColorBJ30]}`}
+                    alt={`BJ30 ${colorNamesBJ30[selectedColorBJ30]}`}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+
+                {/* Color Name Display */}
+                <div className="mt-4 text-center">
+                  <p className="text-lg font-semibold text-gray-700">
+                    {colorNamesBJ30[selectedColorBJ30]}
+                  </p>
+                </div>
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a
                       className="py-3 px-6 text-center bg-red-600 hover:bg-red-700 text-white font-semibold transition-all rounded-lg flex items-center gap-2 justify-center whitespace-nowrap"
-                      href={`/book-a-test-drive/index.html?model=${activeModel
-                        .toLowerCase()
-                        .replace(" ", "")}`}
+                      href="/book-a-test-drive/index.html?model=bj30"
                     >
                       <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive

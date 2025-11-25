@@ -15,7 +15,7 @@ export default function MobileMenu() {
 
   // Specifications data
   const specs = {
-    "BJ30": { wheelbase: "2820", length: "4730", height: "1790" },
+    BJ30: { wheelbase: "2820", length: "4730", height: "1790" },
     "BJ40 PLUS": { wheelbase: "2745", length: "4465", height: "1871" },
     "X55 II Lite": { wheelbase: "2735", length: "4620", height: "1680" },
     "X55 II Prime": { wheelbase: "2735", length: "4620", height: "1680" },
@@ -102,23 +102,35 @@ export default function MobileMenu() {
                     <h2 className="text-sm text-red-500 font-medium mt-2">
                       BAIC {vehicle.name}
                     </h2>
-                    
+
                     {/* Specifications */}
                     <div className="mt-2 bg-gray-50 rounded-lg p-2">
                       <div className="grid grid-cols-3 gap-2 text-center">
                         <div>
-                          <p className="text-[9px] text-gray-500 uppercase">Wheelbase</p>
-                          <p className="text-xs font-semibold text-gray-800">{specs[vehicle.name].wheelbase}</p>
+                          <p className="text-[9px] text-gray-500 uppercase">
+                            Wheelbase
+                          </p>
+                          <p className="text-xs font-semibold text-gray-800">
+                            {specs[vehicle.name].wheelbase}
+                          </p>
                           <p className="text-[8px] text-gray-400">MM</p>
                         </div>
                         <div className="border-l border-r border-gray-200">
-                          <p className="text-[9px] text-gray-500 uppercase">Length</p>
-                          <p className="text-xs font-semibold text-gray-800">{specs[vehicle.name].length}</p>
+                          <p className="text-[9px] text-gray-500 uppercase">
+                            Length
+                          </p>
+                          <p className="text-xs font-semibold text-gray-800">
+                            {specs[vehicle.name].length}
+                          </p>
                           <p className="text-[8px] text-gray-400">MM</p>
                         </div>
                         <div>
-                          <p className="text-[9px] text-gray-500 uppercase">Height</p>
-                          <p className="text-xs font-semibold text-gray-800">{specs[vehicle.name].height}</p>
+                          <p className="text-[9px] text-gray-500 uppercase">
+                            Height
+                          </p>
+                          <p className="text-xs font-semibold text-gray-800">
+                            {specs[vehicle.name].height}
+                          </p>
                           <p className="text-[8px] text-gray-400">MM</p>
                         </div>
                       </div>

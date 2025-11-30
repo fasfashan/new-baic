@@ -161,10 +161,10 @@ function Career() {
               filteredJobs.map((job) => (
                 <div
                   key={job.id}
-                  className="bg-white border p-4 border-neutral-300 rounded-lg shadow-md  flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+                  className="bg-white border p-4 md:p-6 border-neutral-300 rounded-lg shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-4"
                 >
-                  <div className="items-center grid grid-cols-1 md:grid-cols-5 gap-4">
-                    <div>
+                  <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 flex-1">
+                    <div className="flex-1">
                       <p className="text-xs text-red-600 font-semibold mb-1">
                         Position
                       </p>
@@ -172,7 +172,7 @@ function Career() {
                         {job.position}
                       </p>
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <p className="text-xs text-red-600 font-semibold mb-1">
                         Department
                       </p>
@@ -180,7 +180,7 @@ function Career() {
                         {job.department}
                       </p>
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <p className="text-xs text-red-600 font-semibold mb-1">
                         Location
                       </p>
@@ -188,22 +188,14 @@ function Career() {
                         {job.location}
                       </p>
                     </div>
-                    <div>
-                      <p className="text-xs text-red-600 font-semibold mb-1">
-                        Location
-                      </p>
-                      <p className="text-lg font-bold text-gray-800">
-                        {job.location}
-                      </p>
-                    </div>
-                    <div>
-                      <a
-                        href="/career/detail.html"
-                        className="px-6 py-3 w-full bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all font-semibold text-center "
-                      >
-                        See detail
-                      </a>
-                    </div>
+                  </div>
+                  <div className="md:flex-shrink-0">
+                    <a
+                      href="/career/detail.html"
+                      className="block px-6 py-3 w-full md:w-auto bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all font-semibold text-center whitespace-nowrap"
+                    >
+                      See detail
+                    </a>
                   </div>
                 </div>
               ))

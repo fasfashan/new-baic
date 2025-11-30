@@ -5,95 +5,77 @@ import ButtonChat from "../src/components/ButtonChat";
 import { useState } from "react";
 import "../src/index.css";
 
-// Dummy news data - 10 articles
+// News data - 8 articles
 const newsData = [
   {
     image: "/placeholder-news.jpg",
     date: "01 October, 2025",
     title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025",
     description:
       "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
     link: "/news/single-news.html",
   },
   {
     image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
-    title: "PRESENT IN SEMARANG BAIC BJ30 HYBRID OFFERED AT A SPECIAL PRICE!",
+    date: "15 September, 2025",
+    title: "BAIC ukir sejarah baru di Indonesia: luncurkan BJ40 Plus made in Indonesia pertama",
     description:
-      "Indonesia, October 2025 - PT JIO Distribusi Indonesia, BAIC Brand Holder Agent (APM) in Indonesia, officially participated in auto expo Semarang 2025 - Autoshow Series with...",
+      "Indonesia, September 2025 - PT JIO Distribusi Indonesia, BAIC Brand Holder Agent (APM) in Indonesia, proudly announces the launch of the first locally-assembled BJ40 Plus...",
     link: "/news/single-news.html",
   },
   {
     image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
+    date: "10 September, 2025",
     title:
-      "PRESENT AROUND THE HEART OF SOUTH SULAWESI BAIC is Now Available in Makassar - Makassar!",
+      "BAIC turunkan harga untuk model X55 II sekaligus menyegarkan tampilan dan memberikan 2 pilihan varian",
     description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+      "Indonesia, September 2025 – BAIC Indonesia announces a significant price reduction for the X55 II model, along with refreshed styling and two variant options to choose from...",
     link: "/news/single-news.html",
   },
   {
     image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
+    date: "05 September, 2025",
     title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+      "BAIC Indonesia expands to North Jakarta! BAIC Kelapa Gading kini resmi beroperasi",
     description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+      "Jakarta, September 2025 – BAIC Indonesia continues its expansion with the official opening of BAIC Kelapa Gading dealership, bringing premium automotive experience to North Jakarta...",
     link: "/news/single-news.html",
   },
   {
     image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
+    date: "25 August, 2025",
     title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+      "Layanan purna jual BAIC Indonesia kini dilengkapi dengan Emergency Roadside Assistance 24 Jam",
     description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+      "Indonesia, August 2025 – BAIC Indonesia enhances its after-sales service by introducing 24-hour Emergency Roadside Assistance, ensuring peace of mind for all BAIC owners...",
     link: "/news/single-news.html",
   },
   {
     image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
+    date: "20 August, 2025",
     title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+      "World Premiere! BAIC BJ30 Hybrid Right-Hand Drive pertama diluncurkan di Indonesia",
     description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+      "Indonesia, August 2025 – Making history in the global automotive industry, BAIC officially launches the world's first right-hand drive BJ30 Hybrid exclusively in Indonesia...",
     link: "/news/single-news.html",
   },
   {
     image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
+    date: "15 August, 2025",
     title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+      "Hadir perdana di Semarang, BAIC BJ30 Hybrid ditawarkan dengan harga khusus",
     description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+      "Semarang, August 2025 - PT JIO Distribusi Indonesia brings the innovative BAIC BJ30 Hybrid to Semarang for the first time with special promotional pricing for early adopters...",
     link: "/news/single-news.html",
   },
   {
     image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
+    date: "10 August, 2025",
     title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+      "Resmikan city store pertama di Jakarta, BAIC Gandaria City hadirkan pengalaman otomotif inovatif",
     description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
-    link: "/news/single-news.html",
-  },
-  {
-    image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
-    title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
-    description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
-    link: "/news/single-news.html",
-  },
-  {
-    image: "/placeholder-news.jpg",
-    date: "01 October, 2025",
-    title:
-      "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
-    description:
-      "Bandung, October 1, 2025 – PT JIO Distribusi Indonesia, BAIC's authorized agent (APM) in Indonesia, officially participated in GIIAS Bandung 2025 – Autoshow Series, which took place from OC...",
+      "Jakarta, August 2025 – BAIC Indonesia inaugurates its first city store at Gandaria City, offering an innovative and immersive automotive experience in the heart of Jakarta...",
     link: "/news/single-news.html",
   },
 ];

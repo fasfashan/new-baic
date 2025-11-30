@@ -4,22 +4,22 @@ export default function NewsSection() {
       id: 1,
       date: "01 October, 2025",
       title:
-        "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025 - BANDUNG",
+        "THE NEWEST HYBRID SUV BAIC BJ30 COMES TO BANDUNG AT A SPECIAL PRICE DURING GIIAS 2025",
       image: "/placeholder-news.jpg",
       link: "/news/single-news.html",
     },
     {
       id: 2,
-      date: "01 October, 2025",
-      title: "PRESENT IN SEMARANG BAIC BJ30 HYBRID OFFERED AT A SPECIAL PRICE!",
+      date: "15 September, 2025",
+      title: "BAIC ukir sejarah baru di Indonesia: luncurkan BJ40 Plus made in Indonesia pertama",
       image: "/placeholder-news.jpg",
       link: "/news/single-news.html",
     },
     {
       id: 3,
-      date: "01 October, 2025",
+      date: "10 September, 2025",
       title:
-        "PRESENT AROUND THE HEART OF SOUTH SULAWESI BAIC is Now Available in Makassar - Makassar!",
+        "BAIC turunkan harga untuk model X55 II sekaligus menyegarkan tampilan dan memberikan 2 pilihan varian",
       image: "/placeholder-news.jpg",
       link: "/news/single-news.html",
     },

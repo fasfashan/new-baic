@@ -26,7 +26,7 @@ const BigMenu = () => {
       {
         name: "BJ30",
         image: BJ30,
-        exploreLink: "/BJ40/index.html",
+        exploreLink: "/BJ30/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {

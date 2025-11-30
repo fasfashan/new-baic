@@ -431,6 +431,13 @@ export default function ExploreCar() {
                   ))}
                 </div>
 
+                {/* Color Name Display */}
+                <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                  <h2 className="text-center transition-all px-4 py-2">
+                    {colorNamesBJ30[selectedColorBJ30]}
+                  </h2>
+                </div>
+
                 {/* Side View Image */}
                 <div className="mt-8 flex justify-center">
                   <img
@@ -438,13 +445,6 @@ export default function ExploreCar() {
                     alt={`BJ30 ${colorNamesBJ30[selectedColorBJ30]}`}
                     className="w-full h-auto object-contain"
                   />
-                </div>
-
-                {/* Color Name Display */}
-                <div className="mt-4 text-center">
-                  <p className="text-lg font-semibold text-gray-700">
-                    {colorNamesBJ30[selectedColorBJ30]}
-                  </p>
                 </div>
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">

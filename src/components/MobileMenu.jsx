@@ -28,7 +28,7 @@ export default function MobileMenu() {
       {
         name: "BJ30",
         image: BJ30,
-        exploreLink: "/BJ40/index.html",
+        exploreLink: "/BJ30/index.html",
       },
       {
         name: "BJ40 PLUS",

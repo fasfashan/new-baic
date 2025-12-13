@@ -93,7 +93,9 @@ export default function Footer() {
 
         {/* Social Media Column - logos only (pending assets for others) */}
         <div className="flex flex-col space-y-2">
-          <h3 className="text-white text-base font-semibold mb-2">Social Media</h3>
+          <h3 className="text-white text-base font-semibold mb-2">
+            Social Media
+          </h3>
           <div className="flex items-center gap-4">
             <a
               href="https://www.instagram.com/baic.id/"

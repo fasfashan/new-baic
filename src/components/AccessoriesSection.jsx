@@ -8,7 +8,7 @@ const AccessoriesSection = () => {
       title: "Automotive Sunshades",
       price: "Rp 254.000",
       image: "/Accessories.jpg",
-      link: "/accessories/bj30-sunshades",
+      link: "/contact/index.html",
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ const AccessoriesSection = () => {
       title: "Automotive Sunshades",
       price: "Rp 254.000",
       image: "/Accessories-1.jpg",
-      link: "/accessories/bj40-plus-sunshades",
+      link: "/contact/index.html",
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ const AccessoriesSection = () => {
       title: "Automotive Sunshades",
       price: "Rp 254.000",
       image: "/Accessories-2.jpg",
-      link: "/accessories/x55-ii-sunshades",
+      link: "/contact/index.html",
     },
     {
       id: 4,
@@ -32,7 +32,7 @@ const AccessoriesSection = () => {
       title: "Automotive Sunshades",
       price: "Rp 254.000",
       image: "/Accessories-3.jpg",
-      link: "/accessories/x55-ii-roof-sunshades",
+      link: "/contact/index.html",
     },
   ];
 

@@ -16,31 +16,71 @@ export default function MobileMenu() {
   // Specifications data
   const specs = {
     BJ30: { wheelbase: "2820", length: "4730", height: "1790" },
+    "BJ30 Type 1": { wheelbase: "2820", length: "4730", height: "1790" },
+    "BJ30 Type 2": { wheelbase: "2820", length: "4730", height: "1790" },
     "BJ40 PLUS": { wheelbase: "2745", length: "4465", height: "1871" },
+    "BJ40 PLUS Type 1": { wheelbase: "2745", length: "4465", height: "1871" },
+    "BJ40 PLUS Type 2": { wheelbase: "2745", length: "4465", height: "1871" },
     "X55 II Lite": { wheelbase: "2735", length: "4620", height: "1680" },
     "X55 II Prime": { wheelbase: "2735", length: "4620", height: "1680" },
-    "X55 II": { wheelbase: "2735", length: "4620", height: "1680" },
   };
 
   // Vehicle data structure
   const vehicles = {
     "BJ Series": [
       {
-        name: "BJ30",
+        name: "BJ30 Type 1",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
       },
       {
-        name: "BJ40 PLUS",
+        name: "BJ30 Type 2",
+        image: BJ30,
+        exploreLink: "/BJ30/index.html",
+      },
+      {
+        name: "BJ40 PLUS Type 1",
+        image: BJ40,
+        exploreLink: "/BJ40/index.html",
+      },
+      {
+        name: "BJ40 PLUS Type 2",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
       },
     ],
     "X Series": [
       {
-        name: "X55 II",
+        name: "X55 II Lite",
         image: X55,
         exploreLink: "/X55-Models/index.html",
+      },
+      {
+        name: "X55 II Prime",
+        image: X55,
+        exploreLink: "/X55-Models/index.html",
+      },
+    ],
+    Arcfox: [
+      {
+        name: "BJ30 Type 1",
+        image: BJ30,
+        exploreLink: "/BJ30/index.html",
+      },
+      {
+        name: "BJ30 Type 2",
+        image: BJ30,
+        exploreLink: "/BJ30/index.html",
+      },
+      {
+        name: "BJ40 PLUS Type 1",
+        image: BJ40,
+        exploreLink: "/BJ40/index.html",
+      },
+      {
+        name: "BJ40 PLUS Type 2",
+        image: BJ40,
+        exploreLink: "/BJ40/index.html",
       },
     ],
   };
@@ -84,6 +124,16 @@ export default function MobileMenu() {
                   onClick={() => setActiveSeries("X Series")}
                 >
                   X Series
+                </button>
+                <button
+                  className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
+                    activeSeries === "Arcfox"
+                      ? "bg-red-600 text-white"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                  onClick={() => setActiveSeries("Arcfox")}
+                >
+                  Arcfox
                 </button>
               </div>
 
@@ -141,7 +191,7 @@ export default function MobileMenu() {
                         className="py-3 text-center hover:bg-gray-100 transition-all w-full border border-gray-400 rounded-xl"
                         href={vehicle.exploreLink}
                       >
-                        EXPLORE MORE
+                        SEE DETAILS
                       </a>
                     </div>
                   </div>
@@ -160,35 +210,19 @@ export default function MobileMenu() {
         </div>
         <hr />
 
-        {/* Accessories Accordion */}
+        {/* Accessories -> simple link to Contact */}
         <div className="w-full rounded-md">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsAccessoriesOpen(!isAccessoriesOpen)}
-          >
-            <span className="text-lg font-medium">ACCESSORIES</span>
-            {isAccessoriesOpen ? (
-              <ChevronUp className="w-6 h-6" />
-            ) : (
-              <ChevronDown className="w-6 h-6" />
-            )}
-          </div>
-          {isAccessoriesOpen && (
-            <div className="mt-3 ml-4 space-y-2">
-              <a
-                href="/accessories/bj40-sunshades"
-                className="block text-sm text-gray-700 hover:text-red-600"
-              >
-                BJ40 Accessories
-              </a>
-              <a
-                href="/accessories/x55-sunshades"
-                className="block text-sm text-gray-700 hover:text-red-600"
-              >
-                X55 Accessories
-              </a>
-            </div>
-          )}
+          <a className="text-lg" href="/contact/index.html">
+            ACCESSORIES
+          </a>
+        </div>
+        <hr />
+
+        {/* Dealer Link */}
+        <div className="w-full rounded-md">
+          <a className="text-lg" href="/contact/index.html">
+            DEALER
+          </a>
         </div>
         <hr />
 
@@ -226,10 +260,10 @@ export default function MobileMenu() {
                 Publication (News & Event)
               </a>
               <a
-                href="/contact/index.html"
+                href="/career/index.html"
                 className="block text-sm text-gray-700 hover:text-red-600"
               >
-                Dealer Network
+                Career
               </a>
 
               {/* Contact Us Sub-section */}
@@ -249,12 +283,6 @@ export default function MobileMenu() {
                     className="block text-sm text-gray-700 hover:text-red-600"
                   >
                     Social Media
-                  </a>
-                  <a
-                    href="/career/index.html"
-                    className="block text-sm text-gray-700 hover:text-red-600"
-                  >
-                    Career
                   </a>
                 </div>
               </div>

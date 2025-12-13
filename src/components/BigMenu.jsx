@@ -20,17 +20,39 @@ const BigMenu = () => {
     "X55 II": { wheelbase: "2735", length: "4620", height: "1680" },
   };
 
+  // Helper to get base model name for specs mapping
+  const getBaseModel = (name) => {
+    if (name.startsWith("BJ30")) return "BJ30";
+    if (name.startsWith("BJ40 PLUS")) return "BJ40 PLUS";
+    if (name.startsWith("X55 II Lite")) return "X55 II Lite";
+    if (name.startsWith("X55 II Prime")) return "X55 II Prime";
+    if (name.startsWith("X55 II")) return "X55 II";
+    return name;
+  };
+
   // Vehicle data structure
   const vehicles = {
     "BJ Series": [
       {
-        name: "BJ30",
+        name: "BJ30 Type 1",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ40 PLUS",
+        name: "BJ30 Type 2",
+        image: BJ30,
+        exploreLink: "/BJ30/index.html",
+        brochureLink: "/brochure-bj40.pdf",
+      },
+      {
+        name: "BJ40 PLUS Type 1",
+        image: BJ40,
+        exploreLink: "/BJ40/index.html",
+        brochureLink: "/brochure-bj40.pdf",
+      },
+      {
+        name: "BJ40 PLUS Type 2",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
@@ -38,10 +60,42 @@ const BigMenu = () => {
     ],
     "X Series": [
       {
-        name: "X55 II",
+        name: "X55 II Lite",
         image: X55,
         exploreLink: "/X55-Models/index.html",
         brochureLink: "/brochure-x55.pdf",
+      },
+      {
+        name: "X55 II Prime",
+        image: X55,
+        exploreLink: "/X55-Models/index.html",
+        brochureLink: "/brochure-x55.pdf",
+      },
+    ],
+    Arcfox: [
+      {
+        name: "BJ30 Type 1",
+        image: BJ30,
+        exploreLink: "/BJ30/index.html",
+        brochureLink: "/brochure-bj40.pdf",
+      },
+      {
+        name: "BJ30 Type 2",
+        image: BJ30,
+        exploreLink: "/BJ30/index.html",
+        brochureLink: "/brochure-bj40.pdf",
+      },
+      {
+        name: "BJ40 PLUS Type 1",
+        image: BJ40,
+        exploreLink: "/BJ40/index.html",
+        brochureLink: "/brochure-bj40.pdf",
+      },
+      {
+        name: "BJ40 PLUS Type 2",
+        image: BJ40,
+        exploreLink: "/BJ40/index.html",
+        brochureLink: "/brochure-bj40.pdf",
       },
     ],
   };
@@ -74,10 +128,20 @@ const BigMenu = () => {
           >
             X Series
           </button>
+          <button
+            className={`font-semibold text-lg whitespace-nowrap ${
+              activeSeries === "Arcfox"
+                ? "border-b-2 border-red-500 text-red-500 pb-2"
+                : "text-gray-700 hover:text-gray-900 pb-2"
+            }`}
+            onClick={() => handleSeriesClick("Arcfox")}
+          >
+            Arcfox
+          </button>
         </div>
 
-        {/* Vehicles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Vehicles Grid: 4 columns on large screens */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {vehicles[activeSeries].map((vehicle) => (
             <div key={vehicle.name} className="flex flex-col">
               <img
@@ -89,6 +153,8 @@ const BigMenu = () => {
                 BAIC {vehicle.name}
               </h2>
 
+              {/* No inline type badges; types represented as separate products */}
+
               {/* Specifications */}
               <div className="mt-3 bg-gray-50 rounded-lg p-3">
                 <div className="grid grid-cols-3 gap-2 text-center">
@@ -97,7 +163,7 @@ const BigMenu = () => {
                       Wheelbase
                     </p>
                     <p className="text-sm font-semibold text-gray-800">
-                      {specs[vehicle.name].wheelbase}
+                      {specs[getBaseModel(vehicle.name)].wheelbase}
                     </p>
                     <p className="text-[9px] text-gray-400">MM</p>
                   </div>
@@ -106,7 +172,7 @@ const BigMenu = () => {
                       Length
                     </p>
                     <p className="text-sm font-semibold text-gray-800">
-                      {specs[vehicle.name].length}
+                      {specs[getBaseModel(vehicle.name)].length}
                     </p>
                     <p className="text-[9px] text-gray-400">MM</p>
                   </div>
@@ -115,7 +181,7 @@ const BigMenu = () => {
                       Height
                     </p>
                     <p className="text-sm font-semibold text-gray-800">
-                      {specs[vehicle.name].height}
+                      {specs[getBaseModel(vehicle.name)].height}
                     </p>
                     <p className="text-[9px] text-gray-400">MM</p>
                   </div>
@@ -127,7 +193,7 @@ const BigMenu = () => {
                   className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
                   href={vehicle.exploreLink}
                 >
-                  EXPLORE MORE
+                  SEE DETAILS
                 </a>
                 <a
                   className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"

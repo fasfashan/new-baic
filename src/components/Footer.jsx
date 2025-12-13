@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col space-y-2">
           <h3 className="text-white text-base font-semibold mb-2">Model</h3>
           <a
-            href="/BJ40/index.html"
+            href="/BJ30/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             BJ30
@@ -32,14 +32,10 @@ export default function Footer() {
             href="/X55-Models/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            X55 II - Lite
+            X55
           </a>
-          <a
-            href="/X55-Models/index.html"
-            className="text-gray-400 text-sm hover:text-white transition-all"
-          >
-            X55 II - Prime
-          </a>
+          {/* Future: Arcfox tab item when content is ready */}
+          {/* <a href="#" className="text-gray-400 text-sm hover:text-white transition-all">Arcfox</a> */}
         </div>
 
         {/* Company Column */}
@@ -91,64 +87,30 @@ export default function Footer() {
             href="/partnership"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            Partnership
+            Join Partner
           </a>
         </div>
 
-        {/* Social Media Column */}
+        {/* Social Media Column - logos only (pending assets for others) */}
         <div className="flex flex-col space-y-2">
-          <h3 className="text-white text-base font-semibold mb-2">
-            Social Media
-          </h3>
-          <a
-            href="https://www.instagram.com/baic.id/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 text-sm hover:text-white transition-all"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.tiktok.com/@baic.id"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 text-sm hover:text-white transition-all"
-          >
-            TikTok
-          </a>
-          <a
-            href="https://www.facebook.com/baic.id"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 text-sm hover:text-white transition-all"
-          >
-            Facebook
-          </a>
-          <a
-            href="https://www.youtube.com/@baic.id"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 text-sm hover:text-white transition-all"
-          >
-            YouTube
-          </a>
+          <h3 className="text-white text-base font-semibold mb-2">Social Media</h3>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/baic.id/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <img width={20} src={logoinstagram} alt="Instagram" />
+            </a>
+            {/* TODO: Add TikTok, Facebook, YouTube logos when provided */}
+          </div>
         </div>
       </div>
       <div className="flex md:px-8 px-5 flex-wrap gap-y-4 mt-10 mb-10 text-white justify-between max-w-6xl m-auto">
         <div className="space-y-2">
-          <h3 className="">PT. JIO DISTRIBUSI INDONESIA</h3>
+          {/* Company name removed per client request; address kept until new info is provided */}
           <p>Jl. Jalur Sutera Boulevard Kav. 30 Alam Sutera</p>
-        </div>
-        <div className="flex space-y-2 flex-col">
-          <h3>Follow us on:</h3>
-          <div className="flex gap-4">
-            <a href="https://www.instagram.com/">
-              <img width={20} src={logoinstagram} alt="" />
-            </a>
-            <a href="https://www.blibli.com/">
-              <img width={50} src={logoblibli} alt="" />
-            </a>
-          </div>
         </div>
       </div>
       <div className="py-4  text-center bg-white">

@@ -20,7 +20,7 @@ export default function CtaSection() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="/find-dealer"
+            href="/contact/index.html"
             className="py-4 px-8 font-semibold text-white text-center bg-red-600 hover:bg-red-700 transition-all rounded-xl"
           >
             Find dealer

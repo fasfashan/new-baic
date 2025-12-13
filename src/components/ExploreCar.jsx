@@ -78,20 +78,32 @@ const colorsX55 = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
 
 export default function ExploreCar() {
   const [activeSeries, setActiveSeries] = useState("BJ Series");
-  const [activeModel, setActiveModel] = useState("BJ30");
+  const [activeModel, setActiveModel] = useState("BJ30 Type 1");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedColorBJ30, setSelectedColorBJ30] = useState(colorsBJ30[0]);
   const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
 
+  // Map active model to base for rendering
+  const getBaseModel = (name) => {
+    if (!name) return "";
+    if (name.startsWith("BJ30")) return "BJ30";
+    if (name.startsWith("BJ40 PLUS")) return "BJ40 PLUS";
+    if (name.startsWith("X55 II")) return "X55 II";
+    return name;
+  };
+
   const handleSeriesClick = (series) => {
     setActiveSeries(series);
-    // Set default model based on series
+    // Set default typed model based on series
     if (series === "BJ Series") {
-      setActiveModel("BJ30");
+      setActiveModel("BJ30 Type 1");
       setSelectedColorBJ30(colorsBJ30[0]);
     } else if (series === "X Series") {
-      setActiveModel("X55 II");
+      setActiveModel("X55 II Lite");
       setSelectedColorX55(colorsX55[0]);
+    } else if (series === "Arcfox") {
+      setActiveModel("BJ30 Type 1");
+      setSelectedColorBJ30(colorsBJ30[0]);
     }
   };
 
@@ -139,55 +151,114 @@ export default function ExploreCar() {
             >
               X Series
             </button>
+            <button
+              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg ${
+                activeSeries === "Arcfox"
+                  ? "bg-red-600 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              }`}
+              onClick={() => handleSeriesClick("Arcfox")}
+            >
+              Arcfox
+            </button>
           </div>
 
           {/* Model Images Container */}
           <div className="max-w-6xl m-auto mt-8 ">
             <div className="overflow-x-auto scrollbar-hide">
               <div className="flex gap-6 justify-start md:justify-center">
-                {activeSeries === "BJ Series" && (
+                {/* Typed model thumbnails by series */}
+                {activeSeries !== "X Series" && (
                   <>
+                    {/* BJ30 Type 1 */}
                     <div
                       className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ30")}
+                      onClick={() => handleModelClick("BJ30 Type 1")}
                     >
                       <p
                         className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ30"
+                          activeModel === "BJ30 Type 1"
                             ? "text-red-600"
                             : "text-gray-700"
                         }`}
                       >
-                        BJ30
+                        BJ30 Type 1
                       </p>
                       <img
                         src="/BJ30-explore.png"
-                        alt="BJ30"
+                        alt="BJ30 Type 1"
                         className="w-48 h-32 object-contain"
                       />
-                      {activeModel !== "BJ30" && (
+                      {activeModel !== "BJ30 Type 1" && (
                         <div className="absolute inset-0 bg-white/70 mt-8"></div>
                       )}
                     </div>
+                    {/* BJ30 Type 2 */}
                     <div
                       className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ40 PLUS")}
+                      onClick={() => handleModelClick("BJ30 Type 2")}
                     >
                       <p
                         className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ40 PLUS"
+                          activeModel === "BJ30 Type 2"
                             ? "text-red-600"
                             : "text-gray-700"
                         }`}
                       >
-                        BJ40 PLUS
+                        BJ30 Type 2
+                      </p>
+                      <img
+                        src="/BJ30-explore.png"
+                        alt="BJ30 Type 2"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "BJ30 Type 2" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                    {/* BJ40 PLUS Type 1 */}
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
+                      onClick={() => handleModelClick("BJ40 PLUS Type 1")}
+                    >
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "BJ40 PLUS Type 1"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
+                        BJ40 PLUS Type 1
                       </p>
                       <img
                         src="/bj40-plus/flame_red/_0.png"
-                        alt="BJ40 PLUS"
+                        alt="BJ40 PLUS Type 1"
                         className="w-48 h-32 object-contain"
                       />
-                      {activeModel !== "BJ40 PLUS" && (
+                      {activeModel !== "BJ40 PLUS Type 1" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                    {/* BJ40 PLUS Type 2 */}
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
+                      onClick={() => handleModelClick("BJ40 PLUS Type 2")}
+                    >
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "BJ40 PLUS Type 2"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
+                        BJ40 PLUS Type 2
+                      </p>
+                      <img
+                        src="/bj40-plus/flame_red/_0.png"
+                        alt="BJ40 PLUS Type 2"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "BJ40 PLUS Type 2" && (
                         <div className="absolute inset-0 bg-white/70 mt-8"></div>
                       )}
                     </div>
@@ -196,25 +267,49 @@ export default function ExploreCar() {
 
                 {activeSeries === "X Series" && (
                   <>
+                    {/* X55 II Lite */}
                     <div
                       className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("X55 II")}
+                      onClick={() => handleModelClick("X55 II Lite")}
                     >
                       <p
                         className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "X55 II"
+                          activeModel === "X55 II Lite"
                             ? "text-red-600"
                             : "text-gray-700"
                         }`}
                       >
-                        X55 II
+                        X55 II Lite
                       </p>
                       <img
                         src="/x55/red_black/_0.png"
-                        alt="X55 II"
+                        alt="X55 II Lite"
                         className="w-48 h-32 object-contain"
                       />
-                      {activeModel !== "X55 II" && (
+                      {activeModel !== "X55 II Lite" && (
+                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
+                      )}
+                    </div>
+                    {/* X55 II Prime */}
+                    <div
+                      className="relative cursor-pointer flex-shrink-0 transition-all"
+                      onClick={() => handleModelClick("X55 II Prime")}
+                    >
+                      <p
+                        className={`text-center mb-2 font-semibold text-xl ${
+                          activeModel === "X55 II Prime"
+                            ? "text-red-600"
+                            : "text-gray-700"
+                        }`}
+                      >
+                        X55 II Prime
+                      </p>
+                      <img
+                        src="/x55/red_black/_0.png"
+                        alt="X55 II Prime"
+                        className="w-48 h-32 object-contain"
+                      />
+                      {activeModel !== "X55 II Prime" && (
                         <div className="absolute inset-0 bg-white/70 mt-8"></div>
                       )}
                     </div>
@@ -225,7 +320,7 @@ export default function ExploreCar() {
           </div>
 
           {/* Specifications - Shows based on active model */}
-          {activeModel === "BJ30" && (
+          {getBaseModel(activeModel) === "BJ30" && (
             <div className="mt-8 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 max-w-2xl mx-auto">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
@@ -259,7 +354,7 @@ export default function ExploreCar() {
             </div>
           )}
 
-          {activeModel === "BJ40 PLUS" && (
+          {getBaseModel(activeModel) === "BJ40 PLUS" && (
             <div className="mt-8 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 max-w-2xl mx-auto">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
@@ -293,7 +388,7 @@ export default function ExploreCar() {
             </div>
           )}
 
-          {activeModel === "X55 II" && (
+          {getBaseModel(activeModel) === "X55 II" && (
             <div className="mt-8 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 max-w-2xl mx-auto">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
@@ -331,7 +426,7 @@ export default function ExploreCar() {
           {/* Content Area */}
           <div className=" flex justify-center">
             {/* BJ40 PLUS */}
-            {activeModel === "BJ40 PLUS" && (
+            {getBaseModel(activeModel) === "BJ40 PLUS" && (
               <div className="mt-10 md:px-8">
                 <div className="flex space-x-3 justify-center">
                   {colors.map((color) => (
@@ -347,13 +442,24 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-
                 <Car360Viewer
                   modelKey="bj40-plus"
                   colorKey={colorToFolderBJ40[selectedColor]}
                   colorName={colorNamesBJ40[selectedColor]}
                   totalFrames={36}
                 />
+
+                {/* Price */}
+                <div className="mt-6 flex justify-center">
+                  <div className="text-center">
+                    <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                      Rp 698.000.000,-
+                    </p>
+                    <p className="text-gray-500 text-sm italic">
+                      *4X2 (FWD) Variant & Price On The Road Jakarta
+                    </p>
+                  </div>
+                </div>
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
@@ -393,7 +499,7 @@ export default function ExploreCar() {
                     className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
                     href="/BJ40/index.html"
                   >
-                    Explore
+                    See Details
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -414,7 +520,7 @@ export default function ExploreCar() {
             )}
 
             {/* BJ30 - Using BJ40 PLUS images as placeholder */}
-            {activeModel === "BJ30" && (
+            {getBaseModel(activeModel) === "BJ30" && (
               <div className="mt-10 md:px-8">
                 <div className="flex space-x-3 justify-center">
                   {colorsBJ30.map((color) => (
@@ -430,8 +536,6 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-
-                {/* Color Name Display */}
                 <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
                   <h2 className="text-center transition-all px-4 py-2">
                     {colorNamesBJ30[selectedColorBJ30]}
@@ -445,6 +549,18 @@ export default function ExploreCar() {
                     alt={`BJ30 ${colorNamesBJ30[selectedColorBJ30]}`}
                     className="w-full h-auto object-contain"
                   />
+                </div>
+
+                {/* Price */}
+                <div className="mt-6 flex justify-center">
+                  <div className="text-center">
+                    <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                      Rp 529.000.000,-
+                    </p>
+                    <p className="text-gray-500 text-sm italic">
+                      *4X2 (FWD) Variant & Price On The Road Jakarta
+                    </p>
+                  </div>
                 </div>
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
@@ -485,7 +601,7 @@ export default function ExploreCar() {
                     className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
                     href="/BJ40/index.html"
                   >
-                    Explore
+                    See Details
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -506,7 +622,7 @@ export default function ExploreCar() {
             )}
 
             {/* X55 II */}
-            {activeModel === "X55 II" && (
+            {getBaseModel(activeModel) === "X55 II" && (
               <div className="mt-10 md:px-8">
                 <div className="flex space-x-3 justify-center">
                   {colorsX55.map((color) => (
@@ -522,13 +638,24 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-
                 <Car360Viewer
                   modelKey="x55"
                   colorKey={colorToFolderX55[selectedColorX55]}
                   colorName={colorNamesX55[selectedColorX55]}
                   totalFrames={20}
                 />
+
+                {/* Price */}
+                <div className="mt-6 flex justify-center">
+                  <div className="text-center">
+                    <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                      Rp 390.000.000,-
+                    </p>
+                    <p className="text-gray-500 text-sm italic">
+                      *4X2 (FWD) Variant & Price On The Road Jakarta
+                    </p>
+                  </div>
+                </div>
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
@@ -568,7 +695,7 @@ export default function ExploreCar() {
                     className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
                     href="/X55-Models/index.html"
                   >
-                    Explore
+                    See Details
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"

@@ -155,40 +155,25 @@ export default function Header() {
                 )}
               </li>
 
-              {/* Accessories */}
-              <li
-                className="relative group"
-                onMouseEnter={() => setIsAccessoriesOpen(true)}
-                onMouseLeave={() => setIsAccessoriesOpen(false)}
-              >
-                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
+              {/* Accessories -> simple link to Contact */}
+              <li className="relative">
+                <a
+                  href="/contact/index.html"
+                  className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2"
+                >
                   Accessories
-                  {isAccessoriesOpen ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
-                {isAccessoriesOpen && (
-                  <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
-                      <a
-                        href="/accessories/bj40-sunshades"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        BJ40 Accessories
-                      </a>
-                      <a
-                        href="/accessories/x55-sunshades"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        X55 Accessories
-                      </a>
-                    </div>
-                  </div>
-                )}
+                </a>
               </li>
-
+              {/* Dealer */}
+              <li className="relative group">
+                <a
+                  href="/contact/index.html"
+                  className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2"
+                >
+                  Dealer
+                </a>
+              </li>
+              {/* Dealer */}
               {/* About Us Menu */}
               <li
                 className="relative group"
@@ -225,10 +210,10 @@ export default function Header() {
                         Publication (News & Event)
                       </a>
                       <a
-                        href="/contact/index.html"
+                        href="/career/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Dealer Network
+                        Career
                       </a>
 
                       {/* Contact Us with Sub-menu */}
@@ -249,12 +234,6 @@ export default function Header() {
                               className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                             >
                               Social Media
-                            </a>
-                            <a
-                              href="/career/index.html"
-                              className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                            >
-                              Career
                             </a>
                           </div>
                         </div>

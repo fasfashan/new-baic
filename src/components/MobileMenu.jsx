@@ -16,13 +16,20 @@ export default function MobileMenu() {
   // Specifications data
   const specs = {
     BJ30: { wheelbase: "2820", length: "4730", height: "1790" },
-    "BJ30 Type 1": { wheelbase: "2820", length: "4730", height: "1790" },
-    "BJ30 Type 2": { wheelbase: "2820", length: "4730", height: "1790" },
     "BJ40 PLUS": { wheelbase: "2745", length: "4465", height: "1871" },
-    "BJ40 PLUS Type 1": { wheelbase: "2745", length: "4465", height: "1871" },
-    "BJ40 PLUS Type 2": { wheelbase: "2745", length: "4465", height: "1871" },
     "X55 II Lite": { wheelbase: "2735", length: "4620", height: "1680" },
     "X55 II Prime": { wheelbase: "2735", length: "4620", height: "1680" },
+    "X55 II": { wheelbase: "2735", length: "4620", height: "1680" },
+  };
+
+  // Helper to get base model name for specs mapping
+  const getBaseModel = (name) => {
+    if (name.startsWith("BJ30")) return "BJ30";
+    if (name.startsWith("BJ40 PLUS")) return "BJ40 PLUS";
+    if (name.startsWith("X55 II Lite")) return "X55 II Lite";
+    if (name.startsWith("X55 II Prime")) return "X55 II Prime";
+    if (name.startsWith("X55 II")) return "X55 II";
+    return name;
   };
 
   // Vehicle data structure
@@ -137,9 +144,10 @@ export default function MobileMenu() {
                 </button>
               </div>
 
-              {/* Vehicles List */}
-              <div className="space-y-3">
-                {vehicles[activeSeries].map((vehicle) => (
+              {/* Vehicles List - 2 columns with scroll */}
+              <div className="max-h-[60vh] overflow-y-auto">
+                <div className="grid grid-cols-2 gap-3">
+                  {vehicles[activeSeries].map((vehicle) => (
                   <div
                     key={vehicle.name}
                     className="flex flex-col p-4 border border-gray-300 rounded-md"
@@ -153,36 +161,19 @@ export default function MobileMenu() {
                       BAIC {vehicle.name}
                     </h2>
 
-                    {/* Specifications */}
-                    <div className="mt-2 bg-gray-50 rounded-lg p-2">
-                      <div className="grid grid-cols-3 gap-2 text-center">
-                        <div>
-                          <p className="text-[9px] text-gray-500 uppercase">
-                            Wheelbase
-                          </p>
-                          <p className="text-xs font-semibold text-gray-800">
-                            {specs[vehicle.name].wheelbase}
-                          </p>
-                          <p className="text-[8px] text-gray-400">MM</p>
-                        </div>
-                        <div className="border-l border-r border-gray-200">
-                          <p className="text-[9px] text-gray-500 uppercase">
-                            Length
-                          </p>
-                          <p className="text-xs font-semibold text-gray-800">
-                            {specs[vehicle.name].length}
-                          </p>
-                          <p className="text-[8px] text-gray-400">MM</p>
-                        </div>
-                        <div>
-                          <p className="text-[9px] text-gray-500 uppercase">
-                            Height
-                          </p>
-                          <p className="text-xs font-semibold text-gray-800">
-                            {specs[vehicle.name].height}
-                          </p>
-                          <p className="text-[8px] text-gray-400">MM</p>
-                        </div>
+                    {/* Specifications - Stacked vertically */}
+                    <div className="mt-2 bg-gray-50 rounded-lg p-3 space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] text-gray-500 uppercase">Wheelbase</span>
+                        <span className="text-[10px] font-semibold text-gray-800">{specs[getBaseModel(vehicle.name)].wheelbase} MM</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] text-gray-500 uppercase">Length</span>
+                        <span className="text-[10px] font-semibold text-gray-800">{specs[getBaseModel(vehicle.name)].length} MM</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] text-gray-500 uppercase">Height</span>
+                        <span className="text-[10px] font-semibold text-gray-800">{specs[getBaseModel(vehicle.name)].height} MM</span>
                       </div>
                     </div>
 
@@ -195,7 +186,8 @@ export default function MobileMenu() {
                       </a>
                     </div>
                   </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           )}

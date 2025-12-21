@@ -7,6 +7,7 @@ import AfterSalesSection from "./components/AfterSalesSection";
 import NewsSection from "./components/NewsSection";
 import AccessoriesSection from "./components/AccessoriesSection";
 import CtaSection from "./components/CtaSection";
+import ButtonChat from "./components/ButtonChat";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -22,6 +23,7 @@ function App() {
       <NewsSection />
       <CtaSection />
       <Footer />
+      <ButtonChat />
     </>
   );
 }

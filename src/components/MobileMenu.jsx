@@ -148,44 +148,56 @@ export default function MobileMenu() {
               <div className="max-h-[60vh] overflow-y-auto">
                 <div className="grid grid-cols-2 gap-3">
                   {vehicles[activeSeries].map((vehicle) => (
-                  <div
-                    key={vehicle.name}
-                    className="flex flex-col p-4 border border-gray-300 rounded-md"
-                  >
-                    <img
-                      className="w-full h-auto"
-                      src={vehicle.image}
-                      alt={vehicle.name}
-                    />
-                    <h2 className="text-sm text-red-500 font-medium mt-2">
-                      BAIC {vehicle.name}
-                    </h2>
+                    <div
+                      key={vehicle.name}
+                      className="flex flex-col p-4 border border-gray-300 rounded-md"
+                    >
+                      <img
+                        className="w-full h-auto"
+                        src={vehicle.image}
+                        alt={vehicle.name}
+                      />
+                      <h2 className="text-sm text-red-500 font-medium mt-2">
+                        BAIC {vehicle.name}
+                      </h2>
 
-                    {/* Specifications - Stacked vertically */}
-                    <div className="mt-2 bg-gray-50 rounded-lg p-3 space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-[10px] text-gray-500 uppercase">Wheelbase</span>
-                        <span className="text-[10px] font-semibold text-gray-800">{specs[getBaseModel(vehicle.name)].wheelbase} MM</span>
+                      {/* Specifications - Stacked vertically */}
+                      <div className="mt-2 bg-gray-50 rounded-lg p-3 space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-[10px] text-gray-500 uppercase">
+                            Wheelbase
+                          </span>
+                          <span className="text-[10px] font-semibold text-gray-800">
+                            {specs[getBaseModel(vehicle.name)].wheelbase} MM
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-[10px] text-gray-500 uppercase">
+                            Length
+                          </span>
+                          <span className="text-[10px] font-semibold text-gray-800">
+                            {specs[getBaseModel(vehicle.name)].length} MM
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-[10px] text-gray-500 uppercase">
+                            Height
+                          </span>
+                          <span className="text-[10px] font-semibold text-gray-800">
+                            {specs[getBaseModel(vehicle.name)].height} MM
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-[10px] text-gray-500 uppercase">Length</span>
-                        <span className="text-[10px] font-semibold text-gray-800">{specs[getBaseModel(vehicle.name)].length} MM</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-[10px] text-gray-500 uppercase">Height</span>
-                        <span className="text-[10px] font-semibold text-gray-800">{specs[getBaseModel(vehicle.name)].height} MM</span>
+
+                      <div className="flex mt-2 text-xs">
+                        <a
+                          className="py-3 text-center hover:bg-gray-100 transition-all w-full border border-gray-400 rounded-xl"
+                          href={vehicle.exploreLink}
+                        >
+                          SEE DETAILS
+                        </a>
                       </div>
                     </div>
-
-                    <div className="flex mt-2 text-xs">
-                      <a
-                        className="py-3 text-center hover:bg-gray-100 transition-all w-full border border-gray-400 rounded-xl"
-                        href={vehicle.exploreLink}
-                      >
-                        SEE DETAILS
-                      </a>
-                    </div>
-                  </div>
                   ))}
                 </div>
               </div>

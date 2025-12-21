@@ -376,36 +376,36 @@ function App() {
           )}
           {activeTab === "Gallery" && (
             <div className="  md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-4">
-              <div className="flex gap-8  justify-center   ">
+              <div className="flex justify-center mt-20 gap-10">
                 <button
-                  className={`py-2 transition-all    ${
+                  className={`py-3 whitespace-nowrap border-b-2 transition-all ${
                     activeTabGallery === "Interior"
-                      ? "text-red-600 font-medium border-b border-red-600"
-                      : ""
+                      ? "text-red-600 font-medium border-red-600"
+                      : "text-neutral-900 border-transparent"
                   }`}
                   onClick={() => handleTabClickGallery("Interior")}
                 >
                   INTERIOR
                 </button>
                 <button
-                  className={`py-2 transition-all    ${
+                  className={`py-3 whitespace-nowrap border-b-2 transition-all ${
                     activeTabGallery === "Exterior"
-                      ? "text-red-600 font-medium border-b border-red-600"
-                      : ""
+                      ? "text-red-600 font-medium border-red-600"
+                      : "text-neutral-900 border-transparent"
                   }`}
                   onClick={() => handleTabClickGallery("Exterior")}
                 >
                   EXTERIOR
                 </button>
                 <button
-                  className={`py-2 transition-all    ${
-                    activeTabGallery === "Video"
-                      ? "text-red-600 font-medium border-b border-red-600"
-                      : ""
+                  className={`py-3 whitespace-nowrap border-b-2 transition-all ${
+                    activeTabGallery === "Feature"
+                      ? "text-red-600 font-medium border-red-600"
+                      : "text-neutral-900 border-transparent"
                   }`}
-                  onClick={() => handleTabClickGallery("Video")}
+                  onClick={() => handleTabClickGallery("Feature")}
                 >
-                  VIDEO
+                  FEATURE
                 </button>
               </div>
               {activeTabGallery === "Interior" && (
@@ -492,7 +492,7 @@ function App() {
                   </div>
                 </>
               )}
-              {activeTabGallery === "Video" && (
+              {activeTabGallery === "Feature" && (
                 <>
                   <div className="mb-10 m-auto  mt-10">
                     <video controls autoPlay src={BJ40Video}></video>

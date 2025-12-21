@@ -13,6 +13,7 @@ export default defineConfig({
         singleNews: "news/single-news.html",
         contact: "contact/index.html",
         book: "book-a-test-drive/index.html",
+        BJ30: "BJ30/index.html",
         BJ40: "BJ40/index.html",
         singlePost1:
           "news/resmi-mengaspal-baic-bj-40-plus-dan-baic-x-55-dua-produk-unggulan-baic-kini-hadir-meramaikan-pasar-otomotif-indonesia/index.html",

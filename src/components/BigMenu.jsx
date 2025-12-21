@@ -117,7 +117,11 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "BJ Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : `${isArcfox ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"} pb-2`
+                : `${
+                    isArcfox
+                      ? "text-gray-200 hover:text-white"
+                      : "text-gray-700 hover:text-gray-900"
+                  } pb-2`
             }`}
             onClick={() => handleSeriesClick("BJ Series")}
           >
@@ -127,7 +131,11 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "X Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : `${isArcfox ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"} pb-2`
+                : `${
+                    isArcfox
+                      ? "text-gray-200 hover:text-white"
+                      : "text-gray-700 hover:text-gray-900"
+                  } pb-2`
             }`}
             onClick={() => handleSeriesClick("X Series")}
           >
@@ -137,7 +145,11 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "Arcfox"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : `${isArcfox ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"} pb-2`
+                : `${
+                    isArcfox
+                      ? "text-gray-200 hover:text-white"
+                      : "text-gray-700 hover:text-gray-900"
+                  } pb-2`
             }`}
             onClick={() => handleSeriesClick("Arcfox")}
           >

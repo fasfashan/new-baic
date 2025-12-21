@@ -13,6 +13,8 @@ export default function MobileMenu() {
   const [isDealerOpen, setIsDealerOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
 
+  const isArcfox = activeSeries === "Arcfox";
+
   // Specifications data
   const specs = {
     BJ30: { wheelbase: "2820", length: "4730", height: "1790" },
@@ -94,7 +96,11 @@ export default function MobileMenu() {
 
   return (
     <>
-      <div className="w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 bg-white overflow-y-auto">
+      <div
+        className={`w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto ${
+          isArcfox ? "bg-black text-white" : "bg-white"
+        }`}
+      >
         {/* Vehicle Accordion */}
         <div className="w-full rounded-md">
           <div
@@ -116,6 +122,8 @@ export default function MobileMenu() {
                   className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
                     activeSeries === "BJ Series"
                       ? "bg-red-600 text-white"
+                      : isArcfox
+                      ? "bg-gray-800 text-gray-200"
                       : "bg-gray-200 text-gray-700"
                   }`}
                   onClick={() => setActiveSeries("BJ Series")}
@@ -126,6 +134,8 @@ export default function MobileMenu() {
                   className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
                     activeSeries === "X Series"
                       ? "bg-red-600 text-white"
+                      : isArcfox
+                      ? "bg-gray-800 text-gray-200"
                       : "bg-gray-200 text-gray-700"
                   }`}
                   onClick={() => setActiveSeries("X Series")}
@@ -136,6 +146,8 @@ export default function MobileMenu() {
                   className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
                     activeSeries === "Arcfox"
                       ? "bg-red-600 text-white"
+                      : isArcfox
+                      ? "bg-gray-800 text-gray-200"
                       : "bg-gray-200 text-gray-700"
                   }`}
                   onClick={() => setActiveSeries("Arcfox")}
@@ -191,7 +203,9 @@ export default function MobileMenu() {
 
                       <div className="flex mt-2 text-xs">
                         <a
-                          className="py-3 text-center hover:bg-gray-100 transition-all w-full border border-gray-400 rounded-xl"
+                          className={`py-3 text-center transition-all w-full border border-gray-400 rounded-xl ${
+                            isArcfox ? "hover:bg-gray-800" : "hover:bg-gray-100"
+                          }`}
                           href={vehicle.exploreLink}
                         >
                           SEE DETAILS
@@ -204,7 +218,7 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr />
+        <hr className={isArcfox ? "border-gray-700" : undefined} />
 
         {/* Services Accordion */}
         <div className="w-full rounded-md">
@@ -212,7 +226,7 @@ export default function MobileMenu() {
             AFTERSALES
           </a>
         </div>
-        <hr />
+        <hr className={isArcfox ? "border-gray-700" : undefined} />
 
         {/* Accessories -> simple link to Contact */}
         <div className="w-full rounded-md">
@@ -220,7 +234,7 @@ export default function MobileMenu() {
             ACCESSORIES
           </a>
         </div>
-        <hr />
+        <hr className={isArcfox ? "border-gray-700" : undefined} />
 
         {/* Dealer Link */}
         <div className="w-full rounded-md">
@@ -228,7 +242,7 @@ export default function MobileMenu() {
             DEALER
           </a>
         </div>
-        <hr />
+        <hr className={isArcfox ? "border-gray-700" : undefined} />
 
         {/* About Us Accordion */}
         <div className="w-full rounded-md">
@@ -247,44 +261,60 @@ export default function MobileMenu() {
             <div className="mt-3 ml-4 space-y-2">
               <a
                 href="/about-us/index.html"
-                className="block text-sm text-gray-700 hover:text-red-600"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
               >
                 Corporate
               </a>
               <a
                 href="/brand"
-                className="block text-sm text-gray-700 hover:text-red-600"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
               >
                 Brand
               </a>
               <a
                 href="/news/index.html"
-                className="block text-sm text-gray-700 hover:text-red-600"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
               >
                 Publication (News & Event)
               </a>
               <a
                 href="/career/index.html"
-                className="block text-sm text-gray-700 hover:text-red-600"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
               >
                 Career
               </a>
 
               {/* Contact Us Sub-section */}
               <div className=" mt-2">
-                <div className="text-sm font-medium text-gray-900 mb-1">
+                <div
+                  className={`text-sm font-medium mb-1 ${
+                    isArcfox ? "text-white" : "text-gray-900"
+                  }`}
+                >
                   Contact Us
                 </div>
                 <div className="ml-2 space-y-1">
                   <a
                     href=""
-                    className="block text-sm text-gray-700 hover:text-red-600"
+                    className={`block text-sm hover:text-red-600 ${
+                      isArcfox ? "text-gray-200" : "text-gray-700"
+                    }`}
                   >
                     Customer Relationship
                   </a>
                   <a
                     href="/social-media"
-                    className="block text-sm text-gray-700 hover:text-red-600"
+                    className={`block text-sm hover:text-red-600 ${
+                      isArcfox ? "text-gray-200" : "text-gray-700"
+                    }`}
                   >
                     Social Media
                   </a>
@@ -293,7 +323,7 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr />
+        <hr className={isArcfox ? "border-gray-700" : undefined} />
 
         {/* CTA Buttons */}
         <a

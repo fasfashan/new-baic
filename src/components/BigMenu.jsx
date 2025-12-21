@@ -7,6 +7,8 @@ import { useState } from "react";
 const BigMenu = () => {
   const [activeSeries, setActiveSeries] = useState("BJ Series");
 
+  const isArcfox = activeSeries === "Arcfox";
+
   const handleSeriesClick = (series) => {
     setActiveSeries(series);
   };
@@ -102,8 +104,11 @@ const BigMenu = () => {
 
   return (
     <div
-      className="border-b fixed top-[72px] left-0 right-0 z-40 
-     border-gray-400 w-full bg-white shadow-lg"
+      className={`border-b fixed top-[72px] left-0 right-0 z-40 w-full shadow-lg ${
+        isArcfox
+          ? "bg-black text-white border-gray-700"
+          : "bg-white border-gray-400"
+      }`}
     >
       <div className="max-w-6xl md:px-8 px-5 m-auto py-8">
         {/* Series Tabs */}
@@ -112,7 +117,7 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "BJ Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : "text-gray-700 hover:text-gray-900 pb-2"
+                : `${isArcfox ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"} pb-2`
             }`}
             onClick={() => handleSeriesClick("BJ Series")}
           >
@@ -122,7 +127,7 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "X Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : "text-gray-700 hover:text-gray-900 pb-2"
+                : `${isArcfox ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"} pb-2`
             }`}
             onClick={() => handleSeriesClick("X Series")}
           >
@@ -132,7 +137,7 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "Arcfox"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : "text-gray-700 hover:text-gray-900 pb-2"
+                : `${isArcfox ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-gray-900"} pb-2`
             }`}
             onClick={() => handleSeriesClick("Arcfox")}
           >

@@ -351,6 +351,12 @@ function App() {
                   </div>
                 </div>
               </div>
+              <div className="text-center mt-10">
+                <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                  Rp 529.000.000,-
+                </p>
+                <p className="text-sm text-neutral-600 mt-1">OTR Jakarta</p>
+              </div>
               <h2 className=" text-center md:text-3xl text-2xl mt-10">
                 BJ30 Specifications
               </h2>

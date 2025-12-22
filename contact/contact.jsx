@@ -308,38 +308,46 @@ function App() {
                             CONTACT
                           </p>
                           <p className="text-sm text-neutral-600">
-                            Telp: {dealer.phone}
+                            Call Center: {dealer.phone}
                           </p>
                           <p className="text-sm text-neutral-600">
-                            Phone: {dealer.telp}
+                            WhatsApp: {dealer.telp}
                           </p>
                         </div>
                       </div>
+                      <div className="flex flex-col gap-7">
+                        <div className="flex gap-3">
+                          <a
+                            href={dealer.whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                          >
+                            <Phone className="w-5 h-5 text-white" />
+                          </a>
+                          <a
+                            href={dealer.mapLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                          >
+                            <MapPin className="w-5 h-5 text-white" />
+                          </a>
+                          <a
+                            href={dealer.instagramLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                          >
+                            <Instagram className="w-5 h-5 text-white" />
+                          </a>
+                        </div>
 
-                      <div className="flex gap-3">
                         <a
-                          href={dealer.whatsappLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                          href="/book-a-test-drive/index.html"
+                          className=" w-full py-3 px-4 text-center bg-red-600 hover:bg-red-700 text-white font-semibold transition-all rounded-lg"
                         >
-                          <Phone className="w-5 h-5 text-white" />
-                        </a>
-                        <a
-                          href={dealer.mapLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
-                        >
-                          <MapPin className="w-5 h-5 text-white" />
-                        </a>
-                        <a
-                          href={dealer.instagramLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
-                        >
-                          <Instagram className="w-5 h-5 text-white" />
+                          BOOK A TEST DRIVE
                         </a>
                       </div>
                     </div>

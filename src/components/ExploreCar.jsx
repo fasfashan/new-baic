@@ -83,6 +83,8 @@ export default function ExploreCar() {
   const [selectedColorBJ30, setSelectedColorBJ30] = useState(colorsBJ30[0]);
   const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
 
+  const isArcfox = activeSeries === "Arcfox";
+
   // Map active model to base for rendering
   const getBaseModel = (name) => {
     if (!name) return "";
@@ -125,7 +127,11 @@ export default function ExploreCar() {
 
   return (
     <div className="App">
-      <div className="mt-10 md:px-8 px-2">
+      <div
+        className={`pt-10 md:px-8 px-2 ${
+          isArcfox ? "bg-black/90 text-white" : ""
+        }`}
+      >
         <h2 className="text-3xl font-bold text-center">EXPLORE YOUR BAIC</h2>
 
         {/* Series Tabs */}
@@ -179,6 +185,8 @@ export default function ExploreCar() {
                         className={`text-center mb-2 font-semibold text-xl ${
                           activeModel === "BJ30 Type 1"
                             ? "text-red-600"
+                            : isArcfox
+                            ? "text-gray-200"
                             : "text-gray-700"
                         }`}
                       >
@@ -187,11 +195,12 @@ export default function ExploreCar() {
                       <img
                         src="/BJ30-explore.png"
                         alt="BJ30 Type 1"
-                        className="w-48 h-32 object-contain"
+                        className={`w-48 h-32 object-contain transition-opacity ${
+                          activeModel !== "BJ30 Type 1"
+                            ? "opacity-30"
+                            : "opacity-100"
+                        }`}
                       />
-                      {activeModel !== "BJ30 Type 1" && (
-                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
-                      )}
                     </div>
                     {/* BJ30 Type 2 */}
                     <div
@@ -202,6 +211,8 @@ export default function ExploreCar() {
                         className={`text-center mb-2 font-semibold text-xl ${
                           activeModel === "BJ30 Type 2"
                             ? "text-red-600"
+                            : isArcfox
+                            ? "text-gray-200"
                             : "text-gray-700"
                         }`}
                       >
@@ -210,11 +221,12 @@ export default function ExploreCar() {
                       <img
                         src="/BJ30-explore.png"
                         alt="BJ30 Type 2"
-                        className="w-48 h-32 object-contain"
+                        className={`w-48 h-32 object-contain transition-opacity ${
+                          activeModel !== "BJ30 Type 2"
+                            ? "opacity-30"
+                            : "opacity-100"
+                        }`}
                       />
-                      {activeModel !== "BJ30 Type 2" && (
-                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
-                      )}
                     </div>
                     {/* BJ40 PLUS Type 1 */}
                     <div
@@ -225,6 +237,8 @@ export default function ExploreCar() {
                         className={`text-center mb-2 font-semibold text-xl ${
                           activeModel === "BJ40 PLUS Type 1"
                             ? "text-red-600"
+                            : isArcfox
+                            ? "text-gray-200"
                             : "text-gray-700"
                         }`}
                       >
@@ -233,11 +247,12 @@ export default function ExploreCar() {
                       <img
                         src="/bj40-plus/flame_red/_0.png"
                         alt="BJ40 PLUS Type 1"
-                        className="w-48 h-32 object-contain"
+                        className={`w-48 h-32 object-contain transition-opacity ${
+                          activeModel !== "BJ40 PLUS Type 1"
+                            ? "opacity-30"
+                            : "opacity-100"
+                        }`}
                       />
-                      {activeModel !== "BJ40 PLUS Type 1" && (
-                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
-                      )}
                     </div>
                     {/* BJ40 PLUS Type 2 */}
                     <div
@@ -248,6 +263,8 @@ export default function ExploreCar() {
                         className={`text-center mb-2 font-semibold text-xl ${
                           activeModel === "BJ40 PLUS Type 2"
                             ? "text-red-600"
+                            : isArcfox
+                            ? "text-gray-200"
                             : "text-gray-700"
                         }`}
                       >
@@ -256,11 +273,12 @@ export default function ExploreCar() {
                       <img
                         src="/bj40-plus/flame_red/_0.png"
                         alt="BJ40 PLUS Type 2"
-                        className="w-48 h-32 object-contain"
+                        className={`w-48 h-32 object-contain transition-opacity ${
+                          activeModel !== "BJ40 PLUS Type 2"
+                            ? "opacity-30"
+                            : "opacity-100"
+                        }`}
                       />
-                      {activeModel !== "BJ40 PLUS Type 2" && (
-                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
-                      )}
                     </div>
                   </>
                 )}
@@ -276,6 +294,8 @@ export default function ExploreCar() {
                         className={`text-center mb-2 font-semibold text-xl ${
                           activeModel === "X55 II Lite"
                             ? "text-red-600"
+                            : isArcfox
+                            ? "text-gray-200"
                             : "text-gray-700"
                         }`}
                       >
@@ -284,11 +304,12 @@ export default function ExploreCar() {
                       <img
                         src="/x55/red_black/_0.png"
                         alt="X55 II Lite"
-                        className="w-48 h-32 object-contain"
+                        className={`w-48 h-32 object-contain transition-opacity ${
+                          activeModel !== "X55 II Lite"
+                            ? "opacity-30"
+                            : "opacity-100"
+                        }`}
                       />
-                      {activeModel !== "X55 II Lite" && (
-                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
-                      )}
                     </div>
                     {/* X55 II Prime */}
                     <div
@@ -299,6 +320,8 @@ export default function ExploreCar() {
                         className={`text-center mb-2 font-semibold text-xl ${
                           activeModel === "X55 II Prime"
                             ? "text-red-600"
+                            : isArcfox
+                            ? "text-gray-200"
                             : "text-gray-700"
                         }`}
                       >
@@ -307,11 +330,12 @@ export default function ExploreCar() {
                       <img
                         src="/x55/red_black/_0.png"
                         alt="X55 II Prime"
-                        className="w-48 h-32 object-contain"
+                        className={`w-48 h-32 object-contain transition-opacity ${
+                          activeModel !== "X55 II Prime"
+                            ? "opacity-30"
+                            : "opacity-100"
+                        }`}
                       />
-                      {activeModel !== "X55 II Prime" && (
-                        <div className="absolute inset-0 bg-white/70 mt-8"></div>
-                      )}
                     </div>
                   </>
                 )}

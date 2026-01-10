@@ -8,8 +8,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 export default function MobileMenu() {
   const [isVehicleOpen, setIsVehicleOpen] = useState(false);
   const [activeSeries, setActiveSeries] = useState("BJ Series");
-  const [isAccessoriesOpen, setIsAccessoriesOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
+  const [isPartsAccessoriesOpen, setIsPartsAccessoriesOpen] = useState(false);
   const [isDealerOpen, setIsDealerOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
 
@@ -220,19 +220,75 @@ export default function MobileMenu() {
         </div>
         <hr className={isArcfox ? "border-gray-700" : undefined} />
 
-        {/* Services Accordion */}
+        {/* Customer Care Accordion */}
         <div className="w-full rounded-md">
-          <a className="text-lg" href="/aftersales/index.html">
-            AFTERSALES
-          </a>
+          <div
+            className="flex justify-between items-center cursor-pointer"
+            onClick={() => setIsCustomerCareOpen(!isCustomerCareOpen)}
+          >
+            <span className="text-lg font-medium">CUSTOMER CARE</span>
+            {isCustomerCareOpen ? (
+              <ChevronUp className="w-6 h-6" />
+            ) : (
+              <ChevronDown className="w-6 h-6" />
+            )}
+          </div>
+          {isCustomerCareOpen && (
+            <div className="mt-3 ml-4 space-y-2">
+              <a
+                href="#"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
+                Schedule your service
+              </a>
+              <a
+                href="/aftersales/index.html"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
+                After Sales Program
+              </a>
+            </div>
+          )}
         </div>
         <hr className={isArcfox ? "border-gray-700" : undefined} />
 
-        {/* Accessories -> simple link to Contact */}
+        {/* Parts & Accessories Accordion */}
         <div className="w-full rounded-md">
-          <a className="text-lg" href="/contact/index.html">
-            ACCESSORIES
-          </a>
+          <div
+            className="flex justify-between items-center cursor-pointer"
+            onClick={() => setIsPartsAccessoriesOpen(!isPartsAccessoriesOpen)}
+          >
+            <span className="text-lg font-medium">PARTS & ACCESSORIES</span>
+            {isPartsAccessoriesOpen ? (
+              <ChevronUp className="w-6 h-6" />
+            ) : (
+              <ChevronDown className="w-6 h-6" />
+            )}
+          </div>
+          {isPartsAccessoriesOpen && (
+            <div className="mt-3 ml-4 space-y-2">
+              <a
+                href="#"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
+                Genuine Parts - Build for your BAIC
+              </a>
+              <a
+                href="#"
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
+                Genuine Accessories - Style your drive
+              </a>
+            </div>
+          )}
         </div>
         <hr className={isArcfox ? "border-gray-700" : undefined} />
 

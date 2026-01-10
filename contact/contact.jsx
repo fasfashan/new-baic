@@ -38,146 +38,104 @@ function App() {
   };
 
   const isArcfoxDealer = (dealer) => {
-    const seed = `${dealer.id}-${dealer.name}-${dealer.city}`;
-    let hash = 0;
-    for (let i = 0; i < seed.length; i++) {
-      hash = (hash * 31 + seed.charCodeAt(i)) | 0;
-    }
-    return Math.abs(hash) % 3 === 0;
+    return dealer.hasArcfox === true;
   };
 
   const dealers = [
     {
       id: 1,
       name: "BAIC Alam Sutera",
-      company: "JHL Auto",
+      company: "PT JHL AUTO",
       services: "Sales, Service, Spareparts",
       address:
-        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+        "Jl. Sutera Boulevard Kav.30 RT.003/RW.006, Panunggangan Timur, Kec. Pinang Kota Tangerang 15143",
       city: "Tangerang",
-      phone: "031 9986 0888",
-      phoneLink: "tel:03199860888",
-      telp: "0811 3133 3000",
-      telpLink: "tel:08113133000",
+      phone: "",
+      phoneLink: "",
+      telp: "",
+      telpLink: "",
       hours: {
         weekday: "Monday - Friday: 09:00 - 19:00",
         saturday: "Saturday: 09:00 - 17:00",
         sunday: "Sunday: 09:00 - 15:00",
       },
-      whatsappLink: "https://wa.me/6281234567890",
-      mapLink: "https://maps.google.com",
-      instagramLink: "https://instagram.com/baicid",
+      whatsappLink: "https://wa.me/628129000000",
+      mapLink: "https://maps.app.goo.gl/yU3aQznW3Cqv1Pzd8",
+      instagramLink:
+        "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       image: dealerImage,
+      hasArcfox: true,
     },
     {
       id: 2,
-      name: "BAIC Alam Sutera",
-      company: "JHL Auto",
-      services: "Sales, Service, Spareparts",
-      address:
-        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+      name: "BAIC Gading Serpong",
+      company: "PT JHL AUTO",
+      services: "Sales",
+      address: "Jl. Gading Serpong Boulevard Barat No.7, Tangerang, Banten 15810",
       city: "Tangerang",
-      phone: "031 9986 0888",
-      phoneLink: "tel:03199860888",
-      telp: "0811 3133 3000",
-      telpLink: "tel:08113133000",
+      phone: "",
+      phoneLink: "",
+      telp: "",
+      telpLink: "",
       hours: {
         weekday: "Monday - Friday: 09:00 - 19:00",
         saturday: "Saturday: 09:00 - 17:00",
         sunday: "Sunday: 09:00 - 15:00",
       },
-      whatsappLink: "https://wa.me/6281234567890",
-      mapLink: "https://maps.google.com",
-      instagramLink: "https://instagram.com/baicid",
+      whatsappLink: "https://wa.me/628129000000",
+      mapLink: "https://maps.app.goo.gl/MyyM9UMUWPM637jB8",
+      instagramLink:
+        "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       image: dealerImage,
+      hasArcfox: false,
     },
     {
       id: 3,
-      name: "BAIC Jakarta",
-      company: "JHL Auto",
-      services: "Sales, Service, Spareparts",
+      name: "BAIC Gandaria City",
+      company: "PT JHL AUTO",
+      services: "Sales",
       address:
-        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
+        "Gandaria City Lt. GF (West Lobby), Jl. Sultan Iskandar Muda, Kebayoran Lama Selatan, Kebayoran Lama, Kota Adm. Jakarta Selatan, DKI Jakarta",
       city: "Jakarta",
-      phone: "031 9986 0888",
-      phoneLink: "tel:03199860888",
-      telp: "0811 3133 3000",
-      telpLink: "tel:08113133000",
+      phone: "",
+      phoneLink: "",
+      telp: "",
+      telpLink: "",
       hours: {
-        weekday: "Monday - Friday: 09:00 - 19:00",
-        saturday: "Saturday: 09:00 - 17:00",
-        sunday: "Sunday: 09:00 - 15:00",
+        weekday: "Monday - Sunday: 10:00 - 22:00",
+        saturday: "",
+        sunday: "",
       },
-      whatsappLink: "https://wa.me/6281234567890",
-      mapLink: "https://maps.google.com",
-      instagramLink: "https://instagram.com/baicid",
+      whatsappLink: "https://wa.me/628129000000",
+      mapLink: "https://maps.app.goo.gl/us8BhoXwBbnjRM5M6",
+      instagramLink:
+        "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       image: dealerImage,
+      hasArcfox: false,
     },
     {
       id: 4,
-      name: "BAIC Bandung",
-      company: "JHL Auto",
-      services: "Sales, Service, Spareparts",
+      name: "BAIC Puri Indah",
+      company: "PT JHL AUTO",
+      services: "Sales",
       address:
-        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
-      city: "Bandung",
-      phone: "031 9986 0888",
-      phoneLink: "tel:03199860888",
-      telp: "0811 3133 3000",
-      telpLink: "tel:08113133000",
+        "Puri Indah Auto Center. Jl. Puri Lingkar Luar, Kembangan Selatan, Kembangan, Kota Adm. JakartaBarat, DKI Jakarta",
+      city: "Jakarta",
+      phone: "",
+      phoneLink: "",
+      telp: "",
+      telpLink: "",
       hours: {
-        weekday: "Monday - Friday: 09:00 - 19:00",
-        saturday: "Saturday: 09:00 - 17:00",
-        sunday: "Sunday: 09:00 - 15:00",
+        weekday: "Monday - Sunday: 09:00 - 19:30",
+        saturday: "",
+        sunday: "",
       },
-      whatsappLink: "https://wa.me/6281234567890",
-      mapLink: "https://maps.google.com",
-      instagramLink: "https://instagram.com/baicid",
+      whatsappLink: "https://wa.me/628129000000",
+      mapLink: "https://maps.app.goo.gl/KeEYActGvH5wbmbj6",
+      instagramLink:
+        "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       image: dealerImage,
-    },
-    {
-      id: 5,
-      name: "BAIC Surabaya",
-      company: "JHL Auto",
-      services: "Sales, Service, Spareparts",
-      address:
-        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
-      city: "Surabaya",
-      phone: "031 9986 0888",
-      phoneLink: "tel:03199860888",
-      telp: "0811 3133 3000",
-      telpLink: "tel:08113133000",
-      hours: {
-        weekday: "Monday - Friday: 09:00 - 19:00",
-        saturday: "Saturday: 09:00 - 17:00",
-        sunday: "Sunday: 09:00 - 15:00",
-      },
-      whatsappLink: "https://wa.me/6281234567890",
-      mapLink: "https://maps.google.com",
-      instagramLink: "https://instagram.com/baicid",
-      image: dealerImage,
-    },
-    {
-      id: 6,
-      name: "BAIC Medan",
-      company: "JHL Auto",
-      services: "Sales, Service, Spareparts",
-      address:
-        "Jl. Jalur Sutera Boulevard Kav. 30, Alam Sutera, Panunggangan Timur, Pinang, Kota Tangerang, Banten",
-      city: "Medan",
-      phone: "031 9986 0888",
-      phoneLink: "tel:03199860888",
-      telp: "0811 3133 3000",
-      telpLink: "tel:08113133000",
-      hours: {
-        weekday: "Monday - Friday: 09:00 - 19:00",
-        saturday: "Saturday: 09:00 - 17:00",
-        sunday: "Sunday: 09:00 - 15:00",
-      },
-      whatsappLink: "https://wa.me/6281234567890",
-      mapLink: "https://maps.google.com",
-      instagramLink: "https://instagram.com/baicid",
-      image: dealerImage,
+      hasArcfox: true,
     },
   ];
 
@@ -292,27 +250,37 @@ function App() {
                           <p className="text-sm font-semibold text-neutral-700 mb-1">
                             BUSINESS HOURS
                           </p>
-                          <p className="text-sm text-neutral-600">
-                            {dealer.hours.weekday}
-                          </p>
-                          <p className="text-sm text-neutral-600">
-                            {dealer.hours.saturday}
-                          </p>
-                          <p className="text-sm text-neutral-600">
-                            {dealer.hours.sunday}
-                          </p>
+                          {dealer.hours.weekday && (
+                            <p className="text-sm text-neutral-600">
+                              {dealer.hours.weekday}
+                            </p>
+                          )}
+                          {dealer.hours.saturday && (
+                            <p className="text-sm text-neutral-600">
+                              {dealer.hours.saturday}
+                            </p>
+                          )}
+                          {dealer.hours.sunday && (
+                            <p className="text-sm text-neutral-600">
+                              {dealer.hours.sunday}
+                            </p>
+                          )}
                         </div>
 
                         <div>
                           <p className="text-sm font-semibold text-neutral-700 mb-1">
                             CONTACT
                           </p>
-                          <p className="text-sm text-neutral-600">
-                            Call Center: {dealer.phone}
-                          </p>
-                          <p className="text-sm text-neutral-600">
-                            WhatsApp: {dealer.telp}
-                          </p>
+                          {dealer.phone && (
+                            <p className="text-sm text-neutral-600">
+                              Call Center: {dealer.phone}
+                            </p>
+                          )}
+                          {dealer.telp && (
+                            <p className="text-sm text-neutral-600">
+                              WhatsApp: {dealer.telp}
+                            </p>
+                          )}
                         </div>
                       </div>
                       <div className="flex flex-col gap-7">

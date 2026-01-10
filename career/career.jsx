@@ -4,79 +4,31 @@ import Footer from "../src/components/Footer";
 import ButtonChat from "../src/components/ButtonChat";
 import "../src/index.css";
 
-// Dummy job positions data
+// Job positions data
 const jobPositions = [
   {
     id: 1,
-    position: "Aftersales Manager",
-    department: "Sales",
-    location: "Jakarta",
+    position: "Staff",
+    department: "Finance & Accounting",
+    location: "Kota Tangerang",
   },
   {
     id: 2,
-    position: "Sales Executive",
-    department: "Sales",
-    location: "Bandung",
+    position: "Supervisor",
+    department: "Part",
+    location: "Kab. Tangerang",
   },
   {
     id: 3,
-    position: "Marketing Specialist",
-    department: "Marketing",
-    location: "Jakarta",
+    position: "Head of Department",
+    department: "Sales",
+    location: "Kab. Purwakarta",
   },
   {
     id: 4,
-    position: "Digital Marketing Manager",
-    department: "Marketing",
-    location: "Surabaya",
-  },
-  {
-    id: 5,
-    position: "Finance Analyst",
-    department: "Finance",
-    location: "Jakarta",
-  },
-  {
-    id: 6,
-    position: "Accounting Staff",
-    department: "Finance",
-    location: "Medan",
-  },
-  {
-    id: 7,
-    position: "Operations Manager",
-    department: "Operations",
-    location: "Jakarta",
-  },
-  {
-    id: 8,
-    position: "Warehouse Supervisor",
-    department: "Operations",
-    location: "Surabaya",
-  },
-  {
-    id: 9,
-    position: "Service Advisor",
-    department: "Sales",
-    location: "Medan",
-  },
-  {
-    id: 10,
-    position: "Brand Manager",
-    department: "Marketing",
-    location: "Bandung",
-  },
-  {
-    id: 11,
-    position: "HR Manager",
-    department: "Operations",
-    location: "Jakarta",
-  },
-  {
-    id: 12,
-    position: "Customer Service",
-    department: "Sales",
-    location: "Surabaya",
+    position: "Specialist",
+    department: "Dealer Network Development",
+    location: "Free Text",
   },
 ];
 
@@ -128,10 +80,10 @@ function Career() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
               >
                 <option>All Department</option>
+                <option>Finance & Accounting</option>
+                <option>Part</option>
                 <option>Sales</option>
-                <option>Marketing</option>
-                <option>Finance</option>
-                <option>Operations</option>
+                <option>Dealer Network Development</option>
               </select>
             </div>
             <div>
@@ -142,10 +94,10 @@ function Career() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
               >
                 <option>All city</option>
-                <option>Jakarta</option>
-                <option>Bandung</option>
-                <option>Surabaya</option>
-                <option>Medan</option>
+                <option>Kota Tangerang</option>
+                <option>Kab. Tangerang</option>
+                <option>Kab. Purwakarta</option>
+                <option>Free Text</option>
               </select>
             </div>
           </div>

@@ -6,8 +6,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Header() {
   const [isBigMenuOpen, setIsBigMenuOpen] = useState(false);
-  const [isAccessoriesOpen, setIsAccessoriesOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
+  const [isPartsAccessoriesOpen, setIsPartsAccessoriesOpen] = useState(false);
   const [isDealerOpen, setIsDealerOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,8 +23,8 @@ export default function Header() {
     }
 
     setIsBigMenuOpen(true);
-    setIsAccessoriesOpen(false);
-    setIsServicesOpen(false);
+    setIsCustomerCareOpen(false);
+    setIsPartsAccessoriesOpen(false);
     setIsDealerOpen(false);
     setIsAboutUsOpen(false);
   };
@@ -72,8 +72,8 @@ export default function Header() {
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
           // Scrolling down - close all menus
           setIsBigMenuOpen(false);
-          setIsAccessoriesOpen(false);
-          setIsServicesOpen(false);
+          setIsCustomerCareOpen(false);
+          setIsPartsAccessoriesOpen(false);
           setIsDealerOpen(false);
           setIsAboutUsOpen(false);
           if (closeTimeout) {
@@ -121,48 +121,72 @@ export default function Header() {
                 </button>
               </li>
 
-              {/* Services Menu */}
-              <li className="relative group">
-                <a
-                  href="/aftersales/index.html"
-                  className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2"
-                >
-                  After Sales
-                </a>
-                {isServicesOpen && (
+              {/* Customer Care Menu */}
+              <li
+                className="relative group"
+                onMouseEnter={() => setIsCustomerCareOpen(true)}
+                onMouseLeave={() => setIsCustomerCareOpen(false)}
+              >
+                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
+                  Customer Care
+                  {isCustomerCareOpen ? (
+                    <ChevronUp className="w-4 h-4" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </button>
+                {isCustomerCareOpen && (
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
                       <a
-                        href="/aftersales"
+                        href="#"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Aftersales Program
+                        Schedule your service
                       </a>
                       <a
-                        href="/emergency-road"
+                        href="/aftersales/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Emergency Road Assistance
-                      </a>
-                      <a
-                        href="/booking-dealer-service/index.html"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        Booking Dealer Service
+                        After Sales Program
                       </a>
                     </div>
                   </div>
                 )}
               </li>
 
-              {/* Accessories -> simple link to Contact */}
-              <li className="relative">
-                <a
-                  href="/contact/index.html"
-                  className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2"
-                >
-                  Accessories
-                </a>
+              {/* Parts & Accessories Menu */}
+              <li
+                className="relative group"
+                onMouseEnter={() => setIsPartsAccessoriesOpen(true)}
+                onMouseLeave={() => setIsPartsAccessoriesOpen(false)}
+              >
+                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
+                  Parts & Accessories
+                  {isPartsAccessoriesOpen ? (
+                    <ChevronUp className="w-4 h-4" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </button>
+                {isPartsAccessoriesOpen && (
+                  <div className="absolute top-full left-0 pt-2 z-50">
+                    <div className="w-64 bg-white text-black rounded-lg shadow-lg py-2">
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                      >
+                        Genuine Parts - Build for your BAIC
+                      </a>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                      >
+                        Genuine Accessories - Style your drive
+                      </a>
+                    </div>
+                  </div>
+                )}
               </li>
               {/* Dealer */}
               <li className="relative group">

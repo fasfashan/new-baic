@@ -5,33 +5,33 @@ const AccessoriesSection = () => {
     {
       id: 1,
       model: "BJ30",
-      title: "Automotive Sunshades",
-      price: "Rp 254.000",
-      image: "/Accessories.jpg",
+      title: "BJ30 Roof Rack Upper",
+      price: "Rp 9,673,000",
+      image: "/BJ30 Roof Rack Upper.png",
       link: "/contact/index.html",
     },
     {
       id: 2,
-      model: "BJ40 PLUS",
-      title: "Automotive Sunshades",
-      price: "Rp 254.000",
-      image: "/Accessories-1.jpg",
+      model: "BJ30",
+      title: "BJ30 Luggage Box - Side Net Backpack",
+      price: "Rp 4,890,000",
+      image: "/BJ30 Luggage Box - Side Net Backpack.png",
       link: "/contact/index.html",
     },
     {
       id: 3,
-      model: "X55 II",
-      title: "Automotive Sunshades",
-      price: "Rp 254.000",
-      image: "/Accessories-2.jpg",
+      model: "BJ40 PLUS",
+      title: "BJ40 Plus Bumper Front Type 2",
+      price: "Rp 11,428,000",
+      image: "/BJ40 Plus Bumper Front Type 2.png",
       link: "/contact/index.html",
     },
     {
       id: 4,
-      model: "X55 II",
-      title: "Automotive Sunshades",
-      price: "Rp 254.000",
-      image: "/Accessories-3.jpg",
+      model: "BJ40 PLUS",
+      title: "BJ40 Plus Bumper Rear Type 2",
+      price: "Rp 11,428,000",
+      image: "/BJ40 Plus Bumper Rear Type 2.png",
       link: "/contact/index.html",
     },
   ];
@@ -53,11 +53,11 @@ const AccessoriesSection = () => {
               className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
             >
               {/* Image Container */}
-              <div className="relative overflow-hidden bg-gray-50">
+              <div className="relative overflow-hidden bg-gray-50 h-64 flex items-center justify-center p-4">
                 <img
                   src={accessory.image}
                   alt={`${accessory.model} ${accessory.title}`}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                 />
                 {/* Model Badge */}
                 <div className="absolute top-4 left-4">

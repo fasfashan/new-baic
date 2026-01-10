@@ -71,7 +71,8 @@ function App() {
       name: "BAIC Gading Serpong",
       company: "PT JHL AUTO",
       services: "Sales",
-      address: "Jl. Gading Serpong Boulevard Barat No.7, Tangerang, Banten 15810",
+      address:
+        "Jl. Gading Serpong Boulevard Barat No.7, Tangerang, Banten 15810",
       city: "Tangerang",
       phone: "",
       phoneLink: "",

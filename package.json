@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.7",
+    "@mui/lab": "^7.0.1-beta.21",
+    "@mui/material": "^7.3.7",
     "@turf/turf": "^7.0.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.548.0",
     "react": "^18.3.1",
+    "react-chrono": "^3.3.3",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-leaflet": "^4.2.1"

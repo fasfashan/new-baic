@@ -222,7 +222,7 @@ export default function Header() {
                         Corporate
                       </a>
                       <a
-                        href="/brand"
+                        href="/brand/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
                         Brand

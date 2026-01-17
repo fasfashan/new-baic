@@ -324,7 +324,7 @@ export default function MobileMenu() {
                 Corporate
               </a>
               <a
-                href="/brand"
+                href="/brand/index.html"
                 className={`block text-sm hover:text-red-600 ${
                   isArcfox ? "text-gray-200" : "text-gray-700"
                 }`}

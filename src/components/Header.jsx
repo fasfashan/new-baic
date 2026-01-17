@@ -139,7 +139,7 @@ export default function Header() {
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="w-56 bg-white text-black rounded-lg shadow-lg py-2">
                       <a
-                        href="#"
+                        href="/schedule-your-service/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
                         Schedule your service

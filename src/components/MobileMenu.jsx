@@ -236,7 +236,7 @@ export default function MobileMenu() {
           {isCustomerCareOpen && (
             <div className="mt-3 ml-4 space-y-2">
               <a
-                href="#"
+                href="/schedule-your-service/index.html"
                 className={`block text-sm hover:text-red-600 ${
                   isArcfox ? "text-gray-200" : "text-gray-700"
                 }`}

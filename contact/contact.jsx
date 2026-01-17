@@ -50,9 +50,9 @@ function App() {
       address:
         "Jl. Sutera Boulevard Kav.30 RT.003/RW.006, Panunggangan Timur, Kec. Pinang Kota Tangerang 15143",
       city: "Tangerang",
-      phone: "",
+      phone: "+62 21 1234 5678",
       phoneLink: "",
-      telp: "",
+      telp: "+62 812 3456 7890",
       telpLink: "",
       hours: {
         weekday: "Monday - Friday: 09:00 - 19:00",
@@ -74,9 +74,9 @@ function App() {
       address:
         "Jl. Gading Serpong Boulevard Barat No.7, Tangerang, Banten 15810",
       city: "Tangerang",
-      phone: "",
+      phone: "+62 21 5678 9012",
       phoneLink: "",
-      telp: "",
+      telp: "+62 812 5678 9012",
       telpLink: "",
       hours: {
         weekday: "Monday - Friday: 09:00 - 19:00",
@@ -98,9 +98,9 @@ function App() {
       address:
         "Gandaria City Lt. GF (West Lobby), Jl. Sultan Iskandar Muda, Kebayoran Lama Selatan, Kebayoran Lama, Kota Adm. Jakarta Selatan, DKI Jakarta",
       city: "Jakarta",
-      phone: "",
+      phone: "+62 21 9012 3456",
       phoneLink: "",
-      telp: "",
+      telp: "+62 812 9012 3456",
       telpLink: "",
       hours: {
         weekday: "Monday - Sunday: 10:00 - 22:00",
@@ -122,9 +122,9 @@ function App() {
       address:
         "Puri Indah Auto Center. Jl. Puri Lingkar Luar, Kembangan Selatan, Kembangan, Kota Adm. JakartaBarat, DKI Jakarta",
       city: "Jakarta",
-      phone: "",
+      phone: "+62 21 3456 7890",
       phoneLink: "",
-      telp: "",
+      telp: "+62 812 3456 7890",
       telpLink: "",
       hours: {
         weekday: "Monday - Sunday: 09:00 - 19:30",

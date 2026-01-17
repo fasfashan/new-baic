@@ -30,6 +30,7 @@ export default defineConfig({
         aftersales: "aftersales/index.html",
         brand: "brand/index.html",
         joinPartner: "join-partner/index.html",
+        scheduleYourService: "schedule-your-service/index.html",
       },
     },
   },

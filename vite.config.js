@@ -28,6 +28,7 @@ export default defineConfig({
         careerDetail: "career/detail.html",
         bookingService: "booking-dealer-service/index.html",
         aftersales: "aftersales/index.html",
+        brand: "brand/index.html",
       },
     },
   },

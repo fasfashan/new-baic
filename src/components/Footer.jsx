@@ -36,6 +36,12 @@ export default function Footer() {
           >
             X55
           </a>
+          <a
+            href="#"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            Arcfox
+          </a>
           {/* Future: Arcfox tab item when content is ready */}
           {/* <a href="#" className="text-gray-400 text-sm hover:text-white transition-all">Arcfox</a> */}
         </div>
@@ -86,7 +92,7 @@ export default function Footer() {
             Find Dealer
           </a>
           <a
-            href="/partnership"
+            href="/join-partner/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             Join Partner

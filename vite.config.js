@@ -29,6 +29,7 @@ export default defineConfig({
         bookingService: "booking-dealer-service/index.html",
         aftersales: "aftersales/index.html",
         brand: "brand/index.html",
+        joinPartner: "join-partner/index.html",
       },
     },
   },

@@ -179,7 +179,7 @@ export default function Header() {
                         Genuine Parts - Build for your BAIC
                       </a>
                       <a
-                        href="#"
+                        href="/genuine-accessories/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
                         Genuine Accessories - Style your drive

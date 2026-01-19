@@ -291,7 +291,7 @@ export default function MobileMenu() {
                 Genuine Parts - Build for your BAIC
               </a>
               <a
-                href="#"
+                href="/genuine-accessories/index.html"
                 className={`block text-sm hover:text-red-600 ${
                   isArcfox ? "text-gray-200" : "text-gray-700"
                 }`}

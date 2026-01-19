@@ -31,6 +31,7 @@ export default defineConfig({
         brand: "brand/index.html",
         joinPartner: "join-partner/index.html",
         scheduleYourService: "schedule-your-service/index.html",
+        genuineAccessories: "genuine-accessories/index.html",
       },
     },
   },

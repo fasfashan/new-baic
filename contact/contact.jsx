@@ -90,7 +90,7 @@ function App() {
     mapLink,
     instagramLink,
     hasArcfox,
-    businessHour
+    businessHour,
   ) => ({
     name: `BAIC ${name}`,
     company: normalizeString(company),
@@ -118,7 +118,7 @@ function App() {
       "https://maps.app.goo.gl/yU3aQznW3Cqv1Pzd8",
       "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       "Arcfox",
-      "Monday - Friday : 09:00 - 19:00\n\nSaturday : 09:00 - 17:00\n\nSunday : 09:00 - 15:00"
+      "Monday - Friday : 09:00 - 19:00\n\nSaturday : 09:00 - 17:00\n\nSunday : 09:00 - 15:00",
     ),
     buildDealer(
       "Gading Serpong",
@@ -130,7 +130,7 @@ function App() {
       "https://maps.app.goo.gl/MyyM9UMUWPM637jB8",
       "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       "BAIC Only",
-      "Monday - Friday : 09:00 - 19:00\n\nSaturday : 09:00 - 17:00\n\nSunday : 09:00 - 15:00"
+      "Monday - Friday : 09:00 - 19:00\n\nSaturday : 09:00 - 17:00\n\nSunday : 09:00 - 15:00",
     ),
     buildDealer(
       "Gandaria City",
@@ -142,7 +142,7 @@ function App() {
       "https://maps.app.goo.gl/us8BhoXwBbnjRM5M6",
       "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       "BAIC Only",
-      "Monday - Sunday : 10:00 - 22:00"
+      "Monday - Sunday : 10:00 - 22:00",
     ),
     buildDealer(
       "Puri Indah",
@@ -154,7 +154,7 @@ function App() {
       "https://maps.app.goo.gl/KeEYActGvH5wbmbj6",
       "https://www.instagram.com/baic.jhlauto?igsh=MXcyd2RxZm5sYmk4Zw==",
       "Arcfox",
-      "Monday - Sunday : 09.00 - 19.30"
+      "Monday - Sunday : 09.00 - 19.30",
     ),
     buildDealer(
       "Jemursari",
@@ -166,7 +166,7 @@ function App() {
       "https://maps.app.goo.gl/wGo1WimkFihqvH2NA",
       "https://www.instagram.com/surabayabaic?igsh=MWZjbGd3OTZ1dDdncA==",
       "BAIC Only",
-      "Monday - Thursday : 08:30 - 16:30\n\nFriday : 08:30 - 17:00\n\nSaturday : 08:30 - 14:30\n\nSunday : 10:00 - 15:00 (Showroom Only)"
+      "Monday - Thursday : 08:30 - 16:30\n\nFriday : 08:30 - 17:00\n\nSaturday : 08:30 - 14:30\n\nSunday : 10:00 - 15:00 (Showroom Only)",
     ),
     buildDealer(
       "Denpasar",
@@ -178,7 +178,7 @@ function App() {
       "https://maps.app.goo.gl/ZQvsVxbGn8E9PaZy8",
       "https://www.instagram.com/baicbali?igsh=MWh6dWN5OG5ndnZ0eQ==",
       "Arcfox",
-      "Monday - Friday : 08:30 - 16:30\n\nSaturday : 09:00 - 15:00\n\nSunday : Closed"
+      "Monday - Friday : 08:30 - 16:30\n\nSaturday : 09:00 - 15:00\n\nSunday : Closed",
     ),
     buildDealer(
       "Naripan",
@@ -190,7 +190,7 @@ function App() {
       "https://maps.app.goo.gl/85TdZ7SjD68Dbi1Y7",
       "https://www.instagram.com/baicbali?igsh=MWh6dWN5OG5ndnZ0eQ==",
       "Arcfox",
-      "Bussiness Hours:\n\nMonday - Friday : 09:00 - 16:00\n\nSaturday - Sunday : 09:00 - 14:00"
+      "Bussiness Hours:\n\nMonday - Friday : 09:00 - 16:00\n\nSaturday - Sunday : 09:00 - 14:00",
     ),
     buildDealer(
       "Pekanbaru",
@@ -202,7 +202,7 @@ function App() {
       "https://maps.app.goo.gl/KT77AZQkFH5XpjCk9",
       "https://www.instagram.com/baicpekanbaru?igsh=MW16aXhhNTlzcGR1NA==",
       "Arcfox",
-      "Monday - Friday : 09:00 - 16:00\n\nSaturday - Sunday : 09:00 - 14:00"
+      "Monday - Friday : 09:00 - 16:00\n\nSaturday - Sunday : 09:00 - 14:00",
     ),
     buildDealer(
       "Samarinda",
@@ -214,7 +214,7 @@ function App() {
       "https://maps.app.goo.gl/tD2et15LFBdypkSF7",
       "https://www.instagram.com/baickaltim_official?igsh=dGp2dXd2ZnFxZ3Bp",
       "Arcfox",
-      "Monday - Friday : 08:30 - 17:00\n\nSaturday - Sunday : 08:30 - 15:00"
+      "Monday - Friday : 08:30 - 17:00\n\nSaturday - Sunday : 08:30 - 15:00",
     ),
     buildDealer(
       "Letda Sujono",
@@ -226,7 +226,7 @@ function App() {
       "https://share.google/EmTlxlVuVRWYznm9o",
       "https://www.instagram.com/baicmakassar?igsh=MTNiY2s4cjNqbW0xeg==",
       "Arcfox",
-      "Monday - Saturday : 08:30 - 18:30\n\nSunday : 10:00 - 16:00"
+      "Monday - Saturday : 08:30 - 18:30\n\nSunday : 10:00 - 16:00",
     ),
     buildDealer(
       "Batam",
@@ -238,7 +238,7 @@ function App() {
       "https://maps.app.goo.gl/bSN4zCf4NEVTH6Np9",
       "",
       "Arcfox",
-      "Monday - Friday : 08:00- 17:00\n\nSaturday - Sunday : 09:00 - 15:00"
+      "Monday - Friday : 08:00- 17:00\n\nSaturday - Sunday : 09:00 - 15:00",
     ),
     buildDealer(
       "PIK2",
@@ -250,7 +250,7 @@ function App() {
       "https://maps.app.goo.gl/vZbwxECWn37MRwU77",
       "",
       "Arcfox",
-      "Monday - Friday : 09:00 - 20:00\n\nSaturday - Sunday : 09:00 - 20:00"
+      "Monday - Friday : 09:00 - 20:00\n\nSaturday - Sunday : 09:00 - 20:00",
     ),
     buildDealer(
       "Cibubur",
@@ -262,7 +262,7 @@ function App() {
       "https://maps.app.goo.gl/fhqdVfj9JAVoNwn16",
       "https://www.instagram.com/surabayabaic?igsh=MWZjbGd3OTZ1dDdncA==",
       "Arcfox",
-      "Monday - Friday : 09:00 - 19:00\n\nSaturday - Sunday : 09:00 - 15:00"
+      "Monday - Friday : 09:00 - 19:00\n\nSaturday - Sunday : 09:00 - 15:00",
     ),
     buildDealer(
       "Makassar",
@@ -274,7 +274,7 @@ function App() {
       "https://maps.app.goo.gl/ewNZyaMARjgBtKb18",
       "https://www.instagram.com/baicmakassar?igsh=MTNiY2s4cjNqbW0xeg==",
       "Arcfox",
-      "Monday - Friday : 08:30 - 16:00\n\nSaturday - Sunday : 08:30 - 12:00"
+      "Monday - Friday : 08:30 - 16:00\n\nSaturday - Sunday : 08:30 - 12:00",
     ),
     buildDealer(
       "Siliwangi",
@@ -286,7 +286,7 @@ function App() {
       "https://maps.app.goo.gl/YrTQdJeDEoYUxFrK8",
       "https://www.instagram.com/baicsiliwangi.official?igsh=cG5jbG1icWN2a2N0",
       "BAIC Only",
-      "Monday - Saturday : 09:00 - 18:00"
+      "Monday - Saturday : 09:00 - 18:00",
     ),
     buildDealer(
       "Yogyakarta",
@@ -298,7 +298,7 @@ function App() {
       "https://maps.app.goo.gl/221bUWjhbQuJMJEMA",
       "https://www.instagram.com/baic.djogja?igsh=anNrMnc1eGx4azcz",
       "Arcfox",
-      "Monday - Friday : 08.30 - 17.00\n\nSaturday : 08.30 - 15.00"
+      "Monday - Friday : 08.30 - 17.00\n\nSaturday : 08.30 - 15.00",
     ),
     buildDealer(
       "Kelapa Gading",
@@ -310,7 +310,7 @@ function App() {
       "https://maps.app.goo.gl/X5JBeYGjyXyEejiB8",
       "",
       "Arcfox",
-      "Monday - Saturday : 08.30 - 19.00\n\nSunday : 08.30 - 17.30"
+      "Monday - Saturday : 08.30 - 19.00\n\nSunday : 08.30 - 17.30",
     ),
     buildDealer(
       "Harapan Indah",
@@ -322,7 +322,7 @@ function App() {
       "",
       "",
       "Arcfox",
-      ""
+      "",
     ),
     buildDealer(
       "Palembang",
@@ -334,9 +334,20 @@ function App() {
       "",
       "https://www.instagram.com/baicpalembang?igsh=MTRxanZ4djR2NjJiMg==",
       "BAIC Only",
-      ""
+      "",
     ),
-    buildDealer("PIK1", "PT TRIJAYA OTO MAKMUR", "3S", "Coming Soon", "", "", "", "", "Arcfox", ""),
+    buildDealer(
+      "PIK1",
+      "PT TRIJAYA OTO MAKMUR",
+      "3S",
+      "Coming Soon",
+      "",
+      "",
+      "",
+      "",
+      "Arcfox",
+      "",
+    ),
     buildDealer(
       "FATMAWATI",
       "PT SAMUDRA INTI JAYA PERKASA",
@@ -347,7 +358,7 @@ function App() {
       "",
       "",
       "Arcfox",
-      ""
+      "",
     ),
     buildDealer(
       "BALIKPAPAN",
@@ -359,7 +370,7 @@ function App() {
       "",
       "",
       "BAIC Only",
-      ""
+      "",
     ),
     buildDealer(
       "LAMPUNG",
@@ -371,7 +382,7 @@ function App() {
       "",
       "",
       "BAIC Only",
-      ""
+      "",
     ),
     buildDealer(
       "KENDARI",
@@ -383,7 +394,7 @@ function App() {
       "",
       "",
       "BAIC Only",
-      ""
+      "",
     ),
     buildDealer(
       "LOMBOK",
@@ -395,7 +406,7 @@ function App() {
       "",
       "",
       "Arcfox",
-      ""
+      "",
     ),
     buildDealer(
       "SLIPI/SUNTER",
@@ -407,7 +418,7 @@ function App() {
       "",
       "",
       "Arcfox",
-      ""
+      "",
     ),
     buildDealer(
       "MANADO",
@@ -419,7 +430,7 @@ function App() {
       "",
       "",
       "BAIC Only",
-      ""
+      "",
     ),
     buildDealer(
       "KARAWANG",
@@ -431,20 +442,9 @@ function App() {
       "",
       "",
       "BAIC Only",
-      ""
+      "",
     ),
-    buildDealer(
-      "MEDAN",
-      "",
-      "3S",
-      "Coming Soon",
-      "",
-      "",
-      "",
-      "",
-      "Arcfox",
-      ""
-    ),
+    buildDealer("MEDAN", "", "3S", "Coming Soon", "", "", "", "", "Arcfox", ""),
     buildDealer(
       "SURABAYA",
       "",
@@ -455,11 +455,13 @@ function App() {
       "",
       "",
       "Arcfox",
-      ""
+      "",
     ),
   ].map((dealer, index) => ({ ...dealer, id: index + 1 }));
 
-  const cities = [...new Set(dealers.map((dealer) => dealer.city).filter(Boolean))].sort();
+  const cities = [
+    ...new Set(dealers.map((dealer) => dealer.city).filter(Boolean)),
+  ].sort();
 
   const handleCityChange = (e) => {
     setSelectedCity(e.target.value);
@@ -577,7 +579,9 @@ function App() {
                               </p>
                             ))
                           ) : (
-                            <p className="text-sm text-neutral-500">To be confirmed</p>
+                            <p className="text-sm text-neutral-500">
+                              To be confirmed
+                            </p>
                           )}
                         </div>
 

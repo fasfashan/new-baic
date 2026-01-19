@@ -159,8 +159,8 @@ const BigMenu = () => {
                 activeSeries === "Arcfox"
                   ? "bg-white text-red-600"
                   : isArcfox
-                  ? "bg-gray-700 text-gray-200"
-                  : "bg-gray-300 text-gray-700"
+                    ? "bg-gray-700 text-gray-200"
+                    : "bg-gray-300 text-gray-700"
               }`}
             >
               Coming soon

@@ -123,8 +123,8 @@ export default function MobileMenu() {
                     activeSeries === "BJ Series"
                       ? "bg-red-600 text-white"
                       : isArcfox
-                      ? "bg-gray-800 text-gray-200"
-                      : "bg-gray-200 text-gray-700"
+                        ? "bg-gray-800 text-gray-200"
+                        : "bg-gray-200 text-gray-700"
                   }`}
                   onClick={() => setActiveSeries("BJ Series")}
                 >
@@ -135,8 +135,8 @@ export default function MobileMenu() {
                     activeSeries === "X Series"
                       ? "bg-red-600 text-white"
                       : isArcfox
-                      ? "bg-gray-800 text-gray-200"
-                      : "bg-gray-200 text-gray-700"
+                        ? "bg-gray-800 text-gray-200"
+                        : "bg-gray-200 text-gray-700"
                   }`}
                   onClick={() => setActiveSeries("X Series")}
                 >
@@ -147,8 +147,8 @@ export default function MobileMenu() {
                     activeSeries === "Arcfox"
                       ? "bg-red-600 text-white"
                       : isArcfox
-                      ? "bg-gray-800 text-gray-200"
-                      : "bg-gray-200 text-gray-700"
+                        ? "bg-gray-800 text-gray-200"
+                        : "bg-gray-200 text-gray-700"
                   }`}
                   onClick={() => setActiveSeries("Arcfox")}
                 >
@@ -158,8 +158,8 @@ export default function MobileMenu() {
                       activeSeries === "Arcfox"
                         ? "bg-white text-red-600"
                         : isArcfox
-                        ? "bg-gray-700 text-gray-200"
-                        : "bg-gray-300 text-gray-700"
+                          ? "bg-gray-700 text-gray-200"
+                          : "bg-gray-300 text-gray-700"
                     }`}
                   >
                     Coming soon

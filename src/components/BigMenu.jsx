@@ -153,7 +153,18 @@ const BigMenu = () => {
             }`}
             onClick={() => handleSeriesClick("Arcfox")}
           >
-            Arcfox
+            <span>Arcfox</span>
+            <span
+              className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${
+                activeSeries === "Arcfox"
+                  ? "bg-white text-red-600"
+                  : isArcfox
+                  ? "bg-gray-700 text-gray-200"
+                  : "bg-gray-300 text-gray-700"
+              }`}
+            >
+              Coming soon
+            </span>
           </button>
         </div>
 

@@ -1,8 +1,6 @@
 export default function AfterSalesSection() {
   return (
-    <section
-      className="relative min-h-[500px] mt-20 bg-black flex items-center justify-center"
-    >
+    <section className="relative min-h-[500px] mt-20 bg-black flex items-center justify-center">
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 py-16 max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-8">After sales</h2>

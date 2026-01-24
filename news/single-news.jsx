@@ -104,7 +104,7 @@ function SingleNews() {
 
               {/* Article Content */}
               <div
-                className="prose prose-lg max-w-none text-gray-700"
+                className="prose prose-lg max-w-none text-gray-700 text-justify"
                 dangerouslySetInnerHTML={{ __html: newsDetail.content }}
               />
             </div>
@@ -187,7 +187,7 @@ function SingleNews() {
                   <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 hover:text-red-600 transition-colors">
                     {news.title}
                   </h3>
-                  <p className="text-gray-600 text-sm line-clamp-3">
+                  <p className="text-gray-600 text-sm line-clamp-3 text-justify">
                     {news.description}
                   </p>
                 </div>

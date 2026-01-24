@@ -138,34 +138,45 @@ export default function ExploreCar() {
         <div className="mt-6">
           <div className="flex gap-2 justify-center max-w-6xl m-auto flex-wrap">
             <button
-              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg ${
+              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
                 activeSeries === "BJ Series"
-                  ? "bg-red-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  ? "border-red-600 text-red-600"
+                  : "border-gray-300 text-gray-700 hover:border-red-600"
               }`}
               onClick={() => handleSeriesClick("BJ Series")}
             >
               BJ Series
             </button>
             <button
-              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg ${
+              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
                 activeSeries === "X Series"
-                  ? "bg-red-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  ? "border-red-600 text-red-600"
+                  : "border-gray-300 text-gray-700 hover:border-red-600"
               }`}
               onClick={() => handleSeriesClick("X Series")}
             >
               X Series
             </button>
             <button
-              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg ${
+              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
                 activeSeries === "Arcfox"
-                  ? "bg-red-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  ? "border-red-600 text-red-600"
+                  : "border-gray-300 text-gray-700 hover:border-red-600"
               }`}
               onClick={() => handleSeriesClick("Arcfox")}
             >
-              Arcfox
+              <span>Arcfox</span>
+              <span
+                className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${
+                  activeSeries === "Arcfox"
+                    ? "bg-white text-red-600"
+                    : isArcfox
+                      ? "bg-gray-700 text-gray-200"
+                      : "bg-gray-300 text-gray-700"
+                }`}
+              >
+                Coming soon
+              </span>
             </button>
           </div>
 
@@ -190,7 +201,7 @@ export default function ExploreCar() {
                               : "text-gray-700"
                         }`}
                       >
-                        BJ30 Type 1
+                        BJ30 HEV AWD
                       </p>
                       <img
                         src="/BJ30-explore.png"
@@ -216,7 +227,7 @@ export default function ExploreCar() {
                               : "text-gray-700"
                         }`}
                       >
-                        BJ30 Type 2
+                        BJ30 HEV FWD
                       </p>
                       <img
                         src="/BJ30-explore.png"
@@ -489,14 +500,14 @@ export default function ExploreCar() {
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a
-                      className="py-3 px-6 text-center bg-red-600 hover:bg-red-700 text-white font-semibold transition-all rounded-lg flex items-center gap-2 justify-center whitespace-nowrap"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
                       href="/book-a-test-drive/index.html?model=bj40plus"
                     >
                       <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
                     </a>
                     <a
-                      className="py-3 px-6 text-center bg-white hover:bg-gray-50 text-gray-800 font-semibold transition-all border border-gray-300 rounded-lg flex items-center gap-2 justify-center whitespace-nowrap"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
                       href="/brochure-bj40.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -591,14 +602,14 @@ export default function ExploreCar() {
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a
-                      className="py-3 px-6 text-center bg-red-600 hover:bg-red-700 text-white font-semibold transition-all rounded-lg flex items-center gap-2 justify-center whitespace-nowrap"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
                       href="/book-a-test-drive/index.html?model=bj30"
                     >
                       <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
                     </a>
                     <a
-                      className="py-3 px-6 text-center bg-white hover:bg-gray-50 text-gray-800 font-semibold transition-all border border-gray-300 rounded-lg flex items-center gap-2 justify-center whitespace-nowrap"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
                       href="/brochure-bj40.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -686,14 +697,14 @@ export default function ExploreCar() {
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a
-                      className="py-3 px-6 text-center bg-red-600 hover:bg-red-700 text-white font-semibold transition-all rounded-lg flex items-center gap-2 justify-center whitespace-nowrap"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
                       href="/book-a-test-drive/index.html?model=x55ii"
                     >
                       <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
                     </a>
                     <a
-                      className="py-3 px-6 text-center bg-white hover:bg-gray-50 text-gray-800 font-semibold transition-all border border-gray-300 rounded-lg flex items-center gap-2 justify-center whitespace-nowrap"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
                       href="/brochure-x55.pdf"
                       target="_blank"
                       rel="noopener noreferrer"

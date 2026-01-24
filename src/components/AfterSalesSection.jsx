@@ -13,6 +13,7 @@ export default function AfterSalesSection() {
           >
             Learn More
           </a>
+          <p>Hotline: 08123456789</p>
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@ function App() {
       <AfterSalesSection />
       <AccessoriesSection />
       <NewsSection />
-      <CtaSection />
+
       <Footer />
       <ButtonChat />
     </>

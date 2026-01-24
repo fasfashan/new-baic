@@ -6,6 +6,7 @@ import ButtonChat from "../src/components/ButtonChat";
 import heroImage from "/baic-authorized-dealer.jpg";
 import mapImage from "/baic-map.png";
 import dealerImage from "/baic-dealer.jpg";
+import baicLogo from "../src/assets/logo.svg";
 import { Phone, MapPin, Instagram } from "lucide-react";
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
@@ -529,17 +530,26 @@ function App() {
                       className="w-full h-48 object-cover"
                     />
                     <div className="p-6 space-y-4">
-                      <div className="flex items-center justify-between gap-3 mb-1 w-full">
-                        <h3 className="text-xl font-bold">{dealer.name}</h3>
+                      {/* Logos Section - Above dealer name */}
+                      <div className="flex items-center gap-3 mb-2">
+                        <img
+                          src={baicLogo}
+                          alt="BAIC"
+                          title="BAIC available"
+                          className="h-4 object-contain"
+                        />
                         {isArcfoxDealer(dealer) && (
                           <img
                             src={arcfoxLogo}
                             alt="Arcfox"
                             title="Arcfox available"
-                            className="w-20 object-contain"
+                            className="h-4 object-contain"
                           />
                         )}
                       </div>
+
+                      {/* Dealer Name */}
+                      <h3 className="text-xl font-bold">{dealer.name}</h3>
                       <p className="text-sm text-neutral-600 mb-3">
                         {dealer.company}
                       </p>
@@ -631,7 +641,7 @@ function App() {
 
                         <a
                           href="/book-a-test-drive/index.html"
-                          className=" w-full py-3 px-4 text-center bg-red-600 hover:bg-red-700 text-white font-semibold transition-all rounded-lg"
+                          className="w-full py-2.5 px-4 text-center font-medium text-sm text-black border-2 border-black rounded-xl transition-all"
                         >
                           BOOK A TEST DRIVE
                         </a>

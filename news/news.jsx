@@ -19,7 +19,8 @@ const newsData = [
   {
     image: "/placeholder-news.jpg",
     date: "15 September, 2025",
-    title: "BAIC ukir sejarah baru di Indonesia: luncurkan BJ40 Plus made in Indonesia pertama",
+    title:
+      "BAIC ukir sejarah baru di Indonesia: luncurkan BJ40 Plus made in Indonesia pertama",
     description:
       "Indonesia, September 2025 - PT JIO Distribusi Indonesia, BAIC Brand Holder Agent (APM) in Indonesia, proudly announces the launch of the first locally-assembled BJ40 Plus...",
     link: "/news/single-news.html",
@@ -109,7 +110,7 @@ function App() {
 
       {/* News Grid Section */}
       <div className="bg-gray-100 py-16 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {newsData.slice(0, visiblePosts).map((news, index) => (
               <a
@@ -137,7 +138,7 @@ function App() {
                   <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 hover:text-red-600 transition-colors">
                     {news.title}
                   </h3>
-                  <p className="text-gray-600 text-sm line-clamp-3">
+                  <p className="text-gray-600 text-sm line-clamp-3 text-justify">
                     {news.description}
                   </p>
                 </div>
@@ -166,7 +167,6 @@ function App() {
         </div>
       </div>
 
-      <CtaSection />
       <Footer />
     </>
   );

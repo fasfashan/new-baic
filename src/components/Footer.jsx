@@ -38,9 +38,12 @@ export default function Footer() {
           </a>
           <a
             href="#"
-            className="text-gray-400 text-sm hover:text-white transition-all"
+            className="text-gray-400 text-sm hover:text-white transition-all inline-flex items-center gap-2"
           >
-            Arcfox
+            <span>Arcfox</span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full font-semibold bg-gray-700 text-gray-200">
+              Coming soon
+            </span>
           </a>
           {/* Future: Arcfox tab item when content is ready */}
           {/* <a href="#" className="text-gray-400 text-sm hover:text-white transition-all">Arcfox</a> */}

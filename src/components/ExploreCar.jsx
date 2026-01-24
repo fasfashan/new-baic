@@ -186,8 +186,8 @@ export default function ExploreCar() {
                           activeModel === "BJ30 Type 1"
                             ? "text-red-600"
                             : isArcfox
-                            ? "text-gray-200"
-                            : "text-gray-700"
+                              ? "text-gray-200"
+                              : "text-gray-700"
                         }`}
                       >
                         BJ30 Type 1
@@ -212,8 +212,8 @@ export default function ExploreCar() {
                           activeModel === "BJ30 Type 2"
                             ? "text-red-600"
                             : isArcfox
-                            ? "text-gray-200"
-                            : "text-gray-700"
+                              ? "text-gray-200"
+                              : "text-gray-700"
                         }`}
                       >
                         BJ30 Type 2
@@ -238,8 +238,8 @@ export default function ExploreCar() {
                           activeModel === "BJ40 PLUS Type 1"
                             ? "text-red-600"
                             : isArcfox
-                            ? "text-gray-200"
-                            : "text-gray-700"
+                              ? "text-gray-200"
+                              : "text-gray-700"
                         }`}
                       >
                         BJ40 PLUS Type 1
@@ -264,8 +264,8 @@ export default function ExploreCar() {
                           activeModel === "BJ40 PLUS Type 2"
                             ? "text-red-600"
                             : isArcfox
-                            ? "text-gray-200"
-                            : "text-gray-700"
+                              ? "text-gray-200"
+                              : "text-gray-700"
                         }`}
                       >
                         BJ40 PLUS Type 2
@@ -295,8 +295,8 @@ export default function ExploreCar() {
                           activeModel === "X55 II Lite"
                             ? "text-red-600"
                             : isArcfox
-                            ? "text-gray-200"
-                            : "text-gray-700"
+                              ? "text-gray-200"
+                              : "text-gray-700"
                         }`}
                       >
                         X55 II Lite
@@ -321,8 +321,8 @@ export default function ExploreCar() {
                           activeModel === "X55 II Prime"
                             ? "text-red-600"
                             : isArcfox
-                            ? "text-gray-200"
-                            : "text-gray-700"
+                              ? "text-gray-200"
+                              : "text-gray-700"
                         }`}
                       >
                         X55 II Prime
@@ -466,12 +466,6 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-                <Car360Viewer
-                  modelKey="bj40-plus"
-                  colorKey={colorToFolderBJ40[selectedColor]}
-                  colorName={colorNamesBJ40[selectedColor]}
-                  totalFrames={36}
-                />
 
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
@@ -484,6 +478,13 @@ export default function ExploreCar() {
                     </p>
                   </div>
                 </div>
+
+                <Car360Viewer
+                  modelKey="bj40-plus"
+                  colorKey={colorToFolderBJ40[selectedColor]}
+                  colorName={colorNamesBJ40[selectedColor]}
+                  totalFrames={36}
+                />
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
@@ -566,15 +567,6 @@ export default function ExploreCar() {
                   </h2>
                 </div>
 
-                {/* Side View Image */}
-                <div className="mt-8 flex justify-center">
-                  <img
-                    src={`/BJ30/${colorToFileBJ30[selectedColorBJ30]}`}
-                    alt={`BJ30 ${colorNamesBJ30[selectedColorBJ30]}`}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
                   <div className="text-center">
@@ -585,6 +577,15 @@ export default function ExploreCar() {
                       *4X2 (FWD) Variant & Price On The Road Jakarta
                     </p>
                   </div>
+                </div>
+
+                {/* Side View Image */}
+                <div className="mt-8 flex justify-center">
+                  <img
+                    src={`/BJ30/${colorToFileBJ30[selectedColorBJ30]}`}
+                    alt={`BJ30 ${colorNamesBJ30[selectedColorBJ30]}`}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
@@ -662,12 +663,6 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-                <Car360Viewer
-                  modelKey="x55"
-                  colorKey={colorToFolderX55[selectedColorX55]}
-                  colorName={colorNamesX55[selectedColorX55]}
-                  totalFrames={20}
-                />
 
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
@@ -680,6 +675,13 @@ export default function ExploreCar() {
                     </p>
                   </div>
                 </div>
+
+                <Car360Viewer
+                  modelKey="x55"
+                  colorKey={colorToFolderX55[selectedColorX55]}
+                  colorName={colorNamesX55[selectedColorX55]}
+                  totalFrames={20}
+                />
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">

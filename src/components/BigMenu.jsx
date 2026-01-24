@@ -36,13 +36,13 @@ const BigMenu = () => {
   const vehicles = {
     "BJ Series": [
       {
-        name: "BJ30 Type 1",
+        name: "BJ30 HEV AWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ30 Type 2",
+        name: "BJ30 HEV FWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
         brochureLink: "/brochure-bj40.pdf",
@@ -76,13 +76,13 @@ const BigMenu = () => {
     ],
     Arcfox: [
       {
-        name: "BJ30 Type 1",
+        name: "BJ30 HEV AWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ30 Type 2",
+        name: "BJ30 HEV FWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
         brochureLink: "/brochure-bj40.pdf",
@@ -216,30 +216,12 @@ const BigMenu = () => {
                 </div>
               </div>
 
-              <div className="flex mt-4 gap-2 text-xs">
+              <div className="flex mt-4 text-xs">
                 <a
                   className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
                   href={vehicle.exploreLink}
                 >
                   SEE DETAILS
-                </a>
-                <a
-                  className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
-                  href={`/book-a-test-drive/index.html?model=${vehicle.name
-                    .toLowerCase()
-                    .replace(" ", "")}`}
-                >
-                  BOOK A TEST DRIVE
-                </a>
-              </div>
-              <div className="flex mt-2 text-xs">
-                <a
-                  className="py-3 w-full text-center hover:bg-gray-100 transition-all border border-gray-400 rounded-xl"
-                  href={vehicle.brochureLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  DOWNLOAD BROCHURE
                 </a>
               </div>
             </div>

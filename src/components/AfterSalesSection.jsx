@@ -1,25 +1,17 @@
 export default function AfterSalesSection() {
   return (
     <section
-      className="relative min-h-[500px] mt-20  bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: "url('/after-sales-bg.jpg')" }}
+      className="relative min-h-[500px] mt-20 bg-black flex items-center justify-center"
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 py-16 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">After sales</h2>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          Have confidence with your BAIC? Our service team is authorized and
-          dealers are ready to support you.
-        </p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-8">After sales</h2>
 
         {/* CTA Buttons */}
-        <div className="flex  gap-4 justify-center items-center">
+        <div className="flex gap-4 justify-center items-center">
           <a
             href="/aftersales/index.html"
-            className="py-3 px-8 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
+            className="py-3 px-8 border-2 border-white text-white font-medium rounded-xl"
           >
             Learn More
           </a>

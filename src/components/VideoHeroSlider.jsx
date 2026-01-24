@@ -114,23 +114,18 @@ export default function VideoHeroSlider() {
 
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
-
-          {/* Content */}
-          <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="text-center  text-white px-4 max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-                {slide.title}
-              </h1>
-              <a
-                href={slide.ctaLink}
-                className="inline-block bg-white text-black font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300 text-lg"
-              >
-                {slide.ctaText}
-              </a>
-            </div>
-          </div>
         </div>
       ))}
+
+      {/* CTA Button above navigation */}
+      <div className="absolute bottom-36 left-1/2 transform -translate-x-1/2 z-30">
+        <a
+          href={slides[currentSlide].ctaLink}
+          className="inline-block border-2 border-white text-white font-medium px-8 py-3 rounded-xl text-lg"
+        >
+          {slides[currentSlide].ctaText}
+        </a>
+      </div>
 
       {/* Navigation Arrows */}
       <button

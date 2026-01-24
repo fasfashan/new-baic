@@ -38,12 +38,12 @@ export default function MobileMenu() {
   const vehicles = {
     "BJ Series": [
       {
-        name: "BJ30 Type 1",
+        name: "BJ30 HEV AWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
       },
       {
-        name: "BJ30 Type 2",
+        name: "BJ30 HEV FWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
       },
@@ -72,12 +72,12 @@ export default function MobileMenu() {
     ],
     Arcfox: [
       {
-        name: "BJ30 Type 1",
+        name: "BJ30 HEV AWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
       },
       {
-        name: "BJ30 Type 2",
+        name: "BJ30 HEV FWD",
         image: BJ30,
         exploreLink: "/BJ30/index.html",
       },
@@ -267,39 +267,11 @@ export default function MobileMenu() {
         </div>
         <hr className={isArcfox ? "border-gray-700" : undefined} />
 
-        {/* Parts & Accessories Accordion */}
+        {/* Accessories */}
         <div className="w-full rounded-md">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsPartsAccessoriesOpen(!isPartsAccessoriesOpen)}
-          >
-            <span className="text-lg font-medium">PARTS & ACCESSORIES</span>
-            {isPartsAccessoriesOpen ? (
-              <ChevronUp className="w-6 h-6" />
-            ) : (
-              <ChevronDown className="w-6 h-6" />
-            )}
-          </div>
-          {isPartsAccessoriesOpen && (
-            <div className="mt-3 ml-4 space-y-2">
-              <a
-                href="#"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
-              >
-                Genuine Parts - Build for your BAIC
-              </a>
-              <a
-                href="/genuine-accessories/index.html"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
-              >
-                Genuine Accessories - Style your drive
-              </a>
-            </div>
-          )}
+          <a className="text-lg" href="/genuine-accessories/index.html">
+            ACCESSORIES
+          </a>
         </div>
         <hr className={isArcfox ? "border-gray-700" : undefined} />
 
@@ -395,13 +367,13 @@ export default function MobileMenu() {
         {/* CTA Buttons */}
         <a
           href="/book-a-test-drive/index.html"
-          className="py-3 px-4 font-medium text-sm text-white text-center bg-red-600 hover:bg-red-700 rounded-xl transition-all"
+          className="py-3 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl"
         >
           BOOK A TEST DRIVE
         </a>
         <a
           href="/request-price-list/index.html"
-          className="py-3 px-4 font-medium text-sm text-center bg-gray-200 hover:bg-gray-300 rounded-xl transition-all"
+          className="py-3 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl"
         >
           REQUEST PRICE LIST
         </a>

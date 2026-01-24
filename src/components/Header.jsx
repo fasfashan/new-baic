@@ -155,38 +155,14 @@ export default function Header() {
                 )}
               </li>
 
-              {/* Parts & Accessories Menu */}
-              <li
-                className="relative group"
-                onMouseEnter={() => setIsPartsAccessoriesOpen(true)}
-                onMouseLeave={() => setIsPartsAccessoriesOpen(false)}
-              >
-                <button className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2">
-                  Parts & Accessories
-                  {isPartsAccessoriesOpen ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                </button>
-                {isPartsAccessoriesOpen && (
-                  <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="w-64 bg-white text-black rounded-lg shadow-lg py-2">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        Genuine Parts - Build for your BAIC
-                      </a>
-                      <a
-                        href="/genuine-accessories/index.html"
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                      >
-                        Genuine Accessories - Style your drive
-                      </a>
-                    </div>
-                  </div>
-                )}
+              {/* Accessories */}
+              <li className="relative group">
+                <a
+                  href="/genuine-accessories/index.html"
+                  className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2"
+                >
+                  Accessories
+                </a>
               </li>
               {/* Dealer */}
               <li className="relative group">
@@ -197,7 +173,6 @@ export default function Header() {
                   Dealer
                 </a>
               </li>
-              {/* Dealer */}
               {/* About Us Menu */}
               <li
                 className="relative group"
@@ -279,13 +254,13 @@ export default function Header() {
           {/* CTA Buttons & Language Selector */}
           <div className="hidden md:flex gap-3 items-center">
             <a
-              className="py-2.5 px-4 font-medium text-sm text-white text-center bg-red-600 transition-all hover:bg-red-700 rounded-xl whitespace-nowrap"
+              className="py-2.5 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl whitespace-nowrap"
               href="/book-a-test-drive/index.html"
             >
               Book a Test Drive
             </a>
             <a
-              className="py-2.5 px-4 font-medium text-sm text-center bg-white transition-all hover:bg-neutral-100 rounded-xl whitespace-nowrap"
+              className="py-2.5 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl whitespace-nowrap"
               href="/request-price-list/index.html"
             >
               Request Price List

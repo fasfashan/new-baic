@@ -154,28 +154,32 @@ body {
 /* src/fonts.css */
 @font-face {
   font-family: "HarmonyOS";
-  src: url("/src/fonts/HarmonyOS_Sans_Regular.ttf") format("woff2"),
+  src:
+    url("/src/fonts/HarmonyOS_Sans_Regular.ttf") format("woff2"),
     url("/src/fonts/HarmonyOS_Sans_Regular.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "HarmonyOS";
-  src: url("/src/fonts/HarmonyOS_Sans_Light.ttf") format("woff2"),
+  src:
+    url("/src/fonts/HarmonyOS_Sans_Light.ttf") format("woff2"),
     url("/src/fonts/HarmonyOS_Sans_Light.ttf") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "HarmonyOS";
-  src: url("/src/fonts/HarmonyOS_Sans_Medium.ttf") format("woff2"),
+  src:
+    url("/src/fonts/HarmonyOS_Sans_Medium.ttf") format("woff2"),
     url("/src/fonts/HarmonyOS_Sans_Medium.ttf") format("woff");
   font-weight: medium;
   font-style: normal;
 }
 @font-face {
   font-family: "HarmonyOS";
-  src: url("/src/fonts/HarmonyOS_Sans_Bold.ttf") format("woff2"),
+  src:
+    url("/src/fonts/HarmonyOS_Sans_Bold.ttf") format("woff2"),
     url("/src/fonts/HarmonyOS_Sans_Bold.ttf") format("woff");
   font-weight: bold;
   font-style: normal;

@@ -2,10 +2,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
-import AccessoriesTab from "../src/components/AccessoriesTab";
 import "../src/index.css";
-import { useState, useEffect } from "react";
-import BJ30Logo from "../src/assets/BJ30-logo.png";
+import { useState } from "react";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
 import Foto1 from "../src/assets/BJ30-single-produk-1.jpg";
 import Foto2 from "../src/assets/BJ30-single-produk-2.jpg";
@@ -23,9 +21,9 @@ import exterior3 from "../src/assets/exterior-3.jpg";
 import exterior4 from "../src/assets/exterior-4.jpg";
 import exterior5 from "../src/assets/exterior-5.png";
 import exterior6 from "../src/assets/exterior-6.png";
-import CTA from "../src/components/cta";
 import Accordion from "../src/components/Accordion";
 import ButtonChat from "../src/components/ButtonChat";
+
 const carSpecifications = {
   engine: [
     { title: "LengthxWidthxHeight (mm)", content: "4730 / 1870 / 1790" },
@@ -51,8 +49,6 @@ const carSpecifications = {
       content: "Five-link/coil spring non-independent suspnesion",
     },
     { title: "Drivetrain", content: "4WD with Electronic Shifter" },
-
-    // Add more specifications as needed
   ],
   features: [
     { title: "Wheels and Tyres", content: "265/65 R17" },
@@ -71,39 +67,22 @@ const carSpecifications = {
     { title: "Anti-glare inside rear view mirror", content: "√" },
     { title: "Driver's seat - 4-way electric adjustable", content: "√" },
     { title: "Front passengers eat - 6-way manual adjustable", content: "√" },
-    {
-      title: "Rear seat configuration",
-      content: "4WD with Electronic Shifter",
-    },
+    { title: "Rear seat configuration", content: "4WD with Electronic Shifter" },
     { title: "Rear seat recline function", content: "√" },
     { title: "6 speakers", content: "√" },
     { title: "Anti-lock Braking System (ABS)", content: "√" },
     { title: "Electronic Brake force Distribution (ABS)", content: "√" },
     {
-      title:
-        "Electronic stability Programme (ESP), Emergency Brake Assist(EBA)",
+      title: "Electronic stability Programme (ESP), Emergency Brake Assist(EBA)",
       content: "√",
     },
-    {
-      title: "Hill Ascent Control(HOC)",
-      content: "√",
-    },
-    {
-      title: "Electronic Parking Brake (EPB)",
-      content: "√",
-    },
-    {
-      title: "ISO-FIX child seat restraint system",
-      content: "√",
-    },
-    {
-      title: "Driver and front passenger airbag",
-      content: "√",
-    },
-
-    // Add more features as needed
+    { title: "Hill Ascent Control(HOC)", content: "√" },
+    { title: "Electronic Parking Brake (EPB)", content: "√" },
+    { title: "ISO-FIX child seat restraint system", content: "√" },
+    { title: "Driver and front passenger airbag", content: "√" },
   ],
 };
+
 function App() {
   const colors = [
     "#8DB600",
@@ -113,6 +92,7 @@ function App() {
     "#808080",
     "#ffffff",
   ];
+
   const colorNamesBJ30 = {
     "#8DB600": "Apple Green",
     "#87CEEB": "Blue Sky",
@@ -121,6 +101,7 @@ function App() {
     "#808080": "Matte Grey",
     "#ffffff": "Snow White",
   };
+
   const colorToFileBJ30 = {
     "#8DB600": "apple-green.png",
     "#87CEEB": "blue-sky.png",
@@ -130,443 +111,433 @@ function App() {
     "#ffffff": "snow-white.png",
   };
 
-  const [activeTab, setActiveTab] = useState("Overview");
-  const [isTabsVisible, setIsTabsVisible] = useState(true);
-  const [isTabsScrolled, setIsTabsScrolled] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-    window.scrollTo(0, 0);
-  };
-  const handleTabClickGallery = (tab) => {
-    setActiveTabGallery(tab);
-    window.scrollTo(0, 0);
-  };
-
   const [activeTabGallery, setActiveTabGallery] = useState("Interior");
   const [animating, setAnimating] = useState(false);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+
+  const accessories = [
+    {
+      id: 1,
+      model: "BJ30",
+      title: "BJ30 Roof Rack Upper",
+      price: "Rp 9,673,000",
+      image: "/BJ30 Accessories - Roof Rack Upper.png",
+      installedImage: "/BJ30 Accessories - Roof Rack Upper.png",
+    },
+    {
+      id: 2,
+      model: "BJ30",
+      title: "BJ30 Luggage Box - Side Net Backpack",
+      price: "Rp 4,890,000",
+      image: "/BJ30 Luggage Box - Side Net Backpack.png",
+      installedImage: "/BJ30 Luggage Box - Side Net Backpack.png",
+    },
+    {
+      id: 3,
+      model: "BJ30",
+      title: "BJ30 Front Grille",
+      price: "Rp 8,500,000",
+      image: "/BJ30 Accessories - Roof Rack Upper.png",
+      installedImage: "/BJ30 Accessories - Roof Rack Upper.png",
+    },
+    {
+      id: 4,
+      model: "BJ30",
+      title: "BJ30 Side Steps",
+      price: "Rp 7,200,000",
+      image: "/BJ30 Luggage Box - Side Net Backpack.png",
+      installedImage: "/BJ30 Luggage Box - Side Net Backpack.png",
+    },
+  ];
+
+  const [activeSlides, setActiveSlides] = useState(
+    accessories.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {})
+  );
+
+  const [previewModal, setPreviewModal] = useState({
+    isOpen: false,
+    accessoryId: null,
+    imageIndex: 0,
+  });
+
+  const handleTabClickGallery = (tab) => {
+    setActiveTabGallery(tab);
+  };
+
+  const handleSlideChange = (id, index) => {
+    setActiveSlides((prev) => ({ ...prev, [id]: index }));
+  };
+
+  const openPreview = (accessoryId, imageIndex) => {
+    setPreviewModal({ isOpen: true, accessoryId, imageIndex });
+  };
+
+  const closePreview = () => {
+    setPreviewModal({ isOpen: false, accessoryId: null, imageIndex: 0 });
+  };
+
+  const navigatePreview = (direction) => {
+    const currentAccessory = accessories.find(
+      (a) => a.id === previewModal.accessoryId
+    );
+    const images = [currentAccessory.image, currentAccessory.installedImage];
+    const newIndex =
+      direction === "next"
+        ? (previewModal.imageIndex + 1) % images.length
+        : (previewModal.imageIndex - 1 + images.length) % images.length;
+
+    setPreviewModal((prev) => ({ ...prev, imageIndex: newIndex }));
+  };
+
   const onColorSelect = (color) => {
     if (color !== selectedColor) {
       setAnimating(true);
       setTimeout(() => {
         setSelectedColor(color);
         setAnimating(false);
-      }, 100); // Duration of the transition
+      }, 100);
     }
   };
 
-  // Handle tabs visibility on scroll
-  useEffect(() => {
-    const controlTabs = () => {
-      if (typeof window !== "undefined") {
-        const currentScrollY = window.scrollY;
-
-        // Set scrolled state based on scroll position
-        setIsTabsScrolled(currentScrollY > 50);
-
-        // Show tabs when scrolling up, hide when scrolling down
-        if (currentScrollY > lastScrollY && currentScrollY > 150) {
-          // Scrolling down - hide tabs
-          setIsTabsVisible(false);
-        } else if (currentScrollY < lastScrollY) {
-          // Scrolling up - show tabs
-          setIsTabsVisible(true);
-        }
-
-        // Always show tabs at the top
-        if (currentScrollY < 100) {
-          setIsTabsVisible(true);
-        }
-
-        setLastScrollY(currentScrollY);
-      }
-    };
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlTabs);
-
-      return () => {
-        window.removeEventListener("scroll", controlTabs);
-      };
-    }
-  }, [lastScrollY]);
-
   return (
     <>
-      <Header alwaysWhite />
+      <Header />
       <ButtonChat />
+
       <div className="bg-neutral-400">
-        <div
-          className={`py-3 z-40 sticky top-[72px] transition-all duration-300 ${
-            isTabsVisible ? "translate-y-0" : "-translate-y-full"
-          } ${isTabsScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
-        >
-          <div className="max-w-6xl gap-4 flex items-center justify-between flex-wrap m-auto md:px-8 px-5">
-            <img
-              width={100}
-              className="object-contain"
-              src={BJ30Logo}
-              alt="BJ30 PLUS Logo"
+        <div className="bg-neutral-200">
+          {/* ================= OVERVIEW ================= */}
+          <div>
+            {[Foto1, Foto2, Foto3, Foto4].map((bg, i) => (
+              <div
+                key={i}
+                className="h-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${bg})` }}
+              >
+                <div
+                  className={`flex ${i % 2 === 1 ? "md:justify-end" : "justify-start"} max-w-6xl m-auto py-40 items-center h-full text-white`}
+                >
+                  <div className="max-w-2xl px-10 flex flex-col gap-4">
+                    {i === 0 && (
+                      <>
+                        <h1 className="md:text-7xl text-4xl font-bold">
+                          HEART OF A HYBRID
+                        </h1>
+                        <h2 className="text-xl font-bold">
+                          The five-hole daytime running light belt boasts both technological appeal and practical utility.
+                        </h2>
+                      </>
+                    )}
+                    {i === 1 && (
+                      <>
+                        <h1 className="md:text-7xl text-4xl font-bold">
+                          LIGHT THE PATH AHEAD
+                        </h1>
+                        <h2 className="text-xl font-bold">ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE</h2>
+                      </>
+                    )}
+                    {i === 2 && (
+                      <>
+                        <h1 className="md:text-7xl text-4xl font-bold">
+                          RUGGED REAR DESIGN
+                        </h1>
+                        <h2 className="text-xl font-bold">BOLD FROM BEHIND</h2>
+                      </>
+                    )}
+                    {i === 3 && (
+                      <>
+                        <h1 className="md:text-7xl text-4xl font-bold">
+                          TECHNOLOGY WITH THRUST
+                        </h1>
+                        <h2 className="text-xl font-bold">COMFORT IN COMMAND</h2>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ================= PRICING & SPECS ================= */}
+          <div className="py-16 md:px-8 px-5 max-w-4xl m-auto">
+            <h2 className="text-center text-4xl font-bold">PRICING & SPECS</h2>
+
+            <div className="text-center mt-10">
+              <p className="text-4xl font-bold">Rp 529.000.000,-</p>
+              <p className="text-sm text-neutral-600">OTR Jakarta</p>
+            </div>
+
+            {/* COLOR SELECT */}
+            <div className="mt-10 space-y-4 mb-10">
+              <div className="flex justify-center gap-3">
+                {colors.map((color) => (
+                  <div
+                    key={color}
+                    className={`w-8 h-8 rounded-full cursor-pointer border-2 ${
+                      selectedColor === color
+                        ? "outline outline-red-500 scale-110 border-white"
+                        : "border-transparent"
+                    }`}
+                    style={{ backgroundColor: color }}
+                    onClick={() => onColorSelect(color)}
+                  />
+                ))}
+              </div>
+
+              <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto flex items-center">
+                <h2 className="text-center px-4 py-2">
+                  {colorNamesBJ30[selectedColor]}
+                </h2>
+              </div>
+
+              <img
+                src={`/BJ30/${colorToFileBJ30[selectedColor]}`}
+                alt={`BJ30 ${colorNamesBJ30[selectedColor]}`}
+                className={`w-full h-auto object-contain mx-auto transition-opacity duration-100 ${
+                  animating ? "opacity-0" : "opacity-100"
+                }`}
+              />
+            </div>
+
+            <h2 className="text-center md:text-3xl text-2xl mt-10 mb-10">
+              BJ30 Specifications
+            </h2>
+
+            <Accordion
+              title="Engine & Drivetrain"
+              content={carSpecifications.engine}
             />
-            <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
+            <Accordion title="Features" content={carSpecifications.features} />
+
+            <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed">
+              <p className="md:max-w-2xl">
+                DISCLAIMER*<br />
+                Specifications, equipment, colors & materials shown here may differ from every country. Please check with your local dealer for the latest information
+              </p>
+            </div>
+          </div>
+
+          {/* ================= GALLERY ================= */}
+          <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-16">
+            <h2 className="text-center text-4xl font-bold">GALLERY</h2>
+
+            <div className="flex justify-center mt-10 gap-10">
               <button
-                className={`py-2 transition-all whitespace-nowrap ${
-                  activeTab === "Overview" ? "text-red-600 font-medium" : ""
+                className={`py-3 whitespace-nowrap border-b-2 transition-all ${
+                  activeTabGallery === "Interior"
+                    ? "text-red-600 font-medium border-red-600"
+                    : "text-neutral-900 border-transparent"
                 }`}
-                onClick={() => handleTabClick("Overview")}
+                onClick={() => handleTabClickGallery("Interior")}
               >
-                OVERVIEW
+                INTERIOR
               </button>
               <button
-                className={`py-2 transition-all whitespace-nowrap ${
-                  activeTab === "Pricing" ? "text-red-600 font-medium" : ""
+                className={`py-3 whitespace-nowrap border-b-2 transition-all ${
+                  activeTabGallery === "Exterior"
+                    ? "text-red-600 font-medium border-red-600"
+                    : "text-neutral-900 border-transparent"
                 }`}
-                onClick={() => handleTabClick("Pricing")}
+                onClick={() => handleTabClickGallery("Exterior")}
               >
-                PRICING & SPECS
+                EXTERIOR
               </button>
               <button
-                className={`py-2 transition-all whitespace-nowrap ${
-                  activeTab === "Gallery" ? "text-red-600 font-medium" : ""
+                className={`py-3 whitespace-nowrap border-b-2 transition-all ${
+                  activeTabGallery === "Feature"
+                    ? "text-red-600 font-medium border-red-600"
+                    : "text-neutral-900 border-transparent"
                 }`}
-                onClick={() => handleTabClick("Gallery")}
+                onClick={() => handleTabClickGallery("Feature")}
               >
-                GALLERY
+                FEATURE
               </button>
-              <button
-                className={`py-2 transition-all whitespace-nowrap ${
-                  activeTab === "Accessories" ? "text-red-600 font-medium" : ""
-                }`}
-                onClick={() => handleTabClick("Accessories")}
-              >
-                ACCESSORIES
-              </button>
-              <a
-                className="py-2 md:block hidden px-6 text-sm text-black text-center bg-transparent border border-black rounded-xl whitespace-nowrap"
-                href="/book-a-test-drive/index.html"
-              >
-                Book a Test Drive
-              </a>
+            </div>
+
+            {activeTabGallery === "Interior" && (
+              <div className="mb-10 m-auto mt-10">
+                <div className="grid grid-cols-6">
+                  <img src={interior1} alt="interior 1" className="w-full col-span-4" />
+                  <img src={interior2} alt="interior 2" className="w-full h-full col-span-2 object-cover" />
+                </div>
+                <div className="grid grid-cols-6">
+                  <img src={interior3} alt="interior 3" className="w-full h-full object-cover col-span-2" />
+                  <img src={interior4} alt="interior 4" className="w-full col-span-4" />
+                </div>
+                <div className="grid grid-cols-6">
+                  <img src={interior5} alt="interior 5" className="w-full col-span-4" />
+                  <img src={interior6} alt="interior 6" className="w-full h-full col-span-2 object-cover" />
+                </div>
+              </div>
+            )}
+
+            {activeTabGallery === "Exterior" && (
+              <div className="mb-10 m-auto mt-10">
+                <div className="grid grid-cols-6">
+                  <img src={exterior1} alt="exterior 1" className="w-full col-span-4" />
+                  <img src={exterior2} alt="exterior 2" className="w-full h-full col-span-2 object-cover" />
+                </div>
+                <div className="grid grid-cols-6">
+                  <img src={exterior3} alt="exterior 3" className="w-full h-full object-cover col-span-2" />
+                  <img src={exterior4} alt="exterior 4" className="w-full col-span-4" />
+                </div>
+                <div className="grid grid-cols-6">
+                  <img src={exterior5} alt="exterior 5" className="w-full col-span-4" />
+                  <img src={exterior6} alt="exterior 6" className="w-full h-full col-span-2 object-cover" />
+                </div>
+              </div>
+            )}
+
+            {activeTabGallery === "Feature" && (
+              <div className="mb-10 m-auto mt-10">
+                <video controls autoPlay src={BJ40Video}></video>
+              </div>
+            )}
+          </div>
+
+          {/* ================= ACCESSORIES ================= */}
+          <div className="py-16 bg-neutral-200">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-center text-4xl font-bold mb-12">ACCESSORIES</h2>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {accessories.map((accessory) => {
+                  const images = [accessory.image, accessory.installedImage];
+                  const currentSlide = activeSlides[accessory.id];
+
+                  return (
+                    <div
+                      key={accessory.id}
+                      className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
+                    >
+                      <div className="relative overflow-hidden bg-gray-50 h-64">
+                        <div
+                          className="relative h-full flex items-center justify-center p-4 cursor-pointer"
+                          onClick={() => openPreview(accessory.id, currentSlide)}
+                        >
+                          <img
+                            src={images[currentSlide]}
+                            alt={`${accessory.model} ${accessory.title}`}
+                            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                        <div className="absolute top-4 left-4 z-10">
+                          <span className="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            {accessory.model}
+                          </span>
+                        </div>
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+                          {images.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleSlideChange(accessory.id, index);
+                              }}
+                              className={`w-2 h-2 rounded-full transition-all ${
+                                currentSlide === index
+                                  ? "bg-red-600 w-6"
+                                  : "bg-gray-300 hover:bg-gray-400"
+                              }`}
+                              aria-label={`View image ${index + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="p-5">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                          {accessory.title}
+                        </h3>
+                        <p className="text-gray-600 font-medium mb-4">
+                          {accessory.price}
+                        </p>
+                        <a
+                          href="/buy-accessories/index.html"
+                          className="block w-full py-2 px-4 text-sm text-center text-black bg-transparent border border-black rounded-lg hover:bg-black hover:text-white transition-colors"
+                        >
+                          Buy Now
+                        </a>
+                        <p className="text-xs text-gray-500 mt-2">*Gambar hanya ilustrasi.</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* ================= CTA ================= */}
+          <div className="flex gap-4 py-16 justify-center items-center bg-black">
+            <a
+              className="py-3 px-8 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-colors"
+              href="/book-a-test-drive/index.html?model=bj30"
+            >
+              BOOK A TEST DRIVE
+            </a>
+            <a
+              className="py-3 px-6 bg-white rounded-xl text-black hover:bg-neutral-200 transition-colors"
+              href="/brochure-bj30.pdf"
+            >
+              DOWNLOAD BROCHURE
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Preview Modal */}
+      {previewModal.isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+          onClick={closePreview}
+        >
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            <button
+              onClick={closePreview}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10 text-4xl"
+            >
+              ×
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigatePreview("prev");
+              }}
+              className="absolute left-4 text-white hover:text-gray-300 transition-colors z-10 text-6xl"
+            >
+              ‹
+            </button>
+            <div
+              className="max-w-5xl max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={
+                  accessories.find((a) => a.id === previewModal.accessoryId)
+                    ? [
+                        accessories.find((a) => a.id === previewModal.accessoryId).image,
+                        accessories.find((a) => a.id === previewModal.accessoryId).installedImage,
+                      ][previewModal.imageIndex]
+                    : ""
+                }
+                alt="Preview"
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigatePreview("next");
+              }}
+              className="absolute right-4 text-white hover:text-gray-300 transition-colors z-10 text-6xl"
+            >
+              ›
+            </button>
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
+              {previewModal.imageIndex + 1} / 2
             </div>
           </div>
         </div>
-        <div className="bg-neutral-200">
-          {activeTab === "Overview" && (
-            <div className="md:pt-16 pt-10">
-              {/* Section 1 */}
-              <div className="bg-white">
-                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
-                  <div className="grid md:grid-cols-2 gap-10 items-center">
-                    {/* Text Column */}
-                    <div className="flex flex-col gap-4">
-                      <h1 className="md:text-5xl text-3xl font-bold">
-                        HEART OF A HYBRID
-                      </h1>
-                      <h2 className="text-xl text-neutral-600">
-                        The five-hole daytime running light belt boasts both
-                        technological appeal and practical utility.
-                      </h2>
-                    </div>
-                    {/* Image Column */}
-                    <div>
-                      <img
-                        src={Foto1}
-                        alt="BJ30 Heart of a Hybrid"
-                        className="w-full h-auto object-cover rounded-lg"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Section 2 */}
-              <div className="bg-neutral-50">
-                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
-                  <div className="grid md:grid-cols-2 gap-10 items-center">
-                    {/* Image Column */}
-                    <div>
-                      <img
-                        src={Foto1}
-                        alt="BJ30 Light the Path Ahead"
-                        className="w-full h-auto object-cover rounded-lg"
-                      />
-                    </div>
-                    {/* Text Column */}
-                    <div className="flex flex-col gap-4">
-                      <h1 className="md:text-5xl text-3xl font-bold">
-                        LIGHT THE PATH AHEAD.
-                      </h1>
-                      <h2 className="text-xl text-neutral-600">
-                        ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Section 3 */}
-              <div className="bg-white">
-                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
-                  <div className="grid md:grid-cols-2 gap-10 items-center">
-                    {/* Text Column */}
-                    <div className="flex flex-col gap-4">
-                      <h1 className="md:text-5xl text-3xl font-bold">
-                        RUGGED REAR DESIGN
-                      </h1>
-                      <h2 className="text-xl text-neutral-600">
-                        BOLD FROM BEHIND.
-                      </h2>
-                    </div>
-                    {/* Image Column */}
-                    <div>
-                      <img
-                        src={Foto1}
-                        alt="BJ30 Rugged Rear Design"
-                        className="w-full h-auto object-cover rounded-lg"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* Section 4 */}
-              <div className="bg-neutral-50">
-                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
-                  <div className="grid md:grid-cols-2 gap-10 items-center">
-                    {/* Image Column */}
-                    <div>
-                      <img
-                        src={Foto1}
-                        alt="BJ30 Technology with Thrust"
-                        className="w-full h-auto object-cover rounded-lg"
-                      />
-                    </div>
-                    {/* Text Column */}
-                    <div className="flex flex-col gap-4">
-                      <h1 className="md:text-5xl text-3xl font-bold">
-                        TECHNOLOGY WITH THRUST
-                      </h1>
-                      <h2 className="text-xl text-neutral-600">
-                        COMFORT IN COMMAND
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4 py-10 justify-center items-center bg-black">
-                <a
-                  className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-transparent border border-white rounded-xl whitespace-nowrap"
-                  href="/book-a-test-drive/index.html?model=bj40plus"
-                >
-                  BOOK A TEST DRIVE
-                </a>
-                <a
-                  className="py-2.5 px-4 font-medium text-black text-sm text-center bg-white transition-all hover:bg-neutral-100 rounded-xl whitespace-nowrap"
-                  href="/brochure-bj40.pdf"
-                >
-                  DOWNLOAD BROCHURE
-                </a>
-              </div>
-            </div>
-          )}
-          {activeTab === "Pricing" && (
-            <div className="py-16  md:px-8 px-5 max-w-4xl m-auto overflow-hidden bg-neutral-200 ">
-              <div className="space-y-1 text-center mt-10 ">
-                <div className="flex space-x-3 justify-center">
-                  {colors.map((color) => (
-                    <div
-                      key={color}
-                      className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
-                        selectedColor === color
-                          ? "border-4 outline outline-red-500 border-white transform scale-110"
-                          : "border-2 border-transparent"
-                      }`}
-                      style={{ backgroundColor: color }}
-                      onClick={() => onColorSelect(color)}
-                    ></div>
-                  ))}
-                </div>
-                <div className="flex flex-col max-w-2xl overflow-hidden justify-center mx-auto">
-                  <div className="flex flex-col justify-center mt-4">
-                    <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
-                      <h2 className="text-center transition-all px-4 py-2">
-                        {colorNamesBJ30[selectedColor]}
-                      </h2>
-                    </div>
-                    <img
-                      src={`/BJ30/${colorToFileBJ30[selectedColor]}`}
-                      alt={`BJ30 ${colorNamesBJ30[selectedColor]}`}
-                      className={`w-full h-auto object-contain transition-opacity duration-100 ${
-                        animating ? "opacity-0" : "opacity-100"
-                      }`}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="text-center mt-10">
-                <p className="text-3xl md:text-4xl font-bold tracking-wide">
-                  Rp 529.000.000,-
-                </p>
-                <p className="text-sm text-neutral-600 mt-1">OTR Jakarta</p>
-              </div>
-              <h2 className=" text-center md:text-3xl text-2xl mt-10">
-                BJ30 Specifications
-              </h2>
-              <div className="overflow-x-auto mt-10">
-                <Accordion
-                  title="Engine & Drivetrain"
-                  content={carSpecifications.engine}
-                />
-                <Accordion
-                  title="Features"
-                  content={carSpecifications.features}
-                />
-                <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed  ">
-                  <p className="md:max-w-2xl ">
-                    DISCLAIMER* <br></br>
-                    Specifications, equipment, colors & materials shown here may
-                    differ from every country. Please check with your local
-                    dealer for the latest information
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-          {activeTab === "Gallery" && (
-            <div className="  md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-4">
-              <div className="flex gap-8 justify-center mt-20">
-                <button
-                  className={`py-2 transition-all ${
-                    activeTabGallery === "Interior"
-                      ? "text-red-600 font-medium border-b border-red-600"
-                      : ""
-                  }`}
-                  onClick={() => handleTabClickGallery("Interior")}
-                >
-                  INTERIOR
-                </button>
-                <button
-                  className={`py-2 transition-all ${
-                    activeTabGallery === "Exterior"
-                      ? "text-red-600 font-medium border-b border-red-600"
-                      : ""
-                  }`}
-                  onClick={() => handleTabClickGallery("Exterior")}
-                >
-                  EXTERIOR
-                </button>
-                <button
-                  className={`py-2 transition-all ${
-                    activeTabGallery === "Feature"
-                      ? "text-red-600 font-medium border-b border-red-600"
-                      : ""
-                  }`}
-                  onClick={() => handleTabClickGallery("Feature")}
-                >
-                  FEATURE
-                </button>
-              </div>
-              {activeTabGallery === "Interior" && (
-                <>
-                  <div className="mb-10 m-auto  mt-10">
-                    <div className=" grid grid-cols-6">
-                      <img
-                        src={interior1}
-                        alt="interior 1"
-                        className="w-full col-span-4"
-                      />
-                      <img
-                        src={interior2}
-                        alt="interior 1"
-                        className="w-full h-full col-span-2 object-cover  "
-                      />
-                    </div>
-                    <div className=" grid grid-cols-6">
-                      <img
-                        src={interior3}
-                        alt="interior 1"
-                        className="w-full h-full object-cover col-span-2"
-                      />
-                      <img
-                        src={interior4}
-                        alt="interior 1"
-                        className="w-full  col-span-4   "
-                      />
-                    </div>
-                    <div className=" grid grid-cols-6">
-                      <img
-                        src={interior5}
-                        alt="interior 1"
-                        className="w-full col-span-4"
-                      />
-                      <img
-                        src={interior6}
-                        alt="interior 1"
-                        className="w-full h-full col-span-2 object-cover  "
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
-              {activeTabGallery === "Exterior" && (
-                <>
-                  <div className="mb-10 m-auto  mt-10">
-                    <div className=" grid grid-cols-6">
-                      <img
-                        src={exterior1}
-                        alt="exterior 1"
-                        className="w-full col-span-4"
-                      />
-                      <img
-                        src={exterior2}
-                        alt="exterior 2"
-                        className="w-full h-full col-span-2 object-cover  "
-                      />
-                    </div>
-                    <div className=" grid grid-cols-6">
-                      <img
-                        src={exterior3}
-                        alt="exterior 3"
-                        className="w-full h-full object-cover col-span-2"
-                      />
-                      <img
-                        src={exterior4}
-                        alt="exterior 4"
-                        className="w-full  col-span-4   "
-                      />
-                    </div>
-                    <div className=" grid grid-cols-6">
-                      <img
-                        src={exterior5}
-                        alt="exterior 1"
-                        className="w-full col-span-4"
-                      />
-                      <img
-                        src={exterior6}
-                        alt="exterior 2"
-                        className="w-full h-full col-span-2 object-cover  "
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
-              {activeTabGallery === "Feature" && (
-                <>
-                  <div className="mb-10 m-auto  mt-10">
-                    <video controls autoPlay src={BJ40Video}></video>
-                  </div>
-                </>
-              )}
-            </div>
-          )}
-          {activeTab === "Accessories" && (
-            <div className="bg-neutral-200 py-16">
-              <AccessoriesTab />
-            </div>
-          )}
-        </div>
-      </div>
+      )}
 
       <Footer />
     </>

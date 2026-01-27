@@ -97,7 +97,7 @@ export default function MobileMenu() {
 
   return (
     <>
-      <div className="w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto bg-white">
+      <div className="w-full space-y-4 min-h-screen flex flex-col transition-all z-50 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto bg-white">
         {/* Vehicle Accordion */}
         <div className="w-full rounded-md">
           <div

@@ -4,7 +4,7 @@ import MobileMenu from "./MobileMenu";
 import BigMenu from "./BigMenu";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-export default function Header() {
+export default function Header({ alwaysWhite = false }) {
   const [isBigMenuOpen, setIsBigMenuOpen] = useState(false);
   const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
   const [isPartsAccessoriesOpen, setIsPartsAccessoriesOpen] = useState(false);
@@ -114,12 +114,12 @@ export default function Header() {
       <nav
         className={`fixed top-0 left-0 right-0 items-center py-4 z-50 transition-all duration-300 ${
           isVisible ? "translate-y-0" : "-translate-y-full"
-        } ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+        } ${alwaysWhite || isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
       >
         <div className="max-w-6xl md:px-6 px-5 m-auto flex justify-between items-center">
           {/* Logo & Desktop Menu */}
           <div
-            className={`hidden md:flex items-center gap-5 ${isScrolled ? "text-black" : "text-white"}`}
+            className={`hidden md:flex items-center gap-5 ${alwaysWhite || isScrolled ? "text-black" : "text-white"}`}
           >
             <a href="/">
               <img className="h-6" src={logo} alt="Logo" />
@@ -274,8 +274,8 @@ export default function Header() {
           {/* CTA Buttons & Language Selector */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              className={`py-2.5 px-4 font-medium text-sm text-center border-2 rounded-xl whitespace-nowrap transition-colors ${
-                isScrolled
+              className={`py-2.5 px-4 font-medium text-sm text-center border rounded-xl whitespace-nowrap transition-colors ${
+                alwaysWhite || isScrolled
                   ? "text-black border-black hover:bg-black hover:text-white"
                   : "text-white border-white hover:bg-white hover:text-black"
               }`}
@@ -284,8 +284,8 @@ export default function Header() {
               Book a Test Drive
             </a>
             <a
-              className={`py-2.5 px-4 font-medium text-sm text-center border-2 rounded-xl whitespace-nowrap transition-colors ${
-                isScrolled
+              className={`py-2.5 px-4 font-medium text-sm text-center border rounded-xl whitespace-nowrap transition-colors ${
+                alwaysWhite || isScrolled
                   ? "text-black border-black hover:bg-black hover:text-white"
                   : "text-white border-white hover:bg-white hover:text-black"
               }`}
@@ -295,7 +295,7 @@ export default function Header() {
             </a>
             <button
               className={`flex items-center gap-1 transition-colors ${
-                isScrolled
+                alwaysWhite || isScrolled
                   ? "text-black hover:text-gray-600"
                   : "text-white hover:text-gray-300"
               }`}

@@ -97,9 +97,7 @@ export default function MobileMenu() {
 
   return (
     <>
-      <div
-        className="w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto bg-white"
-      >
+      <div className="w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto bg-white">
         {/* Vehicle Accordion */}
         <div className="w-full rounded-md">
           <div
@@ -310,9 +308,7 @@ export default function MobileMenu() {
 
               {/* Contact Us Sub-section */}
               <div className=" mt-2">
-                <div
-                  className="text-sm font-medium mb-1 text-gray-900"
-                >
+                <div className="text-sm font-medium mb-1 text-gray-900">
                   Contact Us
                 </div>
                 <div className="ml-2 space-y-1">
@@ -350,14 +346,10 @@ export default function MobileMenu() {
           </div>
           {isLanguageOpen && (
             <div className="mt-3 ml-4 space-y-2">
-              <button
-                className="block text-sm font-semibold text-black"
-              >
+              <button className="block text-sm font-semibold text-black">
                 EN (English)
               </button>
-              <button
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
+              <button className="block text-sm hover:text-red-600 text-gray-700">
                 ID (Indonesia)
               </button>
             </div>

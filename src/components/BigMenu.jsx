@@ -104,11 +104,7 @@ const BigMenu = () => {
 
   return (
     <div
-      className={`border-b fixed top-[72px] left-0 right-0 z-50 w-full shadow-lg ${
-        isArcfox
-          ? "bg-black text-white border-gray-700"
-          : "bg-white border-gray-400"
-      }`}
+      className="border-b fixed top-[72px] left-0 right-0 z-50 w-full shadow-lg bg-white border-gray-400"
     >
       <div className="max-w-6xl md:px-8 px-5 m-auto py-8">
         {/* Series Tabs */}
@@ -117,11 +113,7 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "BJ Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : `${
-                    isArcfox
-                      ? "text-gray-200 hover:text-white"
-                      : "text-gray-700 hover:text-gray-900"
-                  } pb-2`
+                : "text-gray-700 hover:text-gray-900 pb-2"
             }`}
             onClick={() => handleSeriesClick("BJ Series")}
           >
@@ -131,11 +123,7 @@ const BigMenu = () => {
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "X Series"
                 ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : `${
-                    isArcfox
-                      ? "text-gray-200 hover:text-white"
-                      : "text-gray-700 hover:text-gray-900"
-                  } pb-2`
+                : "text-gray-700 hover:text-gray-900 pb-2"
             }`}
             onClick={() => handleSeriesClick("X Series")}
           >
@@ -144,12 +132,8 @@ const BigMenu = () => {
           <button
             className={`font-semibold text-lg whitespace-nowrap ${
               activeSeries === "Arcfox"
-                ? "border-b-2 border-red-500 text-red-500 pb-2"
-                : `${
-                    isArcfox
-                      ? "text-gray-200 hover:text-white"
-                      : "text-gray-700 hover:text-gray-900"
-                  } pb-2`
+                ? "border-b-2 border-black text-black pb-2"
+                : "text-gray-700 hover:text-gray-900 pb-2"
             }`}
             onClick={() => handleSeriesClick("Arcfox")}
           >
@@ -157,10 +141,8 @@ const BigMenu = () => {
             <span
               className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${
                 activeSeries === "Arcfox"
-                  ? "bg-white text-red-600"
-                  : isArcfox
-                    ? "bg-gray-700 text-gray-200"
-                    : "bg-gray-300 text-gray-700"
+                  ? "bg-black text-white"
+                  : "bg-gray-300 text-gray-700"
               }`}
             >
               Coming soon

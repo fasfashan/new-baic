@@ -113,36 +113,45 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {newsData.slice(0, visiblePosts).map((news, index) => (
-              <a
+              <div
                 key={index}
-                href={news.link}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow block"
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
               >
-                {/* News Image */}
+                {/* Featured Image */}
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={news.image}
                     alt={news.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
-                  {/* Date Badge */}
-                  <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded">
-                    <p className="text-red-600 text-xs font-semibold">
-                      {news.date}
-                    </p>
-                  </div>
                 </div>
 
-                {/* News Content */}
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 hover:text-red-600 transition-colors">
+                {/* Content Below Image */}
+                <div className="p-6">
+                  {/* Date */}
+                  <p className="text-gray-500 text-sm mb-3">
+                    {news.date}
+                  </p>
+                  
+                  {/* Title */}
+                  <h3 className="text-gray-900 text-lg font-bold mb-3 line-clamp-2">
                     {news.title}
                   </h3>
-                  <p className="text-gray-600 text-sm line-clamp-3 text-justify">
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                     {news.description}
                   </p>
+                  
+                  {/* Read More Button */}
+                  <a
+                    href={news.link}
+                    className="inline-block px-6 py-2 border border-gray-300 text-gray-900 text-sm font-semibold rounded hover:bg-gray-50 transition-colors"
+                  >
+                    Read More
+                  </a>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
 

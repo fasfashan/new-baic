@@ -129,20 +129,18 @@ function App() {
                 {/* Content Below Image */}
                 <div className="p-6">
                   {/* Date */}
-                  <p className="text-gray-500 text-sm mb-3">
-                    {news.date}
-                  </p>
-                  
+                  <p className="text-gray-500 text-sm mb-3">{news.date}</p>
+
                   {/* Title */}
                   <h3 className="text-gray-900 text-lg font-bold mb-3 line-clamp-2">
                     {news.title}
                   </h3>
-                  
+
                   {/* Description */}
                   <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                     {news.description}
                   </p>
-                  
+
                   {/* Read More Button */}
                   <a
                     href={news.link}

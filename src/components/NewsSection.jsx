@@ -13,7 +13,8 @@ export default function NewsSection() {
     {
       id: 2,
       date: "15 September, 2025",
-      title: "BAIC ukir sejarah baru di Indonesia: luncurkan BJ40 Plus made in Indonesia pertama",
+      title:
+        "BAIC ukir sejarah baru di Indonesia: luncurkan BJ40 Plus made in Indonesia pertama",
       description:
         "Indonesia, September 2025 - PT JIO Distribusi Indonesia, BAIC Brand Holder Agent (APM) in Indonesia, proudly announces the launch of the first locally-assembled BJ40 Plus...",
       image: "/placeholder-news.jpg",
@@ -58,20 +59,18 @@ export default function NewsSection() {
               {/* Content Below Image */}
               <div className="p-6">
                 {/* Date */}
-                <p className="text-gray-500 text-sm mb-3">
-                  {article.date}
-                </p>
-                
+                <p className="text-gray-500 text-sm mb-3">{article.date}</p>
+
                 {/* Title */}
                 <h3 className="text-gray-900 text-lg font-bold mb-3 line-clamp-2">
                   {article.title}
                 </h3>
-                
+
                 {/* Description */}
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                   {article.description}
                 </p>
-                
+
                 {/* Read More Button */}
                 <a
                   href={article.link}

@@ -12,6 +12,7 @@ export default function MobileMenu() {
   const [isPartsAccessoriesOpen, setIsPartsAccessoriesOpen] = useState(false);
   const [isDealerOpen, setIsDealerOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
   const isArcfox = activeSeries === "Arcfox";
 
@@ -359,6 +360,40 @@ export default function MobileMenu() {
                   </a>
                 </div>
               </div>
+            </div>
+          )}
+        </div>
+        <hr className={isArcfox ? "border-gray-700" : undefined} />
+
+        {/* Language Selector Accordion */}
+        <div className="w-full rounded-md">
+          <div
+            className="flex justify-between items-center cursor-pointer"
+            onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+          >
+            <span className="text-lg font-medium">LANGUAGE</span>
+            {isLanguageOpen ? (
+              <ChevronUp className="w-6 h-6" />
+            ) : (
+              <ChevronDown className="w-6 h-6" />
+            )}
+          </div>
+          {isLanguageOpen && (
+            <div className="mt-3 ml-4 space-y-2">
+              <button
+                className={`block text-sm font-semibold ${
+                  isArcfox ? "text-white" : "text-black"
+                }`}
+              >
+                EN (English)
+              </button>
+              <button
+                className={`block text-sm hover:text-red-600 ${
+                  isArcfox ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
+                ID (Indonesia)
+              </button>
             </div>
           )}
         </div>

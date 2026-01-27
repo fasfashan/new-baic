@@ -14,6 +14,7 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [closeTimeout, setCloseTimeout] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleVehicleMouseEnter = () => {
     // Clear any existing timeout
@@ -63,14 +64,19 @@ export default function Header() {
     };
   }, [closeTimeout]);
 
-  // Handle scroll behavior - Close menus on scroll
+  // Handle scroll behavior - Show/hide header and change background
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== "undefined") {
         const currentScrollY = window.scrollY;
 
+        // Set scrolled state based on scroll position
+        setIsScrolled(currentScrollY > 50);
+
+        // Show header when scrolling up, hide when scrolling down
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
-          // Scrolling down - close all menus
+          // Scrolling down - hide header and close all menus
+          setIsVisible(false);
           setIsBigMenuOpen(false);
           setIsCustomerCareOpen(false);
           setIsPartsAccessoriesOpen(false);
@@ -80,6 +86,14 @@ export default function Header() {
             clearTimeout(closeTimeout);
             setCloseTimeout(null);
           }
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up - show header
+          setIsVisible(true);
+        }
+
+        // Always show header at the top
+        if (currentScrollY < 50) {
+          setIsVisible(true);
         }
 
         setLastScrollY(currentScrollY);
@@ -97,10 +111,16 @@ export default function Header() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 items-center bg-black py-4 z-50">
+      <nav
+        className={`fixed top-0 left-0 right-0 items-center py-4 z-50 transition-all duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        } ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+      >
         <div className="max-w-6xl md:px-6 px-5 m-auto flex justify-between items-center">
           {/* Logo & Desktop Menu */}
-          <div className="hidden md:flex text-white items-center gap-5">
+          <div
+            className={`hidden md:flex items-center gap-5 ${isScrolled ? "text-black" : "text-white"}`}
+          >
             <a href="/">
               <img className="h-6" src={logo} alt="Logo" />
             </a>
@@ -252,20 +272,34 @@ export default function Header() {
           </div>
 
           {/* CTA Buttons & Language Selector */}
-          <div className="hidden md:flex gap-3 items-center">
+          <div className="hidden md:flex items-center gap-3">
             <a
-              className="py-2.5 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl whitespace-nowrap"
+              className={`py-2.5 px-4 font-medium text-sm text-center border-2 rounded-xl whitespace-nowrap transition-colors ${
+                isScrolled
+                  ? "text-black border-black hover:bg-black hover:text-white"
+                  : "text-white border-white hover:bg-white hover:text-black"
+              }`}
               href="/book-a-test-drive/index.html"
             >
               Book a Test Drive
             </a>
             <a
-              className="py-2.5 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl whitespace-nowrap"
+              className={`py-2.5 px-4 font-medium text-sm text-center border-2 rounded-xl whitespace-nowrap transition-colors ${
+                isScrolled
+                  ? "text-black border-black hover:bg-black hover:text-white"
+                  : "text-white border-white hover:bg-white hover:text-black"
+              }`}
               href="/request-price-list/index.html"
             >
               Request Price List
             </a>
-            <button className="flex items-center gap-1 text-white hover:text-gray-300 transition-colors">
+            <button
+              className={`flex items-center gap-1 transition-colors ${
+                isScrolled
+                  ? "text-black hover:text-gray-600"
+                  : "text-white hover:text-gray-300"
+              }`}
+            >
               EN
               <ChevronDown className="w-4 h-4" />
             </button>
@@ -275,7 +309,7 @@ export default function Header() {
           <div className="block md:hidden">
             <button
               onClick={handleMobileMenuClick}
-              className="text-white transition-all"
+              className="text-black transition-all"
             >
               {isMobileMenuOpen ? (
                 <svg

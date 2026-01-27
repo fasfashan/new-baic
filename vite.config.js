@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { BugPlay } from "lucide-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,6 +33,7 @@ export default defineConfig({
         joinPartner: "join-partner/index.html",
         scheduleYourService: "schedule-your-service/index.html",
         genuineAccessories: "genuine-accessories/index.html",
+        buyAccessories: "buy-accessories/index.html",
       },
     },
   },

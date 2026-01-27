@@ -1,0 +1,794 @@
+import { useState, useEffect, useRef } from "react";
+import Header from "../src/components/Header";
+import Footer from "../src/components/Footer";
+import ButtonChat from "../src/components/ButtonChat";
+import "../src/index.css";
+
+// Province and Cities data structure
+const provinceData = {
+  banten: {
+    name: "Banten",
+    cities: ["Tangerang", "Tangerang Selatan", "Serpong", "Serang", "Cilegon"],
+  },
+  "dki-jakarta": {
+    name: "DKI Jakarta",
+    cities: [
+      "Jakarta Pusat",
+      "Jakarta Utara",
+      "Jakarta Selatan",
+      "Jakarta Timur",
+      "Jakarta Barat",
+      "PIK",
+    ],
+  },
+  "jawa-barat": {
+    name: "Jawa Barat",
+    cities: ["Bandung", "Bekasi", "Bogor", "Depok", "Cimahi"],
+  },
+  "jawa-tengah": {
+    name: "Jawa Tengah",
+    cities: ["Semarang", "Solo", "Yogyakarta", "Magelang"],
+  },
+  "jawa-timur": {
+    name: "Jawa Timur",
+    cities: ["Surabaya", "Malang", "Sidoarjo", "Gresik"],
+  },
+};
+
+// Dealer WhatsApp mapping based on province and city
+const dealerMapping = {
+  // Format: "province-city": "whatsapp_number"
+  "banten-tangerang": "6281234567890",
+  "banten-serpong": "6281234567891",
+  "dki-jakarta-jakarta-pusat": "6281234567892",
+  "dki-jakarta-pik": "6281234567893",
+  "jawa-barat-bandung": "6281234567894",
+  "jawa-barat-bekasi": "6281234567895",
+
+  // Province-level fallbacks
+  banten: "6281234567890",
+  "dki-jakarta": "6281234567892",
+  "jawa-barat": "6281234567894",
+  "jawa-tengah": "6281234567896",
+  "jawa-timur": "6281234567897",
+
+  // Default fallback
+  default: "6281234567800",
+};
+
+function App() {
+  // Get model from URL parameter
+  const getModelFromURL = () => {
+    const params = new URLSearchParams(window.location.search);
+    const model = params.get("model");
+    if (model === "bj30") return "BJ30";
+    if (model === "bj40plus") return "BJ40 PLUS";
+    return "BJ30"; // default
+  };
+
+  // Accessories data based on model
+  const accessoriesData = {
+    BJ30: [
+      {
+        id: 1,
+        code: "OP0117",
+        title: "BJ30 Roof Rack Upper",
+        price: "Rp 9,673,000",
+      },
+      {
+        id: 2,
+        code: "OP0118",
+        title: "BJ30 Luggage Box - Side Net Backpack",
+        price: "Rp 4,890,000",
+      },
+      {
+        id: 3,
+        code: "OP0119",
+        title: "BJ30 Luggage Box - Side Backpack",
+        price: "Rp 4,439,000",
+      },
+      { id: 4, code: "OP0120", title: "BJ30 Ladder", price: "Rp 6,696,000" },
+      { id: 5, code: "OP0121", title: "BJ30 LED Light", price: "Rp 8,276,000" },
+      {
+        id: 6,
+        code: "OP0122",
+        title: "BJ30 Pedal Foot Step",
+        price: "Rp 2,220,000",
+      },
+      {
+        id: 7,
+        code: "OP0123",
+        title: "BJ30 Bumper Front",
+        price: "Rp 14,219,000",
+      },
+      {
+        id: 8,
+        code: "OP0124",
+        title: "BJ30 Electric Foot Step",
+        price: "Rp 11,661,000",
+      },
+      {
+        id: 9,
+        code: "OP0125",
+        title: "BJ30 Bike Bracket type 1",
+        price: "Rp 3,950,000",
+      },
+      {
+        id: 10,
+        code: "OP0126",
+        title: "BJ30 Rear Luggage Box type 2",
+        price: "Rp 6,771,000",
+      },
+      {
+        id: 11,
+        code: "OP0129",
+        title: "BIKE BRACKET BAR",
+        price: "Rp 3,499,000",
+      },
+      {
+        id: 12,
+        code: "OP0127",
+        title: "BJ30 Rear Luggage Box type 1",
+        price: "Rp 10,909,000",
+      },
+      {
+        id: 13,
+        code: "OP0128",
+        title: "BJ30 Bike Bracket type 2",
+        price: "Rp 4,326,000",
+      },
+    ],
+    "BJ40 PLUS": [
+      {
+        id: 14,
+        code: "OP0003",
+        title: "BJ40 Plus Bumper Front Type 2",
+        price: "Rp 11,428,000",
+      },
+      {
+        id: 15,
+        code: "OP0004",
+        title: "BJ40 Plus Bumper Rear Type 2",
+        price: "Rp 11,428,000",
+      },
+      {
+        id: 16,
+        code: "OP0096",
+        title: "BJ40 Plus Bumper Front Type 3",
+        price: "Rp 12,037,000",
+      },
+      {
+        id: 17,
+        code: "OP0097",
+        title: "BJ40 Plus Bumper Rear Type 3",
+        price: "Rp 12,037,000",
+      },
+      {
+        id: 18,
+        code: "OP0005",
+        title: "BJ40 Plus Electric Foot Step",
+        price: "Rp 11,849,000",
+      },
+      {
+        id: 19,
+        code: "OP0081",
+        title: "BJ40 Plus LED Light Bar",
+        price: "Rp 3,198,000",
+      },
+      {
+        id: 20,
+        code: "OP0014",
+        title: "BJ40 Plus Bracket LED Light Bar",
+        price: "Rp 1,880,000",
+      },
+      {
+        id: 21,
+        code: "OP0013",
+        title: "BJ40 Plus Snorkel",
+        price: "Rp 6,857,000",
+      },
+      {
+        id: 22,
+        code: "OP0006",
+        title: "BJ40 Plus Horse Pedal Front Type 1",
+        price: "Rp 1,806,000",
+      },
+      {
+        id: 23,
+        code: "OP0007",
+        title: "BJ40 Plus Horse Pedal Rear Type 1",
+        price: "Rp 1,806,000",
+      },
+      {
+        id: 24,
+        code: "OP0109",
+        title: "BJ40 Plus Horse Pedal Front Type 2",
+        price: "Rp 969,000",
+      },
+      {
+        id: 25,
+        code: "OP0110",
+        title: "BJ40 Plus Horse Pedal Rear Type 2",
+        price: "Rp 969,000",
+      },
+      {
+        id: 26,
+        code: "OP0008",
+        title: "BJ40 Plus Roof Rack Upper",
+        price: "Rp 9,585,000",
+      },
+      {
+        id: 27,
+        code: "OP0009",
+        title: "BJ40 Plus Ladder",
+        price: "Rp 6,857,000",
+      },
+      {
+        id: 28,
+        code: "OP0015",
+        title: "BJ40 Plus Rear Trunk Storage Box",
+        price: "Rp 5,714,000",
+      },
+      {
+        id: 29,
+        code: "OP0017",
+        title: "BJ40 Plus Trailer Towing Ball",
+        price: "Rp 4,570,000",
+      },
+      {
+        id: 30,
+        code: "OP0018",
+        title: "BJ40 Plus Tent side of Car",
+        price: "Rp 11,428,000",
+      },
+      {
+        id: 31,
+        code: "OP0019",
+        title: "BJ40 Plus Tent on the roof",
+        price: "Rp 22,857,000",
+      },
+      {
+        id: 32,
+        code: "OP0020",
+        title: "BJ40 Plus Air Compressor 150Psi",
+        price: "Rp 3,428,000",
+      },
+      {
+        id: 33,
+        code: "OP0021",
+        title: "BJ40 Plus Recovery Board Set ( 2pcs )",
+        price: "Rp 2,857,000",
+      },
+      {
+        id: 34,
+        code: "OP0111",
+        title: "BJ40 Plus Door Sill Plate",
+        price: "Rp 1,400,000",
+      },
+      {
+        id: 35,
+        code: "OP0112",
+        title: "BJ40 Plus Car Mat Set ( 5 Pcs )",
+        price: "Rp 2,500,000",
+      },
+      {
+        id: 36,
+        code: "OP0113",
+        title: "BJ40 Plus Body Cover",
+        price: "Rp 1,200,000",
+      },
+      {
+        id: 37,
+        code: "OP0114",
+        title: "BJ40 Plus Cargo Net",
+        price: "Rp 400,000",
+      },
+    ],
+  };
+
+  const [selectedModel, setSelectedModel] = useState(getModelFromURL());
+  const [selectedAccessory, setSelectedAccessory] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [fullname, setFullname] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [province, setProvince] = useState("");
+  const [city, setCity] = useState("");
+  const [availableCities, setAvailableCities] = useState([]);
+  const [additionalNotes, setAdditionalNotes] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [countdown, setCountdown] = useState(5);
+  const [redirectCancelled, setRedirectCancelled] = useState(false);
+
+  const countdownTimerRef = useRef(null);
+  const redirectTimerRef = useRef(null);
+
+  // Update selected model when URL changes
+  useEffect(() => {
+    setSelectedModel(getModelFromURL());
+  }, []);
+
+  // Update available cities when province changes
+  useEffect(() => {
+    if (province) {
+      setAvailableCities(provinceData[province]?.cities || []);
+      setCity(""); // Reset city when province changes
+    } else {
+      setAvailableCities([]);
+      setCity("");
+    }
+  }, [province]);
+
+  // Reset accessory when model changes
+  useEffect(() => {
+    setSelectedAccessory("");
+  }, [selectedModel]);
+
+  // Cleanup timers on unmount
+  useEffect(() => {
+    return () => {
+      if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
+      if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
+    };
+  }, []);
+
+  // Get dealer WhatsApp number based on location
+  const getDealerWhatsApp = (province, city) => {
+    const provinceKey = province.toLowerCase().replace(/\s+/g, "-");
+    const cityKey = city.toLowerCase().replace(/\s+/g, "-");
+
+    // Try exact match first
+    const exactMatch = `${provinceKey}-${cityKey}`;
+    if (dealerMapping[exactMatch]) {
+      return dealerMapping[exactMatch];
+    }
+
+    // Try province-level fallback
+    if (dealerMapping[provinceKey]) {
+      return dealerMapping[provinceKey];
+    }
+
+    // Use default fallback
+    return dealerMapping["default"];
+  };
+
+  // Build WhatsApp message
+  const buildWhatsAppMessage = () => {
+    const provinceName = provinceData[province]?.name || province;
+    const accessoryDetails = accessoriesData[selectedModel].find(
+      (acc) => acc.id === parseInt(selectedAccessory),
+    );
+
+    const message = `Halo, saya ingin membeli aksesori BAIC.
+
+*Detail Pembelian:*
+- Model Mobil: ${selectedModel}
+- Aksesori: ${accessoryDetails?.title} (${accessoryDetails?.code})
+- Harga: ${accessoryDetails?.price}
+- Jumlah: ${quantity}
+- Nama: ${fullname}
+- No. HP: ${phoneNumber}
+- Email: ${email}
+- Provinsi: ${provinceName}
+- Kota: ${city}${additionalNotes ? `\n- Catatan: ${additionalNotes}` : ""}
+
+Mohon informasi lebih lanjut. Terima kasih!`;
+
+    return encodeURIComponent(message);
+  };
+
+  // Mock API call to save lead
+  const saveLead = async (leadData) => {
+    // Simulate API call
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // Mock success (90% success rate for demo)
+        if (Math.random() > 0.1) {
+          console.log("Lead saved:", leadData);
+          resolve({ success: true, id: Date.now() });
+        } else {
+          reject(new Error("Failed to save lead. Please try again."));
+        }
+      }, 1500);
+    });
+  };
+
+  // Handle redirect to WhatsApp
+  const redirectToWhatsApp = () => {
+    if (redirectCancelled) return;
+
+    const dealerNumber = getDealerWhatsApp(province, city);
+    const message = buildWhatsAppMessage();
+    const whatsappUrl = `https://wa.me/${dealerNumber}?text=${message}`;
+
+    window.location.href = whatsappUrl;
+  };
+
+  // Start countdown and redirect
+  const startRedirectCountdown = () => {
+    setCountdown(5);
+    setRedirectCancelled(false);
+
+    // Countdown timer
+    countdownTimerRef.current = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(countdownTimerRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    // Redirect after 5 seconds
+    redirectTimerRef.current = setTimeout(() => {
+      redirectToWhatsApp();
+    }, 5000);
+  };
+
+  // Cancel redirect
+  const cancelRedirect = () => {
+    setRedirectCancelled(true);
+    if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
+    if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setIsLoading(true);
+
+    const leadData = {
+      model: selectedModel,
+      accessory: selectedAccessory,
+      quantity,
+      fullname,
+      phoneNumber,
+      email,
+      province,
+      city,
+      additionalNotes,
+      submittedAt: new Date().toISOString(),
+    };
+
+    try {
+      // Save lead data
+      await saveLead(leadData);
+
+      // Show success message
+      setShowSuccess(true);
+      setIsLoading(false);
+
+      // Start countdown and redirect
+      startRedirectCountdown();
+    } catch (error) {
+      setIsLoading(false);
+      setErrorMessage(error.message || "An error occurred. Please try again.");
+    }
+  };
+
+  // Form validation
+  const isFormComplete = () => {
+    return (
+      selectedModel !== "" &&
+      selectedAccessory !== "" &&
+      quantity > 0 &&
+      fullname.trim() !== "" &&
+      phoneNumber.trim() !== "" &&
+      email.trim() !== "" &&
+      province !== "" &&
+      city !== ""
+    );
+  };
+
+  return (
+    <>
+      <Header />
+      <ButtonChat />
+
+      {/* Hero Section with Background Image */}
+      <div
+        className="relative min-h-screen bg-cover bg-center flex items-center justify-center py-12 px-4"
+        style={{ backgroundImage: "url('/bg-book-a-test-drive.jpg')" }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 "></div>
+
+        {/* Form Card */}
+        <div className="relative mt-20 z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
+          <h2 className="text-2xl font-bold mb-2 text-gray-800">
+            Buy Accessories
+          </h2>
+          <p className="text-gray-600 text-sm mb-6">
+            Enhance your BAIC vehicle with genuine accessories. Select your
+            model, choose the accessory, and complete your purchase today.
+          </p>
+
+          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+            {/* Select Model */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Select Model
+              </label>
+              <select
+                value={selectedModel}
+                onChange={(e) => setSelectedModel(e.target.value)}
+                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3"
+              >
+                <option value="BJ30">BJ30</option>
+                <option value="BJ40 PLUS">BJ40 PLUS</option>
+              </select>
+            </div>
+
+            {/* Select Accessory */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Select Accessory
+              </label>
+              <select
+                value={selectedAccessory}
+                onChange={(e) => setSelectedAccessory(e.target.value)}
+                className="bg-white border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3"
+              >
+                <option value="" disabled>
+                  Choose Accessory
+                </option>
+                {accessoriesData[selectedModel]?.map((accessory) => (
+                  <option key={accessory.id} value={accessory.id}>
+                    {accessory.title} - {accessory.price}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Quantity */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Quantity
+              </label>
+              <input
+                type="number"
+                min="1"
+                max="10"
+                value={quantity}
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
+                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
+              />
+            </div>
+
+            {/* Province and City */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Province
+                </label>
+                <select
+                  value={province}
+                  onChange={(e) => setProvince(e.target.value)}
+                  className="bg-white border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3"
+                >
+                  <option value="" disabled>
+                    Choose Province
+                  </option>
+                  {Object.keys(provinceData).map((key) => (
+                    <option key={key} value={key}>
+                      {provinceData[key].name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  City
+                </label>
+                <select
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  disabled={!province}
+                  className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${
+                    !province
+                      ? "text-gray-400 cursor-not-allowed"
+                      : "text-gray-500"
+                  }`}
+                >
+                  <option value="" disabled>
+                    {!province ? "Select Province First" : "Select City"}
+                  </option>
+                  {availableCities.map((cityName) => (
+                    <option key={cityName} value={cityName}>
+                      {cityName}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Full Name and Phone Number */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Full Name
+                </label>
+                <input
+                  value={fullname}
+                  onChange={(e) => setFullname(e.target.value)}
+                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
+                  placeholder="e.g. John Doe"
+                  type="text"
+                  name="fullname"
+                  id="fullname"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Phone Number
+                </label>
+                <input
+                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
+                  placeholder="e.g. +62 812 3456 7890"
+                  type="text"
+                  name="phone-number"
+                  id="phone-number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Email
+              </label>
+              <input
+                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
+                placeholder="e.g. johndoe@gmail.com"
+                type="email"
+                name="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+
+            {/* Additional Notes */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Additional Notes (Optional)
+              </label>
+              <textarea
+                value={additionalNotes}
+                onChange={(e) => setAdditionalNotes(e.target.value)}
+                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3 resize-none"
+                placeholder="Any special requests or questions..."
+                rows="3"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className={`p-3 w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all ${
+                !isFormComplete() || isLoading
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
+              }`}
+              disabled={!isFormComplete() || isLoading}
+            >
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin h-5 w-5 mr-3 text-white"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8H4z"
+                    ></path>
+                  </svg>
+                  Loading...
+                </div>
+              ) : (
+                "Order Now"
+              )}
+            </button>
+
+            {/* Error Message */}
+            {errorMessage && (
+              <div
+                className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 text-sm"
+                role="alert"
+              >
+                <div className="flex items-start gap-2">
+                  <svg
+                    className="w-5 h-5 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>{errorMessage}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Success Message with Countdown */}
+            {showSuccess && (
+              <div
+                className="p-4 bg-green-50 border border-green-200 rounded-lg"
+                role="alert"
+                aria-live="polite"
+              >
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-green-800 mb-1">
+                      Thank you! Your order has been submitted.
+                    </h3>
+                    {!redirectCancelled ? (
+                      <p className="text-sm text-green-700">
+                        You will be redirected to our sales team on WhatsApp in{" "}
+                        <span className="font-bold">{countdown}</span>{" "}
+                        seconds...
+                      </p>
+                    ) : (
+                      <p className="text-sm text-green-700">
+                        Redirect cancelled. You can close this page or{" "}
+                        <button
+                          onClick={redirectToWhatsApp}
+                          className="underline font-semibold hover:text-green-900"
+                        >
+                          click here to redirect manually
+                        </button>
+                        .
+                      </p>
+                    )}
+                    {!redirectCancelled && (
+                      <button
+                        onClick={cancelRedirect}
+                        className="mt-2 text-xs text-green-700 underline hover:text-green-900 font-medium"
+                      >
+                        Cancel redirect
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+export default App;

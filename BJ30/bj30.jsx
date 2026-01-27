@@ -67,13 +67,17 @@ const carSpecifications = {
     { title: "Anti-glare inside rear view mirror", content: "√" },
     { title: "Driver's seat - 4-way electric adjustable", content: "√" },
     { title: "Front passengers eat - 6-way manual adjustable", content: "√" },
-    { title: "Rear seat configuration", content: "4WD with Electronic Shifter" },
+    {
+      title: "Rear seat configuration",
+      content: "4WD with Electronic Shifter",
+    },
     { title: "Rear seat recline function", content: "√" },
     { title: "6 speakers", content: "√" },
     { title: "Anti-lock Braking System (ABS)", content: "√" },
     { title: "Electronic Brake force Distribution (ABS)", content: "√" },
     {
-      title: "Electronic stability Programme (ESP), Emergency Brake Assist(EBA)",
+      title:
+        "Electronic stability Programme (ESP), Emergency Brake Assist(EBA)",
       content: "√",
     },
     { title: "Hill Ascent Control(HOC)", content: "√" },
@@ -151,7 +155,7 @@ function App() {
   ];
 
   const [activeSlides, setActiveSlides] = useState(
-    accessories.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {})
+    accessories.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {}),
   );
 
   const [previewModal, setPreviewModal] = useState({
@@ -178,7 +182,7 @@ function App() {
 
   const navigatePreview = (direction) => {
     const currentAccessory = accessories.find(
-      (a) => a.id === previewModal.accessoryId
+      (a) => a.id === previewModal.accessoryId,
     );
     const images = [currentAccessory.image, currentAccessory.installedImage];
     const newIndex =
@@ -224,7 +228,8 @@ function App() {
                           HEART OF A HYBRID
                         </h1>
                         <h2 className="text-xl font-bold">
-                          The five-hole daytime running light belt boasts both technological appeal and practical utility.
+                          The five-hole daytime running light belt boasts both
+                          technological appeal and practical utility.
                         </h2>
                       </>
                     )}
@@ -233,7 +238,9 @@ function App() {
                         <h1 className="md:text-7xl text-4xl font-bold">
                           LIGHT THE PATH AHEAD
                         </h1>
-                        <h2 className="text-xl font-bold">ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE</h2>
+                        <h2 className="text-xl font-bold">
+                          ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
+                        </h2>
                       </>
                     )}
                     {i === 2 && (
@@ -249,7 +256,9 @@ function App() {
                         <h1 className="md:text-7xl text-4xl font-bold">
                           TECHNOLOGY WITH THRUST
                         </h1>
-                        <h2 className="text-xl font-bold">COMFORT IN COMMAND</h2>
+                        <h2 className="text-xl font-bold">
+                          COMFORT IN COMMAND
+                        </h2>
                       </>
                     )}
                   </div>
@@ -311,8 +320,11 @@ function App() {
 
             <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed">
               <p className="md:max-w-2xl">
-                DISCLAIMER*<br />
-                Specifications, equipment, colors & materials shown here may differ from every country. Please check with your local dealer for the latest information
+                DISCLAIMER*
+                <br />
+                Specifications, equipment, colors & materials shown here may
+                differ from every country. Please check with your local dealer
+                for the latest information
               </p>
             </div>
           </div>
@@ -357,16 +369,40 @@ function App() {
             {activeTabGallery === "Interior" && (
               <div className="mb-10 m-auto mt-10">
                 <div className="grid grid-cols-6">
-                  <img src={interior1} alt="interior 1" className="w-full col-span-4" />
-                  <img src={interior2} alt="interior 2" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={interior1}
+                    alt="interior 1"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={interior2}
+                    alt="interior 2"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={interior3} alt="interior 3" className="w-full h-full object-cover col-span-2" />
-                  <img src={interior4} alt="interior 4" className="w-full col-span-4" />
+                  <img
+                    src={interior3}
+                    alt="interior 3"
+                    className="w-full h-full object-cover col-span-2"
+                  />
+                  <img
+                    src={interior4}
+                    alt="interior 4"
+                    className="w-full col-span-4"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={interior5} alt="interior 5" className="w-full col-span-4" />
-                  <img src={interior6} alt="interior 6" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={interior5}
+                    alt="interior 5"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={interior6}
+                    alt="interior 6"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
               </div>
             )}
@@ -374,16 +410,40 @@ function App() {
             {activeTabGallery === "Exterior" && (
               <div className="mb-10 m-auto mt-10">
                 <div className="grid grid-cols-6">
-                  <img src={exterior1} alt="exterior 1" className="w-full col-span-4" />
-                  <img src={exterior2} alt="exterior 2" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={exterior1}
+                    alt="exterior 1"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={exterior2}
+                    alt="exterior 2"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={exterior3} alt="exterior 3" className="w-full h-full object-cover col-span-2" />
-                  <img src={exterior4} alt="exterior 4" className="w-full col-span-4" />
+                  <img
+                    src={exterior3}
+                    alt="exterior 3"
+                    className="w-full h-full object-cover col-span-2"
+                  />
+                  <img
+                    src={exterior4}
+                    alt="exterior 4"
+                    className="w-full col-span-4"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={exterior5} alt="exterior 5" className="w-full col-span-4" />
-                  <img src={exterior6} alt="exterior 6" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={exterior5}
+                    alt="exterior 5"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={exterior6}
+                    alt="exterior 6"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
               </div>
             )}
@@ -398,8 +458,10 @@ function App() {
           {/* ================= ACCESSORIES ================= */}
           <div className="py-16 bg-neutral-200">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-center text-4xl font-bold mb-12">ACCESSORIES</h2>
-              
+              <h2 className="text-center text-4xl font-bold mb-12">
+                ACCESSORIES
+              </h2>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {accessories.map((accessory) => {
                   const images = [accessory.image, accessory.installedImage];
@@ -413,7 +475,9 @@ function App() {
                       <div className="relative overflow-hidden bg-gray-50 h-64">
                         <div
                           className="relative h-full flex items-center justify-center p-4 cursor-pointer"
-                          onClick={() => openPreview(accessory.id, currentSlide)}
+                          onClick={() =>
+                            openPreview(accessory.id, currentSlide)
+                          }
                         >
                           <img
                             src={images[currentSlide]}
@@ -457,7 +521,9 @@ function App() {
                         >
                           Buy Now
                         </a>
-                        <p className="text-xs text-gray-500 mt-2">*Gambar hanya ilustrasi.</p>
+                        <p className="text-xs text-gray-500 mt-2">
+                          *Gambar hanya ilustrasi.
+                        </p>
                       </div>
                     </div>
                   );
@@ -514,8 +580,12 @@ function App() {
                 src={
                   accessories.find((a) => a.id === previewModal.accessoryId)
                     ? [
-                        accessories.find((a) => a.id === previewModal.accessoryId).image,
-                        accessories.find((a) => a.id === previewModal.accessoryId).installedImage,
+                        accessories.find(
+                          (a) => a.id === previewModal.accessoryId,
+                        ).image,
+                        accessories.find(
+                          (a) => a.id === previewModal.accessoryId,
+                        ).installedImage,
                       ][previewModal.imageIndex]
                     : ""
                 }

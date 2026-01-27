@@ -59,7 +59,8 @@ const carSpecifications = {
     { title: "Fuel type", content: "Gasoline - Euro VI" },
     {
       title: "Front/rear supension",
-      content: "MacPherson Independent suspension/multi-link independent suspension",
+      content:
+        "MacPherson Independent suspension/multi-link independent suspension",
     },
     { title: "Front/rear brake", content: "Ventilation Disc / Disc" },
     { title: "Tyres", content: "225/55 R19" },
@@ -69,7 +70,11 @@ const carSpecifications = {
     { title: "Electric Power Steering - EPS (2 mode)", content: "√" },
     { title: "Manual mode shift prompt", content: "√" },
     { title: "Drive mode(ECO/Sport/Comfort/Smart)", content: "√" },
-    { title: "ABS (Antilock Brake System)+ EBD (Electronic Brakeforce Distribution)", content: "√" },
+    {
+      title:
+        "ABS (Antilock Brake System)+ EBD (Electronic Brakeforce Distribution)",
+      content: "√",
+    },
     { title: "Emergency Braking Assist, EBA", content: "√" },
     { title: "Electronic Parking Brake, EPB", content: "√" },
     { title: "Auto Hold", content: "√" },
@@ -83,16 +88,25 @@ const carSpecifications = {
     { title: "Warning of tired driving (symbol + sound)", content: "√" },
     { title: "Engine immobilizer", content: "√" },
     { title: "Door mirror with electric adjustment", content: "√" },
-    { title: "Door mirror with electric fold and auto fold when lock", content: "√" },
+    {
+      title: "Door mirror with electric fold and auto fold when lock",
+      content: "√",
+    },
     { title: "Panoramic sunroof", content: "√" },
     { title: "Hidden door handle", content: "√" },
     { title: "Rain sensor wiper", content: "√" },
     { title: "Power tailgate with smart anti-pinch", content: "√" },
     { title: "12V charging port & Trunk", content: "√" },
     { title: "Steering wheel off-hand sensing", content: "√" },
-    { title: "Multi-function steering wheel with 4-way adjustment", content: "√" },
+    {
+      title: "Multi-function steering wheel with 4-way adjustment",
+      content: "√",
+    },
     { title: "Driver seat memory", content: "√" },
-    { title: "Driving seat & Passenger seat 6-way electric adjustment", content: "√" },
+    {
+      title: "Driving seat & Passenger seat 6-way electric adjustment",
+      content: "√",
+    },
     { title: "Front seat ventilation", content: "√" },
     { title: "Rear seat angle adjustable", content: "√" },
     { title: "Rear seat 6/4 fold", content: "√" },
@@ -110,7 +124,10 @@ const carSpecifications = {
     { title: "Multi-color interior atmosphere light", content: "√" },
     { title: "Double zone automatic air conditioning", content: "√" },
     { title: "Rear air outlet (blowing surface)", content: "√" },
-    { title: "Pollen filter/PM2.5 air purification, CN95 filter element", content: "√" },
+    {
+      title: "Pollen filter/PM2.5 air purification, CN95 filter element",
+      content: "√",
+    },
   ],
 };
 
@@ -126,11 +143,31 @@ function App() {
   };
 
   const colorToImageMapX55 = {
-    "#464C47": [platinumBlackView1, platinumBlackView2, platinumBlackView3, platinumBlackView4],
-    "#96901D": [yellowBlackView1, yellowBlackView2, yellowBlackView3, yellowBlackView4],
+    "#464C47": [
+      platinumBlackView1,
+      platinumBlackView2,
+      platinumBlackView3,
+      platinumBlackView4,
+    ],
+    "#96901D": [
+      yellowBlackView1,
+      yellowBlackView2,
+      yellowBlackView3,
+      yellowBlackView4,
+    ],
     "#EA3435": [redBlackView1, redBlackView2, redBlackView3, redBlackView4],
-    "#CBD1D4": [crystalBlackView1, crystalBlackView2, crystalBlackView3, crystalBlackView4],
-    "#D1D1D1": [whiteBlackView1, whiteBlackView2, whiteBlackView3, whiteBlackView4],
+    "#CBD1D4": [
+      crystalBlackView1,
+      crystalBlackView2,
+      crystalBlackView3,
+      crystalBlackView4,
+    ],
+    "#D1D1D1": [
+      whiteBlackView1,
+      whiteBlackView2,
+      whiteBlackView3,
+      whiteBlackView4,
+    ],
   };
 
   const [activeTabGallery, setActiveTabGallery] = useState("Interior");
@@ -174,7 +211,7 @@ function App() {
   ];
 
   const [activeSlides, setActiveSlides] = useState(
-    accessories.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {})
+    accessories.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {}),
   );
 
   const [previewModal, setPreviewModal] = useState({
@@ -200,7 +237,9 @@ function App() {
   };
 
   const navigatePreview = (direction) => {
-    const currentAccessory = accessories.find((a) => a.id === previewModal.accessoryId);
+    const currentAccessory = accessories.find(
+      (a) => a.id === previewModal.accessoryId,
+    );
     const images = [currentAccessory.image, currentAccessory.installedImage];
     const newIndex =
       direction === "next"
@@ -253,7 +292,9 @@ function App() {
                         <h1 className="md:text-7xl text-4xl font-bold">
                           SMART TECHNOLOGY
                         </h1>
-                        <h2 className="text-xl font-bold">STANDARD FEATURES INCLUDE:</h2>
+                        <h2 className="text-xl font-bold">
+                          STANDARD FEATURES INCLUDE:
+                        </h2>
                       </>
                     )}
                     {i === 1 && (
@@ -261,7 +302,9 @@ function App() {
                         <h1 className="md:text-7xl text-4xl font-bold">
                           EXCEPTIONAL PERFORMANCE
                         </h1>
-                        <h2 className="text-xl font-bold">ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE</h2>
+                        <h2 className="text-xl font-bold">
+                          ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
+                        </h2>
                       </>
                     )}
                     {i === 2 && (
@@ -269,7 +312,9 @@ function App() {
                         <h1 className="md:text-7xl text-4xl font-bold">
                           REVOLUTIONARY SPORTS STYLING
                         </h1>
-                        <h2 className="text-xl font-bold">BORN WITH EXCELLENT DESIGN</h2>
+                        <h2 className="text-xl font-bold">
+                          BORN WITH EXCELLENT DESIGN
+                        </h2>
                       </>
                     )}
                     {i === 3 && (
@@ -277,7 +322,9 @@ function App() {
                         <h1 className="md:text-7xl text-4xl font-bold">
                           HUMAN-CENTERED COMFORT
                         </h1>
-                        <h2 className="text-xl font-bold">BUILT TOUGH FOR A RELAXED AND THRILLING RIDE</h2>
+                        <h2 className="text-xl font-bold">
+                          BUILT TOUGH FOR A RELAXED AND THRILLING RIDE
+                        </h2>
                       </>
                     )}
                   </div>
@@ -313,14 +360,18 @@ function App() {
               </div>
 
               <div className="border select-none border-neutral-500 w-fit justify-center m-auto flex items-center">
-                <h2 className="text-center px-4 py-2">{colorNamesX55[selectedColor]}</h2>
+                <h2 className="text-center px-4 py-2">
+                  {colorNamesX55[selectedColor]}
+                </h2>
               </div>
 
               <img
                 src={colorToImageMapX55[selectedColor][currentImageIndex]}
                 alt={`X55 II View ${currentImageIndex + 1}`}
                 className={`mx-auto transition-transform duration-100 ${
-                  animating ? "translate-x-full opacity-0" : "translate-x-0 opacity-100"
+                  animating
+                    ? "translate-x-full opacity-0"
+                    : "translate-x-0 opacity-100"
                 }`}
               />
 
@@ -330,7 +381,9 @@ function App() {
                     key={index}
                     onClick={() => handleImageSelect(index)}
                     className={`border ${
-                      currentImageIndex === index ? "border-red-500" : "opacity-50"
+                      currentImageIndex === index
+                        ? "border-red-500"
+                        : "opacity-50"
                     }`}
                   >
                     <img src={imageSrc} className="w-24" alt="" />
@@ -343,13 +396,19 @@ function App() {
               X55 II Specifications
             </h2>
 
-            <Accordion title="Model/Configuration | Luxury" content={carSpecifications.model} />
+            <Accordion
+              title="Model/Configuration | Luxury"
+              content={carSpecifications.model}
+            />
             <Accordion title="Features" content={carSpecifications.features} />
 
             <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed">
               <p className="md:max-w-2xl">
-                DISCLAIMER*<br />
-                Specifications, equipment, colors & materials shown here may differ from every country. Please check with your local dealer for the latest information
+                DISCLAIMER*
+                <br />
+                Specifications, equipment, colors & materials shown here may
+                differ from every country. Please check with your local dealer
+                for the latest information
               </p>
             </div>
           </div>
@@ -394,16 +453,40 @@ function App() {
             {activeTabGallery === "Interior" && (
               <div className="mb-10 m-auto mt-10">
                 <div className="grid grid-cols-6">
-                  <img src={interior1} alt="interior 1" className="w-full col-span-4" />
-                  <img src={interior2} alt="interior 2" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={interior1}
+                    alt="interior 1"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={interior2}
+                    alt="interior 2"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={interior3} alt="interior 3" className="w-full h-full object-cover col-span-2" />
-                  <img src={interior4} alt="interior 4" className="w-full col-span-4" />
+                  <img
+                    src={interior3}
+                    alt="interior 3"
+                    className="w-full h-full object-cover col-span-2"
+                  />
+                  <img
+                    src={interior4}
+                    alt="interior 4"
+                    className="w-full col-span-4"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={interior5} alt="interior 5" className="w-full col-span-4" />
-                  <img src={interior6} alt="interior 6" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={interior5}
+                    alt="interior 5"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={interior6}
+                    alt="interior 6"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
               </div>
             )}
@@ -411,16 +494,40 @@ function App() {
             {activeTabGallery === "Exterior" && (
               <div className="mb-10 m-auto mt-10">
                 <div className="grid grid-cols-6">
-                  <img src={exterior1} alt="exterior 1" className="w-full col-span-4" />
-                  <img src={exterior2} alt="exterior 2" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={exterior1}
+                    alt="exterior 1"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={exterior2}
+                    alt="exterior 2"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={exterior3} alt="exterior 3" className="w-full h-full object-cover col-span-2" />
-                  <img src={exterior4} alt="exterior 4" className="w-full col-span-4" />
+                  <img
+                    src={exterior3}
+                    alt="exterior 3"
+                    className="w-full h-full object-cover col-span-2"
+                  />
+                  <img
+                    src={exterior4}
+                    alt="exterior 4"
+                    className="w-full col-span-4"
+                  />
                 </div>
                 <div className="grid grid-cols-6">
-                  <img src={exterior5} alt="exterior 5" className="w-full col-span-4" />
-                  <img src={exterior6} alt="exterior 6" className="w-full h-full col-span-2 object-cover" />
+                  <img
+                    src={exterior5}
+                    alt="exterior 5"
+                    className="w-full col-span-4"
+                  />
+                  <img
+                    src={exterior6}
+                    alt="exterior 6"
+                    className="w-full h-full col-span-2 object-cover"
+                  />
                 </div>
               </div>
             )}
@@ -435,8 +542,10 @@ function App() {
           {/* ================= ACCESSORIES ================= */}
           <div className="py-16 bg-neutral-200">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-center text-4xl font-bold mb-12">ACCESSORIES</h2>
-              
+              <h2 className="text-center text-4xl font-bold mb-12">
+                ACCESSORIES
+              </h2>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {accessories.map((accessory) => {
                   const images = [accessory.image, accessory.installedImage];
@@ -450,7 +559,9 @@ function App() {
                       <div className="relative overflow-hidden bg-gray-50 h-64">
                         <div
                           className="relative h-full flex items-center justify-center p-4 cursor-pointer"
-                          onClick={() => openPreview(accessory.id, currentSlide)}
+                          onClick={() =>
+                            openPreview(accessory.id, currentSlide)
+                          }
                         >
                           <img
                             src={images[currentSlide]}
@@ -494,7 +605,9 @@ function App() {
                         >
                           Buy Now
                         </a>
-                        <p className="text-xs text-gray-500 mt-2">*Gambar hanya ilustrasi.</p>
+                        <p className="text-xs text-gray-500 mt-2">
+                          *Gambar hanya ilustrasi.
+                        </p>
                       </div>
                     </div>
                   );
@@ -551,8 +664,12 @@ function App() {
                 src={
                   accessories.find((a) => a.id === previewModal.accessoryId)
                     ? [
-                        accessories.find((a) => a.id === previewModal.accessoryId).image,
-                        accessories.find((a) => a.id === previewModal.accessoryId).installedImage,
+                        accessories.find(
+                          (a) => a.id === previewModal.accessoryId,
+                        ).image,
+                        accessories.find(
+                          (a) => a.id === previewModal.accessoryId,
+                        ).installedImage,
                       ][previewModal.imageIndex]
                     : ""
                 }

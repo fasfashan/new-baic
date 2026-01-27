@@ -8,8 +8,8 @@ const AccessoriesSection = () => {
       model: "BJ30",
       title: "BJ30 Roof Rack Upper",
       price: "Rp 9,673,000",
-      image: "/BJ30 Roof Rack Upper.png",
-      installedImage: "/BJ30 Roof Rack Upper-Installed.jpg",
+      image: "/BJ30 Accessories - Roof Rack Upper.png",
+      installedImage: "/BJ30 Accessories - Roof Rack Upper.webp",
       link: "/contact/index.html",
     },
     {

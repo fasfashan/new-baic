@@ -698,7 +698,8 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                       Terima kasih! Formulir Anda telah berhasil dikirim.
                     </h3>
                     <p className="text-sm text-green-700">
-                      Tim kami akan segera menghubungi Anda untuk proses selanjutnya.
+                      Tim kami akan segera menghubungi Anda untuk proses
+                      selanjutnya.
                     </p>
                   </div>
                 </div>

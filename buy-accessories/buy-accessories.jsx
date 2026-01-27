@@ -299,11 +299,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [countdown, setCountdown] = useState(5);
-  const [redirectCancelled, setRedirectCancelled] = useState(false);
-
-  const countdownTimerRef = useRef(null);
-  const redirectTimerRef = useRef(null);
 
   // Update selected model when URL changes
   useEffect(() => {
@@ -325,14 +320,6 @@ function App() {
   useEffect(() => {
     setSelectedAccessory("");
   }, [selectedModel]);
-
-  // Cleanup timers on unmount
-  useEffect(() => {
-    return () => {
-      if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
-      if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
-    };
-  }, []);
 
   // Get dealer WhatsApp number based on location
   const getDealerWhatsApp = (province, city) => {
@@ -395,46 +382,6 @@ Mohon informasi lebih lanjut. Terima kasih!`;
     });
   };
 
-  // Handle redirect to WhatsApp
-  const redirectToWhatsApp = () => {
-    if (redirectCancelled) return;
-
-    const dealerNumber = getDealerWhatsApp(province, city);
-    const message = buildWhatsAppMessage();
-    const whatsappUrl = `https://wa.me/${dealerNumber}?text=${message}`;
-
-    window.location.href = whatsappUrl;
-  };
-
-  // Start countdown and redirect
-  const startRedirectCountdown = () => {
-    setCountdown(5);
-    setRedirectCancelled(false);
-
-    // Countdown timer
-    countdownTimerRef.current = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(countdownTimerRef.current);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    // Redirect after 5 seconds
-    redirectTimerRef.current = setTimeout(() => {
-      redirectToWhatsApp();
-    }, 5000);
-  };
-
-  // Cancel redirect
-  const cancelRedirect = () => {
-    setRedirectCancelled(true);
-    if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
-    if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
-  };
-
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -461,9 +408,6 @@ Mohon informasi lebih lanjut. Terima kasih!`;
       // Show success message
       setShowSuccess(true);
       setIsLoading(false);
-
-      // Start countdown and redirect
-      startRedirectCountdown();
     } catch (error) {
       setIsLoading(false);
       setErrorMessage(error.message || "An error occurred. Please try again.");
@@ -728,7 +672,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
               </div>
             )}
 
-            {/* Success Message with Countdown */}
+            {/* Success Message */}
             {showSuccess && (
               <div
                 className="p-4 bg-green-50 border border-green-200 rounded-lg"
@@ -751,34 +695,11 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                   </svg>
                   <div className="flex-1">
                     <h3 className="font-semibold text-green-800 mb-1">
-                      Thank you! Your order has been submitted.
+                      Terima kasih! Formulir Anda telah berhasil dikirim.
                     </h3>
-                    {!redirectCancelled ? (
-                      <p className="text-sm text-green-700">
-                        You will be redirected to our sales team on WhatsApp in{" "}
-                        <span className="font-bold">{countdown}</span>{" "}
-                        seconds...
-                      </p>
-                    ) : (
-                      <p className="text-sm text-green-700">
-                        Redirect cancelled. You can close this page or{" "}
-                        <button
-                          onClick={redirectToWhatsApp}
-                          className="underline font-semibold hover:text-green-900"
-                        >
-                          click here to redirect manually
-                        </button>
-                        .
-                      </p>
-                    )}
-                    {!redirectCancelled && (
-                      <button
-                        onClick={cancelRedirect}
-                        className="mt-2 text-xs text-green-700 underline hover:text-green-900 font-medium"
-                      >
-                        Cancel redirect
-                      </button>
-                    )}
+                    <p className="text-sm text-green-700">
+                      Tim kami akan segera menghubungi Anda untuk proses selanjutnya.
+                    </p>
                   </div>
                 </div>
               </div>

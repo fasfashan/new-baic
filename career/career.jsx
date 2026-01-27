@@ -54,7 +54,7 @@ function Career() {
 
       {/* Hero Section */}
       <div
-        className="relative mt-10 min-h-screen bg-cover bg-center flex items-center justify-center"
+        className="relative  min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage: "url('/bg-book-a-test-drive.jpg')",
         }}

@@ -104,7 +104,7 @@ const BigMenu = () => {
 
   return (
     <div
-      className={`border-b fixed top-[72px] left-0 right-0 z-40 w-full shadow-lg ${
+      className={`border-b fixed top-[72px] left-0 right-0 z-50 w-full shadow-lg ${
         isArcfox
           ? "bg-black text-white border-gray-700"
           : "bg-white border-gray-400"

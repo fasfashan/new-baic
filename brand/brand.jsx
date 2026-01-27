@@ -12,7 +12,7 @@ const timelineData = [
         date: "1958",
         title: "Inception",
         description:
-          "BAIC independently developed its first Chinese sedan 'Jinggangshan'",
+          "BAIC independently develops China's first sedan 'Jinggangshan'",
         side: "left",
       },
     ],
@@ -24,7 +24,7 @@ const timelineData = [
         date: "1966",
         title: "First Production",
         description:
-          "The BJ212 light off-road vehicle officially started mass production",
+          "The BJ212 China's first off-road vehicle is officially placed into production. The BJ130 successfully passes the trial production.",
         side: "right",
       },
     ],
@@ -34,9 +34,9 @@ const timelineData = [
     items: [
       {
         date: "1983",
-        title: "Partnership",
+        title: "First Automotive Joint Venture",
         description:
-          "Formed Beijing Jeep Automobile Corporation, partnering with American Motors Corporation",
+          "Beijing Jeep Corporation is established, China's first automotive JV.",
         side: "left",
       },
     ],
@@ -46,9 +46,8 @@ const timelineData = [
     items: [
       {
         date: "1996",
-        title: "Joint Venture",
-        description:
-          "Beijing Benz-DaimlerChrysler Automobile Co., Ltd. with Hyundai Motor",
+        title: "Foton Motor Establishment",
+        description: "Foton Motor Co., Ltd. is established.",
         side: "right",
       },
     ],
@@ -58,15 +57,16 @@ const timelineData = [
     items: [
       {
         date: "2002",
-        title: "Modern Era",
+        title: "Beijing Hyundai",
         description:
-          "Beijing Hyundai Motor Company Co., Ltd. with Hyundai Motor",
+          "Beijing Hyundai Motor Co., Ltd. is officially established with Hyundai Motor.",
         side: "left",
       },
       {
-        date: "2005",
-        title: "Partnership",
-        description: "Cooperation with Mercedes-Benz",
+        date: "2003",
+        title: "Beijing Benz",
+        description:
+          "Beijing Benz Automotive Co., Ltd. is officially established with DaimlerChrysler.",
         side: "right",
       },
     ],
@@ -76,17 +76,10 @@ const timelineData = [
     items: [
       {
         date: "2009",
-        title: "Innovation",
+        title: "Saab Acquisition",
         description:
-          "Acquired 100% stake in Saab intellectual property and production licenses",
+          "Acquires Saab intellectual property rights and annual sales revenue exceeds 100 billion yuan.",
         side: "left",
-      },
-      {
-        date: "2011",
-        title: "Milestone",
-        description:
-          "Acquired Saab's intellectual property license and the Phoenix platform awarded 100 billion yuan",
-        side: "right",
       },
     ],
   },
@@ -95,22 +88,24 @@ const timelineData = [
     items: [
       {
         date: "2013",
-        title: "BAIC International",
-        description: "BAIC Intl. was officially established",
-        side: "left",
-      },
-      {
-        date: "2016",
-        title: "Global Expansion",
+        title: "BAIC International & Fortune 500",
         description:
-          "BAIC officially launched sales in the Middle East, Latin America through Egyptian branch offices",
+          "BAIC INTL is officially established. BAIC Group ranked Fortune Global 500.",
         side: "right",
       },
       {
-        date: "2017",
-        title: "New Manufacturing",
-        description: "New off-road vehicle factory established in China",
+        date: "2016",
+        title: "Fujian Benz Acquisition",
+        description:
+          "BAIC Motor officially acquires 35% shares of Fujian Benz.",
         side: "left",
+      },
+      {
+        date: "2017",
+        title: "Presidential Parade Car",
+        description:
+          "BJ80 off-road vehicle serves as the parade inspection car for the Chinese president.",
+        side: "right",
       },
     ],
   },
@@ -119,9 +114,16 @@ const timelineData = [
     items: [
       {
         date: "2018",
-        title: "Technology",
+        title: "MAGNA Joint Venture",
         description:
-          "Establish a joint venture with MAGNA and build up a R&D HUB and manufacturing",
+          "Establish a joint venture with MAGNA. Build a high-end BEV R&D and manufacturing base. Ranked 124th in the Fortune Global 500.",
+        side: "left",
+      },
+      {
+        date: "2019",
+        title: "ARCFOX Debut",
+        description:
+          "High-end new energy brand ARCFOX of BAIC makes debut at Geneva Motor Show.",
         side: "right",
       },
     ],
@@ -130,18 +132,11 @@ const timelineData = [
     period: "2021 - Present",
     items: [
       {
-        date: "2021",
-        title: "Market Leader",
+        date: "2025",
+        title: "Fortune Global 500",
         description:
-          "BJ40 awarded the National Off-Road Vehicle of the Year award. BAIC was awarded Top 10 brand for the future",
+          "Listed in Fortune Global 500 for thirteen consecutive years.",
         side: "left",
-      },
-      {
-        date: "2023",
-        title: "Global Reach",
-        description:
-          "Reached 100,000 units exported overseas. Listed in Fortune Global 500",
-        side: "right",
       },
     ],
   },
@@ -155,7 +150,7 @@ function App() {
 
       {/* Hero Section */}
       <div
-        className="relative mt-10 min-h-screen bg-cover bg-center flex items-center justify-center"
+        className="relative  min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage: "url('/bg-book-a-test-drive.jpg')",
         }}
@@ -173,33 +168,32 @@ function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
-                65+
+                9
               </div>
-              <p className="text-gray-600">Years of Excellence</p>
+              <p className="text-gray-600">Global KD Factories</p>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
-                162
+                90+
               </div>
-              <p className="text-gray-600">Fortune 500 Rank</p>
+              <p className="text-gray-600">Countries and Areas</p>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
-                100K+
+                290
               </div>
-              <p className="text-gray-600">Units Exported</p>
+              <p className="text-gray-600">Sales Networks</p>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
-                Global
+                49+
               </div>
-              <p className="text-gray-600">Market Presence</p>
+              <p className="text-gray-600">Deeply Layout of ARCFOX</p>
             </div>
           </div>
         </div>
       </div>
 
-      <CtaSection />
       <Footer />
     </>
   );

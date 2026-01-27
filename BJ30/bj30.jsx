@@ -4,7 +4,7 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import AccessoriesTab from "../src/components/AccessoriesTab";
 import "../src/index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BJ30Logo from "../src/assets/BJ30-logo.png";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
 import Foto1 from "../src/assets/BJ30-single-produk-1.jpg";
@@ -131,6 +131,9 @@ function App() {
   };
 
   const [activeTab, setActiveTab] = useState("Overview");
+  const [isTabsVisible, setIsTabsVisible] = useState(true);
+  const [isTabsScrolled, setIsTabsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -154,20 +157,60 @@ function App() {
     }
   };
 
+  // Handle tabs visibility on scroll
+  useEffect(() => {
+    const controlTabs = () => {
+      if (typeof window !== "undefined") {
+        const currentScrollY = window.scrollY;
+
+        // Set scrolled state based on scroll position
+        setIsTabsScrolled(currentScrollY > 50);
+
+        // Show tabs when scrolling up, hide when scrolling down
+        if (currentScrollY > lastScrollY && currentScrollY > 150) {
+          // Scrolling down - hide tabs
+          setIsTabsVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up - show tabs
+          setIsTabsVisible(true);
+        }
+
+        // Always show tabs at the top
+        if (currentScrollY < 100) {
+          setIsTabsVisible(true);
+        }
+
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlTabs);
+
+      return () => {
+        window.removeEventListener("scroll", controlTabs);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
     <>
-      <Header />
+      <Header alwaysWhite />
       <ButtonChat />
-      <div className="bg-neutral-400    ">
-        <div className=" py-6 z-10  bg-neutral-100  sticky  top-16 items-center ">
-          <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
+      <div className="bg-neutral-400">
+        <div
+          className={`py-3 z-40 sticky top-[72px] transition-all duration-300 ${
+            isTabsVisible ? "translate-y-0" : "-translate-y-full"
+          } ${isTabsScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+        >
+          <div className="max-w-6xl gap-4 flex items-center justify-between flex-wrap m-auto md:px-8 px-5">
             <img
               width={100}
               className="object-contain"
               src={BJ30Logo}
-              alt="BJ30 Logo"
+              alt="BJ30 PLUS Logo"
             />
-            <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+            <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
               <button
                 className={`py-2 transition-all whitespace-nowrap ${
                   activeTab === "Overview" ? "text-red-600 font-medium" : ""
@@ -201,109 +244,119 @@ function App() {
                 ACCESSORIES
               </button>
               <a
-                className="py-3 md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all border border-white hover:border-none rounded-xl whitespace-nowrap"
-                href="/book-a-test-drive/index.html?model=bj30"
+                className="py-2 md:block hidden px-6 text-sm text-black text-center bg-transparent border border-black rounded-xl whitespace-nowrap"
+                href="/book-a-test-drive/index.html"
               >
-                BOOK A TEST DRIVE
+                Book a Test Drive
               </a>
             </div>
           </div>
         </div>
         <div className="bg-neutral-200">
           {activeTab === "Overview" && (
-            <div className=" md:pt-16 pt-10">
-              <div
-                className="h-full  bg-cover bg-center"
-                style={{ backgroundImage: `url(${Foto1})` }}
-              >
-                <div className="flex max-w-6xl m-auto py-40 items-center  h-full   text-white">
-                  <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
-                      HEART OF A HYBRID
-                    </h1>
-                    <h2 className="text-xl font-bold">
-                      The five-hole daytime running light belt boasts both
-                      technological appeal and practical utility.
-                    </h2>
-                    <p className="font-light">
-                      Distinctive five-lens LED daytime running lights combine
-                      cutting-edge design with real function. More than just
-                      lighting—these lights signal innovation. Precisely
-                      designed to increase visibility, these lights emphasize
-                      the BJ30 Hybrid's bold presence on all terrains, day and
-                      night.
-                    </p>
+            <div className="md:pt-16 pt-10">
+              {/* Section 1 */}
+              <div className="bg-white">
+                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    {/* Text Column */}
+                    <div className="flex flex-col gap-4">
+                      <h1 className="md:text-5xl text-3xl font-bold">
+                        HEART OF A HYBRID
+                      </h1>
+                      <h2 className="text-xl text-neutral-600">
+                        The five-hole daytime running light belt boasts both
+                        technological appeal and practical utility.
+                      </h2>
+                    </div>
+                    {/* Image Column */}
+                    <div>
+                      <img
+                        src={Foto1}
+                        alt="BJ30 Heart of a Hybrid"
+                        className="w-full h-auto object-cover rounded-lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                className=" h-full  bg-cover bg-center"
-                style={{ backgroundImage: `url(${Foto2})` }}
-              >
-                <div className="flex md:justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
-                  <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
-                      LIGHT THE PATH AHEAD.
-                    </h1>
-                    <h2 className="text-xl font-bold">
-                      ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
-                    </h2>
-                    <p className="font-light">
-                      Jelajahi dunia yang belum dijamah dengan kehandalan BJ40
-                      Plus yang tidak perlu dipertanyakan lagi. SUV luar biasa
-                      ini menyediakan tenaga yang melimpah, memungkinkan anda
-                      unuk membuka jalan menuju cakrawala baru.
-                    </p>
+
+              {/* Section 2 */}
+              <div className="bg-neutral-50">
+                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    {/* Image Column */}
+                    <div>
+                      <img
+                        src={Foto1}
+                        alt="BJ30 Light the Path Ahead"
+                        className="w-full h-auto object-cover rounded-lg"
+                      />
+                    </div>
+                    {/* Text Column */}
+                    <div className="flex flex-col gap-4">
+                      <h1 className="md:text-5xl text-3xl font-bold">
+                        LIGHT THE PATH AHEAD.
+                      </h1>
+                      <h2 className="text-xl text-neutral-600">
+                        ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
+                      </h2>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                className=" h-full  bg-cover bg-center"
-                style={{ backgroundImage: `url(${Foto3})` }}
-              >
-                <div className="flex justify-start max-w-6xl m-auto py-40 items-center  h-full   text-white">
-                  <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
-                      RUGGED REAR DESIGN
-                    </h1>
-                    <h2 className="text-xl font-bold">BOLD FROM BEHIND.</h2>
-                    <p className="font-light">
-                      Bold and stylish. The rear appearance of the BJ30 Hybrid
-                      is enhanced by vertical “double-D” style lights that are
-                      not only functional, but also iconic—affirming the
-                      identity of a tough SUV that is ready to attract attention
-                      wherever it goes.
-                    </p>
+
+              {/* Section 3 */}
+              <div className="bg-white">
+                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    {/* Text Column */}
+                    <div className="flex flex-col gap-4">
+                      <h1 className="md:text-5xl text-3xl font-bold">
+                        RUGGED REAR DESIGN
+                      </h1>
+                      <h2 className="text-xl text-neutral-600">
+                        BOLD FROM BEHIND.
+                      </h2>
+                    </div>
+                    {/* Image Column */}
+                    <div>
+                      <img
+                        src={Foto1}
+                        alt="BJ30 Rugged Rear Design"
+                        className="w-full h-auto object-cover rounded-lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                className=" h-full  bg-cover bg-center"
-                style={{ backgroundImage: `url(${Foto4})` }}
-              >
-                <div className="flex md:justify-end max-w-6xl m-auto py-40 items-center  h-full   text-white">
-                  <div className="max-w-2xl px-10  flex flex-col gap-4">
-                    <h1 className="md:text-7xl text-4xl font-bold max-w-lg mb-4">
-                      TECHNOLOGY WITH THRUST
-                    </h1>
-                    <h2 className="text-xl font-bold">COMFORT IN COMMAND</h2>
-                    <p className="font-light">
-                      The fighter jet engine-style design of the electronic
-                      shift lever is more than just stylish—it offers precise
-                      control and a sophisticated feel ready to support any
-                      adventure. Behind the wheel of the BJ30 Hybrid,
-                      cutting-edge technology meets top-class comfort. Luxurious
-                      cabin materials, dynamic ambient lighting and powerful
-                      hybrid performance make every trip more exciting,
-                      comfortable and ready to face the challenges of any
-                      terrain.
-                    </p>
+              {/* Section 4 */}
+              <div className="bg-neutral-50">
+                <div className="max-w-6xl m-auto md:px-8 px-5 py-20">
+                  <div className="grid md:grid-cols-2 gap-10 items-center">
+                    {/* Image Column */}
+                    <div>
+                      <img
+                        src={Foto1}
+                        alt="BJ30 Technology with Thrust"
+                        className="w-full h-auto object-cover rounded-lg"
+                      />
+                    </div>
+                    {/* Text Column */}
+                    <div className="flex flex-col gap-4">
+                      <h1 className="md:text-5xl text-3xl font-bold">
+                        TECHNOLOGY WITH THRUST
+                      </h1>
+                      <h2 className="text-xl text-neutral-600">
+                        COMFORT IN COMMAND
+                      </h2>
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="flex gap-4 py-10 justify-center items-center bg-black">
                 <a
-                  className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all  hover:border-none rounded-xl whitespace-nowrap"
+                  className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-transparent border border-white rounded-xl whitespace-nowrap"
                   href="/book-a-test-drive/index.html?model=bj40plus"
                 >
                   BOOK A TEST DRIVE
@@ -382,32 +435,32 @@ function App() {
           )}
           {activeTab === "Gallery" && (
             <div className="  md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-4">
-              <div className="flex justify-center mt-20 gap-10">
+              <div className="flex gap-8 justify-center mt-20">
                 <button
-                  className={`py-3 whitespace-nowrap border-b-2 transition-all ${
+                  className={`py-2 transition-all ${
                     activeTabGallery === "Interior"
-                      ? "text-red-600 font-medium border-red-600"
-                      : "text-neutral-900 border-transparent"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
                   }`}
                   onClick={() => handleTabClickGallery("Interior")}
                 >
                   INTERIOR
                 </button>
                 <button
-                  className={`py-3 whitespace-nowrap border-b-2 transition-all ${
+                  className={`py-2 transition-all ${
                     activeTabGallery === "Exterior"
-                      ? "text-red-600 font-medium border-red-600"
-                      : "text-neutral-900 border-transparent"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
                   }`}
                   onClick={() => handleTabClickGallery("Exterior")}
                 >
                   EXTERIOR
                 </button>
                 <button
-                  className={`py-3 whitespace-nowrap border-b-2 transition-all ${
+                  className={`py-2 transition-all ${
                     activeTabGallery === "Feature"
-                      ? "text-red-600 font-medium border-red-600"
-                      : "text-neutral-900 border-transparent"
+                      ? "text-red-600 font-medium border-b border-red-600"
+                      : ""
                   }`}
                   onClick={() => handleTabClickGallery("Feature")}
                 >

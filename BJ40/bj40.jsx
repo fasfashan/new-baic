@@ -24,7 +24,7 @@ import midnightBlueView1 from "../src/assets/midnight-blue-view-1.png";
 import midnightBlueView2 from "../src/assets/midnight-blue-view-2.png";
 import midnightBlueView3 from "../src/assets/midnight-blue-view-3.png";
 import midnightBlueView4 from "../src/assets/midnight-blue-view-4.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
 import Foto1 from "../src/assets/BJ40-single-produk-1.jpg";
@@ -171,6 +171,9 @@ function App() {
   };
 
   const [activeTab, setActiveTab] = useState("Overview");
+  const [isTabsVisible, setIsTabsVisible] = useState(true);
+  const [isTabsScrolled, setIsTabsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -203,20 +206,60 @@ function App() {
     }, 100);
   };
 
+  // Handle tabs visibility on scroll
+  useEffect(() => {
+    const controlTabs = () => {
+      if (typeof window !== "undefined") {
+        const currentScrollY = window.scrollY;
+
+        // Set scrolled state based on scroll position
+        setIsTabsScrolled(currentScrollY > 50);
+
+        // Show tabs when scrolling up, hide when scrolling down
+        if (currentScrollY > lastScrollY && currentScrollY > 150) {
+          // Scrolling down - hide tabs
+          setIsTabsVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up - show tabs
+          setIsTabsVisible(true);
+        }
+
+        // Always show tabs at the top
+        if (currentScrollY < 100) {
+          setIsTabsVisible(true);
+        }
+
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlTabs);
+
+      return () => {
+        window.removeEventListener("scroll", controlTabs);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
     <>
-      <Header />
+      <Header alwaysWhite />
       <ButtonChat />
-      <div className="bg-neutral-400    ">
-        <div className=" py-6 z-10  bg-neutral-100  sticky  top-16 items-center ">
-          <div className="max-w-6xl gap-4 flex justify-between flex-wrap m-auto md:px-8 px-5">
+      <div className="bg-neutral-400">
+        <div
+          className={`py-3 z-40 sticky top-[72px] transition-all duration-300 ${
+            isTabsVisible ? "translate-y-0" : "-translate-y-full"
+          } ${isTabsScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+        >
+          <div className="max-w-6xl gap-4 flex items-center justify-between flex-wrap m-auto md:px-8 px-5">
             <img
               width={200}
               className="object-contain"
               src={BJ40Logo}
               alt="BJ40 PLUS Logo"
             />
-            <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+            <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
               <button
                 className={`py-2 transition-all whitespace-nowrap ${
                   activeTab === "Overview" ? "text-red-600 font-medium" : ""
@@ -250,10 +293,10 @@ function App() {
                 ACCESSORIES
               </button>
               <a
-                className="py-3 md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all border border-white hover:border-none rounded-xl whitespace-nowrap"
+                className="py-2 md:block hidden px-6 text-sm text-black text-center bg-transparent border border-black rounded-xl whitespace-nowrap"
                 href="/book-a-test-drive/index.html?model=bj40plus"
               >
-                BOOK A TEST DRIVE
+                Book a Test Drive
               </a>
             </div>
           </div>
@@ -351,7 +394,7 @@ function App() {
               </div>
               <div className="flex gap-4 py-10 justify-center items-center bg-black">
                 <a
-                  className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-red-600 transition-all  hover:border-none rounded-xl whitespace-nowrap"
+                  className="py-3 w-fit md:block hidden px-8 text-sm text-white text-center bg-transparent border border-white rounded-xl whitespace-nowrap"
                   href="/book-a-test-drive/index.html?model=bj40plus"
                 >
                   BOOK A TEST DRIVE
@@ -418,7 +461,7 @@ function App() {
                               alt=""
                             />
                           </button>
-                        )
+                        ),
                       )}
                     </div>
                   </div>

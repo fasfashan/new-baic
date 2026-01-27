@@ -103,9 +103,7 @@ const BigMenu = () => {
   };
 
   return (
-    <div
-      className="border-b fixed top-[72px] left-0 right-0 z-50 w-full shadow-lg bg-white border-gray-400"
-    >
+    <div className="border-b fixed top-[72px] left-0 right-0 z-50 w-full shadow-lg bg-white border-gray-400">
       <div className="max-w-6xl md:px-8 px-5 m-auto py-8">
         {/* Series Tabs */}
         <div className="flex gap-8 mb-6 overflow-x-auto scrollbar-hide">

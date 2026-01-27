@@ -127,11 +127,7 @@ export default function ExploreCar() {
 
   return (
     <div className="App">
-      <div
-        className={`pt-10 md:px-8 px-2 ${
-          isArcfox ? "bg-black/90 text-white" : ""
-        }`}
-      >
+      <div className="pt-10 md:px-8 px-2">
         <h2 className="text-3xl font-bold text-center">EXPLORE YOUR BAIC</h2>
 
         {/* Series Tabs */}
@@ -141,7 +137,7 @@ export default function ExploreCar() {
               className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
                 activeSeries === "BJ Series"
                   ? "border-red-600 text-red-600"
-                  : "border-gray-300 text-gray-700 hover:border-red-600"
+                  : "border-gray-300 text-gray-700 hover:border-gray-400"
               }`}
               onClick={() => handleSeriesClick("BJ Series")}
             >
@@ -151,7 +147,7 @@ export default function ExploreCar() {
               className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
                 activeSeries === "X Series"
                   ? "border-red-600 text-red-600"
-                  : "border-gray-300 text-gray-700 hover:border-red-600"
+                  : "border-gray-300 text-gray-700 hover:border-gray-400"
               }`}
               onClick={() => handleSeriesClick("X Series")}
             >
@@ -160,8 +156,8 @@ export default function ExploreCar() {
             <button
               className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
                 activeSeries === "Arcfox"
-                  ? "border-red-600 text-red-600"
-                  : "border-gray-300 text-gray-700 hover:border-red-600"
+                  ? "border-black text-black"
+                  : "border-gray-300 text-gray-700 hover:border-gray-400"
               }`}
               onClick={() => handleSeriesClick("Arcfox")}
             >
@@ -169,10 +165,8 @@ export default function ExploreCar() {
               <span
                 className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${
                   activeSeries === "Arcfox"
-                    ? "bg-white text-red-600"
-                    : isArcfox
-                      ? "bg-gray-700 text-gray-200"
-                      : "bg-gray-300 text-gray-700"
+                    ? "bg-black text-white"
+                    : "bg-gray-300 text-gray-700"
                 }`}
               >
                 Coming soon

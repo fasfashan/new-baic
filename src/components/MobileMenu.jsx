@@ -98,9 +98,7 @@ export default function MobileMenu() {
   return (
     <>
       <div
-        className={`w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto ${
-          isArcfox ? "bg-black text-white" : "bg-white"
-        }`}
+        className="w-full space-y-4 min-h-screen flex flex-col transition-all z-40 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto bg-white"
       >
         {/* Vehicle Accordion */}
         <div className="w-full rounded-md">
@@ -118,38 +116,32 @@ export default function MobileMenu() {
           {isVehicleOpen && (
             <div className="mt-4 space-y-4">
               {/* Series Tabs */}
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-6 mb-4 overflow-x-auto scrollbar-hide">
                 <button
-                  className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
+                  className={`font-semibold text-base whitespace-nowrap ${
                     activeSeries === "BJ Series"
-                      ? "bg-red-600 text-white"
-                      : isArcfox
-                        ? "bg-gray-800 text-gray-200"
-                        : "bg-gray-200 text-gray-700"
+                      ? "border-b-2 border-red-500 text-red-500 pb-2"
+                      : "text-gray-700 hover:text-gray-900 pb-2"
                   }`}
                   onClick={() => setActiveSeries("BJ Series")}
                 >
                   BJ Series
                 </button>
                 <button
-                  className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
+                  className={`font-semibold text-base whitespace-nowrap ${
                     activeSeries === "X Series"
-                      ? "bg-red-600 text-white"
-                      : isArcfox
-                        ? "bg-gray-800 text-gray-200"
-                        : "bg-gray-200 text-gray-700"
+                      ? "border-b-2 border-red-500 text-red-500 pb-2"
+                      : "text-gray-700 hover:text-gray-900 pb-2"
                   }`}
                   onClick={() => setActiveSeries("X Series")}
                 >
                   X Series
                 </button>
                 <button
-                  className={`py-2 px-4 rounded-lg font-medium text-sm transition-all ${
+                  className={`font-semibold text-base whitespace-nowrap ${
                     activeSeries === "Arcfox"
-                      ? "bg-red-600 text-white"
-                      : isArcfox
-                        ? "bg-gray-800 text-gray-200"
-                        : "bg-gray-200 text-gray-700"
+                      ? "border-b-2 border-black text-black pb-2"
+                      : "text-gray-700 hover:text-gray-900 pb-2"
                   }`}
                   onClick={() => setActiveSeries("Arcfox")}
                 >
@@ -157,10 +149,8 @@ export default function MobileMenu() {
                   <span
                     className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${
                       activeSeries === "Arcfox"
-                        ? "bg-white text-red-600"
-                        : isArcfox
-                          ? "bg-gray-700 text-gray-200"
-                          : "bg-gray-300 text-gray-700"
+                        ? "bg-black text-white"
+                        : "bg-gray-300 text-gray-700"
                     }`}
                   >
                     Coming soon
@@ -215,9 +205,7 @@ export default function MobileMenu() {
 
                       <div className="flex mt-2 text-xs">
                         <a
-                          className={`py-3 text-center transition-all w-full border border-gray-400 rounded-xl ${
-                            isArcfox ? "hover:bg-gray-800" : "hover:bg-gray-100"
-                          }`}
+                          className="py-3 text-center transition-all w-full border border-gray-400 rounded-xl hover:bg-gray-100"
                           href={vehicle.exploreLink}
                         >
                           SEE DETAILS
@@ -230,7 +218,7 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr className={isArcfox ? "border-gray-700" : undefined} />
+        <hr />
 
         {/* Customer Care Accordion */}
         <div className="w-full rounded-md">
@@ -249,24 +237,20 @@ export default function MobileMenu() {
             <div className="mt-3 ml-4 space-y-2">
               <a
                 href="/schedule-your-service/index.html"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
+                className="block text-sm hover:text-red-600 text-gray-700"
               >
                 Schedule your service
               </a>
               <a
                 href="/aftersales/index.html"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
+                className="block text-sm hover:text-red-600 text-gray-700"
               >
                 After Sales Program
               </a>
             </div>
           )}
         </div>
-        <hr className={isArcfox ? "border-gray-700" : undefined} />
+        <hr />
 
         {/* Accessories */}
         <div className="w-full rounded-md">
@@ -274,7 +258,7 @@ export default function MobileMenu() {
             ACCESSORIES
           </a>
         </div>
-        <hr className={isArcfox ? "border-gray-700" : undefined} />
+        <hr />
 
         {/* Dealer Link */}
         <div className="w-full rounded-md">
@@ -282,7 +266,7 @@ export default function MobileMenu() {
             DEALER
           </a>
         </div>
-        <hr className={isArcfox ? "border-gray-700" : undefined} />
+        <hr />
 
         {/* About Us Accordion */}
         <div className="w-full rounded-md">
@@ -301,33 +285,25 @@ export default function MobileMenu() {
             <div className="mt-3 ml-4 space-y-2">
               <a
                 href="/about-us/index.html"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
+                className="block text-sm hover:text-red-600 text-gray-700"
               >
                 Corporate
               </a>
               <a
                 href="/brand/index.html"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
+                className="block text-sm hover:text-red-600 text-gray-700"
               >
                 Brand
               </a>
               <a
                 href="/news/index.html"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
+                className="block text-sm hover:text-red-600 text-gray-700"
               >
                 Publication (News & Event)
               </a>
               <a
                 href="/career/index.html"
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
+                className="block text-sm hover:text-red-600 text-gray-700"
               >
                 Career
               </a>
@@ -335,26 +311,20 @@ export default function MobileMenu() {
               {/* Contact Us Sub-section */}
               <div className=" mt-2">
                 <div
-                  className={`text-sm font-medium mb-1 ${
-                    isArcfox ? "text-white" : "text-gray-900"
-                  }`}
+                  className="text-sm font-medium mb-1 text-gray-900"
                 >
                   Contact Us
                 </div>
                 <div className="ml-2 space-y-1">
                   <a
                     href=""
-                    className={`block text-sm hover:text-red-600 ${
-                      isArcfox ? "text-gray-200" : "text-gray-700"
-                    }`}
+                    className="block text-sm hover:text-red-600 text-gray-700"
                   >
                     Customer Relationship
                   </a>
                   <a
                     href="/social-media"
-                    className={`block text-sm hover:text-red-600 ${
-                      isArcfox ? "text-gray-200" : "text-gray-700"
-                    }`}
+                    className="block text-sm hover:text-red-600 text-gray-700"
                   >
                     Social Media
                   </a>
@@ -363,7 +333,7 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr className={isArcfox ? "border-gray-700" : undefined} />
+        <hr />
 
         {/* Language Selector Accordion */}
         <div className="w-full rounded-md">
@@ -381,34 +351,30 @@ export default function MobileMenu() {
           {isLanguageOpen && (
             <div className="mt-3 ml-4 space-y-2">
               <button
-                className={`block text-sm font-semibold ${
-                  isArcfox ? "text-white" : "text-black"
-                }`}
+                className="block text-sm font-semibold text-black"
               >
                 EN (English)
               </button>
               <button
-                className={`block text-sm hover:text-red-600 ${
-                  isArcfox ? "text-gray-200" : "text-gray-700"
-                }`}
+                className="block text-sm hover:text-red-600 text-gray-700"
               >
                 ID (Indonesia)
               </button>
             </div>
           )}
         </div>
-        <hr className={isArcfox ? "border-gray-700" : undefined} />
+        <hr />
 
         {/* CTA Buttons */}
         <a
           href="/book-a-test-drive/index.html"
-          className="py-3 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl"
+          className="py-3 px-4 font-medium text-sm text-white text-center bg-red-600 hover:bg-red-700 rounded-xl transition-all"
         >
           BOOK A TEST DRIVE
         </a>
         <a
           href="/request-price-list/index.html"
-          className="py-3 px-4 font-medium text-sm text-white text-center border-2 border-white rounded-xl"
+          className="py-3 px-4 font-medium text-sm text-gray-900 text-center border-2 border-gray-900 hover:bg-gray-100 rounded-xl transition-all"
         >
           REQUEST PRICE LIST
         </a>

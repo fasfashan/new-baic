@@ -18,25 +18,27 @@ const AccessoriesSection = () => {
       title: "BJ30 Luggage Box - Side Net Backpack",
       price: "Rp 4,890,000",
       image: "/BJ30 Luggage Box - Side Net Backpack.png",
-      installedImage: "/BJ30 Roof Rack Upper-Installed.jpg",
+      installedImage:
+        "/BJ30 Accessories - Luggage Box Side Backpack-installed.png",
       link: "/contact/index.html",
     },
     {
       id: 3,
       model: "BJ40 PLUS",
-      title: "BJ40 Plus Bumper Front Type 2",
-      price: "Rp 11,428,000",
-      image: "/BJ40 Plus Bumper Front Type 2.png",
-      installedImage: "/BJ30 Roof Rack Upper-Installed.jpg",
+      title: "BJ40 Luggage Box - Side Backpack",
+      price: "Rp 3,882,800",
+      image: "/BJ40 Plus Accessories - Luggage Box Side Backpac.png",
+      installedImage:
+        "/BJ40 Plus Accessories - Luggage Box Side Backpack-installed.jpg",
       link: "/contact/index.html",
     },
     {
       id: 4,
       model: "BJ40 PLUS",
-      title: "BJ40 Plus Bumper Rear Type 2",
-      price: "Rp 11,428,000",
-      image: "/BJ40 Plus Bumper Rear Type 2.png",
-      installedImage: "/BJ30 Roof Rack Upper-Installed.jpg",
+      title: "BJ40 Steel Tube Door",
+      price: "Rp 9,421,900",
+      image: "/BJ40 Plus Tubular Door.png",
+      installedImage: "/BJ40 Plus Tubular Door-installed.png",
       link: "/contact/index.html",
     },
   ];
@@ -98,13 +100,13 @@ const AccessoriesSection = () => {
                 {/* Image Container with Slider */}
                 <div className="relative overflow-hidden bg-gray-50 h-64">
                   <div
-                    className="relative h-full flex items-center justify-center p-4 cursor-pointer"
+                    className={`relative h-full flex items-center justify-center cursor-pointer ${currentSlide === 0 ? "p-4" : ""}`}
                     onClick={() => openPreview(accessory.id, currentSlide)}
                   >
                     <img
                       src={images[currentSlide]}
                       alt={`${accessory.model} ${accessory.title}`}
-                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                      className={`w-full h-full ${currentSlide === 0 ? "object-contain" : "object-cover"} group-hover:scale-110 transition-transform duration-500`}
                     />
                   </div>
 
@@ -137,11 +139,9 @@ const AccessoriesSection = () => {
 
                 {/* Card Content */}
                 <div className="p-5">
-                  <a href={accessory.link}>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
-                      {accessory.title}
-                    </h3>
-                  </a>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {accessory.title}
+                  </h3>
                   <p className="text-gray-600 font-medium mb-4">
                     {accessory.price}
                   </p>

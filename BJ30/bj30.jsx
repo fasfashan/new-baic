@@ -224,7 +224,7 @@ function App() {
                   <div className="max-w-2xl px-10 flex flex-col gap-4">
                     {i === 0 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           HEART OF A HYBRID
                         </h1>
                         <h2 className="text-xl font-bold">
@@ -235,7 +235,7 @@ function App() {
                     )}
                     {i === 1 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           LIGHT THE PATH AHEAD
                         </h1>
                         <h2 className="text-xl font-bold">
@@ -245,7 +245,7 @@ function App() {
                     )}
                     {i === 2 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           RUGGED REAR DESIGN
                         </h1>
                         <h2 className="text-xl font-bold">BOLD FROM BEHIND</h2>
@@ -253,7 +253,7 @@ function App() {
                     )}
                     {i === 3 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           TECHNOLOGY WITH THRUST
                         </h1>
                         <h2 className="text-xl font-bold">

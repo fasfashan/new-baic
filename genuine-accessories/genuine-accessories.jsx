@@ -358,10 +358,10 @@ function App() {
       <div
         className="relative  min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: "url('/bg-book-a-test-drive.jpg')",
+          backgroundImage: "url('/bg-aksesoris.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 "></div>
         <h1 className="relative text-white text-5xl md:text-6xl font-bold">
           Genuine Accessories
         </h1>

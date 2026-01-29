@@ -291,7 +291,7 @@ function App() {
                   <div className="max-w-2xl px-10 flex flex-col gap-4">
                     {i === 0 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           BORN FOR EXCELLENCE
                         </h1>
                         <h2>4X4 SUVS WITH A DOMINATING PRESENCE</h2>
@@ -299,7 +299,7 @@ function App() {
                     )}
                     {i === 1 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           EXPLORE THE UNKNOWN
                         </h1>
                         <h2>ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE</h2>
@@ -307,7 +307,7 @@ function App() {
                     )}
                     {i === 2 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           ROBUST & FEARLESS
                         </h1>
                         <h2>
@@ -317,7 +317,7 @@ function App() {
                     )}
                     {i === 3 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-3xl font-bold">
                           LUXURIOUS & COMFORTABLE
                         </h1>
                         <h2>BUILT TOUGH FOR A RELAXED AND THRILLING RIDE</h2>

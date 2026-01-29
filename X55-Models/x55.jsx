@@ -289,7 +289,7 @@ function App() {
                   <div className="max-w-2xl px-10 flex flex-col gap-4">
                     {i === 0 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-4xl font-bold">
                           SMART TECHNOLOGY
                         </h1>
                         <h2 className="text-xl font-bold">
@@ -299,7 +299,7 @@ function App() {
                     )}
                     {i === 1 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-4xl font-bold">
                           EXCEPTIONAL PERFORMANCE
                         </h1>
                         <h2 className="text-xl font-bold">
@@ -309,7 +309,7 @@ function App() {
                     )}
                     {i === 2 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-4xl font-bold">
                           REVOLUTIONARY SPORTS STYLING
                         </h1>
                         <h2 className="text-xl font-bold">
@@ -319,7 +319,7 @@ function App() {
                     )}
                     {i === 3 && (
                       <>
-                        <h1 className="md:text-7xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-4xl font-bold">
                           HUMAN-CENTERED COMFORT
                         </h1>
                         <h2 className="text-xl font-bold">

@@ -491,17 +491,25 @@ export default function ExploreCar() {
                   totalFrames={36}
                 />
 
+                <div className="mt-8 flex justify-center">
+                  <img
+                    src="/Award list BAIC - global.png"
+                    alt="BAIC Awards"
+                    className="w-full max-w-3xl h-auto object-contain"
+                  />
+                </div>
+
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
                       href="/book-a-test-drive/index.html?model=bj40plus"
                     >
                       <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
                     </a>
                     <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
                       href="/brochure-bj40.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -593,17 +601,25 @@ export default function ExploreCar() {
                   />
                 </div>
 
+                <div className="mt-8 flex justify-center">
+                  <img
+                    src="/Award list BAIC - global.png"
+                    alt="BAIC Awards"
+                    className="w-full max-w-3xl h-auto object-contain"
+                  />
+                </div>
+
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
                       href="/book-a-test-drive/index.html?model=bj30"
                     >
                       <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
                     </a>
                     <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
                       href="/brochure-bj40.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -688,17 +704,25 @@ export default function ExploreCar() {
                   totalFrames={20}
                 />
 
+                <div className="mt-8 flex justify-center">
+                  <img
+                    src="/Award list BAIC - global.png"
+                    alt="BAIC Awards"
+                    className="w-full max-w-3xl h-auto object-contain"
+                  />
+                </div>
+
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
                       href="/book-a-test-drive/index.html?model=x55ii"
                     >
                       <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
                     </a>
                     <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all"
+                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
                       href="/brochure-x55.pdf"
                       target="_blank"
                       rel="noopener noreferrer"

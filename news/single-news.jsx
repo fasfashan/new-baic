@@ -273,42 +273,49 @@ function SingleNews() {
       </article>
 
       {/* Other News Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Other News</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {otherNews.map((news) => (
-              <a
+              <div
                 key={news.id}
-                href={news.link}
-                className="relative h-80 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all block group"
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
               >
-                {/* Background Image with Overlay */}
-                <div className="absolute inset-0">
+                {/* Featured Image */}
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={news.image}
                     alt={news.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                 </div>
 
-                {/* Content Overlay */}
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  {/* Date Badge */}
-                  <div className="mb-4">
-                    <span className="bg-white px-3 py-1 rounded text-red-600 text-xs font-semibold">
-                      {news.date}
-                    </span>
-                  </div>
+                {/* Content Below Image */}
+                <div className="p-6">
+                  {/* Date */}
+                  <p className="text-gray-500 text-sm mb-3">{news.date}</p>
 
                   {/* Title */}
-                  <h3 className="text-white text-xl font-bold mb-2 line-clamp-3 group-hover:text-red-400 transition-colors">
+                  <h3 className="text-gray-900 text-lg font-bold mb-3 line-clamp-2">
                     {news.title}
                   </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    {news.description}
+                  </p>
+
+                  {/* Read More Button */}
+                  <a
+                    href={news.link}
+                    className="inline-block px-6 py-2 border border-gray-300 text-gray-900 text-sm font-semibold rounded hover:bg-black hover:text-white transition-colors"
+                  >
+                    Read More
+                  </a>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>

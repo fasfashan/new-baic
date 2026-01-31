@@ -203,7 +203,7 @@ export default function MobileMenu() {
 
                       <div className="flex mt-2 text-xs">
                         <a
-                          className="py-3 text-center transition-all w-full border border-gray-400 rounded-xl hover:bg-gray-100"
+                          className="py-3 text-center transition-all w-full border border-gray-400 rounded-xl hover:bg-black hover:text-white"
                           href={vehicle.exploreLink}
                         >
                           SEE DETAILS

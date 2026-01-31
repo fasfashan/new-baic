@@ -641,7 +641,7 @@ function App() {
 
                         <a
                           href="/book-a-test-drive/index.html"
-                          className="w-full py-2.5 px-4 text-center font-medium text-sm text-black border-2 border-black rounded-xl transition-all"
+                          className="w-full py-2.5 px-4 text-center font-medium text-sm text-black border-2 border-black rounded-xl transition-all hover:bg-black hover:text-white"
                         >
                           BOOK A TEST DRIVE
                         </a>

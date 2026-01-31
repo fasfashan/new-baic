@@ -305,27 +305,12 @@ export default function MobileMenu() {
               >
                 Career
               </a>
-
-              {/* Contact Us Sub-section */}
-              <div className=" mt-2">
-                <div className="text-sm font-medium mb-1 text-gray-900">
-                  Contact Us
-                </div>
-                <div className="ml-2 space-y-1">
-                  <a
-                    href=""
-                    className="block text-sm hover:text-red-600 text-gray-700"
-                  >
-                    Customer Relationship
-                  </a>
-                  <a
-                    href="/social-media"
-                    className="block text-sm hover:text-red-600 text-gray-700"
-                  >
-                    Social Media
-                  </a>
-                </div>
-              </div>
+              <a
+                href="/contact/index.html"
+                className="block text-sm hover:text-red-600 text-gray-700"
+              >
+                Contact Us
+              </a>
             </div>
           )}
         </div>

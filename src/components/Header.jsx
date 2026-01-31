@@ -234,29 +234,12 @@ export default function Header({ alwaysWhite = false }) {
                       >
                         Career
                       </a>
-
-                      {/* Contact Us with Sub-menu */}
-                      <div className="relative group/contact">
-                        <div className="px-4 py-2 hover:bg-gray-100 transition-colors cursor-pointer">
-                          Contact Us
-                        </div>
-                        <div className="hidden group-hover/contact:block absolute left-full top-0 -ml-2">
-                          <div className="w-64 bg-white text-black rounded-lg shadow-lg py-2 ml-2">
-                            <a
-                              href="/"
-                              className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                            >
-                              Customer Relationship
-                            </a>
-                            <a
-                              href="/social-media"
-                              className="block px-4 py-2 hover:bg-gray-100 transition-colors"
-                            >
-                              Social Media
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                      <a
+                        href="/contact/index.html"
+                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                      >
+                        Contact Us
+                      </a>
                     </div>
                   </div>
                 )}

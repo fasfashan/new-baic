@@ -74,7 +74,7 @@ export default function NewsSection() {
                 {/* Read More Button */}
                 <a
                   href={article.link}
-                  className="inline-block px-6 py-2 border border-gray-300 text-gray-900 text-sm font-semibold rounded hover:bg-gray-50 transition-colors"
+                  className="inline-block px-6 py-2 border border-gray-300 text-gray-900 text-sm font-semibold rounded hover:bg-black hover:text-white transition-colors"
                 >
                   Read More
                 </a>

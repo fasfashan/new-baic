@@ -233,53 +233,53 @@ export default function ExploreCar() {
                         }`}
                       />
                     </div>
-                    {/* BJ40 PLUS Type 1 */}
+                    {/* BJ40 PLUS CBU */}
                     <div
                       className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ40 PLUS Type 1")}
+                      onClick={() => handleModelClick("BJ40 PLUS CBU")}
                     >
                       <p
                         className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ40 PLUS Type 1"
+                          activeModel === "BJ40 PLUS CBU"
                             ? "text-red-600"
                             : isArcfox
                               ? "text-gray-200"
                               : "text-gray-700"
                         }`}
                       >
-                        BJ40 PLUS Type 1
+                        BJ40 PLUS CBU
                       </p>
                       <img
                         src="/bj40-plus/flame_red/_0.png"
-                        alt="BJ40 PLUS Type 1"
+                        alt="BJ40 PLUS CBU"
                         className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "BJ40 PLUS Type 1"
+                          activeModel !== "BJ40 PLUS CBU"
                             ? "opacity-30"
                             : "opacity-100"
                         }`}
                       />
                     </div>
-                    {/* BJ40 PLUS Type 2 */}
+                    {/* BJ40 PLUS CKD */}
                     <div
                       className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ40 PLUS Type 2")}
+                      onClick={() => handleModelClick("BJ40 PLUS CKD")}
                     >
                       <p
                         className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ40 PLUS Type 2"
+                          activeModel === "BJ40 PLUS CKD"
                             ? "text-red-600"
                             : isArcfox
                               ? "text-gray-200"
                               : "text-gray-700"
                         }`}
                       >
-                        BJ40 PLUS Type 2
+                        BJ40 PLUS CKD
                       </p>
                       <img
                         src="/bj40-plus/flame_red/_0.png"
-                        alt="BJ40 PLUS Type 2"
+                        alt="BJ40 PLUS CKD"
                         className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "BJ40 PLUS Type 2"
+                          activeModel !== "BJ40 PLUS CKD"
                             ? "opacity-30"
                             : "opacity-100"
                         }`}

@@ -48,13 +48,13 @@ const BigMenu = () => {
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ40 PLUS Type 1",
+        name: "BJ40 PLUS CBU",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ40 PLUS Type 2",
+        name: "BJ40 PLUS CKD",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
@@ -88,13 +88,13 @@ const BigMenu = () => {
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ40 PLUS Type 1",
+        name: "BJ40 PLUS CBU",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",
       },
       {
-        name: "BJ40 PLUS Type 2",
+        name: "BJ40 PLUS CKD",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
         brochureLink: "/brochure-bj40.pdf",

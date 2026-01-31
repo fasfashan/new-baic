@@ -49,12 +49,12 @@ export default function MobileMenu() {
         exploreLink: "/BJ30/index.html",
       },
       {
-        name: "BJ40 PLUS Type 1",
+        name: "BJ40 PLUS CBU",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
       },
       {
-        name: "BJ40 PLUS Type 2",
+        name: "BJ40 PLUS CKD",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
       },
@@ -83,12 +83,12 @@ export default function MobileMenu() {
         exploreLink: "/BJ30/index.html",
       },
       {
-        name: "BJ40 PLUS Type 1",
+        name: "BJ40 PLUS CBU",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
       },
       {
-        name: "BJ40 PLUS Type 2",
+        name: "BJ40 PLUS CKD",
         image: BJ40,
         exploreLink: "/BJ40/index.html",
       },

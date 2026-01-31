@@ -147,7 +147,7 @@ const AccessoriesSection = () => {
                   </p>
                   <a
                     href="/buy-accessories/index.html"
-                    className="block w-full py-2 px-4 text-sm text-center text-black bg-transparent border border-black rounded-lg"
+                    className="block w-full py-2 px-4 text-sm text-center text-black bg-transparent border border-black rounded-lg hover:bg-black hover:text-white transition-all"
                   >
                     Buy Now
                   </a>

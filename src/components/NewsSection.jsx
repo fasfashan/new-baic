@@ -87,7 +87,7 @@ export default function NewsSection() {
         <div className="text-center mt-12">
           <a
             href="/news/index.html"
-            className="inline-block py-3 px-8 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all shadow-md hover:shadow-lg"
+            className="inline-block py-3 px-8 bg-transparent border-2 border-black text-black hover:bg-black hover:text-white font-semibold rounded-lg transition-all"
           >
             See all
           </a>

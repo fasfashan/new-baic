@@ -158,7 +158,7 @@ function App() {
             {!allPostsLoaded ? (
               <button
                 onClick={handleLoadMore}
-                className="px-8 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg hover:bg-red-600 hover:text-white hover:border-red-600 transition-all font-semibold"
+                className="px-8 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg hover:bg-black hover:text-white hover:border-red-600 transition-all font-semibold"
               >
                 Load more
               </button>

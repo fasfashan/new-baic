@@ -30,9 +30,10 @@ const AccessoriesCards = ({ accessories = [] }) => {
     );
     if (!currentAccessory) return;
 
-    const images = [currentAccessory.image, currentAccessory.installedImage].filter(
-      Boolean,
-    );
+    const images = [
+      currentAccessory.image,
+      currentAccessory.installedImage,
+    ].filter(Boolean);
     if (images.length === 0) return;
 
     const newIndex =
@@ -47,7 +48,9 @@ const AccessoriesCards = ({ accessories = [] }) => {
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {accessories.map((accessory) => {
-          const images = [accessory.image, accessory.installedImage].filter(Boolean);
+          const images = [accessory.image, accessory.installedImage].filter(
+            Boolean,
+          );
           const currentSlide = activeSlides[accessory.id] ?? 0;
 
           return (
@@ -156,9 +159,10 @@ const AccessoriesCards = ({ accessories = [] }) => {
                   (a) => a.id === previewModal.accessoryId,
                 );
                 const images = currentAccessory
-                  ? [currentAccessory.image, currentAccessory.installedImage].filter(
-                      Boolean,
-                    )
+                  ? [
+                      currentAccessory.image,
+                      currentAccessory.installedImage,
+                    ].filter(Boolean)
                   : [];
 
                 return (
@@ -188,14 +192,16 @@ const AccessoriesCards = ({ accessories = [] }) => {
                 (a) => a.id === previewModal.accessoryId,
               );
               const images = currentAccessory
-                ? [currentAccessory.image, currentAccessory.installedImage].filter(
-                    Boolean,
-                  )
+                ? [
+                    currentAccessory.image,
+                    currentAccessory.installedImage,
+                  ].filter(Boolean)
                 : [];
 
               return (
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
-                  {Math.min(previewModal.imageIndex + 1, images.length || 1)} / {Math.max(images.length, 1)}
+                  {Math.min(previewModal.imageIndex + 1, images.length || 1)} /{" "}
+                  {Math.max(images.length, 1)}
                 </div>
               );
             })()}

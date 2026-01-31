@@ -182,10 +182,10 @@ function App() {
 
             <button
               type="submit"
-              className={`w-full py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all text-lg ${
+              className={`w-full py-4 bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all text-lg ${
                 !isFormComplete() || isLoading
                   ? "opacity-50 cursor-not-allowed"
-                  : ""
+                  : "hover:bg-black hover:text-white"
               }`}
               disabled={!isFormComplete() || isLoading}
             >

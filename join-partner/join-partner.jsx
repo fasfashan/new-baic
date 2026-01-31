@@ -189,10 +189,10 @@ function App() {
             {/* Submit Button */}
             <button
               type="submit"
-              className={`p-3 w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all ${
+              className={`p-3 w-full bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all ${
                 !isFormComplete() || isLoading
                   ? "opacity-50 cursor-not-allowed"
-                  : ""
+                  : "hover:bg-black hover:text-white"
               }`}
               disabled={!isFormComplete() || isLoading}
             >

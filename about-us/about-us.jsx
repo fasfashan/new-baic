@@ -12,9 +12,24 @@ function App() {
     <>
       <Header />
       <ButtonChat />
-      <div className="bg-neutral-100   py-4">
-        <div className="max-w-6xl flex gap-4 m-auto md:px-8 px-5 font-medium">
-          <p className="font-semibold">ABOUT US</p>
+      {/* Hero Section */}
+      <div
+        className="relative min-h-screen bg-cover bg-center flex items-center justify-center py-12 px-4"
+        style={{ backgroundImage: "url('/banner-about-us.webp')" }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="relative z-10 max-w-4xl text-center text-white px-4">
+          <p className="text-sm font-semibold tracking-widest mb-3">ABOUT US</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Driving Innovation, Building Trust
+          </h1>
+          <p className="text-base md:text-lg text-white/90">
+            Learn more about BAIC and our partners in Indonesia — our heritage,
+            our mission, and our commitment to delivering world-class vehicles
+            and customer experiences.
+          </p>
         </div>
       </div>
       <div className="bg-neutral-200 py-10   m-auto ">
@@ -85,7 +100,6 @@ function App() {
         </p>
       </div>
 
-      <CTA />
       <Footer />
     </>
   );

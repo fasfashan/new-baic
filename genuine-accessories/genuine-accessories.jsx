@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import CtaSection from "../src/components/CtaSection";
@@ -8,6 +8,51 @@ import ButtonChat from "../src/components/ButtonChat";
 
 function App() {
   const [selectedModel, setSelectedModel] = useState("BJ30");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const heroSlides = [
+    { image: "/bg-aksesoris.jpg", hasText: true },
+    { image: "/bg-aksesoris-slide-2.jpg", hasText: false },
+    { image: "/bg-aksesoris-slide-3.jpg", hasText: false },
+    { image: "/bg-aksesoris-slide-4.jpg", hasText: false },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 700);
+
+    return () => clearTimeout(timer);
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) =>
+      prev === 0 ? heroSlides.length - 1 : prev - 1,
+    );
+  };
+
+  const goToSlide = (index) => {
+    if (isTransitioning || index === currentSlide) return;
+    setIsTransitioning(true);
+    setCurrentSlide(index);
+  };
 
   const accessories = [
     {
@@ -60,16 +105,89 @@ function App() {
       <ButtonChat />
 
       {/* Hero Section */}
-      <div
-        className="relative  min-h-screen bg-cover bg-center flex items-center justify-center"
-        style={{
-          backgroundImage: "url('/bg-aksesoris.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 "></div>
-        <h1 className="relative text-white text-5xl md:text-6xl font-bold">
-          Genuine Accessories
-        </h1>
+      <div className="relative w-full h-screen overflow-hidden">
+        {heroSlides.map((slide, index) => (
+          <div
+            key={`${slide.image}-${index}`}
+            className={`absolute inset-0 bg-cover bg-center flex items-center justify-center transition-opacity duration-700 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url('${slide.image}')` }}
+          >
+            <div className="absolute inset-0 bg-black/40"></div>
+            {slide.hasText && (
+              <h1 className="relative text-white text-5xl md:text-6xl font-bold">
+                Genuine Accessories
+              </h1>
+            )}
+          </div>
+        ))}
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          disabled={isTransitioning}
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Previous slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <button
+          onClick={nextSlide}
+          disabled={isTransitioning}
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Next slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+
+        {/* Pagination Dots */}
+        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="bg-white rounded-full px-4 py-3 flex items-center space-x-2">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                disabled={isTransitioning}
+                className={`rounded-full transition-all duration-300 disabled:cursor-not-allowed ${
+                  index === currentSlide
+                    ? "bg-red-600 w-10 h-2"
+                    : "bg-gray-300 hover:bg-gray-400 w-2 h-2"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Accessories Section */}

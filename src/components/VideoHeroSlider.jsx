@@ -121,7 +121,7 @@ export default function VideoHeroSlider() {
       <div className="absolute bottom-36 left-1/2 transform -translate-x-1/2 z-30">
         <a
           href={slides[currentSlide].ctaLink}
-          className="inline-block border-2 border-white text-white font-medium px-8 py-3 rounded-xl text-lg"
+          className="inline-block border-2 border-white text-white font-medium px-8 py-3 rounded-xl text-lg hover:bg-black hover:border-black transition-colors"
         >
           {slides[currentSlide].ctaText}
         </a>

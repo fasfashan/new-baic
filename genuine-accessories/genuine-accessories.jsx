@@ -43,9 +43,7 @@ function App() {
   const prevSlide = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentSlide((prev) =>
-      prev === 0 ? heroSlides.length - 1 : prev - 1,
-    );
+    setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
   };
 
   const goToSlide = (index) => {

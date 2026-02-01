@@ -104,8 +104,7 @@ export default function ExploreCar() {
       setActiveModel("X55 II Lite");
       setSelectedColorX55(colorsX55[0]);
     } else if (series === "Arcfox") {
-      setActiveModel("BJ30 Type 1");
-      setSelectedColorBJ30(colorsBJ30[0]);
+      setActiveModel("");
     }
   };
 
@@ -177,174 +176,171 @@ export default function ExploreCar() {
           {/* Model Images Container */}
           <div className="max-w-6xl m-auto mt-8 ">
             <div className="overflow-x-auto scrollbar-hide">
-              <div className="flex gap-6 justify-start md:justify-center">
-                {/* Typed model thumbnails by series */}
-                {activeSeries !== "X Series" && (
-                  <>
-                    {/* BJ30 Type 1 */}
-                    <div
-                      className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ30 Type 1")}
-                    >
-                      <p
-                        className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ30 Type 1"
-                            ? "text-red-600"
-                            : isArcfox
-                              ? "text-gray-200"
-                              : "text-gray-700"
-                        }`}
+              {activeSeries === "Arcfox" ? (
+                <div className="py-10 text-center text-gray-600">
+                  <p className="text-lg font-semibold">
+                    Arcfox is coming soon.
+                  </p>
+                  <p className="text-sm mt-1">Stay tuned for updates.</p>
+                </div>
+              ) : (
+                <div className="flex gap-6 justify-start md:justify-center">
+                  {/* Typed model thumbnails by series */}
+                  {activeSeries !== "X Series" && (
+                    <>
+                      {/* BJ30 Type 1 */}
+                      <div
+                        className="relative cursor-pointer flex-shrink-0 transition-all"
+                        onClick={() => handleModelClick("BJ30 Type 1")}
                       >
-                        BJ30 HEV AWD
-                      </p>
-                      <img
-                        src="/BJ30-explore.png"
-                        alt="BJ30 Type 1"
-                        className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "BJ30 Type 1"
-                            ? "opacity-30"
-                            : "opacity-100"
-                        }`}
-                      />
-                    </div>
-                    {/* BJ30 Type 2 */}
-                    <div
-                      className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ30 Type 2")}
-                    >
-                      <p
-                        className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ30 Type 2"
-                            ? "text-red-600"
-                            : isArcfox
-                              ? "text-gray-200"
+                        <p
+                          className={`text-center mb-2 font-semibold text-xl ${
+                            activeModel === "BJ30 Type 1"
+                              ? "text-red-600"
                               : "text-gray-700"
-                        }`}
+                          }`}
+                        >
+                          BJ30 HEV AWD
+                        </p>
+                        <img
+                          src="/BJ30-explore.png"
+                          alt="BJ30 Type 1"
+                          className={`w-48 h-32 object-contain transition-opacity ${
+                            activeModel !== "BJ30 Type 1"
+                              ? "opacity-30"
+                              : "opacity-100"
+                          }`}
+                        />
+                      </div>
+                      {/* BJ30 Type 2 */}
+                      <div
+                        className="relative cursor-pointer flex-shrink-0 transition-all"
+                        onClick={() => handleModelClick("BJ30 Type 2")}
                       >
-                        BJ30 HEV FWD
-                      </p>
-                      <img
-                        src="/BJ30-explore.png"
-                        alt="BJ30 Type 2"
-                        className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "BJ30 Type 2"
-                            ? "opacity-30"
-                            : "opacity-100"
-                        }`}
-                      />
-                    </div>
-                    {/* BJ40 PLUS CBU */}
-                    <div
-                      className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ40 PLUS CBU")}
-                    >
-                      <p
-                        className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ40 PLUS CBU"
-                            ? "text-red-600"
-                            : isArcfox
-                              ? "text-gray-200"
+                        <p
+                          className={`text-center mb-2 font-semibold text-xl ${
+                            activeModel === "BJ30 Type 2"
+                              ? "text-red-600"
                               : "text-gray-700"
-                        }`}
+                          }`}
+                        >
+                          BJ30 HEV FWD
+                        </p>
+                        <img
+                          src="/BJ30-explore.png"
+                          alt="BJ30 Type 2"
+                          className={`w-48 h-32 object-contain transition-opacity ${
+                            activeModel !== "BJ30 Type 2"
+                              ? "opacity-30"
+                              : "opacity-100"
+                          }`}
+                        />
+                      </div>
+                      {/* BJ40 PLUS CBU */}
+                      <div
+                        className="relative cursor-pointer flex-shrink-0 transition-all"
+                        onClick={() => handleModelClick("BJ40 PLUS CBU")}
                       >
-                        BJ40 PLUS CBU
-                      </p>
-                      <img
-                        src="/bj40-plus/flame_red/_0.png"
-                        alt="BJ40 PLUS CBU"
-                        className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "BJ40 PLUS CBU"
-                            ? "opacity-30"
-                            : "opacity-100"
-                        }`}
-                      />
-                    </div>
-                    {/* BJ40 PLUS CKD */}
-                    <div
-                      className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("BJ40 PLUS CKD")}
-                    >
-                      <p
-                        className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "BJ40 PLUS CKD"
-                            ? "text-red-600"
-                            : isArcfox
-                              ? "text-gray-200"
+                        <p
+                          className={`text-center mb-2 font-semibold text-xl ${
+                            activeModel === "BJ40 PLUS CBU"
+                              ? "text-red-600"
                               : "text-gray-700"
-                        }`}
+                          }`}
+                        >
+                          BJ40 PLUS CBU
+                        </p>
+                        <img
+                          src="/bj40-plus/flame_red/_0.png"
+                          alt="BJ40 PLUS CBU"
+                          className={`w-48 h-32 object-contain transition-opacity ${
+                            activeModel !== "BJ40 PLUS CBU"
+                              ? "opacity-30"
+                              : "opacity-100"
+                          }`}
+                        />
+                      </div>
+                      {/* BJ40 PLUS CKD */}
+                      <div
+                        className="relative cursor-pointer flex-shrink-0 transition-all"
+                        onClick={() => handleModelClick("BJ40 PLUS CKD")}
                       >
-                        BJ40 PLUS CKD
-                      </p>
-                      <img
-                        src="/bj40-plus/flame_red/_0.png"
-                        alt="BJ40 PLUS CKD"
-                        className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "BJ40 PLUS CKD"
-                            ? "opacity-30"
-                            : "opacity-100"
-                        }`}
-                      />
-                    </div>
-                  </>
-                )}
+                        <p
+                          className={`text-center mb-2 font-semibold text-xl ${
+                            activeModel === "BJ40 PLUS CKD"
+                              ? "text-red-600"
+                              : "text-gray-700"
+                          }`}
+                        >
+                          BJ40 PLUS CKD
+                        </p>
+                        <img
+                          src="/bj40-plus/flame_red/_0.png"
+                          alt="BJ40 PLUS CKD"
+                          className={`w-48 h-32 object-contain transition-opacity ${
+                            activeModel !== "BJ40 PLUS CKD"
+                              ? "opacity-30"
+                              : "opacity-100"
+                          }`}
+                        />
+                      </div>
+                    </>
+                  )}
 
-                {activeSeries === "X Series" && (
-                  <>
-                    {/* X55 II Lite */}
-                    <div
-                      className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("X55 II Lite")}
-                    >
-                      <p
-                        className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "X55 II Lite"
-                            ? "text-red-600"
-                            : isArcfox
-                              ? "text-gray-200"
-                              : "text-gray-700"
-                        }`}
+                  {activeSeries === "X Series" && (
+                    <>
+                      {/* X55 II Lite */}
+                      <div
+                        className="relative cursor-pointer flex-shrink-0 transition-all"
+                        onClick={() => handleModelClick("X55 II Lite")}
                       >
-                        X55 II Lite
-                      </p>
-                      <img
-                        src="/x55/red_black/_0.png"
-                        alt="X55 II Lite"
-                        className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "X55 II Lite"
-                            ? "opacity-30"
-                            : "opacity-100"
-                        }`}
-                      />
-                    </div>
-                    {/* X55 II Prime */}
-                    <div
-                      className="relative cursor-pointer flex-shrink-0 transition-all"
-                      onClick={() => handleModelClick("X55 II Prime")}
-                    >
-                      <p
-                        className={`text-center mb-2 font-semibold text-xl ${
-                          activeModel === "X55 II Prime"
-                            ? "text-red-600"
-                            : isArcfox
-                              ? "text-gray-200"
+                        <p
+                          className={`text-center mb-2 font-semibold text-xl ${
+                            activeModel === "X55 II Lite"
+                              ? "text-red-600"
                               : "text-gray-700"
-                        }`}
+                          }`}
+                        >
+                          X55 II Lite
+                        </p>
+                        <img
+                          src="/x55/red_black/_0.png"
+                          alt="X55 II Lite"
+                          className={`w-48 h-32 object-contain transition-opacity ${
+                            activeModel !== "X55 II Lite"
+                              ? "opacity-30"
+                              : "opacity-100"
+                          }`}
+                        />
+                      </div>
+                      {/* X55 II Prime */}
+                      <div
+                        className="relative cursor-pointer flex-shrink-0 transition-all"
+                        onClick={() => handleModelClick("X55 II Prime")}
                       >
-                        X55 II Prime
-                      </p>
-                      <img
-                        src="/x55/red_black/_0.png"
-                        alt="X55 II Prime"
-                        className={`w-48 h-32 object-contain transition-opacity ${
-                          activeModel !== "X55 II Prime"
-                            ? "opacity-30"
-                            : "opacity-100"
-                        }`}
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                        <p
+                          className={`text-center mb-2 font-semibold text-xl ${
+                            activeModel === "X55 II Prime"
+                              ? "text-red-600"
+                              : "text-gray-700"
+                          }`}
+                        >
+                          X55 II Prime
+                        </p>
+                        <img
+                          src="/x55/red_black/_0.png"
+                          alt="X55 II Prime"
+                          className={`w-48 h-32 object-contain transition-opacity ${
+                            activeModel !== "X55 II Prime"
+                              ? "opacity-30"
+                              : "opacity-100"
+                          }`}
+                        />
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 

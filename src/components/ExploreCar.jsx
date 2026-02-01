@@ -468,6 +468,12 @@ export default function ExploreCar() {
                   ))}
                 </div>
 
+                <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                  <h2 className="text-center transition-all px-4 py-2">
+                    {colorNamesBJ40[selectedColor]}
+                  </h2>
+                </div>
+
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
                   <div className="text-center">
@@ -679,6 +685,12 @@ export default function ExploreCar() {
                       onClick={() => onColorSelectX55(color)}
                     ></div>
                   ))}
+                </div>
+
+                <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                  <h2 className="text-center transition-all px-4 py-2">
+                    {colorNamesX55[selectedColorX55]}
+                  </h2>
                 </div>
 
                 {/* Price */}

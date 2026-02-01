@@ -34,7 +34,7 @@ function App() {
       </div>
       <div className="bg-neutral-200 py-10   m-auto ">
         <img src={logo} className="m-auto mb-4" width={200} alt="" />
-        <p className="max-w-6xl m-auto  md:px-8 px-5 text-neutral-600 font-light">
+        <p className="max-w-6xl m-auto md:px-8 px-5 text-neutral-600 font-light text-justify">
           Beijing Automotive International Corporation - well known as its brand
           BAIC, founded in 1958, is headquartered in Beijing, China, and its
           head office, Beijing Automotive Group Co., Ltd. is ranked 162th in the
@@ -54,7 +54,7 @@ function App() {
       </div>
       <div className="bg-neutral-200 py-10   m-auto ">
         <img src={logoJDI} className="m-auto mb-4" width={200} alt="" />
-        <p className="max-w-6xl m-auto  md:px-8 px-5 text-neutral-600 font-light">
+        <p className="max-w-6xl m-auto md:px-8 px-5 text-neutral-600 font-light text-justify">
           28 March 2024, BAIC International Development Co., Ltd. appointed PT
           JIO Distribusi Indonesia (JDI) to become the authorized sole
           distributor of the BAIC brand in Indonesia, both for the distribution

@@ -361,6 +361,11 @@ function App() {
                 src={colorToImageMapBJ40[selectedColor][currentImageIndex]}
                 className="mx-auto"
               />
+              <img
+                src="/Award list BAIC - global.png"
+                alt="BAIC Awards"
+                className="mx-auto mt-4"
+              />
 
               <div className="flex justify-center gap-4">
                 {colorToImageMapBJ40[selectedColor].map((img, i) => (

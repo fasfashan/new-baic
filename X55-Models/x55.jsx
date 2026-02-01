@@ -374,6 +374,11 @@ function App() {
                     : "translate-x-0 opacity-100"
                 }`}
               />
+              <img
+                src="/Award list BAIC - global.png"
+                alt="BAIC Awards"
+                className="mx-auto mt-4"
+              />
 
               <div className="flex justify-center gap-4">
                 {colorToImageMapX55[selectedColor]?.map((imageSrc, index) => (

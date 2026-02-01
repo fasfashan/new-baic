@@ -306,6 +306,11 @@ function App() {
                   animating ? "opacity-0" : "opacity-100"
                 }`}
               />
+              <img
+                src="/Award list BAIC - global.png"
+                alt="BAIC Awards"
+                className="mx-auto mt-4"
+              />
             </div>
 
             <h2 className="text-center md:text-3xl text-2xl mt-10 mb-10">

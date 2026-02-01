@@ -144,7 +144,7 @@ function Career() {
                   <div className="md:flex-shrink-0">
                     <a
                       href="/career/detail.html"
-                      className="block px-6 py-3 w-full md:w-auto bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all font-semibold text-center whitespace-nowrap"
+                      className="block px-6 py-3 w-full md:w-auto border-2 border-black text-black rounded-lg hover:bg-black hover:text-white transition-all font-semibold text-center whitespace-nowrap"
                     >
                       See detail
                     </a>

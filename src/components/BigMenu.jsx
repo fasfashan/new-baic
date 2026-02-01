@@ -74,32 +74,7 @@ const BigMenu = () => {
         brochureLink: "/brochure-x55.pdf",
       },
     ],
-    Arcfox: [
-      {
-        name: "BJ30 HEV AWD",
-        image: BJ30,
-        exploreLink: "/BJ30/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ30 HEV FWD",
-        image: BJ30,
-        exploreLink: "/BJ30/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ40 PLUS CBU",
-        image: BJ40,
-        exploreLink: "/BJ40/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ40 PLUS CKD",
-        image: BJ40,
-        exploreLink: "/BJ40/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-    ],
+    Arcfox: [],
   };
 
   return (
@@ -149,64 +124,71 @@ const BigMenu = () => {
         </div>
 
         {/* Vehicles Grid: 4 columns on large screens */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {vehicles[activeSeries].map((vehicle) => (
-            <div key={vehicle.name} className="flex flex-col">
-              <img
-                className="w-full h-auto"
-                src={vehicle.image}
-                alt={vehicle.name}
-              />
-              <h2 className="text-xl text-red-500 font-medium mt-2">
-                BAIC {vehicle.name}
-              </h2>
+        {activeSeries === "Arcfox" ? (
+          <div className="py-10 text-center text-gray-600">
+            <p className="text-lg font-semibold">Arcfox is coming soon.</p>
+            <p className="text-sm mt-1">Stay tuned for updates.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {vehicles[activeSeries].map((vehicle) => (
+              <div key={vehicle.name} className="flex flex-col">
+                <img
+                  className="w-full h-auto"
+                  src={vehicle.image}
+                  alt={vehicle.name}
+                />
+                <h2 className="text-xl text-red-500 font-medium mt-2">
+                  BAIC {vehicle.name}
+                </h2>
 
-              {/* No inline type badges; types represented as separate products */}
+                {/* No inline type badges; types represented as separate products */}
 
-              {/* Specifications */}
-              <div className="mt-3 bg-gray-50 rounded-lg p-3">
-                <div className="grid grid-cols-3 gap-2 text-center">
-                  <div>
-                    <p className="text-[10px] text-gray-500 uppercase">
-                      Wheelbase
-                    </p>
-                    <p className="text-sm font-semibold text-gray-800">
-                      {specs[getBaseModel(vehicle.name)].wheelbase}
-                    </p>
-                    <p className="text-[9px] text-gray-400">MM</p>
-                  </div>
-                  <div className="border-l border-r border-gray-200">
-                    <p className="text-[10px] text-gray-500 uppercase">
-                      Length
-                    </p>
-                    <p className="text-sm font-semibold text-gray-800">
-                      {specs[getBaseModel(vehicle.name)].length}
-                    </p>
-                    <p className="text-[9px] text-gray-400">MM</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-gray-500 uppercase">
-                      Height
-                    </p>
-                    <p className="text-sm font-semibold text-gray-800">
-                      {specs[getBaseModel(vehicle.name)].height}
-                    </p>
-                    <p className="text-[9px] text-gray-400">MM</p>
+                {/* Specifications */}
+                <div className="mt-3 bg-gray-50 rounded-lg p-3">
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div>
+                      <p className="text-[10px] text-gray-500 uppercase">
+                        Wheelbase
+                      </p>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {specs[getBaseModel(vehicle.name)].wheelbase}
+                      </p>
+                      <p className="text-[9px] text-gray-400">MM</p>
+                    </div>
+                    <div className="border-l border-r border-gray-200">
+                      <p className="text-[10px] text-gray-500 uppercase">
+                        Length
+                      </p>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {specs[getBaseModel(vehicle.name)].length}
+                      </p>
+                      <p className="text-[9px] text-gray-400">MM</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-500 uppercase">
+                        Height
+                      </p>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {specs[getBaseModel(vehicle.name)].height}
+                      </p>
+                      <p className="text-[9px] text-gray-400">MM</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex mt-4 text-xs">
-                <a
-                  className="py-3 w-full text-center hover:bg-black hover:text-white transition-all border border-gray-400 rounded-xl"
-                  href={vehicle.exploreLink}
-                >
-                  SEE DETAILS
-                </a>
+                <div className="flex mt-4 text-xs">
+                  <a
+                    className="py-3 w-full text-center hover:bg-black hover:text-white transition-all border border-gray-400 rounded-xl"
+                    href={vehicle.exploreLink}
+                  >
+                    SEE DETAILS
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

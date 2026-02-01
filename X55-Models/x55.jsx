@@ -337,11 +337,6 @@ function App() {
           <div className="py-16 md:px-8 px-5 max-w-4xl m-auto">
             <h2 className="text-center text-4xl font-bold">PRICING & SPECS</h2>
 
-            <div className="text-center mt-10">
-              <p className="text-4xl font-bold">Rp 329.000.000,-</p>
-              <p className="text-sm text-neutral-600">OTR Jakarta</p>
-            </div>
-
             {/* COLOR SELECT */}
             <div className="mt-10 space-y-4 mb-10">
               <div className="flex justify-center gap-3">
@@ -363,6 +358,11 @@ function App() {
                 <h2 className="text-center px-4 py-2">
                   {colorNamesX55[selectedColor]}
                 </h2>
+              </div>
+
+              <div className="text-center mt-2">
+                <p className="text-4xl font-bold">Rp 329.000.000,-</p>
+                <p className="text-sm text-neutral-600">OTR Jakarta</p>
               </div>
 
               <img

@@ -141,6 +141,11 @@ const BigMenu = () => {
                 <h2 className="text-xl text-red-500 font-medium mt-2">
                   BAIC {vehicle.name}
                 </h2>
+                <img
+                  src="/Award list BAIC - global.png"
+                  alt="BAIC Awards"
+                  className="mt-2 w-full max-w-[220px] mx-auto"
+                />
 
                 {/* No inline type badges; types represented as separate products */}
 

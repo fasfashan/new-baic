@@ -159,6 +159,11 @@ export default function MobileMenu() {
                         <h2 className="text-sm text-red-500 font-medium mt-2">
                           BAIC {vehicle.name}
                         </h2>
+                        <img
+                          src="/Award list BAIC - global.png"
+                          alt="BAIC Awards"
+                          className="mt-2 w-full max-w-[180px] mx-auto"
+                        />
 
                         {/* Specifications - Stacked vertically */}
                         <div className="mt-2 bg-gray-50 rounded-lg p-3 space-y-2">

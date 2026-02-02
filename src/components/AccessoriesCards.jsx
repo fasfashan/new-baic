@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const AccessoriesCards = ({ accessories = [] }) => {
@@ -11,6 +11,31 @@ const AccessoriesCards = ({ accessories = [] }) => {
     accessoryId: null,
     imageIndex: 0,
   });
+
+  useEffect(() => {
+    if (!accessories.length) return;
+
+    const intervalId = setInterval(() => {
+      setActiveSlides((prev) => {
+        const nextState = { ...prev };
+
+        accessories.forEach((accessory) => {
+          const images = [accessory.image, accessory.installedImage].filter(
+            Boolean,
+          );
+
+          if (images.length <= 1) return;
+
+          const currentIndex = prev[accessory.id] ?? 0;
+          nextState[accessory.id] = (currentIndex + 1) % images.length;
+        });
+
+        return nextState;
+      });
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [accessories]);
 
   const handleSlideChange = (id, index) => {
     setActiveSlides((prev) => ({ ...prev, [id]: index }));
@@ -65,9 +90,10 @@ const AccessoriesCards = ({ accessories = [] }) => {
                   onClick={() => openPreview(accessory.id, currentSlide)}
                 >
                   <img
+                    key={`${accessory.id}-${currentSlide}`}
                     src={images[currentSlide]}
                     alt={`${accessory.model} ${accessory.title}`}
-                    className={`w-full h-full ${currentSlide === 0 ? "object-contain" : "object-cover"} group-hover:scale-110 transition-transform duration-500`}
+                    className={`w-full h-full ${currentSlide === 0 ? "object-contain" : "object-cover"} group-hover:scale-110 transition-transform duration-500 accessory-slide-right`}
                   />
                 </div>
 

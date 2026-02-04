@@ -60,7 +60,7 @@ function Career() {
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
-        <h1 className="relative text-white text-5xl md:text-6xl font-bold">
+        <h1 className="relative text-white text-4xl md:text-6xl font-bold">
           Careers
         </h1>
       </div>

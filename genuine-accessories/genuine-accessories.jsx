@@ -137,7 +137,7 @@ function App() {
       <section className="py-16 mt-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Title */}
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
+          <h2 className="md:text-3xl text-2xl font-bold text-center text-gray-900 mb-6">
             Genuine Accessories
           </h2>
 

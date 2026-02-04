@@ -127,7 +127,9 @@ export default function ExploreCar() {
   return (
     <div className="App">
       <div className="pt-10 md:px-8 px-2">
-        <h2 className="text-3xl font-bold text-center">EXPLORE YOUR BAIC</h2>
+        <h2 className="md:text-3xl text-2xl font-bold text-center">
+          EXPLORE YOUR BAIC
+        </h2>
 
         {/* Series Tabs */}
         <div className="mt-6">

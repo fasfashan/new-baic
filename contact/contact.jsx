@@ -495,7 +495,7 @@ function App() {
       {/* Select Area & Dealers Section */}
       <div className="bg-neutral-100 py-12">
         <div className="max-w-6xl m-auto md:px-8 px-5">
-          <h2 className="text-2xl font-bold mb-6">Select area</h2>
+          <h2 className="md:text-3xl text-2xl font-bold mb-6">Select area</h2>
 
           {/* Filter Dropdown */}
           <div className="mb-8">

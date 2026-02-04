@@ -22,7 +22,7 @@ function App() {
 
         <div className="relative z-10 max-w-4xl text-center text-white px-4">
           <p className="text-sm font-semibold tracking-widest mb-3">ABOUT US</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="md:text-3xl text-2xl font-bold mb-4">
             Driving Innovation, Building Trust
           </h1>
           <p className="text-base md:text-lg text-white/90">

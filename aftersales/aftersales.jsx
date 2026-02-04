@@ -26,7 +26,7 @@ function AfterSales() {
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="flex px-5 flex-col gap-4">
-          <h1 className="relative text-white text-center text-5xl md:text-6xl font-bold">
+          <h1 className="relative text-white text-center text-4xl md:text-6xl font-bold">
             Aftersales
           </h1>
           <p className="relative text-white text-center max-w-2xl mx-auto text-lg ">
@@ -40,7 +40,7 @@ function AfterSales() {
       <div className="bg-gradient-to-b from-neutral-50 to-white py-12">
         <div className="max-w-6xl m-auto md:px-8 px-5">
           {/* Layanan Purna Jual Lengkap */}
-          <h2 className="text-3xl font-bold text-center mb-8">
+          <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">
             Layanan Purna Jual Lengkap
           </h2>
 
@@ -95,7 +95,7 @@ function AfterSales() {
 
           {/* Garansi Kendaraan Section */}
           <div className="py-16">
-            <h2 className="text-3xl font-bold text-center mb-8">
+            <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">
               Garansi Kendaraan
             </h2>
 
@@ -182,7 +182,7 @@ function AfterSales() {
 
           {/* Perawatan & Pemeliharaan Section */}
           <div className="pb-7">
-            <h2 className="text-3xl font-bold text-center mb-8">
+            <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">
               Perawatan & Pemeliharaan
             </h2>
 
@@ -243,7 +243,7 @@ function AfterSales() {
 
           {/* FAQ Section */}
           <div className="mt-20">
-            <h2 className="text-3xl font-bold text-center mb-8">
+            <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">
               Pertanyaan yang Sering Diajukan
             </h2>
 

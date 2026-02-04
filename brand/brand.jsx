@@ -156,7 +156,7 @@ function App() {
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
-        <h1 className="relative text-white text-5xl md:text-6xl font-bold">
+        <h1 className="relative text-center text-white text-4xl md:text-6xl font-bold">
           Our Journey Through Time
         </h1>
       </div>

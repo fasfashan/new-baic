@@ -9,7 +9,7 @@ export default function AfterSalesSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 py-16 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8">After sales</h2>
+        <h2 className="md:text-3xl text-2xl font-bold mb-8">After sales</h2>
 
         {/* CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center">

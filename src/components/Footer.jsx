@@ -19,22 +19,40 @@ export default function Footer() {
         <div className="flex flex-col space-y-2">
           <h3 className="text-white text-base font-semibold mb-2">Model</h3>
           <a
+            href="/bj30-hev-awd/index.html"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            BJ30 HEV AWD
+          </a>
+          <a
             href="/bj30-hev-fwd/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            BJ30
+            BJ30 HEV FWD
           </a>
           <a
-            href="/BJ40/index.html"
+            href="/bj40-plus-cbu/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            BJ40 PLUS
+            BJ40 PLUS CBU
           </a>
           <a
-            href="/X55-Models/index.html"
+            href="/bj40-plus-ckd/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            X55
+            BJ40 PLUS CKD
+          </a>
+          <a
+            href="/x55-ii-lite/index.html"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            X55 II LITE
+          </a>
+          <a
+            href="/x55-ii-prime/index.html"
+            className="text-gray-400 text-sm hover:text-white transition-all"
+          >
+            X55 II PRIME
           </a>
           <a
             href="#"

@@ -14,8 +14,11 @@ export default defineConfig({
         singleNews: "news/single-news.html",
         contact: "contact/index.html",
         book: "book-a-test-drive/index.html",
-        BJ30: "BJ30/index.html",
+        BJ30: "bj30-hev-fwd/index.html",
+        BJ30Awd: "bj30-hev-awd/index.html",
         BJ40: "BJ40/index.html",
+        BJ40Cbu: "bj40-plus-cbu/index.html",
+        BJ40Ckd: "bj40-plus-ckd/index.html",
         singlePost1:
           "news/resmi-mengaspal-baic-bj-40-plus-dan-baic-x-55-dua-produk-unggulan-baic-kini-hadir-meramaikan-pasar-otomotif-indonesia/index.html",
         singlePost2:
@@ -23,6 +26,8 @@ export default defineConfig({
         singlePost3:
           "news/baic-international-menandatangani-kesepakatan-penjualan-merk-mobil-baic-di-indonesia-melalui-pt-jio-distribusi-indonesia/index.html",
         X55Models: "X55-Models/index.html",
+        X55Lite: "x55-ii-lite/index.html",
+        X55Prime: "x55-ii-prime/index.html",
         aboutUs: "about-us/index.html",
         reqPriceList: "request-price-list/index.html",
         career: "career/index.html",

@@ -54,6 +54,14 @@ const AccessoriesSection = () => {
         <AccessoriesCards accessories={accessories} />
 
         {/* View All Button */}
+        <div className="mt-10 flex justify-center">
+          <a
+            href="/genuine-accessories/index.html"
+            className="py-3 px-6 font-medium text-sm text-gray-900 text-center border-2 border-gray-900 hover:bg-black hover:text-white rounded-xl transition-all"
+          >
+            SEE MORE
+          </a>
+        </div>
       </div>
     </section>
   );

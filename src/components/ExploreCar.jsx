@@ -468,7 +468,7 @@ export default function ExploreCar() {
                   ))}
                 </div>
 
-                <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                <div className="select-none w-fit justify-center m-auto mt-4 mb-4 flex items-center">
                   <h2 className="text-center transition-all px-4 py-2">
                     {colorNamesBJ40[selectedColor]}
                   </h2>
@@ -537,7 +537,11 @@ export default function ExploreCar() {
                   </div>
                   <a
                     className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
-                    href="/BJ40/index.html"
+                    href={
+                      activeModel === "BJ40 PLUS CBU"
+                        ? "/bj40-plus-cbu/index.html"
+                        : "/bj40-plus-ckd/index.html"
+                    }
                   >
                     See Details
                     <svg
@@ -576,7 +580,7 @@ export default function ExploreCar() {
                     ></div>
                   ))}
                 </div>
-                <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                <div className="select-none w-fit justify-center m-auto mt-4 mb-4 flex items-center">
                   <h2 className="text-center transition-all px-4 py-2">
                     {colorNamesBJ30[selectedColorBJ30]}
                   </h2>
@@ -647,7 +651,11 @@ export default function ExploreCar() {
                   </div>
                   <a
                     className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
-                    href="/BJ40/index.html"
+                    href={
+                      activeModel === "BJ30 Type 1"
+                        ? "/bj30-hev-awd/index.html"
+                        : "/bj30-hev-fwd/index.html"
+                    }
                   >
                     See Details
                     <svg
@@ -687,7 +695,7 @@ export default function ExploreCar() {
                   ))}
                 </div>
 
-                <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                <div className="select-none w-fit justify-center m-auto mt-4 mb-4 flex items-center">
                   <h2 className="text-center transition-all px-4 py-2">
                     {colorNamesX55[selectedColorX55]}
                   </h2>
@@ -756,7 +764,11 @@ export default function ExploreCar() {
                   </div>
                   <a
                     className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
-                    href="/X55-Models/index.html"
+                    href={
+                      activeModel === "X55 II Lite"
+                        ? "/x55-ii-lite/index.html"
+                        : "/x55-ii-prime/index.html"
+                    }
                   >
                     See Details
                     <svg

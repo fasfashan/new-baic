@@ -289,40 +289,40 @@ function App() {
                   <div className="max-w-2xl px-10 flex flex-col gap-4">
                     {i === 0 && (
                       <>
-                        <h1 className="md:text-5xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-2xl font-bold uppercase">
                           SMART TECHNOLOGY
                         </h1>
-                        <h2 className="text-xl font-bold">
+                        <h2 className="text-lg font-semibold uppercase">
                           STANDARD FEATURES INCLUDE:
                         </h2>
                       </>
                     )}
                     {i === 1 && (
                       <>
-                        <h1 className="md:text-5xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-2xl font-bold uppercase">
                           EXCEPTIONAL PERFORMANCE
                         </h1>
-                        <h2 className="text-xl font-bold">
+                        <h2 className="text-lg font-semibold uppercase">
                           ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
                         </h2>
                       </>
                     )}
                     {i === 2 && (
                       <>
-                        <h1 className="md:text-5xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-2xl font-bold uppercase">
                           REVOLUTIONARY SPORTS STYLING
                         </h1>
-                        <h2 className="text-xl font-bold">
+                        <h2 className="text-lg font-semibold uppercase">
                           BORN WITH EXCELLENT DESIGN
                         </h2>
                       </>
                     )}
                     {i === 3 && (
                       <>
-                        <h1 className="md:text-5xl text-4xl font-bold">
+                        <h1 className="md:text-5xl text-2xl font-bold uppercase">
                           HUMAN-CENTERED COMFORT
                         </h1>
-                        <h2 className="text-xl font-bold">
+                        <h2 className="text-lg font-semibold uppercase">
                           BUILT TOUGH FOR A RELAXED AND THRILLING RIDE
                         </h2>
                       </>
@@ -335,7 +335,9 @@ function App() {
 
           {/* ================= PRICING & SPECS ================= */}
           <div className="py-16 md:px-8 px-5 max-w-4xl m-auto">
-            <h2 className="text-center text-4xl font-bold">PRICING & SPECS</h2>
+            <h2 className="text-center md:text-4xl text-2xl font-bold">
+              PRICING & SPECS
+            </h2>
 
             {/* COLOR SELECT */}
             <div className="mt-10 space-y-4 mb-10">
@@ -420,7 +422,9 @@ function App() {
 
           {/* ================= GALLERY ================= */}
           <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-16">
-            <h2 className="text-center text-4xl font-bold">GALLERY</h2>
+            <h2 className="text-center md:text-4xl text-2xl font-bold">
+              GALLERY
+            </h2>
 
             <div className="flex justify-center mt-10 gap-10">
               <button
@@ -547,7 +551,7 @@ function App() {
           {/* ================= ACCESSORIES ================= */}
           <div className="py-16 bg-neutral-200">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-center text-4xl font-bold mb-12">
+              <h2 className="text-center md:text-4xl text-2xl font-bold mb-12">
                 ACCESSORIES
               </h2>
 
@@ -622,7 +626,7 @@ function App() {
           </div>
 
           {/* ================= CTA ================= */}
-          <div className="flex gap-4 py-16 justify-center items-center bg-black">
+          <div className="flex flex-col md:flex-row gap-4 py-16 px-5 md:px-0 justify-center items-center bg-black">
             <a
               className="py-3 px-8 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-colors"
               href="/book-a-test-drive/index.html?model=x55ii"

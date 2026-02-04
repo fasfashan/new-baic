@@ -2,35 +2,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
-import AccessoriesTab from "../src/components/AccessoriesTab";
 import "../src/index.css";
-import flameRedView1 from "../src/assets/flame-red-view-1.png";
-import flameRedView2 from "../src/assets/flame-red-view-2.png";
-import flameRedView3 from "../src/assets/flame-red-view-3.png";
-import flameRedView4 from "../src/assets/flame-red-view-4.png";
-import jadeBlackView1 from "../src/assets/jade-black-view-1.png";
-import jadeBlackView2 from "../src/assets/jade-black-view-2.png";
-import jadeBlackView3 from "../src/assets/jade-black-view-3.png";
-import jadeBlackView4 from "../src/assets/jade-black-view-4.png";
-import porcelainBlueView1 from "../src/assets/porcelain-blue-view-1.png";
-import porcelainBlueView2 from "../src/assets/porcelain-blue-view-2.png";
-import porcelainBlueView3 from "../src/assets/porcelain-blue-view-3.png";
-import porcelainBlueView4 from "../src/assets/porcelain-blue-view-4.png";
-import forestGreanView1 from "../src/assets/forest-green-view-1.png";
-import forestGreanView2 from "../src/assets/forest-green-view-2.png";
-import forestGreanView3 from "../src/assets/forest-green-view-3.png";
-import forestGreanView4 from "../src/assets/forest-green-view-4.png";
-import midnightBlueView1 from "../src/assets/midnight-blue-view-1.png";
-import midnightBlueView2 from "../src/assets/midnight-blue-view-2.png";
-import midnightBlueView3 from "../src/assets/midnight-blue-view-3.png";
-import midnightBlueView4 from "../src/assets/midnight-blue-view-4.png";
-import { useState, useEffect } from "react";
-import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
+import { useState } from "react";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
-import Foto1 from "../src/assets/BJ40-single-produk-1.jpg";
-import Foto2 from "../src/assets/BJ40-single-produk-2.jpg";
-import Foto3 from "../src/assets/BJ40-single-produk-3.jpg";
-import Foto4 from "../src/assets/BJ40-single-produk-4.jpg";
+import Foto1 from "../src/assets/BJ30-single-produk-1.jpg";
+import Foto2 from "../src/assets/BJ30-single-produk-2.jpg";
+import Foto3 from "../src/assets/BJ30-single-produk-3.jpg";
+import Foto4 from "../src/assets/BJ30-single-produk-4.jpg";
 import interior1 from "../src/assets/interior-1.jpg";
 import interior2 from "../src/assets/interior-2.jpg";
 import interior3 from "../src/assets/interior-3.jpg";
@@ -43,22 +21,20 @@ import exterior3 from "../src/assets/exterior-3.jpg";
 import exterior4 from "../src/assets/exterior-4.jpg";
 import exterior5 from "../src/assets/exterior-5.png";
 import exterior6 from "../src/assets/exterior-6.png";
-import snowWhite from "../src/assets/snow white.png";
-import armyGreen from "../src/assets/army green.png";
-import CTA from "../src/components/cta";
 import Accordion from "../src/components/Accordion";
 import ButtonChat from "../src/components/ButtonChat";
+
 const carSpecifications = {
   engine: [
-    { title: "LengthxWidthxHeight (mm)", content: "4465 / 1925 / 1871" },
-    { title: "Wheelbase (mm )", content: "2745" },
+    { title: "LengthxWidthxHeight (mm)", content: "4730 / 1870 / 1790" },
+    { title: "Wheelbase (mm )", content: "2820" },
     { title: "Fuel tank capacity (l)", content: "75" },
     { title: "Approach angle (degrees)", content: "37°" },
     { title: "Departure angle (degrees)", content: "31°" },
     { title: "Rampower angle (degrees)", content: "23°" },
     { title: "Ground clearence (mm )", content: "210" },
     { title: "Luggage capacity (litres) *seats down", content: "532/965*" },
-    { title: "Displacement (cm3)", content: "2.000 cc Turbo" },
+    { title: "Displacement (cm3)", content: "1.5T Hybrid" },
     { title: "Clynder configuration", content: "in-line 4 cylinder 16 value" },
     { title: "Maximum power (Hp@r/min)", content: "221 Hp@ 5500 r/min" },
     { title: "Minimum power (Hp@r/min)", content: "380 Nm@ 1750-4500 r/min" },
@@ -73,8 +49,6 @@ const carSpecifications = {
       content: "Five-link/coil spring non-independent suspnesion",
     },
     { title: "Drivetrain", content: "4WD with Electronic Shifter" },
-
-    // Add more specifications as needed
   ],
   features: [
     { title: "Wheels and Tyres", content: "265/65 R17" },
@@ -106,109 +80,77 @@ const carSpecifications = {
         "Electronic stability Programme (ESP), Emergency Brake Assist(EBA)",
       content: "√",
     },
-    {
-      title: "Hill Ascent Control(HOC)",
-      content: "√",
-    },
-    {
-      title: "Electronic Parking Brake (EPB)",
-      content: "√",
-    },
-    {
-      title: "ISO-FIX child seat restraint system",
-      content: "√",
-    },
-    {
-      title: "Driver and front passenger airbag",
-      content: "√",
-    },
-
-    // Add more features as needed
+    { title: "Hill Ascent Control(HOC)", content: "√" },
+    { title: "Electronic Parking Brake (EPB)", content: "√" },
+    { title: "ISO-FIX child seat restraint system", content: "√" },
+    { title: "Driver and front passenger airbag", content: "√" },
   ],
 };
+
 function App() {
   const colors = [
-    "#94111B",
-    "#ffffff",
+    "#8DB600",
+    "#87CEEB",
+    "#C0C0C0",
     "#000000",
-    "#86A9C6",
-    "#2E3F2B",
-    "#5A603F",
-    "#00243A",
+    "#808080",
+    "#ffffff",
   ];
 
-  const colorNamesBJ40 = {
-    "#94111B": "Flame Red",
-    "#ffffff": "Snow White",
+  const colorNamesBJ30 = {
+    "#8DB600": "Apple Green",
+    "#87CEEB": "Blue Sky",
+    "#C0C0C0": "Bubble Grey",
     "#000000": "Jade Black",
-    "#86A9C6": "Porcelain Blue",
-    "#2E3F2B": "Forest Green",
-    "#5A603F": "Army Green",
-    "#00243A": "Midnight Blue",
+    "#808080": "Matte Grey",
+    "#ffffff": "Snow White",
   };
 
-  const colorToImageMapBJ40 = {
-    "#94111B": [flameRedView1, flameRedView2, flameRedView3, flameRedView4],
-    "#ffffff": [snowWhite, snowWhite, snowWhite, snowWhite],
-    "#000000": [jadeBlackView1, jadeBlackView2, jadeBlackView3, jadeBlackView4],
-    "#86A9C6": [
-      porcelainBlueView1,
-      porcelainBlueView2,
-      porcelainBlueView3,
-      porcelainBlueView4,
-    ],
-    "#2E3F2B": [
-      forestGreanView1,
-      forestGreanView2,
-      forestGreanView3,
-      forestGreanView4,
-    ],
-    "#5A603F": [armyGreen, armyGreen, armyGreen, armyGreen],
-    "#00243A": [
-      midnightBlueView1,
-      midnightBlueView2,
-      midnightBlueView3,
-      midnightBlueView4,
-    ],
+  const colorToFileBJ30 = {
+    "#8DB600": "apple-green.png",
+    "#87CEEB": "blue-sky.png",
+    "#C0C0C0": "bubble-grey.png",
+    "#000000": "jade-black.png",
+    "#808080": "matte-grey.png",
+    "#ffffff": "snow-white.png",
   };
 
   const [activeTabGallery, setActiveTabGallery] = useState("Interior");
   const [animating, setAnimating] = useState(false);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const accessories = [
     {
       id: 1,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Bumper Front Type 2",
-      price: "Rp 11,428,000",
-      image: "/BJ40 Plus Bumper Front Type 2.png",
-      installedImage: "/BJ40 Plus Bumper Front Type 2.png",
+      model: "BJ30",
+      title: "BJ30 Roof Rack Upper",
+      price: "Rp 9,673,000",
+      image: "/BJ30 Accessories - Roof Rack Upper.png",
+      installedImage: "/BJ30 Accessories - Roof Rack Upper.png",
     },
     {
       id: 2,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Bumper Rear Type 2",
-      price: "Rp 11,428,000",
-      image: "/BJ40 Plus Bumper Rear Type 2.png",
-      installedImage: "/BJ40 Plus Bumper Rear Type 2.png",
+      model: "BJ30",
+      title: "BJ30 Luggage Box - Side Net Backpack",
+      price: "Rp 4,890,000",
+      image: "/BJ30 Luggage Box - Side Net Backpack.png",
+      installedImage: "/BJ30 Luggage Box - Side Net Backpack.png",
     },
     {
       id: 3,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Front Grille",
+      model: "BJ30",
+      title: "BJ30 Front Grille",
       price: "Rp 8,500,000",
-      image: "/BJ40 Plus Bumper Front Type 2.png",
-      installedImage: "/BJ40 Plus Bumper Front Type 2.png",
+      image: "/BJ30 Accessories - Roof Rack Upper.png",
+      installedImage: "/BJ30 Accessories - Roof Rack Upper.png",
     },
     {
       id: 4,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Roof Rack",
-      price: "Rp 9,673,000",
-      image: "/BJ40 Plus Bumper Rear Type 2.png",
-      installedImage: "/BJ40 Plus Bumper Rear Type 2.png",
+      model: "BJ30",
+      title: "BJ30 Side Steps",
+      price: "Rp 7,200,000",
+      image: "/BJ30 Luggage Box - Side Net Backpack.png",
+      installedImage: "/BJ30 Luggage Box - Side Net Backpack.png",
     },
   ];
 
@@ -256,25 +198,24 @@ function App() {
       setAnimating(true);
       setTimeout(() => {
         setSelectedColor(color);
-        setCurrentImageIndex(0);
         setAnimating(false);
       }, 100);
     }
   };
 
-  const handleImageSelect = (index) => {
-    setAnimating(true);
-    setTimeout(() => {
-      setCurrentImageIndex(index);
-      setAnimating(false);
-    }, 100);
-  };
-
   return (
     <>
-      <Header />
+      <Header alwaysWhite />
+      <div className="bg-white mt-20">
+        <div className="max-w-6xl mx-auto px-5 py-3 flex items-center gap-3">
+          <img src="/bj30-logo.png" alt="BJ30 Logo" className="h-4 w-auto" />
+          <span className="text-sm font-semibold tracking-wide text-gray-900">
+            HEV FWD
+          </span>
+        </div>
+      </div>
       <ButtonChat />
-
+      <p></p>
       <div className="bg-neutral-400">
         <div className="bg-neutral-200">
           {/* ================= OVERVIEW ================= */}
@@ -292,17 +233,18 @@ function App() {
                     {i === 0 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          BORN FOR EXCELLENCE
+                          HEART OF A HYBRID
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
-                          4X4 SUVS WITH A DOMINATING PRESENCE
+                          The five-hole daytime running light belt boasts both
+                          technological appeal and practical utility.
                         </h2>
                       </>
                     )}
                     {i === 1 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          EXPLORE THE UNKNOWN
+                          LIGHT THE PATH AHEAD
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
                           ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
@@ -312,20 +254,20 @@ function App() {
                     {i === 2 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          ROBUST & FEARLESS
+                          RUGGED REAR DESIGN
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
-                          CUSTOMIZED FUNCTIONS TO RESONATE WITH YOUR PERSONALITY
+                          BOLD FROM BEHIND
                         </h2>
                       </>
                     )}
                     {i === 3 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          LUXURIOUS & COMFORTABLE
+                          TECHNOLOGY WITH THRUST
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
-                          BUILT TOUGH FOR A RELAXED AND THRILLING RIDE
+                          COMFORT IN COMMAND
                         </h2>
                       </>
                     )}
@@ -335,7 +277,7 @@ function App() {
             ))}
           </div>
 
-          {/* ================= PRICING ================= */}
+          {/* ================= PRICING & SPECS ================= */}
           <div className="py-16 md:px-8 px-5 max-w-4xl m-auto">
             <h2 className="text-center md:text-4xl text-2xl font-bold">
               PRICING & SPECS
@@ -347,10 +289,10 @@ function App() {
                 {colors.map((color) => (
                   <div
                     key={color}
-                    className={`w-8 h-8 rounded-full cursor-pointer ${
+                    className={`w-8 h-8 rounded-full cursor-pointer border-2 ${
                       selectedColor === color
-                        ? "outline outline-red-500 scale-110"
-                        : ""
+                        ? "outline outline-red-500 scale-110 border-white"
+                        : "border-transparent"
                     }`}
                     style={{ backgroundColor: color }}
                     onClick={() => onColorSelect(color)}
@@ -358,7 +300,11 @@ function App() {
                 ))}
               </div>
 
-              <h2 className="text-center">{colorNamesBJ40[selectedColor]}</h2>
+              <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto flex items-center">
+                <h2 className="text-center px-4 py-2">
+                  {colorNamesBJ30[selectedColor]}
+                </h2>
+              </div>
 
               <div className="text-center mt-2">
                 <p className="text-4xl font-bold">Rp 529.000.000,-</p>
@@ -366,36 +312,38 @@ function App() {
               </div>
 
               <img
-                src={colorToImageMapBJ40[selectedColor][currentImageIndex]}
-                className="mx-auto"
+                src={`/BJ30/${colorToFileBJ30[selectedColor]}`}
+                alt={`BJ30 ${colorNamesBJ30[selectedColor]}`}
+                className={`w-full h-auto object-contain mx-auto transition-opacity duration-100 ${
+                  animating ? "opacity-0" : "opacity-100"
+                }`}
               />
               <img
                 src="/Award list BAIC - global.png"
                 alt="BAIC Awards"
                 className="mx-auto mt-4"
               />
-
-              <div className="flex justify-center gap-4">
-                {colorToImageMapBJ40[selectedColor].map((img, i) => (
-                  <button
-                    key={i}
-                    onClick={() => handleImageSelect(i)}
-                    className={`border ${
-                      currentImageIndex === i ? "border-red-500" : "opacity-50"
-                    }`}
-                  >
-                    <img src={img} className="w-24" />
-                  </button>
-                ))}
-              </div>
             </div>
+
+            <h2 className="text-center md:text-3xl text-2xl mt-10 mb-10">
+              BJ30 Specifications
+            </h2>
 
             <Accordion
               title="Engine & Drivetrain"
               content={carSpecifications.engine}
             />
-
             <Accordion title="Features" content={carSpecifications.features} />
+
+            <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed">
+              <p className="md:max-w-2xl">
+                DISCLAIMER*
+                <br />
+                Specifications, equipment, colors & materials shown here may
+                differ from every country. Please check with your local dealer
+                for the latest information
+              </p>
+            </div>
           </div>
 
           {/* ================= GALLERY ================= */}
@@ -543,7 +491,6 @@ function App() {
                       key={accessory.id}
                       className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
                     >
-                      {/* Image Container with Slider */}
                       <div className="relative overflow-hidden bg-gray-50 h-64">
                         <div
                           className="relative h-full flex items-center justify-center p-4 cursor-pointer"
@@ -557,15 +504,11 @@ function App() {
                             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                           />
                         </div>
-
-                        {/* Model Badge */}
                         <div className="absolute top-4 left-4 z-10">
                           <span className="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                             {accessory.model}
                           </span>
                         </div>
-
-                        {/* Slider Dots */}
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
                           {images.map((_, index) => (
                             <button
@@ -584,8 +527,6 @@ function App() {
                           ))}
                         </div>
                       </div>
-
-                      {/* Card Content */}
                       <div className="p-5">
                         <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                           {accessory.title}
@@ -614,13 +555,13 @@ function App() {
           <div className="flex flex-col md:flex-row gap-4 py-16 px-5 md:px-0 justify-center items-center bg-black">
             <a
               className="py-3 px-8 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-colors"
-              href="/book-a-test-drive/index.html?model=bj40plus"
+              href="/book-a-test-drive/index.html?model=bj30"
             >
               BOOK A TEST DRIVE
             </a>
             <a
               className="py-3 px-6 bg-white rounded-xl text-black hover:bg-neutral-200 transition-colors"
-              href="/brochure-bj40.pdf"
+              href="/brochure-bj30.pdf"
             >
               DOWNLOAD BROCHURE
             </a>
@@ -635,15 +576,12 @@ function App() {
           onClick={closePreview}
         >
           <div className="relative w-full h-full flex items-center justify-center p-4">
-            {/* Close Button */}
             <button
               onClick={closePreview}
               className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10 text-4xl"
             >
               ×
             </button>
-
-            {/* Previous Button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -653,8 +591,6 @@ function App() {
             >
               ‹
             </button>
-
-            {/* Image */}
             <div
               className="max-w-5xl max-h-[90vh] flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
@@ -676,8 +612,6 @@ function App() {
                 className="max-w-full max-h-full object-contain"
               />
             </div>
-
-            {/* Next Button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -687,8 +621,6 @@ function App() {
             >
               ›
             </button>
-
-            {/* Image Counter */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
               {previewModal.imageIndex + 1} / 2
             </div>

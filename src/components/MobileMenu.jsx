@@ -41,34 +41,34 @@ export default function MobileMenu() {
       {
         name: "BJ30 HEV AWD",
         image: BJ30,
-        exploreLink: "/BJ30/index.html",
+        exploreLink: "/bj30-hev-awd/index.html",
       },
       {
         name: "BJ30 HEV FWD",
         image: BJ30,
-        exploreLink: "/BJ30/index.html",
+        exploreLink: "/bj30-hev-fwd/index.html",
       },
       {
         name: "BJ40 PLUS CBU",
         image: BJ40,
-        exploreLink: "/BJ40/index.html",
+        exploreLink: "/bj40-plus-cbu/index.html",
       },
       {
         name: "BJ40 PLUS CKD",
         image: BJ40,
-        exploreLink: "/BJ40/index.html",
+        exploreLink: "/bj40-plus-ckd/index.html",
       },
     ],
     "X Series": [
       {
         name: "X55 II Lite",
         image: X55,
-        exploreLink: "/X55-Models/index.html",
+        exploreLink: "/x55-ii-lite/index.html",
       },
       {
         name: "X55 II Prime",
         image: X55,
-        exploreLink: "/X55-Models/index.html",
+        exploreLink: "/x55-ii-prime/index.html",
       },
     ],
     Arcfox: [],

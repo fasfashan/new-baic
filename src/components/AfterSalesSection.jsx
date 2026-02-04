@@ -12,7 +12,7 @@ export default function AfterSalesSection() {
         <h2 className="text-4xl md:text-5xl font-bold mb-8">After sales</h2>
 
         {/* CTA Buttons */}
-        <div className="flex gap-4 justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
           <a
             href="/aftersales/index.html"
             className="py-3 px-8 border-2 border-white text-white font-medium rounded-xl hover:bg-black transition-colors"

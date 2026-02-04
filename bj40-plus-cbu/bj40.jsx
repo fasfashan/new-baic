@@ -272,7 +272,19 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header alwaysWhite />
+      <div className="bg-white mt-20">
+        <div className="max-w-6xl mx-auto px-5 py-3 flex items-center gap-3">
+          <img
+            src="/bj40plus-logo.png"
+            alt="BJ40 Plus Logo"
+            className="h-4 w-auto"
+          />
+          <span className="text-sm font-semibold tracking-wide text-gray-900">
+            CBU
+          </span>
+        </div>
+      </div>
       <ButtonChat />
 
       <div className="bg-neutral-400">

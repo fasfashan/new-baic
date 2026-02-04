@@ -1,174 +1,172 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
+import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
-import AccessoriesTab from "../src/components/AccessoriesTab";
 import "../src/index.css";
-import flameRedView1 from "../src/assets/flame-red-view-1.png";
-import flameRedView2 from "../src/assets/flame-red-view-2.png";
-import flameRedView3 from "../src/assets/flame-red-view-3.png";
-import flameRedView4 from "../src/assets/flame-red-view-4.png";
-import jadeBlackView1 from "../src/assets/jade-black-view-1.png";
-import jadeBlackView2 from "../src/assets/jade-black-view-2.png";
-import jadeBlackView3 from "../src/assets/jade-black-view-3.png";
-import jadeBlackView4 from "../src/assets/jade-black-view-4.png";
-import porcelainBlueView1 from "../src/assets/porcelain-blue-view-1.png";
-import porcelainBlueView2 from "../src/assets/porcelain-blue-view-2.png";
-import porcelainBlueView3 from "../src/assets/porcelain-blue-view-3.png";
-import porcelainBlueView4 from "../src/assets/porcelain-blue-view-4.png";
-import forestGreanView1 from "../src/assets/forest-green-view-1.png";
-import forestGreanView2 from "../src/assets/forest-green-view-2.png";
-import forestGreanView3 from "../src/assets/forest-green-view-3.png";
-import forestGreanView4 from "../src/assets/forest-green-view-4.png";
-import midnightBlueView1 from "../src/assets/midnight-blue-view-1.png";
-import midnightBlueView2 from "../src/assets/midnight-blue-view-2.png";
-import midnightBlueView3 from "../src/assets/midnight-blue-view-3.png";
-import midnightBlueView4 from "../src/assets/midnight-blue-view-4.png";
-import { useState, useEffect } from "react";
-import BJ40Logo from "../src/assets/BJ40-plus-logo.png";
-import BJ40Video from "../src/assets/BJ40-Video.mp4";
-import Foto1 from "../src/assets/BJ40-single-produk-1.jpg";
-import Foto2 from "../src/assets/BJ40-single-produk-2.jpg";
-import Foto3 from "../src/assets/BJ40-single-produk-3.jpg";
-import Foto4 from "../src/assets/BJ40-single-produk-4.jpg";
-import interior1 from "../src/assets/interior-1.jpg";
-import interior2 from "../src/assets/interior-2.jpg";
-import interior3 from "../src/assets/interior-3.jpg";
-import interior4 from "../src/assets/interior-4.jpg";
-import interior5 from "../src/assets/interior-5.jpg";
-import interior6 from "../src/assets/interior-6.jpg";
-import exterior1 from "../src/assets/exterior-1.jpg";
-import exterior2 from "../src/assets/exterior-2.jpg";
-import exterior3 from "../src/assets/exterior-3.jpg";
-import exterior4 from "../src/assets/exterior-4.jpg";
-import exterior5 from "../src/assets/exterior-5.png";
-import exterior6 from "../src/assets/exterior-6.png";
-import snowWhite from "../src/assets/snow white.png";
-import armyGreen from "../src/assets/army green.png";
-import CTA from "../src/components/cta";
+import platinumBlackView1 from "../src/assets/platinum-black-view-1.png";
+import platinumBlackView2 from "../src/assets/platinum-black-view-2.png";
+import platinumBlackView3 from "../src/assets/platinum-black-view-3.png";
+import platinumBlackView4 from "../src/assets/platinum-black-view-4.png";
+import yellowBlackView1 from "../src/assets/yellow-black-view-1.png";
+import yellowBlackView2 from "../src/assets/yellow-black-view-2.png";
+import yellowBlackView3 from "../src/assets/yellow-black-view-3.png";
+import yellowBlackView4 from "../src/assets/yellow-black-view-4.png";
+import redBlackView1 from "../src/assets/red-black-view-1.png";
+import redBlackView2 from "../src/assets/red-black-view-2.png";
+import redBlackView3 from "../src/assets/red-black-view-3.png";
+import redBlackView4 from "../src/assets/red-black-view-4.png";
+import crystalBlackView1 from "../src/assets/crystal-black-view-1.png";
+import crystalBlackView2 from "../src/assets/crystal-black-view-2.png";
+import crystalBlackView3 from "../src/assets/crystal-black-view-3.png";
+import crystalBlackView4 from "../src/assets/crystal-black-view-4.png";
+import whiteBlackView1 from "../src/assets/white-black-view-1.png";
+import whiteBlackView2 from "../src/assets/white-black-view-2.png";
+import whiteBlackView3 from "../src/assets/white-black-view-3.png";
+import whiteBlackView4 from "../src/assets/white-black-view-4.png";
+import X55Video from "../src/assets/X55-Video.mp4";
+import Foto1 from "../src/assets/X55-single-produk-1.jpg";
+import Foto2 from "../src/assets/X55-single-produk-2.jpg";
+import Foto3 from "../src/assets/X55-single-produk-3.jpg";
+import Foto4 from "../src/assets/X55-single-produk-4.jpg";
+import interior1 from "../src/assets/interior-x55-1.jpg";
+import interior2 from "../src/assets/interior-x55-2.jpg";
+import interior3 from "../src/assets/interior-x55-3.jpg";
+import interior4 from "../src/assets/interior-x55-4.jpg";
+import interior5 from "../src/assets/interior-x55-5.jpg";
+import interior6 from "../src/assets/interior-x55-6.jpg";
+import exterior1 from "../src/assets/exterior-x55-1.png";
+import exterior2 from "../src/assets/exterior-x55-2.png";
+import exterior3 from "../src/assets/exterior-x55-3.png";
+import exterior4 from "../src/assets/exterior-x55-4.png";
+import exterior5 from "../src/assets/exterior-x55-5.png";
+import exterior6 from "../src/assets/exterior-x55-6.png";
 import Accordion from "../src/components/Accordion";
 import ButtonChat from "../src/components/ButtonChat";
-const carSpecifications = {
-  engine: [
-    { title: "LengthxWidthxHeight (mm)", content: "4465 / 1925 / 1871" },
-    { title: "Wheelbase (mm )", content: "2745" },
-    { title: "Fuel tank capacity (l)", content: "75" },
-    { title: "Approach angle (degrees)", content: "37°" },
-    { title: "Departure angle (degrees)", content: "31°" },
-    { title: "Rampower angle (degrees)", content: "23°" },
-    { title: "Ground clearence (mm )", content: "210" },
-    { title: "Luggage capacity (litres) *seats down", content: "532/965*" },
-    { title: "Displacement (cm3)", content: "2.000 cc Turbo" },
-    { title: "Clynder configuration", content: "in-line 4 cylinder 16 value" },
-    { title: "Maximum power (Hp@r/min)", content: "221 Hp@ 5500 r/min" },
-    { title: "Minimum power (Hp@r/min)", content: "380 Nm@ 1750-4500 r/min" },
-    { title: "Emission controls", content: "Euro IV" },
-    { title: "Transmission", content: "ZF 8 Speed At" },
-    {
-      title: "Front suspension",
-      content: "Double wishbone/coil spring font independent suspension",
-    },
-    {
-      title: "Rear suspension",
-      content: "Five-link/coil spring non-independent suspnesion",
-    },
-    { title: "Drivetrain", content: "4WD with Electronic Shifter" },
 
-    // Add more specifications as needed
+const carSpecifications = {
+  model: [
+    { title: "Length/width/heeight (mm)", content: "4620 / 1886 / 1680" },
+    { title: "Wheelbase (mm )", content: "2735" },
+    { title: "Seats", content: "5" },
+    { title: "Trunk capacity (L)", content: "350" },
+    { title: "Fuel tank (L)", content: "53" },
+    { title: "Rampower angle (degrees)", content: "23°" },
+    { title: "Engine", content: "1.500 cc TURBO" },
+    { title: "Max. power (HP)", content: "185 Hp/5.550 rpm" },
+    { title: "Max. torque (Nm/pm)", content: "305 Nm / 1.500 - 6.000 rpm" },
+    { title: "Transmission", content: "7 Speed DCT" },
+    { title: "Fuel type", content: "Gasoline - Euro VI" },
+    {
+      title: "Front/rear supension",
+      content:
+        "MacPherson Independent suspension/multi-link independent suspension",
+    },
+    { title: "Front/rear brake", content: "Ventilation Disc / Disc" },
+    { title: "Tyres", content: "225/55 R19" },
   ],
   features: [
-    { title: "Wheels and Tyres", content: "265/65 R17" },
-    { title: "Spare type", content: "Full size" },
-    { title: "Slide foot step", content: "√" },
-    { title: "Remove hard stop", content: "√" },
-    { title: "Red tow hooks - front & back", content: "√" },
-    { title: "Height adjustable headlights - electric", content: "√" },
-    { title: "Front & Rear fog lights", content: "√" },
-    { title: "LED Daytime Running Lights", content: "√" },
-    { title: "Follow me home lights", content: "√" },
-    { title: "LED high mount brake lights", content: "√" },
-    { title: "Cruise Control", content: "√" },
-    { title: "Dual zone auto air conditioner", content: "√" },
-    { title: "Multi-function steering wheel", content: "√" },
-    { title: "Anti-glare inside rear view mirror", content: "√" },
-    { title: "Driver's seat - 4-way electric adjustable", content: "√" },
-    { title: "Front passengers eat - 6-way manual adjustable", content: "√" },
-    {
-      title: "Rear seat configuration",
-      content: "4WD with Electronic Shifter",
-    },
-    { title: "Rear seat recline function", content: "√" },
-    { title: "6 speakers", content: "√" },
-    { title: "Anti-lock Braking System (ABS)", content: "√" },
-    { title: "Electronic Brake force Distribution (ABS)", content: "√" },
+    { title: "Electronic shifter", content: "√" },
+    { title: "Electric Power Steering - EPS (2 mode)", content: "√" },
+    { title: "Manual mode shift prompt", content: "√" },
+    { title: "Drive mode(ECO/Sport/Comfort/Smart)", content: "√" },
     {
       title:
-        "Electronic stability Programme (ESP), Emergency Brake Assist(EBA)",
+        "ABS (Antilock Brake System)+ EBD (Electronic Brakeforce Distribution)",
       content: "√",
     },
+    { title: "Emergency Braking Assist, EBA", content: "√" },
+    { title: "Electronic Parking Brake, EPB", content: "√" },
+    { title: "Auto Hold", content: "√" },
+    { title: "Button start/stop", content: "√" },
+    { title: "Keyless entry", content: "√" },
+    { title: "Electronic Stability Program, ESP", content: "√" },
+    { title: "Hill Assist Control, HAC", content: "√" },
+    { title: "Hill Descent Control, HDC", content: "√" },
+    { title: "Driver and passenger air bags", content: "√" },
+    { title: "Front side air bags", content: "√" },
+    { title: "Warning of tired driving (symbol + sound)", content: "√" },
+    { title: "Engine immobilizer", content: "√" },
+    { title: "Door mirror with electric adjustment", content: "√" },
     {
-      title: "Hill Ascent Control(HOC)",
+      title: "Door mirror with electric fold and auto fold when lock",
       content: "√",
     },
+    { title: "Panoramic sunroof", content: "√" },
+    { title: "Hidden door handle", content: "√" },
+    { title: "Rain sensor wiper", content: "√" },
+    { title: "Power tailgate with smart anti-pinch", content: "√" },
+    { title: "12V charging port & Trunk", content: "√" },
+    { title: "Steering wheel off-hand sensing", content: "√" },
     {
-      title: "Electronic Parking Brake (EPB)",
+      title: "Multi-function steering wheel with 4-way adjustment",
       content: "√",
     },
+    { title: "Driver seat memory", content: "√" },
     {
-      title: "ISO-FIX child seat restraint system",
+      title: "Driving seat & Passenger seat 6-way electric adjustment",
       content: "√",
     },
+    { title: "Front seat ventilation", content: "√" },
+    { title: "Rear seat angle adjustable", content: "√" },
+    { title: "Rear seat 6/4 fold", content: "√" },
+    { title: "Back 360° panoramic image", content: "√" },
+    { title: "Lane Departure Warning, LDW", content: "√" },
+    { title: "Blind Spot Detection, BSD", content: "√" },
+    { title: "Adaptive Cruise Control, ACC", content: "√" },
+    { title: "Front Collision Warning, FCW", content: "√" },
+    { title: "Voice Control (English)", content: "√" },
+    { title: "Wireless charging", content: "√" },
+    { title: "Bluetooth", content: "√" },
+    { title: "8 Speakers", content: "√" },
+    { title: "Automatic headlight", content: "√" },
+    { title: "Emergence Stop Signal, ESS", content: "√" },
+    { title: "Multi-color interior atmosphere light", content: "√" },
+    { title: "Double zone automatic air conditioning", content: "√" },
+    { title: "Rear air outlet (blowing surface)", content: "√" },
     {
-      title: "Driver and front passenger airbag",
+      title: "Pollen filter/PM2.5 air purification, CN95 filter element",
       content: "√",
     },
-
-    // Add more features as needed
   ],
 };
-function App() {
-  const colors = [
-    "#94111B",
-    "#ffffff",
-    "#000000",
-    "#86A9C6",
-    "#2E3F2B",
-    "#5A603F",
-    "#00243A",
-  ];
 
-  const colorNamesBJ40 = {
-    "#94111B": "Flame Red",
-    "#ffffff": "Snow White",
-    "#000000": "Jade Black",
-    "#86A9C6": "Porcelain Blue",
-    "#2E3F2B": "Forest Green",
-    "#5A603F": "Army Green",
-    "#00243A": "Midnight Blue",
+function App() {
+  const colors = ["#464C47", "#96901D", "#EA3435", "#CBD1D4", "#D1D1D1"];
+
+  const colorNamesX55 = {
+    "#464C47": "Platinum Black",
+    "#96901D": "Yellow Black",
+    "#EA3435": "Red Black",
+    "#CBD1D4": "Crystal Black",
+    "#D1D1D1": "White Black",
   };
 
-  const colorToImageMapBJ40 = {
-    "#94111B": [flameRedView1, flameRedView2, flameRedView3, flameRedView4],
-    "#ffffff": [snowWhite, snowWhite, snowWhite, snowWhite],
-    "#000000": [jadeBlackView1, jadeBlackView2, jadeBlackView3, jadeBlackView4],
-    "#86A9C6": [
-      porcelainBlueView1,
-      porcelainBlueView2,
-      porcelainBlueView3,
-      porcelainBlueView4,
+  const colorToImageMapX55 = {
+    "#464C47": [
+      platinumBlackView1,
+      platinumBlackView2,
+      platinumBlackView3,
+      platinumBlackView4,
     ],
-    "#2E3F2B": [
-      forestGreanView1,
-      forestGreanView2,
-      forestGreanView3,
-      forestGreanView4,
+    "#96901D": [
+      yellowBlackView1,
+      yellowBlackView2,
+      yellowBlackView3,
+      yellowBlackView4,
     ],
-    "#5A603F": [armyGreen, armyGreen, armyGreen, armyGreen],
-    "#00243A": [
-      midnightBlueView1,
-      midnightBlueView2,
-      midnightBlueView3,
-      midnightBlueView4,
+    "#EA3435": [redBlackView1, redBlackView2, redBlackView3, redBlackView4],
+    "#CBD1D4": [
+      crystalBlackView1,
+      crystalBlackView2,
+      crystalBlackView3,
+      crystalBlackView4,
+    ],
+    "#D1D1D1": [
+      whiteBlackView1,
+      whiteBlackView2,
+      whiteBlackView3,
+      whiteBlackView4,
     ],
   };
 
@@ -180,33 +178,33 @@ function App() {
   const accessories = [
     {
       id: 1,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Bumper Front Type 2",
-      price: "Rp 11,428,000",
+      model: "X55 II",
+      title: "X55 Front Grille Chrome",
+      price: "Rp 5,500,000",
       image: "/BJ40 Plus Bumper Front Type 2.png",
       installedImage: "/BJ40 Plus Bumper Front Type 2.png",
     },
     {
       id: 2,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Bumper Rear Type 2",
-      price: "Rp 11,428,000",
+      model: "X55 II",
+      title: "X55 Side Skirts",
+      price: "Rp 8,200,000",
       image: "/BJ40 Plus Bumper Rear Type 2.png",
       installedImage: "/BJ40 Plus Bumper Rear Type 2.png",
     },
     {
       id: 3,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Front Grille",
-      price: "Rp 8,500,000",
+      model: "X55 II",
+      title: "X55 Roof Rack Cross Bar",
+      price: "Rp 6,800,000",
       image: "/BJ40 Plus Bumper Front Type 2.png",
       installedImage: "/BJ40 Plus Bumper Front Type 2.png",
     },
     {
       id: 4,
-      model: "BJ40 PLUS",
-      title: "BJ40 Plus Roof Rack",
-      price: "Rp 9,673,000",
+      model: "X55 II",
+      title: "X55 Rear Spoiler",
+      price: "Rp 4,500,000",
       image: "/BJ40 Plus Bumper Rear Type 2.png",
       installedImage: "/BJ40 Plus Bumper Rear Type 2.png",
     },
@@ -272,7 +270,15 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header alwaysWhite />
+      <div className="bg-white mt-20">
+        <div className="max-w-6xl mx-auto px-5 py-3 flex items-center gap-3">
+          <img src="/x55-logo.png" alt="X55 Logo" className="h-4 w-auto" />
+          <span className="text-sm font-semibold tracking-wide text-gray-900">
+            LITE
+          </span>
+        </div>
+      </div>
       <ButtonChat />
 
       <div className="bg-neutral-400">
@@ -292,17 +298,17 @@ function App() {
                     {i === 0 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          BORN FOR EXCELLENCE
+                          SMART TECHNOLOGY
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
-                          4X4 SUVS WITH A DOMINATING PRESENCE
+                          STANDARD FEATURES INCLUDE:
                         </h2>
                       </>
                     )}
                     {i === 1 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          EXPLORE THE UNKNOWN
+                          EXCEPTIONAL PERFORMANCE
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
                           ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
@@ -312,17 +318,17 @@ function App() {
                     {i === 2 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          ROBUST & FEARLESS
+                          REVOLUTIONARY SPORTS STYLING
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
-                          CUSTOMIZED FUNCTIONS TO RESONATE WITH YOUR PERSONALITY
+                          BORN WITH EXCELLENT DESIGN
                         </h2>
                       </>
                     )}
                     {i === 3 && (
                       <>
                         <h1 className="md:text-5xl text-2xl font-bold uppercase">
-                          LUXURIOUS & COMFORTABLE
+                          HUMAN-CENTERED COMFORT
                         </h1>
                         <h2 className="text-lg font-semibold uppercase">
                           BUILT TOUGH FOR A RELAXED AND THRILLING RIDE
@@ -335,7 +341,7 @@ function App() {
             ))}
           </div>
 
-          {/* ================= PRICING ================= */}
+          {/* ================= PRICING & SPECS ================= */}
           <div className="py-16 md:px-8 px-5 max-w-4xl m-auto">
             <h2 className="text-center md:text-4xl text-2xl font-bold">
               PRICING & SPECS
@@ -347,10 +353,10 @@ function App() {
                 {colors.map((color) => (
                   <div
                     key={color}
-                    className={`w-8 h-8 rounded-full cursor-pointer ${
+                    className={`w-8 h-8 rounded-full cursor-pointer border-2 ${
                       selectedColor === color
-                        ? "outline outline-red-500 scale-110"
-                        : ""
+                        ? "outline outline-red-500 scale-110 border-white"
+                        : "border-transparent"
                     }`}
                     style={{ backgroundColor: color }}
                     onClick={() => onColorSelect(color)}
@@ -358,16 +364,25 @@ function App() {
                 ))}
               </div>
 
-              <h2 className="text-center">{colorNamesBJ40[selectedColor]}</h2>
+              <div className="border select-none border-neutral-500 w-fit justify-center m-auto flex items-center">
+                <h2 className="text-center px-4 py-2">
+                  {colorNamesX55[selectedColor]}
+                </h2>
+              </div>
 
               <div className="text-center mt-2">
-                <p className="text-4xl font-bold">Rp 529.000.000,-</p>
+                <p className="text-4xl font-bold">Rp 329.000.000,-</p>
                 <p className="text-sm text-neutral-600">OTR Jakarta</p>
               </div>
 
               <img
-                src={colorToImageMapBJ40[selectedColor][currentImageIndex]}
-                className="mx-auto"
+                src={colorToImageMapX55[selectedColor][currentImageIndex]}
+                alt={`X55 II View ${currentImageIndex + 1}`}
+                className={`mx-auto transition-transform duration-100 ${
+                  animating
+                    ? "translate-x-full opacity-0"
+                    : "translate-x-0 opacity-100"
+                }`}
               />
               <img
                 src="/Award list BAIC - global.png"
@@ -376,26 +391,41 @@ function App() {
               />
 
               <div className="flex justify-center gap-4">
-                {colorToImageMapBJ40[selectedColor].map((img, i) => (
+                {colorToImageMapX55[selectedColor]?.map((imageSrc, index) => (
                   <button
-                    key={i}
-                    onClick={() => handleImageSelect(i)}
+                    key={index}
+                    onClick={() => handleImageSelect(index)}
                     className={`border ${
-                      currentImageIndex === i ? "border-red-500" : "opacity-50"
+                      currentImageIndex === index
+                        ? "border-red-500"
+                        : "opacity-50"
                     }`}
                   >
-                    <img src={img} className="w-24" />
+                    <img src={imageSrc} className="w-24" alt="" />
                   </button>
                 ))}
               </div>
             </div>
 
-            <Accordion
-              title="Engine & Drivetrain"
-              content={carSpecifications.engine}
-            />
+            <h2 className="text-center md:text-3xl text-2xl mt-10 mb-10">
+              X55 II Specifications
+            </h2>
 
+            <Accordion
+              title="Model/Configuration | Luxury"
+              content={carSpecifications.model}
+            />
             <Accordion title="Features" content={carSpecifications.features} />
+
+            <div className="max-w-5xl mt-10 font-light text-xs m-auto mb-10 leading-relaxed">
+              <p className="md:max-w-2xl">
+                DISCLAIMER*
+                <br />
+                Specifications, equipment, colors & materials shown here may
+                differ from every country. Please check with your local dealer
+                for the latest information
+              </p>
+            </div>
           </div>
 
           {/* ================= GALLERY ================= */}
@@ -427,13 +457,13 @@ function App() {
               </button>
               <button
                 className={`py-3 whitespace-nowrap border-b-2 transition-all ${
-                  activeTabGallery === "Feature"
+                  activeTabGallery === "Video"
                     ? "text-red-600 font-medium border-red-600"
                     : "text-neutral-900 border-transparent"
                 }`}
-                onClick={() => handleTabClickGallery("Feature")}
+                onClick={() => handleTabClickGallery("Video")}
               >
-                FEATURE
+                VIDEO
               </button>
             </div>
 
@@ -519,9 +549,9 @@ function App() {
               </div>
             )}
 
-            {activeTabGallery === "Feature" && (
+            {activeTabGallery === "Video" && (
               <div className="mb-10 m-auto mt-10">
-                <video controls autoPlay src={BJ40Video}></video>
+                <video controls autoPlay src={X55Video}></video>
               </div>
             )}
           </div>
@@ -543,7 +573,6 @@ function App() {
                       key={accessory.id}
                       className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
                     >
-                      {/* Image Container with Slider */}
                       <div className="relative overflow-hidden bg-gray-50 h-64">
                         <div
                           className="relative h-full flex items-center justify-center p-4 cursor-pointer"
@@ -557,15 +586,11 @@ function App() {
                             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                           />
                         </div>
-
-                        {/* Model Badge */}
                         <div className="absolute top-4 left-4 z-10">
                           <span className="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                             {accessory.model}
                           </span>
                         </div>
-
-                        {/* Slider Dots */}
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
                           {images.map((_, index) => (
                             <button
@@ -584,8 +609,6 @@ function App() {
                           ))}
                         </div>
                       </div>
-
-                      {/* Card Content */}
                       <div className="p-5">
                         <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
                           {accessory.title}
@@ -614,13 +637,13 @@ function App() {
           <div className="flex flex-col md:flex-row gap-4 py-16 px-5 md:px-0 justify-center items-center bg-black">
             <a
               className="py-3 px-8 border border-white text-white rounded-xl hover:bg-white hover:text-black transition-colors"
-              href="/book-a-test-drive/index.html?model=bj40plus"
+              href="/book-a-test-drive/index.html?model=x55ii"
             >
               BOOK A TEST DRIVE
             </a>
             <a
               className="py-3 px-6 bg-white rounded-xl text-black hover:bg-neutral-200 transition-colors"
-              href="/brochure-bj40.pdf"
+              href="/brochure-x55.pdf"
             >
               DOWNLOAD BROCHURE
             </a>
@@ -635,15 +658,12 @@ function App() {
           onClick={closePreview}
         >
           <div className="relative w-full h-full flex items-center justify-center p-4">
-            {/* Close Button */}
             <button
               onClick={closePreview}
               className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10 text-4xl"
             >
               ×
             </button>
-
-            {/* Previous Button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -653,8 +673,6 @@ function App() {
             >
               ‹
             </button>
-
-            {/* Image */}
             <div
               className="max-w-5xl max-h-[90vh] flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
@@ -676,8 +694,6 @@ function App() {
                 className="max-w-full max-h-full object-contain"
               />
             </div>
-
-            {/* Next Button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -687,8 +703,6 @@ function App() {
             >
               ›
             </button>
-
-            {/* Image Counter */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
               {previewModal.imageIndex + 1} / 2
             </div>

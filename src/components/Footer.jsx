@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="flex flex-col space-y-2">
           <h3 className="text-white text-base font-semibold mb-2">Model</h3>
           <a
-            href="/BJ30/index.html"
+            href="/bj30-hev-fwd/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
             BJ30

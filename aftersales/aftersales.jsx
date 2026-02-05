@@ -169,7 +169,7 @@ function AfterSales() {
                   />
                 </div>
                 <h3 className="font-bold text-neutral-800 mb-2">
-                  Garansi Spart Part
+                  Garansi Spare Part
                 </h3>
                 <ul className="space-y-2 text-sm text-neutral-600">
                   <li>• Suku cadang original berkualitas</li>

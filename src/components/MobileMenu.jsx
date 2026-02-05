@@ -302,7 +302,7 @@ export default function MobileMenu() {
                 href="/contact/index.html"
                 className="block text-sm hover:text-red-600 text-gray-700"
               >
-                Contact
+                Contact Us
               </a>
             </div>
           )}

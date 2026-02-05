@@ -238,7 +238,7 @@ export default function Header({ alwaysWhite = false }) {
                         href="/contact/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Contact
+                        Contact Us
                       </a>
                     </div>
                   </div>

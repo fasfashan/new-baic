@@ -355,14 +355,14 @@ function App() {
 
             {/* COLOR SELECT */}
             <div className="mt-10 space-y-4 mb-10">
-              <div className="flex justify-center gap-3">
+              <div className="flex space-x-3 justify-center">
                 {colors.map((color) => (
                   <div
                     key={color}
-                    className={`w-8 h-8 rounded-full cursor-pointer ${
+                    className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
                       selectedColor === color
-                        ? "outline outline-red-500 scale-110"
-                        : ""
+                        ? "border-4 outline outline-red-500 border-white transform scale-110"
+                        : "border-2"
                     }`}
                     style={{ backgroundColor: color }}
                     onClick={() => onColorSelect(color)}
@@ -370,11 +370,19 @@ function App() {
                 ))}
               </div>
 
-              <h2 className="text-center">{colorNamesBJ40[selectedColor]}</h2>
+              <div className="select-none w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                <h2 className="text-center transition-all px-4 py-2">
+                  {colorNamesBJ40[selectedColor]}
+                </h2>
+              </div>
 
-              <div className="text-center mt-2">
-                <p className="text-4xl font-bold">Rp 529.000.000,-</p>
-                <p className="text-sm text-neutral-600">OTR Jakarta</p>
+              <div className="mt-6 flex justify-center">
+                <div className="text-center">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+                    Rp 529.000.000,-
+                  </p>
+                  <p className="text-gray-500 text-sm italic">OTR Jakarta</p>
+                </div>
               </div>
 
               <img

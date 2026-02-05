@@ -23,7 +23,7 @@ export default function Car360Viewer({
       setIsTouchDevice(
         "ontouchstart" in window ||
           navigator.maxTouchPoints > 0 ||
-          navigator.msMaxTouchPoints > 0
+          navigator.msMaxTouchPoints > 0,
       );
     };
     checkTouchDevice();
@@ -34,7 +34,7 @@ export default function Car360Viewer({
     (frameIndex) => {
       return `/${modelKey}/${colorKey}/_${frameIndex}.png`;
     },
-    [modelKey, colorKey]
+    [modelKey, colorKey],
   );
 
   // Preload images - simplified version
@@ -69,7 +69,7 @@ export default function Car360Viewer({
             };
 
             img.src = imgPath;
-          })
+          }),
         );
       }
 

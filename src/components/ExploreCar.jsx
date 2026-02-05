@@ -196,7 +196,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ30 Type 1")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-xl ${
+                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
                             activeModel === "BJ30 Type 1"
                               ? "text-red-600"
                               : "text-gray-700"
@@ -220,7 +220,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ30 Type 2")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-xl ${
+                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
                             activeModel === "BJ30 Type 2"
                               ? "text-red-600"
                               : "text-gray-700"
@@ -244,7 +244,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ40 PLUS CBU")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-xl ${
+                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
                             activeModel === "BJ40 PLUS CBU"
                               ? "text-red-600"
                               : "text-gray-700"
@@ -268,7 +268,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ40 PLUS CKD")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-xl ${
+                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
                             activeModel === "BJ40 PLUS CKD"
                               ? "text-red-600"
                               : "text-gray-700"
@@ -297,7 +297,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("X55 II Lite")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-xl ${
+                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
                             activeModel === "X55 II Lite"
                               ? "text-red-600"
                               : "text-gray-700"
@@ -321,7 +321,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("X55 II Prime")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-xl ${
+                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
                             activeModel === "X55 II Prime"
                               ? "text-red-600"
                               : "text-gray-700"
@@ -479,7 +479,7 @@ export default function ExploreCar() {
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
                   <div className="text-center">
-                    <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
                       Rp 698.000.000,-
                     </p>
                     <p className="text-gray-500 text-sm italic">
@@ -591,7 +591,7 @@ export default function ExploreCar() {
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
                   <div className="text-center">
-                    <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
                       Rp 529.000.000,-
                     </p>
                     <p className="text-gray-500 text-sm italic">
@@ -707,7 +707,7 @@ export default function ExploreCar() {
                   {/* Price */}
                   <div className="mt-6 flex justify-center">
                     <div className="text-center">
-                      <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                      <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
                         Rp 390.000.000,-
                       </p>
                       <p className="text-gray-500 text-sm italic">

@@ -6,7 +6,7 @@ import { ChevronLeft } from "lucide-react";
 import "../src/index.css";
 
 function CareerDetail() {
-  const [showSuccess, setShowSuccess] = useState(false);
+  href = "/dealer/index.html";
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -339,7 +339,7 @@ function CareerDetail() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact/index.html"
+              href="/dealer/index.html"
               className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all"
             >
               Find dealer

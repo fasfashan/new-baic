@@ -4,7 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./news/**/*.{html,css,js,jsx,ts,tsx}",
-    "./contact/**/*.{html,css,js,jsx,ts,tsx}",
+    "./dealer/**/*.{html,css,js,jsx,ts,tsx}",
     "./book-a-test-drive/**/*.{html,css,js,jsx,ts,tsx}",
     "./BJ40/**/*.{html,css,js,jsx,ts,tsx}",
     "./X55/**/*.{html,css,js,jsx,ts,tsx}",

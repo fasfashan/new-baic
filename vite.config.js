@@ -12,7 +12,7 @@ export default defineConfig({
         newsRoot: "news.html",
         newsPage: "news/index.html",
         singleNews: "news/single-news.html",
-        contact: "contact/index.html",
+        dealer: "dealer/index.html",
         book: "book-a-test-drive/index.html",
         BJ30: "bj30-hev-fwd/index.html",
         BJ30Awd: "bj30-hev-awd/index.html",

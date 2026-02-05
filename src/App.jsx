@@ -1,4 +1,3 @@
-import Contact from "../contact/contact";
 import Header from "./components/Header";
 import VideoHeroSlider from "./components/VideoHeroSlider";
 import ExploreCar from "./components/ExploreCar";

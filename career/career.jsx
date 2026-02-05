@@ -180,7 +180,7 @@ function Career() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact/index.html"
+              href="/dealer/index.html"
               className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all"
             >
               Find dealer

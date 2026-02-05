@@ -253,7 +253,7 @@ export default function MobileMenu() {
 
         {/* Dealer Link */}
         <div className="w-full rounded-md">
-          <a className="text-lg" href="/contact/index.html">
+          <a className="text-lg" href="/dealer/index.html">
             DEALER
           </a>
         </div>
@@ -302,7 +302,7 @@ export default function MobileMenu() {
                 href="/contact/index.html"
                 className="block text-sm hover:text-red-600 text-gray-700"
               >
-                Contact Us
+                Contact
               </a>
             </div>
           )}

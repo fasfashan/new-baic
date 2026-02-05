@@ -25,7 +25,7 @@ export default function CTA() {
             </h3>
           </a>
           <a
-            href="/contact/index.html"
+            href="/dealer/index.html"
             className="flex justify-center flex-col  gap-2 border-l border-r md:p-8 p-2 border-white"
           >
             <img src={call} width={32} className="m-auto" alt="" />

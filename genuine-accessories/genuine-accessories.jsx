@@ -24,7 +24,7 @@ function App() {
         price: "Rp 9,673,000",
         image: "/BJ30 Accessories - Roof Rack Upper.png",
         installedImage: "/BJ30 Accessories - Roof Rack Upper.webp",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
       {
         id: 2,
@@ -34,7 +34,7 @@ function App() {
         image: "/BJ30 Luggage Box - Side Net Backpack.png",
         installedImage:
           "/BJ30 Accessories - Luggage Box Side Backpack-installed.png",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
       {
         id: 3,
@@ -44,7 +44,7 @@ function App() {
         image: "/BJ30 Luggage Box - Side Net Backpack.png",
         installedImage:
           "/BJ30 Accessories - Luggage Box Side Backpack-installed.png",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
       {
         id: 4,
@@ -53,7 +53,7 @@ function App() {
         price: "Rp 9,421,900",
         image: "/BJ30 Accessories - Roof Rack Upper.png",
         installedImage: "/BJ30 Accessories - Roof Rack Upper.webp",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
     ],
     "BJ40 PLUS": [
@@ -65,7 +65,7 @@ function App() {
         image: "/BJ40 Plus Accessories - Luggage Box Side Backpac.png",
         installedImage:
           "/BJ40 Plus Accessories - Luggage Box Side Backpack-installed.jpg",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
       {
         id: 2,
@@ -74,7 +74,7 @@ function App() {
         price: "Rp 9,421,900",
         image: "/BJ40 Plus Tubular Door.png",
         installedImage: "/BJ40 Plus Tubular Door-installed.png",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
     ],
     X55: [
@@ -85,7 +85,7 @@ function App() {
         price: "Rp 9,673,000",
         image: "/BJ30 Accessories - Roof Rack Upper.png",
         installedImage: "/BJ30 Accessories - Roof Rack Upper.webp",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
       {
         id: 2,
@@ -95,7 +95,7 @@ function App() {
         image: "/BJ30 Luggage Box - Side Net Backpack.png",
         installedImage:
           "/BJ30 Accessories - Luggage Box Side Backpack-installed.png",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
       {
         id: 3,
@@ -105,7 +105,7 @@ function App() {
         image: "/BJ30 Luggage Box - Side Net Backpack.png",
         installedImage:
           "/BJ30 Accessories - Luggage Box Side Backpack-installed.png",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
       {
         id: 4,
@@ -114,7 +114,7 @@ function App() {
         price: "Rp 9,421,900",
         image: "/BJ30 Accessories - Roof Rack Upper.png",
         installedImage: "/BJ30 Accessories - Roof Rack Upper.webp",
-        link: "/contact/index.html",
+        link: "/dealer/index.html",
       },
     ],
   };

@@ -69,7 +69,7 @@ const ButtonChat = () => {
       {isOpen && (
         <div className="mb-3 bg-white text-neutral-900 border border-neutral-200 rounded-3xl px-5 py-6 shadow-lg flex flex-col items-center gap-6">
           <a
-            href="/contact/index.html"
+            href="/dealer/index.html"
             className="flex flex-col items-center gap-2"
           >
             <div className="w-11 h-11 rounded-full bg-neutral-100 flex items-center justify-center border border-neutral-200">

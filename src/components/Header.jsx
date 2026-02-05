@@ -187,7 +187,7 @@ export default function Header({ alwaysWhite = false }) {
               {/* Dealer */}
               <li className="relative group">
                 <a
-                  href="/contact/index.html"
+                  href="/dealer/index.html"
                   className="flex items-center gap-1 hover:text-gray-300 transition-colors py-2"
                 >
                   Dealer
@@ -238,7 +238,7 @@ export default function Header({ alwaysWhite = false }) {
                         href="/contact/index.html"
                         className="block px-4 py-2 hover:bg-gray-100 transition-colors"
                       >
-                        Contact Us
+                        Contact
                       </a>
                     </div>
                   </div>

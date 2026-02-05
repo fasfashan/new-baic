@@ -354,8 +354,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Wheelbase
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">2820</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    2820
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -363,8 +365,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Length
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">4730</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    4730
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -372,8 +376,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Height
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">1790</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    1790
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -388,8 +394,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Wheelbase
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">2745</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    2745
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -397,8 +405,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Length
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">4465</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    4465
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -406,8 +416,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Height
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">1871</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    1871
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -422,8 +434,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Wheelbase
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">2735</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    2735
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -431,8 +445,10 @@ export default function ExploreCar() {
                   <p className="text-gray-500 text-sm font-medium mb-1">
                     Length
                   </p>
-                  <p className="text-2xl font-bold text-gray-800">4620</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    4620
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>
@@ -441,8 +457,10 @@ export default function ExploreCar() {
                     Height
                   </p>
 
-                  <p className="text-2xl font-bold text-gray-800">1680</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                    1680
+                  </p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                     MM
                   </p>
                 </div>

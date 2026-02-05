@@ -39,7 +39,7 @@ export default defineConfig({
         scheduleYourService: "schedule-your-service/index.html",
         genuineAccessories: "genuine-accessories/index.html",
         buyAccessories: "buy-accessories/index.html",
-        contactUs: "contact-us/index.html",
+        contactUs: "contact/index.html",
       },
     },
   },

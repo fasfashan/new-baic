@@ -27,7 +27,7 @@ function AfterSales() {
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="flex px-5 flex-col gap-4">
           <h1 className="relative text-white text-center text-4xl md:text-6xl font-bold">
-            Aftersales
+            After Sales
           </h1>
           <p className="relative text-white text-center max-w-2xl mx-auto text-lg ">
             Kami di BAIC berkomitmen untuk memberikan pengalaman kepemilikan

@@ -142,11 +142,6 @@ export default function Car360Viewer({
 
   return (
     <div className="relative w-full mx-auto">
-      {/* Color Name Label */}
-      <div className="border select-none rounded-xl border-neutral-500 w-fit justify-center m-auto mt-4 mb-4 flex items-center">
-        <h2 className="text-center transition-all px-4 py-2">{colorName}</h2>
-      </div>
-
       {/* 360 Viewer Container */}
       <div
         ref={containerRef}

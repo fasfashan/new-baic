@@ -682,36 +682,38 @@ export default function ExploreCar() {
             {/* X55 II */}
             {getBaseModel(activeModel) === "X55 II" && (
               <div className="mt-10 md:px-8">
-                <div className="flex space-x-3 justify-center">
-                  {colorsX55.map((color) => (
-                    <div
-                      key={color}
-                      className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
-                        selectedColorX55 === color
-                          ? "border-4 outline outline-red-500 border-white transform scale-110"
-                          : "border-2"
-                      }`}
-                      style={{ backgroundColor: color }}
-                      onClick={() => onColorSelectX55(color)}
-                    ></div>
-                  ))}
-                </div>
+                <div className="flex flex-col items-center">
+                  <div className="flex space-x-3 justify-center">
+                    {colorsX55.map((color) => (
+                      <div
+                        key={color}
+                        className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
+                          selectedColorX55 === color
+                            ? "border-4 outline outline-red-500 border-white transform scale-110"
+                            : "border-2"
+                        }`}
+                        style={{ backgroundColor: color }}
+                        onClick={() => onColorSelectX55(color)}
+                      ></div>
+                    ))}
+                  </div>
 
-                <div className="select-none w-fit justify-center m-auto mt-4 mb-4 flex items-center">
-                  <h2 className="text-center transition-all px-4 py-2">
-                    {colorNamesX55[selectedColorX55]}
-                  </h2>
-                </div>
+                  <div className="select-none w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+                    <h2 className="text-center transition-all px-4 py-2">
+                      {colorNamesX55[selectedColorX55]}
+                    </h2>
+                  </div>
 
-                {/* Price */}
-                <div className="mt-6 flex justify-center">
-                  <div className="text-center">
-                    <p className="text-3xl md:text-4xl font-bold tracking-wide">
-                      Rp 390.000.000,-
-                    </p>
-                    <p className="text-gray-500 text-sm italic">
-                      *4X2 (FWD) Variant & Price On The Road Jakarta
-                    </p>
+                  {/* Price */}
+                  <div className="mt-6 flex justify-center">
+                    <div className="text-center">
+                      <p className="text-3xl md:text-4xl font-bold tracking-wide">
+                        Rp 390.000.000,-
+                      </p>
+                      <p className="text-gray-500 text-sm italic">
+                        *4X2 (FWD) Variant & Price On The Road Jakarta
+                      </p>
+                    </div>
                   </div>
                 </div>
 

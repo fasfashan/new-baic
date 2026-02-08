@@ -29,7 +29,7 @@ export default function MilestoneTimeline({ data = [] }) {
   // Status-based icons/colors: green check for done, pending only for 2023
 
   return (
-    <Box sx={{ maxWidth: 900, mx: "auto", py: 6 }}>
+    <Box sx={{ maxWidth: 900, mx: "auto", py: 6, fontFamily: "HarmonyOS, sans-serif" }}>
       <Timeline
         position="alternate"
         sx={{
@@ -47,7 +47,10 @@ export default function MilestoneTimeline({ data = [] }) {
 
           return (
             <TimelineItem key={`${item.date}-${item.title}-${index}`}>
-              <TimelineOppositeContent color="text.secondary">
+              <TimelineOppositeContent
+                color="text.secondary"
+                sx={{ fontFamily: "HarmonyOS, sans-serif" }}
+              >
                 {item.date}
               </TimelineOppositeContent>
 
@@ -57,16 +60,25 @@ export default function MilestoneTimeline({ data = [] }) {
               </TimelineSeparator>
 
               <TimelineContent>
-                <Typography variant="h6">{item.title}</Typography>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontFamily: "HarmonyOS, sans-serif" }}
+                >
+                  {item.title}
+                </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  sx={{ mb: 0.5 }}
+                  sx={{ mb: 0.5, fontFamily: "HarmonyOS, sans-serif" }}
                 >
                   {item.desc}
                 </Typography>
                 {item.period && (
-                  <Typography variant="caption" color="text.secondary">
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ fontFamily: "HarmonyOS, sans-serif" }}
+                  >
                     {item.period}
                   </Typography>
                 )}

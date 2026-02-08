@@ -120,7 +120,7 @@ function Career() {
                       <p className="text-xs text-red-600 font-semibold mb-1">
                         Position
                       </p>
-                      <p className="text-lg font-bold text-gray-800">
+                      <p className="text-base font-bold text-gray-800">
                         {job.position}
                       </p>
                     </div>
@@ -128,7 +128,7 @@ function Career() {
                       <p className="text-xs text-red-600 font-semibold mb-1">
                         Department
                       </p>
-                      <p className="text-lg font-bold text-gray-800">
+                      <p className="text-base font-bold text-gray-800">
                         {job.department}
                       </p>
                     </div>
@@ -136,7 +136,7 @@ function Career() {
                       <p className="text-xs text-red-600 font-semibold mb-1">
                         Location
                       </p>
-                      <p className="text-lg font-bold text-gray-800">
+                      <p className="text-base font-bold text-gray-800">
                         {job.location}
                       </p>
                     </div>
@@ -161,39 +161,6 @@ function Career() {
           </div>
         </div>
       </div>
-
-      {/* CTA Section */}
-      <section
-        className="relative py-20 md:py-32 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/bg-cta.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Take the Next Step with BAIC
-          </h2>
-          <p className="text-lg md:text-xl mb-8">
-            Visit a nearby dealer or schedule your test drive today — adventure
-            starts with one click
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/dealer/index.html"
-              className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all"
-            >
-              Find dealer
-            </a>
-            <a
-              href="/book-a-test-drive/index.html"
-              className="px-8 py-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold rounded-lg transition-all"
-            >
-              Book a Test Drive
-            </a>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </>

@@ -15,7 +15,10 @@ function App() {
       {/* Hero Section */}
       <div
         className="relative min-h-screen bg-cover bg-center flex items-center justify-center py-12 px-4"
-        style={{ backgroundImage: "url('/banner-about-us.webp')" }}
+        style={{
+          backgroundImage: "url('/new-bg-for-all.jpg')",
+          backgroundPosition: "center 20%",
+        }}
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>

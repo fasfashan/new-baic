@@ -99,7 +99,8 @@ function App() {
       <div
         className="relative h-80 bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: "url('/bg-news.jpg')",
+          backgroundImage: "url('/new-bg-for-all.jpg')",
+          backgroundPosition: "center 20%",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>

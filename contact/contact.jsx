@@ -69,8 +69,8 @@ function App() {
       <ButtonChat />
 
       <div
-        className="relative min-h-screen bg-cover bg-center flex items-center justify-center py-12 px-4"
-        style={{ backgroundImage: "url('/bg-book-a-test-drive.jpg')" }}
+        className="relative min-h-screen bg-cover bg-top flex items-center justify-center py-12 px-4"
+        style={{ backgroundImage: "url('/new-bg-for-all.jpg')" }}
       >
         <div className="absolute inset-0"></div>
 

@@ -25,6 +25,14 @@ export default function MobileMenu() {
     "X55 II": { wheelbase: "2735", length: "4620", height: "1680" },
   };
 
+  const prices = {
+    BJ30: "Rp 529.000.000,-",
+    "BJ40 PLUS": "Rp 698.000.000,-",
+    "X55 II Lite": "Rp 390.000.000,-",
+    "X55 II Prime": "Rp 390.000.000,-",
+    "X55 II": "Rp 390.000.000,-",
+  };
+
   // Helper to get base model name for specs mapping
   const getBaseModel = (name) => {
     if (name.startsWith("BJ30")) return "BJ30";
@@ -34,6 +42,8 @@ export default function MobileMenu() {
     if (name.startsWith("X55 II")) return "X55 II";
     return name;
   };
+
+  const getPrice = (name) => prices[getBaseModel(name)] || "";
 
   // Vehicle data structure
   const vehicles = {
@@ -192,6 +202,10 @@ export default function MobileMenu() {
                             </span>
                           </div>
                         </div>
+
+                        <p className="mt-2 text-xs font-bold text-gray-700 text-center">
+                          {getPrice(vehicle.name)}
+                        </p>
 
                         <div className="flex mt-2 text-xs">
                           <a

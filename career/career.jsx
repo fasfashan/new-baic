@@ -56,7 +56,8 @@ function Career() {
       <div
         className="relative  min-h-screen bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: "url('/bg-book-a-test-drive.jpg')",
+          backgroundImage: "url('/new-bg-for-all.jpg')",
+          backgroundPosition: "center 20%",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>

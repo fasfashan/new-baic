@@ -114,7 +114,8 @@ function AfterSales() {
                 </h3>
                 <ul className="space-y-2 text-sm text-neutral-600">
                   <li>
-                    • 3 Tahun / 100.000 km (mana yang tercapai lebih dahulu)
+                    • Garansi mesin 5 tahun / 150.000 Km (mana yang tercapai
+                    lebih dulu)
                   </li>
                   <li>• Garansi mencakup komponen mesin</li>
                   <li>• Perlindungan terhadap cacat pabrik</li>

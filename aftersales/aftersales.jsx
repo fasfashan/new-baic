@@ -102,11 +102,11 @@ function AfterSales() {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Garansi Mesin */}
               <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-40 sm:h-44 md:h-48 rounded-lg overflow-hidden bg-neutral-100 mb-4 flex items-center justify-center">
+                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
                   <img
-                    src="/BJ30 Accessories - Luggage Box Side Backpack-installed.png"
+                    src="/BJ30 Modification3-0510-2-RGB-fin.jpg"
                     alt="Garansi Mesin"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="font-bold text-neutral-800 mb-2">
@@ -124,11 +124,11 @@ function AfterSales() {
 
               {/* Garansi Transmisi */}
               <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-40 sm:h-44 md:h-48 rounded-lg overflow-hidden bg-neutral-100 mb-4 flex items-center justify-center">
+                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
                   <img
                     src="/BJ40 Plus Accessories - Luggage Box Side Backpack-installed.jpg"
                     alt="Garansi Mesin"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="font-bold text-neutral-800 mb-2">
@@ -143,11 +143,11 @@ function AfterSales() {
 
               {/* Garansi Baterai EV */}
               <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-40 sm:h-44 md:h-48 rounded-lg overflow-hidden bg-neutral-100 mb-4 flex items-center justify-center">
+                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
                   <img
                     src="/garansi-baterai.webp"
                     alt="Garansi Baterai"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="font-bold text-neutral-800 mb-2">
@@ -162,11 +162,11 @@ function AfterSales() {
 
               {/* Garansi Spart Part */}
               <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-40 sm:h-44 md:h-48 rounded-lg overflow-hidden bg-neutral-100 mb-4 flex items-center justify-center">
+                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
                   <img
                     src="/BJ30/blue-sky.png"
                     alt="Garansi Spare Part"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="font-bold text-neutral-800 mb-2">
@@ -267,8 +267,9 @@ function AfterSales() {
                   </svg>
                 </summary>
                 <p className="text-neutral-600 mt-4 text-sm">
-                  Servis rutin dianjurkan setiap 5.000 km atau 6 bulan sekali,
-                  tergantung mana yang tercapai lebih dahulu.
+                  Service rutin dianjurkan setiap 10.000 km/6 bulan sekali untuk
+                  X55-II & BJ40 Plus, dan 10.000 km / 12 bulan untuk BJ30
+                  AWD&FWD
                 </p>
               </details>
 

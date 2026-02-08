@@ -22,14 +22,21 @@ export default function MilestoneTimeline({ data = [] }) {
           title: item.title,
           desc: item.description,
           period: section.period,
-        }))
+        })),
       )
     : [];
 
   // Status-based icons/colors: green check for done, pending only for 2023
 
   return (
-    <Box sx={{ maxWidth: 900, mx: "auto", py: 6, fontFamily: "HarmonyOS, sans-serif" }}>
+    <Box
+      sx={{
+        maxWidth: 900,
+        mx: "auto",
+        py: 6,
+        fontFamily: "HarmonyOS, sans-serif",
+      }}
+    >
       <Timeline
         position="alternate"
         sx={{

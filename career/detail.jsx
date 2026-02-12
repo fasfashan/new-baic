@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
@@ -6,7 +7,7 @@ import { ChevronLeft } from "lucide-react";
 import "../src/index.css";
 
 function CareerDetail() {
-  href = "/dealer/index.html";
+  const [showSuccess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -89,7 +90,7 @@ function CareerDetail() {
               About the Role
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              As part of the Finance Information System team, you'll support and
+            As part of the Finance Information System team, you'll support and
               assist the Finance, Accounting, Tax, and Procurement teams in the
               daily use of SAP FICO, from processing transactions and generating
               accurate financial reports for the company. Collaborating with

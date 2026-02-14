@@ -46,7 +46,7 @@ const AccessoriesSection = () => {
     <section className="py-16 mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <h2 className="md:text-3xl text-2xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="md:text-2xl text-xl font-bold text-center text-gray-900 mb-12">
           Accessories
         </h2>
 

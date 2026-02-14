@@ -71,9 +71,9 @@ const AccessoriesCards = ({ accessories = [] }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {accessories.map((accessory) => {
-          const images = [accessory.image, accessory.installedImage].filter(
+          const images = [accessory.installedImage, accessory.image].filter(
             Boolean,
           );
           const currentSlide = activeSlides[accessory.id] ?? 0;
@@ -84,16 +84,16 @@ const AccessoriesCards = ({ accessories = [] }) => {
               className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
             >
               {/* Image Container with Slider */}
-              <div className="relative overflow-hidden bg-gray-50 h-64">
+              <div className="relative overflow-hidden bg-gray-50 aspect-square md:h-64 md:aspect-auto">
                 <div
-                  className={`relative h-full flex items-center justify-center cursor-pointer ${currentSlide === 0 ? "p-4" : ""}`}
+                  className={`relative h-full flex items-center justify-center cursor-pointer ${currentSlide === 1 ? "p-4" : ""}`}
                   onClick={() => openPreview(accessory.id, currentSlide)}
                 >
                   <img
                     key={`${accessory.id}-${currentSlide}`}
                     src={images[currentSlide]}
                     alt={`${accessory.model} ${accessory.title}`}
-                    className={`w-full h-full ${currentSlide === 0 ? "object-contain" : "object-cover"} group-hover:scale-110 transition-transform duration-500 accessory-slide-right`}
+                    className={`w-full h-full ${currentSlide === 1 ? "object-contain" : "object-cover"} group-hover:scale-110 transition-transform duration-500 accessory-slide-right`}
                   />
                 </div>
 
@@ -128,19 +128,22 @@ const AccessoriesCards = ({ accessories = [] }) => {
 
               {/* Card Content */}
               <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-2 min-h-[2.5rem] md:min-h-[3.5rem] line-clamp-2">
                   {accessory.title}
                 </h3>
-                <p className="text-gray-600 font-medium mb-4">
+                <p className="text-xs md:text-base text-gray-600 font-medium mb-1">
                   {accessory.price}
+                </p>
+                <p className="text-[10px] md:text-xs text-gray-500 mb-4">
+                  (Harga belum termasuk PPn dan Jasa pasang)
                 </p>
                 <a
                   href="/buy-accessories/index.html"
-                  className="block w-full py-2 px-4 text-sm text-center text-black bg-transparent border border-black rounded-lg hover:bg-black hover:text-white transition-all"
+                  className="block w-full py-2 px-4 text-xs md:text-sm text-center text-black bg-transparent border border-black rounded-lg hover:bg-black hover:text-white transition-all"
                 >
                   Buy Now
                 </a>
-                <p className="text-xs text-gray-500 mt-2 ">
+                <p className="text-[10px] md:text-xs text-gray-500 mt-2 ">
                   *Gambar hanya ilustrasi.
                 </p>
               </div>

@@ -122,7 +122,7 @@ export default function Header({ alwaysWhite = false }) {
             className={`hidden md:flex items-center gap-5 ${alwaysWhite || isScrolled ? "text-black" : "text-white"}`}
           >
             <a href="/">
-              <img className="h-6" src={logo} alt="Logo" />
+              <img className="h-5" src={logo} alt="Logo" />
             </a>
             <ul className="flex gap-4 tracking-wide items-center text-sm">
               {/* Vehicle Menu */}
@@ -250,7 +250,7 @@ export default function Header({ alwaysWhite = false }) {
           {/* Mobile Logo */}
           <div className="md:hidden">
             <a href="/">
-              <img className="h-6" src={logo} alt="Logo" />
+              <img className="h-4" src={logo} alt="Logo" />
             </a>
           </div>
 

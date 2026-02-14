@@ -83,7 +83,6 @@ export default function ExploreCar() {
   const [selectedColorBJ30, setSelectedColorBJ30] = useState(colorsBJ30[0]);
   const [selectedColorX55, setSelectedColorX55] = useState(colorsX55[0]);
 
-  const isArcfox = activeSeries === "Arcfox";
 
   // Map active model to base for rendering
   const getBaseModel = (name) => {
@@ -144,7 +143,7 @@ export default function ExploreCar() {
             >
               BJ Series
             </button>
-            <div className="w-px bg-gray-300 h-10 my-auto"></div>
+            <div className="w-px bg-gray-300 h-10 my-auto flex-shrink-0"></div>
             <button
               className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${
                 activeSeries === "X Series"
@@ -155,7 +154,7 @@ export default function ExploreCar() {
             >
               X Series
             </button>
-            <div className="w-px bg-gray-300 h-10 my-auto"></div>
+            <div className="w-px bg-gray-300 h-10 my-auto flex-shrink-0"></div>
             <button
               className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${
                 activeSeries === "Arcfox"

@@ -116,7 +116,7 @@ export default function Footer() {
             href="/join-partner/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-            Join Partner
+           Become Dealers
           </a>
         </div>
 
@@ -169,13 +169,25 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex md:px-8 px-5 flex-wrap gap-y-4 mt-10 mb-10 text-white justify-between max-w-6xl m-auto">
-        <div className="space-y-2">
-          {/* Company name removed per client request; address kept until new info is provided */}
-          <p>
-            BAIC Tower, 13th Fl <br /> Jl. Gading Serpong Boulevard Barat <br />{" "}
-            No.8, Gading, Kec. Serpong, Kabupaten <br /> Tangerang, Banten
-            15810.
-          </p>
+        <div className="flex items-start gap-6 w-full">
+          {/* JDI Logo */}
+          <div className="flex-shrink-0">
+            <img width={80} src={logojdi} alt="Logo JDI" />
+          </div>
+          {/* Address */}
+          <a
+            href="https://maps.app.goo.gl/Pp66WVdc9YGoLsPJ9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="space-y-2 hover:underline transition-all"
+          >
+            <p className="font-semibold text-sm">PT. JIO DISTRIBUSI INDONESIA</p>
+            <p className="text-sm">
+              BAIC Tower, 13th Fl <br /> Jl. Gading Serpong Boulevard Barat <br />{" "}
+              No.8, Gading, Kec. Serpong, Kabupaten <br /> Tangerang, Banten
+              15810.
+            </p>
+          </a>
         </div>
       </div>
       <div className="py-4  text-center bg-white">

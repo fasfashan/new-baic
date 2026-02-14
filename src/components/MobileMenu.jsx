@@ -1,7 +1,7 @@
 import BJ40 from "../assets/BJ40-plus.png";
 import BJ30 from "../../public/BJ30-header.png";
 import X55 from "../assets/BAIC-X55-II.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import Button from "./Button";
 export default function MobileMenu({ onClose }) {
@@ -10,6 +10,14 @@ export default function MobileMenu({ onClose }) {
   const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
 
   // Specifications data
@@ -117,7 +125,7 @@ export default function MobileMenu({ onClose }) {
               {/* Series Tabs */}
               <div className="flex gap-6 mb-4 overflow-x-auto scrollbar-hide">
                 <button
-                  className={`font-semibold text-base whitespace-nowrap ${
+                  className={`font-semibold text-sm whitespace-nowrap ${
                     activeSeries === "BJ Series"
                       ? "border-b-2 border-red-500 text-red-500 pb-2"
                       : "text-gray-700 hover:text-gray-900 pb-2"
@@ -127,7 +135,7 @@ export default function MobileMenu({ onClose }) {
                   BJ Series
                 </button>
                 <button
-                  className={`font-semibold text-base whitespace-nowrap ${
+                  className={`font-semibold text-sm whitespace-nowrap ${
                     activeSeries === "X Series"
                       ? "border-b-2 border-red-500 text-red-500 pb-2"
                       : "text-gray-700 hover:text-gray-900 pb-2"
@@ -137,7 +145,7 @@ export default function MobileMenu({ onClose }) {
                   X Series
                 </button>
                 <button
-                  className={`font-semibold text-base whitespace-nowrap ${
+                  className={`font-semibold text-sm whitespace-nowrap ${
                     activeSeries === "Arcfox"
                       ? "border-b-2 border-black text-black pb-2"
                       : "text-gray-700 hover:text-gray-900 pb-2"
@@ -369,7 +377,7 @@ export default function MobileMenu({ onClose }) {
           <Button
             variant="dark"
             href="/book-a-test-drive/index.html"
-            className="w-full bg-red-600 text-white border-red-600 hover:bg-red-700 hover:border-red-700"
+            className="w-full "
           >
             BOOK A TEST DRIVE
           </Button>

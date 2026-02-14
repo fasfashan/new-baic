@@ -57,7 +57,7 @@ const AccessoriesSection = () => {
         {/* View All Button */}
         <div className="mt-10 flex justify-center">
           <Button variant="dark" href="/genuine-accessories/index.html">
-            SEE MORE
+            See More
           </Button>
         </div>
       </div>

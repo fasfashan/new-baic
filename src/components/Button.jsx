@@ -18,11 +18,11 @@ export default function Button({
   ...props
 }) {
   const baseClasses =
-    "py-3 px-6 text-sm font-medium rounded-xl transition-all whitespace-nowrap inline-flex items-center justify-center gap-2 text-capitalize";
+    "py-3 px-6 text-sm font-medium rounded-xl transition-all whitespace-nowrap inline-flex items-center justify-center gap-2 capitalize";
 
   const variantClasses = {
-    dark: "border border-black text-black hover:bg-black hover:text-white",
-    light: "border border-white text-white hover:bg-white hover:text-black",
+    dark: "border border-black text-black hover:bg-black hover:text-white capitalize",
+    light: "border border-white text-white hover:bg-white hover:text-black capitalize",
   };
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CarFront, MapPin, X, ArrowUpRight } from "lucide-react";
+import { CarFront, MapPin, X, ArrowUpRight, MessageCircle } from "lucide-react";
 
 const ButtonChat = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -102,10 +102,10 @@ const ButtonChat = () => {
       <button
         type="button"
         onClick={() => setIsOpen((v) => !v)}
-        className="w-[60px] h-[60px] rounded-full bg-red-600 hover:bg-red-700 transition-colors shadow-lg flex items-center justify-center"
+        className="w-[45px] h-[45px] sm:w-[60px] sm:h-[60px] rounded-full bg-red-600 hover:bg-red-700 transition-colors shadow-lg flex items-center justify-center"
         aria-label={isOpen ? "Close quick actions" : "Open quick actions"}
       >
-        <MapPin className="w-7 h-7 text-white" />
+        <MapPin className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
       </button>
 
       <button
@@ -117,9 +117,18 @@ const ButtonChat = () => {
         <img
           src="/chat.png"
           alt="Chat Now"
-          className="w-[60px] h-[60px] object-contain"
+          className="w-[45px] h-[45px] sm:w-[60px] sm:h-[60px] object-contain"
         />
       </button>
+      <a
+        href="https://wa.me/6281234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-[45px] h-[45px] sm:w-[55px] sm:h-[55px] rounded-full bg-red-600 hover:bg-red-700 transition-colors shadow-lg"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      </a>
     </div>
   );
 };

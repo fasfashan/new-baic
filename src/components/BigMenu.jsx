@@ -1,7 +1,7 @@
 import BJ40 from "../assets/BJ40-plus.png";
 import BJ30 from "../../public/BJ30-header.png";
-import X55 from "../assets/BAIC-X55-II.png";
-import X55Lite from "../../public/X55-lite-header.png";
+import X55Prime from "../../public/baic x55 prime.png";
+import X55Lite from "../../public/baic x55 lite-.png";
 import { useState } from "react";
 
 const BigMenu = () => {
@@ -73,13 +73,13 @@ const BigMenu = () => {
     "X Series": [
       {
         name: "X55 II Lite",
-        image: X55,
+        image: X55Lite,
         exploreLink: "/x55-ii-lite/index.html",
         brochureLink: "/brochure-x55.pdf",
       },
       {
         name: "X55 II Prime",
-        image: X55,
+        image: X55Prime,
         exploreLink: "/x55-ii-prime/index.html",
         brochureLink: "/brochure-x55.pdf",
       },

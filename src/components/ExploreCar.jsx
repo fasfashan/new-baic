@@ -133,32 +133,34 @@ export default function ExploreCar() {
 
         {/* Series Tabs */}
         <div className="mt-6">
-          <div className="flex gap-2 justify-center max-w-6xl m-auto flex-wrap">
+          <div className="flex gap-0 justify-center max-w-6xl m-auto flex-wrap">
             <button
-              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
+              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base ${
                 activeSeries === "BJ Series"
-                  ? "border-red-600 text-red-600"
-                  : "border-gray-300 text-gray-700 hover:border-gray-400"
+                  ? "border-b-2 border-red-600 text-red-600"
+                  : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
               }`}
               onClick={() => handleSeriesClick("BJ Series")}
             >
               BJ Series
             </button>
+            <div className="w-px bg-gray-300 h-10 my-auto"></div>
             <button
-              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
+              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base ${
                 activeSeries === "X Series"
-                  ? "border-red-600 text-red-600"
-                  : "border-gray-300 text-gray-700 hover:border-gray-400"
+                  ? "border-b-2 border-red-600 text-red-600"
+                  : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
               }`}
               onClick={() => handleSeriesClick("X Series")}
             >
               X Series
             </button>
+            <div className="w-px bg-gray-300 h-10 my-auto"></div>
             <button
-              className={`py-3 px-8 transition-all rounded-lg font-semibold text-lg border-2 ${
+              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base ${
                 activeSeries === "Arcfox"
-                  ? "border-black text-black"
-                  : "border-gray-300 text-gray-700 hover:border-gray-400"
+                  ? "border-b-2 border-black text-black"
+                  : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
               }`}
               onClick={() => handleSeriesClick("Arcfox")}
             >
@@ -196,10 +198,10 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ30 Type 1")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
+                          className={`text-center mb-2 text-lg ${
                             activeModel === "BJ30 Type 1"
-                              ? "text-red-600"
-                              : "text-gray-700"
+                              ? "font-semibold text-red-600"
+                              : "font-normal text-gray-500"
                           }`}
                         >
                           BJ30 HEV AWD
@@ -220,10 +222,10 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ30 Type 2")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
+                          className={`text-center mb-2 text-lg ${
                             activeModel === "BJ30 Type 2"
-                              ? "text-red-600"
-                              : "text-gray-700"
+                              ? "font-semibold text-red-600"
+                              : "font-normal text-gray-500"
                           }`}
                         >
                           BJ30 HEV FWD
@@ -244,10 +246,10 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ40 PLUS CBU")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
+                          className={`text-center mb-2 text-lg ${
                             activeModel === "BJ40 PLUS CBU"
-                              ? "text-red-600"
-                              : "text-gray-700"
+                              ? "font-semibold text-red-600"
+                              : "font-normal text-gray-500"
                           }`}
                         >
                           BJ40 PLUS CBU
@@ -268,10 +270,10 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ40 PLUS CKD")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
+                          className={`text-center mb-2 text-lg ${
                             activeModel === "BJ40 PLUS CKD"
-                              ? "text-red-600"
-                              : "text-gray-700"
+                              ? "font-semibold text-red-600"
+                              : "font-normal text-gray-500"
                           }`}
                         >
                           BJ40 PLUS CKD
@@ -297,10 +299,10 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("X55 II Lite")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
+                          className={`text-center mb-2 text-lg ${
                             activeModel === "X55 II Lite"
-                              ? "text-red-600"
-                              : "text-gray-700"
+                              ? "font-semibold text-red-600"
+                              : "font-normal text-gray-500"
                           }`}
                         >
                           X55 II Lite
@@ -321,10 +323,10 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("X55 II Prime")}
                       >
                         <p
-                          className={`text-center mb-2 font-semibold text-base sm:text-lg md:text-xl ${
+                          className={`text-center mb-2 text-lg ${
                             activeModel === "X55 II Prime"
-                              ? "text-red-600"
-                              : "text-gray-700"
+                              ? "font-semibold text-red-600"
+                              : "font-normal text-gray-500"
                           }`}
                         >
                           X55 II Prime
@@ -497,7 +499,7 @@ export default function ExploreCar() {
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
                   <div className="text-center">
-                    <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                       Rp 698.000.000,-
                     </p>
                     <p className="text-gray-500 text-sm italic">
@@ -609,7 +611,7 @@ export default function ExploreCar() {
                 {/* Price */}
                 <div className="mt-6 flex justify-center">
                   <div className="text-center">
-                    <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                       Rp 529.000.000,-
                     </p>
                     <p className="text-gray-500 text-sm italic">
@@ -725,7 +727,7 @@ export default function ExploreCar() {
                   {/* Price */}
                   <div className="mt-6 flex justify-center">
                     <div className="text-center">
-                      <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+                      <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                         Rp 390.000.000,-
                       </p>
                       <p className="text-gray-500 text-sm italic">

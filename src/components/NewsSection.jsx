@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function NewsSection() {
   const newsArticles = [
     {
@@ -72,12 +74,9 @@ export default function NewsSection() {
                 </p>
 
                 {/* Read More Button */}
-                <a
-                  href={article.link}
-                  className="inline-block px-6 py-2 border border-gray-300 text-gray-900 text-sm font-semibold rounded hover:bg-black hover:text-white transition-colors"
-                >
+                <Button variant="dark" href={article.link}>
                   Read More
-                </a>
+                </Button>
               </div>
             </div>
           ))}
@@ -85,12 +84,9 @@ export default function NewsSection() {
 
         {/* See All Button */}
         <div className="text-center mt-12">
-          <a
-            href="/news/index.html"
-            className="inline-block py-3 px-8 bg-transparent border-2 border-black text-black hover:bg-black hover:text-white font-semibold rounded-lg transition-all"
-          >
+          <Button variant="dark" href="/news/index.html">
             See all
-          </a>
+          </Button>
         </div>
       </div>
     </section>

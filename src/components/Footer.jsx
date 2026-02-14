@@ -1,7 +1,5 @@
 import logo from "../assets/logo.svg";
 import logojdi from "../assets/logo-jdi.png";
-import logoinstagram from "../assets/Logo-IG.png";
-import logoblibli from "../assets/Logo-blibli-blue.png";
 import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function Footer() {

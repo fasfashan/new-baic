@@ -1,4 +1,5 @@
 import AccessoriesCards from "./AccessoriesCards";
+import Button from "./Button";
 
 const AccessoriesSection = () => {
   const accessories = [
@@ -55,12 +56,9 @@ const AccessoriesSection = () => {
 
         {/* View All Button */}
         <div className="mt-10 flex justify-center">
-          <a
-            href="/genuine-accessories/index.html"
-            className="py-3 px-6 font-medium text-sm text-gray-900 text-center border-2 border-gray-900 hover:bg-black hover:text-white rounded-xl transition-all"
-          >
+          <Button variant="dark" href="/genuine-accessories/index.html">
             SEE MORE
-          </a>
+          </Button>
         </div>
       </div>
     </section>

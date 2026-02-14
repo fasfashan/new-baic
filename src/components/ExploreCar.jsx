@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Car360Viewer from "./Car360Viewer";
 import { CarFront } from "lucide-react";
+import Button from "./Button";
 const colors = [
   "#94111B",
   "#ffffff",
@@ -524,21 +525,49 @@ export default function ExploreCar() {
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
-                    <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
+                    <Button
+                      variant="dark"
                       href="/book-a-test-drive/index.html?model=bj40plus"
+                      icon={CarFront}
                     >
-                      <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
-                    </a>
-                    <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
+                    </Button>
+                    <Button
+                      variant="dark"
                       href="/brochure-bj40.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      icon={() => (
+                        <svg
+                          className="flex-shrink-0"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <polyline points="7 10 12 15 17 10" />
+                          <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                      )}
                     >
+                      Download Brochure
+                    </Button>
+                  </div>
+                  <Button
+                    variant="dark"
+                    href={
+                      activeModel === "BJ40 PLUS CBU"
+                        ? "/bj40-plus-cbu/index.html"
+                        : "/bj40-plus-ckd/index.html"
+                    }
+                    icon={() => (
                       <svg
-                        className="flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
                         height="20"
@@ -549,37 +578,13 @@ export default function ExploreCar() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                       </svg>
-                      Download Brochure
-                    </a>
-                  </div>
-                  <a
-                    className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
-                    href={
-                      activeModel === "BJ40 PLUS CBU"
-                        ? "/bj40-plus-cbu/index.html"
-                        : "/bj40-plus-ckd/index.html"
-                    }
+                    )}
                   >
                     See Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
+                  </Button>
                 </div>
               </div>
             )}
@@ -638,21 +643,49 @@ export default function ExploreCar() {
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
-                    <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
+                    <Button
+                      variant="dark"
                       href="/book-a-test-drive/index.html?model=bj30"
+                      icon={CarFront}
                     >
-                      <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
-                    </a>
-                    <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
+                    </Button>
+                    <Button
+                      variant="dark"
                       href="/brochure-bj40.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      icon={() => (
+                        <svg
+                          className="flex-shrink-0"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <polyline points="7 10 12 15 17 10" />
+                          <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                      )}
                     >
+                      Download Brochure
+                    </Button>
+                  </div>
+                  <Button
+                    variant="dark"
+                    href={
+                      activeModel === "BJ30 Type 1"
+                        ? "/bj30-hev-awd/index.html"
+                        : "/bj30-hev-fwd/index.html"
+                    }
+                    icon={() => (
                       <svg
-                        className="flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
                         height="20"
@@ -663,37 +696,13 @@ export default function ExploreCar() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                       </svg>
-                      Download Brochure
-                    </a>
-                  </div>
-                  <a
-                    className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
-                    href={
-                      activeModel === "BJ30 Type 1"
-                        ? "/bj30-hev-awd/index.html"
-                        : "/bj30-hev-fwd/index.html"
-                    }
+                    )}
                   >
                     See Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
+                  </Button>
                 </div>
               </div>
             )}
@@ -753,21 +762,49 @@ export default function ExploreCar() {
 
                 <div className="flex flex-col gap-4 mt-10 justify-center items-center">
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
-                    <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
+                    <Button
+                      variant="dark"
                       href="/book-a-test-drive/index.html?model=x55ii"
+                      icon={CarFront}
                     >
-                      <CarFront className="w-5 h-5 flex-shrink-0" />
                       Book a Test Drive
-                    </a>
-                    <a
-                      className="py-2.5 px-4 font-medium text-sm text-black text-center border-2 border-black rounded-xl whitespace-nowrap flex items-center gap-2 justify-center transition-all hover:bg-black hover:text-white"
+                    </Button>
+                    <Button
+                      variant="dark"
                       href="/brochure-x55.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
+                      icon={() => (
+                        <svg
+                          className="flex-shrink-0"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <polyline points="7 10 12 15 17 10" />
+                          <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                      )}
                     >
+                      Download Brochure
+                    </Button>
+                  </div>
+                  <Button
+                    variant="dark"
+                    href={
+                      activeModel === "X55 II Lite"
+                        ? "/x55-ii-lite/index.html"
+                        : "/x55-ii-prime/index.html"
+                    }
+                    icon={() => (
                       <svg
-                        className="flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
                         height="20"
@@ -778,37 +815,13 @@ export default function ExploreCar() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                       </svg>
-                      Download Brochure
-                    </a>
-                  </div>
-                  <a
-                    className="text-gray-800 font-semibold hover:text-red-600 transition-all flex items-center gap-2"
-                    href={
-                      activeModel === "X55 II Lite"
-                        ? "/x55-ii-lite/index.html"
-                        : "/x55-ii-prime/index.html"
-                    }
+                    )}
                   >
                     See Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
+                  </Button>
                 </div>
               </div>
             )}

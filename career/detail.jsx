@@ -66,7 +66,7 @@ function CareerDetail() {
         <div className="relative flex flex-col justify-center items-center text-center text-white">
           <a
             href="/career/index.html"
-            className="inline-flex items-center gap-2 flex justify-center text-white hover:text-gray-200 transition-colors mb-4"
+            className=" items-center gap-2 flex justify-center text-white hover:text-gray-200 transition-colors mb-4"
           >
             <ChevronLeft className="w-5 h-5" />
             Back to careers

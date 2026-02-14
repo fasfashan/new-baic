@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Button from "./Button";
 import BJ40Video from "../assets/BJ40-Video.mp4";
 import BJ30 from "../../public/BJ30Video.mp4";
 import X55Video from "../assets/X55-Video.mp4";
@@ -119,12 +120,9 @@ export default function VideoHeroSlider() {
 
       {/* CTA Button above navigation */}
       <div className="absolute bottom-36 left-1/2 transform -translate-x-1/2 z-30">
-        <a
-          href={slides[currentSlide].ctaLink}
-          className="inline-block text-nowrap text-center border border-white text-white font-medium px-8 py-3 rounded-xl text-sm hover:bg-black hover:border-black transition-colors"
-        >
+        <Button variant="light" href={slides[currentSlide].ctaLink}>
           {slides[currentSlide].ctaText}
-        </a>
+        </Button>
       </div>
 
       {/* Navigation Container with max-width */}

@@ -3,11 +3,11 @@ import BJ30 from "../../public/BJ30-header.png";
 import X55Prime from "../../public/baic x55 prime.png";
 import X55Lite from "../../public/baic x55 lite-.png";
 import { useState } from "react";
+import Button from "./Button";
 
 const BigMenu = () => {
   const [activeSeries, setActiveSeries] = useState("BJ Series");
 
-  const isArcfox = activeSeries === "Arcfox";
 
   const handleSeriesClick = (series) => {
     setActiveSeries(series);
@@ -206,12 +206,13 @@ const BigMenu = () => {
                 </p>
 
                 <div className="flex mt-4 text-xs">
-                  <a
-                    className="py-3 w-full text-center hover:bg-black hover:text-white transition-all border border-gray-400 rounded-xl"
+                  <Button
+                    variant="dark"
                     href={vehicle.exploreLink}
+                    className="w-full"
                   >
                     SEE DETAILS
-                  </a>
+                  </Button>
                 </div>
               </div>
             ))}

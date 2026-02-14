@@ -1,14 +1,16 @@
 import logo from "../assets/logo.svg";
 import { useState, useEffect } from "react";
+import Button from "./Button";
 import MobileMenu from "./MobileMenu";
 import BigMenu from "./BigMenu";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+// eslint-disable-next-line react/prop-types
 export default function Header({ alwaysWhite = false }) {
   const [isBigMenuOpen, setIsBigMenuOpen] = useState(false);
   const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
-  const [isPartsAccessoriesOpen, setIsPartsAccessoriesOpen] = useState(false);
-  const [isDealerOpen, setIsDealerOpen] = useState(false);
+  const [, setIsPartsAccessoriesOpen] = useState(false);
+  const [, setIsDealerOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -256,26 +258,18 @@ export default function Header({ alwaysWhite = false }) {
 
           {/* CTA Buttons & Language Selector */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              className={`py-2.5 px-4 font-medium text-sm text-center border rounded-xl whitespace-nowrap transition-colors ${
-                alwaysWhite || isScrolled
-                  ? "text-black border-black hover:bg-black hover:text-white"
-                  : "text-white border-white hover:bg-white hover:text-black"
-              }`}
+            <Button
+              variant={alwaysWhite || isScrolled ? "dark" : "light"}
               href="/book-a-test-drive/index.html"
             >
               Book a Test Drive
-            </a>
-            <a
-              className={`py-2.5 px-4 font-medium text-sm text-center border rounded-xl whitespace-nowrap transition-colors ${
-                alwaysWhite || isScrolled
-                  ? "text-black border-black hover:bg-black hover:text-white"
-                  : "text-white border-white hover:bg-white hover:text-black"
-              }`}
+            </Button>
+            <Button
+              variant={alwaysWhite || isScrolled ? "dark" : "light"}
               href="/request-price-list/index.html"
             >
               Request Price List
-            </a>
+            </Button>
             <button
               className={`flex items-center gap-1 transition-colors ${
                 alwaysWhite || isScrolled

@@ -1,4 +1,5 @@
 import { Phone, MessageCircle } from "lucide-react";
+import Button from "./Button";
 
 export default function AfterSalesSection() {
   return (
@@ -15,28 +16,28 @@ export default function AfterSalesSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center flex-wrap">
-          <a
+          <Button
+            variant="light"
             href="tel:08123456789"
-            className="py-3 px-8 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-black transition-colors flex items-center gap-2 whitespace-nowrap"
+            icon={Phone}
           >
-            <Phone className="w-5 h-5" />
             Call Us
-          </a>
-          <a
+          </Button>
+          <Button
+            variant="light"
             href="https://wa.me/62"
             target="_blank"
             rel="noopener noreferrer"
-            className="py-3 px-8 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-black transition-colors flex items-center gap-2 whitespace-nowrap"
+            icon={MessageCircle}
           >
-            <MessageCircle className="w-5 h-5" />
             Chat Us
-          </a>
-          <a
+          </Button>
+          <Button
+            variant="light"
             href="/aftersales/index.html"
-            className="py-3 px-8 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-black transition-colors whitespace-nowrap"
           >
             Learn More
-          </a>
+          </Button>
         </div>
       </div>
     </section>

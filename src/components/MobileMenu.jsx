@@ -1,20 +1,20 @@
 import BJ40 from "../assets/BJ40-plus.png";
 import BJ30 from "../../public/BJ30-header.png";
 import X55 from "../assets/BAIC-X55-II.png";
-import X55Lite from "../../public/X55-lite-header.png";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-
+import Button from "./Button";
 export default function MobileMenu() {
   const [isVehicleOpen, setIsVehicleOpen] = useState(false);
   const [activeSeries, setActiveSeries] = useState("BJ Series");
   const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
-  const [isPartsAccessoriesOpen, setIsPartsAccessoriesOpen] = useState(false);
-  const [isDealerOpen, setIsDealerOpen] = useState(false);
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState(false);
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
-  const isArcfox = activeSeries === "Arcfox";
 
   // Specifications data
   const specs = {
@@ -215,12 +215,13 @@ export default function MobileMenu() {
                         </p>
 
                         <div className="flex mt-2 text-xs">
-                          <a
-                            className="py-3 text-center transition-all w-full border border-gray-400 rounded-xl hover:bg-black hover:text-white"
+                          <Button
+                            variant="dark"
                             href={vehicle.exploreLink}
+                            className="w-full text-xs"
                           >
                             SEE DETAILS
-                          </a>
+                          </Button>
                         </div>
                       </div>
                     ))}
@@ -357,18 +358,19 @@ export default function MobileMenu() {
         <hr />
 
         {/* CTA Buttons */}
-        <a
+        <Button
+          variant="dark"
           href="/book-a-test-drive/index.html"
-          className="py-3 px-4 font-medium text-sm text-white text-center bg-red-600 hover:bg-red-700 rounded-xl transition-all"
+          className="bg-red-600 text-white border-red-600 hover:bg-red-700 hover:border-red-700"
         >
           BOOK A TEST DRIVE
-        </a>
-        <a
+        </Button>
+        <Button
+          variant="dark"
           href="/request-price-list/index.html"
-          className="py-3 px-4 font-medium text-sm text-gray-900 text-center border-2 border-gray-900 hover:bg-gray-100 rounded-xl transition-all"
         >
           REQUEST PRICE LIST
-        </a>
+        </Button>
       </div>
     </>
   );

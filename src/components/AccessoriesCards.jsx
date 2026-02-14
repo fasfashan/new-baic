@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import Button from "./Button";
 
+// eslint-disable-next-line react/prop-types
 const AccessoriesCards = ({ accessories = [] }) => {
   const [activeSlides, setActiveSlides] = useState(
     accessories.reduce((acc, item) => ({ ...acc, [item.id]: 0 }), {}),
@@ -137,12 +139,13 @@ const AccessoriesCards = ({ accessories = [] }) => {
                 <p className="text-[10px] md:text-xs text-gray-500 mb-4">
                   (Harga belum termasuk PPn dan Jasa pasang)
                 </p>
-                <a
+                <Button
+                  variant="dark"
                   href="/buy-accessories/index.html"
-                  className="block w-full py-2 px-4 text-xs md:text-sm text-center text-black bg-transparent border border-black rounded-lg hover:bg-black hover:text-white transition-all"
+                  className="w-full text-xs md:text-sm"
                 >
                   Buy Now
-                </a>
+                </Button>
                 <p className="text-[10px] md:text-xs text-gray-500 mt-2 ">
                   *Gambar hanya ilustrasi.
                 </p>

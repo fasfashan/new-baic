@@ -2,16 +2,12 @@ import BJ40 from "../assets/BJ40-plus.png";
 import BJ30 from "../../public/BJ30-header.png";
 import X55 from "../assets/BAIC-X55-II.png";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, X } from "lucide-react";
 import Button from "./Button";
-export default function MobileMenu() {
+export default function MobileMenu({ onClose }) {
   const [isVehicleOpen, setIsVehicleOpen] = useState(false);
   const [activeSeries, setActiveSeries] = useState("BJ Series");
   const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useState(false);
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
@@ -86,20 +82,36 @@ export default function MobileMenu() {
 
   return (
     <>
-      <div className="w-full space-y-4 min-h-screen flex flex-col transition-all z-50 fixed top-[72px] left-0 right-0 p-5 overflow-y-auto bg-white">
-        {/* Vehicle Accordion */}
-        <div className="w-full rounded-md">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsVehicleOpen(!isVehicleOpen)}
+      <div className="fixed inset-0 z-50 bg-white flex flex-col overflow-hidden">
+        {/* Header with Logo and Close Button */}
+        <div className="flex justify-between items-center px-6 py-5 border-b border-gray-100">
+          <a href="/">
+            <img className="h-5" src="/logo.png" alt="BAIC Logo" />
+          </a>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-gray-50 rounded-lg transition-colors"
+            aria-label="Close menu"
           >
-            <span className="text-lg font-medium">MODEL</span>
-            {isVehicleOpen ? (
-              <ChevronUp className="w-6 h-6" />
-            ) : (
-              <ChevronDown className="w-6 h-6" />
-            )}
-          </div>
+            <X className="w-6 h-6 text-gray-900" />
+          </button>
+        </div>
+
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto px-6 py-2">
+          {/* Vehicle Accordion */}
+          <div className="w-full py-4 border-b border-gray-100">
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => setIsVehicleOpen(!isVehicleOpen)}
+            >
+              <span className="text-base font-normal text-gray-900">Model</span>
+              {isVehicleOpen ? (
+                <ChevronUp className="w-5 h-5 text-gray-600" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-gray-600" />
+              )}
+            </div>
           {isVehicleOpen && (
             <div className="mt-4 space-y-4">
               {/* Series Tabs */}
@@ -231,19 +243,18 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr />
 
         {/* Customer Care Accordion */}
-        <div className="w-full rounded-md">
+        <div className="w-full py-4 border-b border-gray-100">
           <div
             className="flex justify-between items-center cursor-pointer"
             onClick={() => setIsCustomerCareOpen(!isCustomerCareOpen)}
           >
-            <span className="text-lg font-medium">CUSTOMER CARE</span>
+            <span className="text-base font-normal text-gray-900">Customer Care</span>
             {isCustomerCareOpen ? (
-              <ChevronUp className="w-6 h-6" />
+              <ChevronUp className="w-5 h-5 text-gray-600" />
             ) : (
-              <ChevronDown className="w-6 h-6" />
+              <ChevronDown className="w-5 h-5 text-gray-600" />
             )}
           </div>
           {isCustomerCareOpen && (
@@ -263,35 +274,32 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr />
 
         {/* Accessories */}
-        <div className="w-full rounded-md">
-          <a className="text-lg" href="/genuine-accessories/index.html">
-            ACCESSORIES
+        <div className="w-full py-4 border-b border-gray-100">
+          <a className="flex justify-between items-center text-base font-normal text-gray-900" href="/genuine-accessories/index.html">
+            Accessories
           </a>
         </div>
-        <hr />
 
         {/* Dealer Link */}
-        <div className="w-full rounded-md">
-          <a className="text-lg" href="/dealer/index.html">
-            DEALER
+        <div className="w-full py-4 border-b border-gray-100">
+          <a className="flex justify-between items-center text-base font-normal text-gray-900" href="/dealer/index.html">
+            Dealer
           </a>
         </div>
-        <hr />
 
         {/* About Us Accordion */}
-        <div className="w-full rounded-md">
+        <div className="w-full py-4 border-b border-gray-100">
           <div
             className="flex justify-between items-center cursor-pointer"
             onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
           >
-            <span className="text-lg font-medium">ABOUT US</span>
+            <span className="text-base font-normal text-gray-900">About Us</span>
             {isAboutUsOpen ? (
-              <ChevronUp className="w-6 h-6" />
+              <ChevronUp className="w-5 h-5 text-gray-600" />
             ) : (
-              <ChevronDown className="w-6 h-6" />
+              <ChevronDown className="w-5 h-5 text-gray-600" />
             )}
           </div>
           {isAboutUsOpen && (
@@ -329,19 +337,18 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr />
 
         {/* Language Selector Accordion */}
-        <div className="w-full rounded-md">
+        <div className="w-full py-4 border-b border-gray-100">
           <div
             className="flex justify-between items-center cursor-pointer"
             onClick={() => setIsLanguageOpen(!isLanguageOpen)}
           >
-            <span className="text-lg font-medium">LANGUAGE</span>
+            <span className="text-base font-normal text-gray-900">Language</span>
             {isLanguageOpen ? (
-              <ChevronUp className="w-6 h-6" />
+              <ChevronUp className="w-5 h-5 text-gray-600" />
             ) : (
-              <ChevronDown className="w-6 h-6" />
+              <ChevronDown className="w-5 h-5 text-gray-600" />
             )}
           </div>
           {isLanguageOpen && (
@@ -355,22 +362,25 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        <hr />
+        </div>
 
-        {/* CTA Buttons */}
-        <Button
-          variant="dark"
-          href="/book-a-test-drive/index.html"
-          className="bg-red-600 text-white border-red-600 hover:bg-red-700 hover:border-red-700"
-        >
-          BOOK A TEST DRIVE
-        </Button>
-        <Button
-          variant="dark"
-          href="/request-price-list/index.html"
-        >
-          REQUEST PRICE LIST
-        </Button>
+        {/* CTA Buttons - Fixed at bottom */}
+        <div className="border-t border-gray-100 px-6 py-5 space-y-3 bg-white">
+          <Button
+            variant="dark"
+            href="/book-a-test-drive/index.html"
+            className="w-full bg-red-600 text-white border-red-600 hover:bg-red-700 hover:border-red-700"
+          >
+            BOOK A TEST DRIVE
+          </Button>
+          <Button
+            variant="dark"
+            href="/request-price-list/index.html"
+            className="w-full"
+          >
+            REQUEST PRICE LIST
+          </Button>
+        </div>
       </div>
     </>
   );

@@ -331,7 +331,7 @@ export default function Header({ alwaysWhite = false }) {
           <BigMenu />
         </div>
       )}
-      {isMobileMenuOpen && <MobileMenu />}
+      {isMobileMenuOpen && <MobileMenu onClose={handleMobileMenuClick} />}
     </>
   );
 }

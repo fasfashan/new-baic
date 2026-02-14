@@ -127,15 +127,15 @@ export default function ExploreCar() {
   return (
     <div className="App">
       <div className="pt-10 md:px-8 px-2">
-        <h2 className="md:text-3xl text-2xl font-bold text-center">
+        <h2 className="md:text-2xl text-xl font-bold text-center">
           EXPLORE YOUR BAIC
         </h2>
 
         {/* Series Tabs */}
         <div className="mt-6">
-          <div className="flex gap-0 justify-center max-w-6xl m-auto flex-wrap">
+          <div className="flex gap-0 justify-start md:justify-center max-w-6xl m-auto overflow-x-auto md:flex-wrap">
             <button
-              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base ${
+              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${
                 activeSeries === "BJ Series"
                   ? "border-b-2 border-red-600 text-red-600"
                   : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
@@ -146,7 +146,7 @@ export default function ExploreCar() {
             </button>
             <div className="w-px bg-gray-300 h-10 my-auto"></div>
             <button
-              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base ${
+              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${
                 activeSeries === "X Series"
                   ? "border-b-2 border-red-600 text-red-600"
                   : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
@@ -157,7 +157,7 @@ export default function ExploreCar() {
             </button>
             <div className="w-px bg-gray-300 h-10 my-auto"></div>
             <button
-              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base ${
+              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${
                 activeSeries === "Arcfox"
                   ? "border-b-2 border-black text-black"
                   : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
@@ -198,7 +198,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ30 Type 1")}
                       >
                         <p
-                          className={`text-center mb-2 text-lg ${
+                          className={`text-center mb-2 text-base sm:text-lg ${
                             activeModel === "BJ30 Type 1"
                               ? "font-semibold text-red-600"
                               : "font-normal text-gray-500"
@@ -222,7 +222,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ30 Type 2")}
                       >
                         <p
-                          className={`text-center mb-2 text-lg ${
+                          className={`text-center mb-2 text-base sm:text-lg ${
                             activeModel === "BJ30 Type 2"
                               ? "font-semibold text-red-600"
                               : "font-normal text-gray-500"
@@ -246,7 +246,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ40 PLUS CBU")}
                       >
                         <p
-                          className={`text-center mb-2 text-lg ${
+                          className={`text-center mb-2 text-base sm:text-lg ${
                             activeModel === "BJ40 PLUS CBU"
                               ? "font-semibold text-red-600"
                               : "font-normal text-gray-500"
@@ -270,7 +270,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("BJ40 PLUS CKD")}
                       >
                         <p
-                          className={`text-center mb-2 text-lg ${
+                          className={`text-center mb-2 text-base sm:text-lg ${
                             activeModel === "BJ40 PLUS CKD"
                               ? "font-semibold text-red-600"
                               : "font-normal text-gray-500"
@@ -299,7 +299,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("X55 II Lite")}
                       >
                         <p
-                          className={`text-center mb-2 text-lg ${
+                          className={`text-center mb-2 text-base sm:text-lg ${
                             activeModel === "X55 II Lite"
                               ? "font-semibold text-red-600"
                               : "font-normal text-gray-500"
@@ -323,7 +323,7 @@ export default function ExploreCar() {
                         onClick={() => handleModelClick("X55 II Prime")}
                       >
                         <p
-                          className={`text-center mb-2 text-lg ${
+                          className={`text-center mb-2 text-base sm:text-lg ${
                             activeModel === "X55 II Prime"
                               ? "font-semibold text-red-600"
                               : "font-normal text-gray-500"
@@ -353,10 +353,10 @@ export default function ExploreCar() {
             <div className="mt-8 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 max-w-2xl mx-auto">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Wheelbase
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     2820
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -364,10 +364,10 @@ export default function ExploreCar() {
                   </p>
                 </div>
                 <div className="text-center border-l border-r border-gray-300">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Length
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     4730
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -375,10 +375,10 @@ export default function ExploreCar() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Height
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     1790
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -393,10 +393,10 @@ export default function ExploreCar() {
             <div className="mt-8 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 max-w-2xl mx-auto">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Wheelbase
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     2745
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -404,10 +404,10 @@ export default function ExploreCar() {
                   </p>
                 </div>
                 <div className="text-center border-l border-r border-gray-300">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Length
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     4465
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -415,10 +415,10 @@ export default function ExploreCar() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Height
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     1871
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -433,10 +433,10 @@ export default function ExploreCar() {
             <div className="mt-8 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 max-w-2xl mx-auto">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Wheelbase
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     2735
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -444,10 +444,10 @@ export default function ExploreCar() {
                   </p>
                 </div>
                 <div className="text-center border-l border-r border-gray-300">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Length
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     4620
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
@@ -455,11 +455,11 @@ export default function ExploreCar() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="text-gray-500 text-sm font-medium mb-1">
+                  <p className="text-gray-500 text-xs font-medium mb-1">
                     Height
                   </p>
 
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
                     1680
                   </p>
                   <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">

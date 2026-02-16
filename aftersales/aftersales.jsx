@@ -19,17 +19,17 @@ function AfterSales() {
       <Header />
       <ButtonChat />
       <div
-        className="relative pt-32 min-h-screen bg-cover bg-center flex items-center justify-center"
+        className="relative pt-32 min-h-screen bg-cover bg-center flex items-end justify-center pb-20"
         style={{
           backgroundImage: "url('/bg-book-a-test-drive.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="flex px-5 flex-col gap-4">
-          <h1 className="relative text-white text-center text-4xl md:text-6xl font-bold">
+          <h1 className="relative text-white text-center text-xl md:text-4xl font-bold">
             After Sales
           </h1>
-          <p className="relative text-white text-center max-w-2xl mx-auto text-lg ">
+          <p className="relative text-white text-center max-w-2xl mx-auto text-base ">
             Kami di BAIC berkomitmen untuk memberikan pengalaman kepemilikan
             mobil yang optimal melalui layanan purna jual yang berkualitas.
           </p>

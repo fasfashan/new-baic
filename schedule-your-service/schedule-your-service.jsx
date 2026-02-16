@@ -3,6 +3,11 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import ButtonChat from "../src/components/ButtonChat";
 import "../src/index.css";
+import {
+  getProvinces,
+  getCitiesByProvince,
+  getDealersByCity,
+} from "../src/utils/dealerData";
 
 // Partner inquiry WhatsApp number
 const partnerInquiryNumber = "6281234567890";
@@ -11,6 +16,9 @@ function App() {
   const [fullname, setFullname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
+  const [province, setProvince] = useState("");
+  const [city, setCity] = useState("");
+  const [dealer, setDealer] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -43,6 +51,9 @@ function App() {
       fullname,
       phoneNumber,
       email,
+      province,
+      city,
+      dealer,
       subject,
       message,
       submittedAt: new Date().toISOString(),
@@ -57,6 +68,9 @@ function App() {
       setFullname("");
       setPhoneNumber("");
       setEmail("");
+      setProvince("");
+      setCity("");
+      setDealer("");
       setSubject("");
       setMessage("");
       setIsLoading(false);
@@ -77,6 +91,9 @@ function App() {
       fullname.trim() !== "" &&
       phoneNumber.trim() !== "" &&
       email.trim() !== "" &&
+      province.trim() !== "" &&
+      city.trim() !== "" &&
+      dealer.trim() !== "" &&
       subject.trim() !== "" &&
       message.trim() !== ""
     );
@@ -121,36 +138,122 @@ function App() {
               />
             </div>
 
-            {/* Your Phone Number */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Your Phone Number
-              </label>
-              <input
-                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
-                placeholder="e.g. +62 812 3456 7890"
-                type="text"
-                name="phone-number"
-                id="phone-number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              />
+            {/* Phone Number and Email - Two Columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Your Phone Number */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Your Phone Number
+                </label>
+                <input
+                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
+                  placeholder="e.g. +62 812 3456 7890"
+                  type="text"
+                  name="phone-number"
+                  id="phone-number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+              </div>
+
+              {/* Your Email */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Your Email
+                </label>
+                <input
+                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
+                  placeholder="e.g. johndoe@gmail.com"
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
             </div>
 
-            {/* Your Email */}
+            {/* Province and City - Two Columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Province */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Province
+                </label>
+                <select
+                  value={province}
+                  onChange={(e) => {
+                    setProvince(e.target.value);
+                    setCity("");
+                    setDealer("");
+                  }}
+                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
+                  name="province"
+                  id="province"
+                >
+                  <option value="" disabled>
+                    Select Province
+                  </option>
+                  {getProvinces().map((prov) => (
+                    <option key={prov} value={prov}>
+                      {prov}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* City */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  City
+                </label>
+                <select
+                  value={city}
+                  onChange={(e) => {
+                    setCity(e.target.value);
+                    setDealer("");
+                  }}
+                  disabled={!province}
+                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                  name="city"
+                  id="city"
+                >
+                  <option value="" disabled>
+                    {province ? "Select City" : "Select Province First"}
+                  </option>
+                  {province &&
+                    getCitiesByProvince(province).map((c) => (
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
+                    ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Dealer */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Your Email
+                Select Dealer
               </label>
-              <input
-                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3"
-                placeholder="e.g. johndoe@gmail.com"
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+              <select
+                value={dealer}
+                onChange={(e) => setDealer(e.target.value)}
+                disabled={!city}
+                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full p-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                name="dealer"
+                id="dealer"
+              >
+                <option value="" disabled>
+                  {city ? "Select Dealer" : "Select City First"}
+                </option>
+                {city &&
+                  getDealersByCity(city).map((d) => (
+                    <option key={d.id} value={d.name}>
+                      {d.name} - {d.serviceCode}
+                    </option>
+                  ))}
+              </select>
             </div>
 
             {/* Subject */}
@@ -188,11 +291,10 @@ function App() {
             {/* Submit Button */}
             <button
               type="submit"
-              className={`p-3 w-full bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all ${
-                !isFormComplete() || isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-black hover:text-white"
-              }`}
+              className={`p-3 w-full bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all ${!isFormComplete() || isLoading
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-black hover:text-white"
+                }`}
               disabled={!isFormComplete() || isLoading}
             >
               {isLoading ? (

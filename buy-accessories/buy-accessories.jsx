@@ -3,6 +3,7 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import ButtonChat from "../src/components/ButtonChat";
 import "../src/index.css";
+import { getDealersByCity } from "../src/utils/dealerData";
 
 // Province and Cities data structure
 const provinceData = {
@@ -294,6 +295,7 @@ function App() {
   const [email, setEmail] = useState("");
   const [province, setProvince] = useState("");
   const [city, setCity] = useState("");
+  const [dealer, setDealer] = useState("");
   const [availableCities, setAvailableCities] = useState([]);
   const [additionalNotes, setAdditionalNotes] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -310,9 +312,11 @@ function App() {
     if (province) {
       setAvailableCities(provinceData[province]?.cities || []);
       setCity(""); // Reset city when province changes
+      setDealer(""); // Reset dealer when province changes
     } else {
       setAvailableCities([]);
       setCity("");
+      setDealer("");
     }
   }, [province]);
 
@@ -397,6 +401,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
       email,
       province,
       city,
+      dealer,
       additionalNotes,
       submittedAt: new Date().toISOString(),
     };
@@ -424,7 +429,8 @@ Mohon informasi lebih lanjut. Terima kasih!`;
       phoneNumber.trim() !== "" &&
       email.trim() !== "" &&
       province !== "" &&
-      city !== ""
+      city !== "" &&
+      dealer !== ""
     );
   };
 
@@ -532,11 +538,10 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   disabled={!province}
-                  className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${
-                    !province
-                      ? "text-gray-400 cursor-not-allowed"
-                      : "text-gray-500"
-                  }`}
+                  className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${!province
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-gray-500"
+                    }`}
                 >
                   <option value="" disabled>
                     {!province ? "Select Province First" : "Select City"}
@@ -548,6 +553,32 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                   ))}
                 </select>
               </div>
+            </div>
+
+            {/* Dealer */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Select Dealer
+              </label>
+              <select
+                value={dealer}
+                onChange={(e) => setDealer(e.target.value)}
+                disabled={!city}
+                className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${!city
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-gray-500"
+                  }`}
+              >
+                <option value="" disabled>
+                  {!city ? "Select City First" : "Select Dealer"}
+                </option>
+                {city &&
+                  getDealersByCity(city).map((d) => (
+                    <option key={d.id} value={d.name}>
+                      {d.name} - {d.serviceCode}
+                    </option>
+                  ))}
+              </select>
             </div>
 
             {/* Full Name and Phone Number */}
@@ -615,11 +646,10 @@ Mohon informasi lebih lanjut. Terima kasih!`;
             {/* Submit Button */}
             <button
               type="submit"
-              className={`p-3 w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all ${
-                !isFormComplete() || isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : ""
-              }`}
+              className={`p-3 w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all ${!isFormComplete() || isLoading
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+                }`}
               disabled={!isFormComplete() || isLoading}
             >
               {isLoading ? (

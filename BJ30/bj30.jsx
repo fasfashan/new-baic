@@ -5,7 +5,7 @@ import Footer from "../src/components/Footer";
 import "../src/index.css";
 import { useState } from "react";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
-import Foto1 from "../src/assets/BJ30-single-produk-1.jpg";
+import Foto1 from "../src/assets/BJ30-single-produk-1.png";
 import Foto2 from "../src/assets/BJ30-single-produk-2.jpg";
 import Foto3 from "../src/assets/BJ30-single-produk-3.jpg";
 import Foto4 from "../src/assets/BJ30-single-produk-4.jpg";
@@ -289,11 +289,10 @@ function App() {
                 {colors.map((color) => (
                   <div
                     key={color}
-                    className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${
-                      selectedColor === color
-                        ? "border-4 outline outline-red-500 border-white transform scale-110"
-                        : "border-2"
-                    }`}
+                    className={`w-8 h-8 rounded-full border border-neutral-200 cursor-pointer transition-transform duration-200 ${selectedColor === color
+                      ? "border-4 outline outline-red-500 border-white transform scale-110"
+                      : "border-2"
+                      }`}
                     style={{ backgroundColor: color }}
                     onClick={() => onColorSelect(color)}
                   />
@@ -318,9 +317,8 @@ function App() {
               <img
                 src={`/BJ30/${colorToFileBJ30[selectedColor]}`}
                 alt={`BJ30 ${colorNamesBJ30[selectedColor]}`}
-                className={`w-full h-auto object-contain mx-auto transition-opacity duration-100 ${
-                  animating ? "opacity-0" : "opacity-100"
-                }`}
+                className={`w-full h-auto object-contain mx-auto transition-opacity duration-100 ${animating ? "opacity-0" : "opacity-100"
+                  }`}
               />
               <img
                 src="/Award list BAIC - global.png"
@@ -358,31 +356,28 @@ function App() {
 
             <div className="flex justify-center mt-10 gap-10">
               <button
-                className={`py-3 whitespace-nowrap border-b-2 transition-all ${
-                  activeTabGallery === "Interior"
-                    ? "text-red-600 font-medium border-red-600"
-                    : "text-neutral-900 border-transparent"
-                }`}
+                className={`py-3 whitespace-nowrap border-b-2 transition-all ${activeTabGallery === "Interior"
+                  ? "text-red-600 font-medium border-red-600"
+                  : "text-neutral-900 border-transparent"
+                  }`}
                 onClick={() => handleTabClickGallery("Interior")}
               >
                 INTERIOR
               </button>
               <button
-                className={`py-3 whitespace-nowrap border-b-2 transition-all ${
-                  activeTabGallery === "Exterior"
-                    ? "text-red-600 font-medium border-red-600"
-                    : "text-neutral-900 border-transparent"
-                }`}
+                className={`py-3 whitespace-nowrap border-b-2 transition-all ${activeTabGallery === "Exterior"
+                  ? "text-red-600 font-medium border-red-600"
+                  : "text-neutral-900 border-transparent"
+                  }`}
                 onClick={() => handleTabClickGallery("Exterior")}
               >
                 EXTERIOR
               </button>
               <button
-                className={`py-3 whitespace-nowrap border-b-2 transition-all ${
-                  activeTabGallery === "Feature"
-                    ? "text-red-600 font-medium border-red-600"
-                    : "text-neutral-900 border-transparent"
-                }`}
+                className={`py-3 whitespace-nowrap border-b-2 transition-all ${activeTabGallery === "Feature"
+                  ? "text-red-600 font-medium border-red-600"
+                  : "text-neutral-900 border-transparent"
+                  }`}
                 onClick={() => handleTabClickGallery("Feature")}
               >
                 FEATURE
@@ -521,11 +516,10 @@ function App() {
                                 e.stopPropagation();
                                 handleSlideChange(accessory.id, index);
                               }}
-                              className={`w-2 h-2 rounded-full transition-all ${
-                                currentSlide === index
-                                  ? "bg-red-600 w-6"
-                                  : "bg-gray-300 hover:bg-gray-400"
-                              }`}
+                              className={`w-2 h-2 rounded-full transition-all ${currentSlide === index
+                                ? "bg-red-600 w-6"
+                                : "bg-gray-300 hover:bg-gray-400"
+                                }`}
                               aria-label={`View image ${index + 1}`}
                             />
                           ))}
@@ -603,13 +597,13 @@ function App() {
                 src={
                   accessories.find((a) => a.id === previewModal.accessoryId)
                     ? [
-                        accessories.find(
-                          (a) => a.id === previewModal.accessoryId,
-                        ).image,
-                        accessories.find(
-                          (a) => a.id === previewModal.accessoryId,
-                        ).installedImage,
-                      ][previewModal.imageIndex]
+                      accessories.find(
+                        (a) => a.id === previewModal.accessoryId,
+                      ).image,
+                      accessories.find(
+                        (a) => a.id === previewModal.accessoryId,
+                      ).installedImage,
+                    ][previewModal.imageIndex]
                     : ""
                 }
                 alt="Preview"

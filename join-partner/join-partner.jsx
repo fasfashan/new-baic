@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import ButtonChat from "../src/components/ButtonChat";
+import Button from "../src/components/Button";
 import "../src/index.css";
 
 // Partner inquiry WhatsApp number
@@ -187,19 +188,18 @@ function App() {
             </div>
 
             {/* Submit Button */}
-            <button
+            <Button
               type="submit"
-              className={`p-3 w-full bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all ${
-                !isFormComplete() || isLoading
+              className={`w-full ${!isFormComplete() || isLoading
                   ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-black hover:text-white"
-              }`}
+                  : ""
+                }`}
               disabled={!isFormComplete() || isLoading}
             >
               {isLoading ? (
                 <div className="flex items-center justify-center">
                   <svg
-                    className="animate-spin h-5 w-5 mr-3 text-white"
+                    className="animate-spin h-5 w-5 mr-3 text-current"
                     viewBox="0 0 24 24"
                   >
                     <circle
@@ -209,6 +209,7 @@ function App() {
                       r="10"
                       stroke="currentColor"
                       strokeWidth="4"
+                      fill="none"
                     ></circle>
                     <path
                       className="opacity-75"
@@ -221,7 +222,7 @@ function App() {
               ) : (
                 "Send Inquiry"
               )}
-            </button>
+            </Button>
 
             {/* Error Message */}
             {errorMessage && (

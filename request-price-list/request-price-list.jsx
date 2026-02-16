@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import ButtonChat from "../src/components/ButtonChat";
+import Button from "../src/components/Button";
 import "../src/index.css";
 
 function App() {
@@ -180,19 +181,18 @@ function App() {
               />
             </div>
 
-            <button
+            <Button
               type="submit"
-              className={`w-full py-4 bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all text-lg ${
-                !isFormComplete() || isLoading
+              className={`w-full ${!isFormComplete() || isLoading
                   ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-black hover:text-white"
-              }`}
+                  : ""
+                }`}
               disabled={!isFormComplete() || isLoading}
             >
               {isLoading ? (
                 <div className="flex items-center justify-center">
                   <svg
-                    className="animate-spin h-5 w-5 mr-3 text-white"
+                    className="animate-spin h-5 w-5 mr-3 text-current"
                     viewBox="0 0 24 24"
                   >
                     <circle
@@ -215,7 +215,7 @@ function App() {
               ) : (
                 "Request Price List"
               )}
-            </button>
+            </Button>
           </form>
 
           {/* Success Toast */}

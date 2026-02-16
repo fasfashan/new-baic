@@ -2,60 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import ButtonChat from "../src/components/ButtonChat";
+import Button from "../src/components/Button";
 import "../src/index.css";
-import { getDealersByCity } from "../src/utils/dealerData";
-
-// Province and Cities data structure
-const provinceData = {
-  banten: {
-    name: "Banten",
-    cities: ["Tangerang", "Tangerang Selatan", "Serpong", "Serang", "Cilegon"],
-  },
-  "dki-jakarta": {
-    name: "DKI Jakarta",
-    cities: [
-      "Jakarta Pusat",
-      "Jakarta Utara",
-      "Jakarta Selatan",
-      "Jakarta Timur",
-      "Jakarta Barat",
-      "PIK",
-    ],
-  },
-  "jawa-barat": {
-    name: "Jawa Barat",
-    cities: ["Bandung", "Bekasi", "Bogor", "Depok", "Cimahi"],
-  },
-  "jawa-tengah": {
-    name: "Jawa Tengah",
-    cities: ["Semarang", "Solo", "Yogyakarta", "Magelang"],
-  },
-  "jawa-timur": {
-    name: "Jawa Timur",
-    cities: ["Surabaya", "Malang", "Sidoarjo", "Gresik"],
-  },
-};
-
-// Dealer WhatsApp mapping based on province and city
-const dealerMapping = {
-  // Format: "province-city": "whatsapp_number"
-  "banten-tangerang": "6281234567890",
-  "banten-serpong": "6281234567891",
-  "dki-jakarta-jakarta-pusat": "6281234567892",
-  "dki-jakarta-pik": "6281234567893",
-  "jawa-barat-bandung": "6281234567894",
-  "jawa-barat-bekasi": "6281234567895",
-
-  // Province-level fallbacks
-  banten: "6281234567890",
-  "dki-jakarta": "6281234567892",
-  "jawa-barat": "6281234567894",
-  "jawa-tengah": "6281234567896",
-  "jawa-timur": "6281234567897",
-
-  // Default fallback
-  default: "6281234567800",
-};
+import {
+  getProvinces,
+  getCitiesByProvince,
+  getDealersByCity,
+} from "../src/utils/dealerData";
 
 function App() {
   // Get model from URL parameter
@@ -335,7 +288,7 @@ function App() {
   // Update available cities when province changes
   useEffect(() => {
     if (province) {
-      setAvailableCities(provinceData[province]?.cities || []);
+      setAvailableCities(getCitiesByProvince(province) || []);
       setCity(""); // Reset city when province changes
       setDealer(""); // Reset dealer when province changes
     } else {
@@ -345,29 +298,11 @@ function App() {
     }
   }, [province]);
 
-  // Get dealer WhatsApp number based on location
-  const getDealerWhatsApp = (province, city) => {
-    const provinceKey = province.toLowerCase().replace(/\s+/g, "-");
-    const cityKey = city.toLowerCase().replace(/\s+/g, "-");
 
-    // Try exact match first
-    const exactMatch = `${provinceKey}-${cityKey}`;
-    if (dealerMapping[exactMatch]) {
-      return dealerMapping[exactMatch];
-    }
-
-    // Try province-level fallback
-    if (dealerMapping[provinceKey]) {
-      return dealerMapping[provinceKey];
-    }
-
-    // Use default fallback
-    return dealerMapping["default"];
-  };
 
   // Build WhatsApp message
   const buildWhatsAppMessage = () => {
-    const provinceName = provinceData[province]?.name || province;
+    const provinceName = province;
     const accessoryDetails = accessoriesData[selectedModel].find(
       (acc) => acc.id === parseInt(selectedAccessory),
     );
@@ -546,9 +481,9 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                   <option value="" disabled>
                     Choose Province
                   </option>
-                  {Object.keys(provinceData).map((key) => (
-                    <option key={key} value={key}>
-                      {provinceData[key].name}
+                  {getProvinces().map((prov) => (
+                    <option key={prov} value={prov}>
+                      {prov}
                     </option>
                   ))}
                 </select>
@@ -667,18 +602,18 @@ Mohon informasi lebih lanjut. Terima kasih!`;
             </div>
 
             {/* Submit Button */}
-            <button
+            <Button
               type="submit"
-              className={`p-3 w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all ${!isFormComplete() || isLoading
-                ? "opacity-50 cursor-not-allowed"
-                : ""
+              className={`w-full ${!isFormComplete() || isLoading
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
                 }`}
               disabled={!isFormComplete() || isLoading}
             >
               {isLoading ? (
                 <div className="flex items-center justify-center">
                   <svg
-                    className="animate-spin h-5 w-5 mr-3 text-white"
+                    className="animate-spin h-5 w-5 mr-3 text-current"
                     viewBox="0 0 24 24"
                   >
                     <circle
@@ -700,7 +635,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
               ) : (
                 "Order Now"
               )}
-            </button>
+            </Button>
 
             {/* Error Message */}
             {errorMessage && (

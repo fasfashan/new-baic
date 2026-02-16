@@ -36,7 +36,7 @@ function App() {
         </div>
       </div>
       <div className="bg-neutral-200 py-10   m-auto ">
-        <img src={logo} className="m-auto mb-4" width={200} alt="" />
+        <img src="/JHL-Group-logo.png" className="m-auto mb-4" width={200} alt="" />
         <p className="max-w-6xl m-auto md:px-8 px-5 text-neutral-600 font-light text-justify">
           <span className="text-black font-medium">JHL Group</span>
           <br />
@@ -54,26 +54,12 @@ function App() {
         <p className="max-w-6xl m-auto md:px-8 px-5 text-neutral-600 font-light text-justify">
           <span className="text-black font-medium">JDI</span>
           <br />
-          PT JIO Distribusi Indonesia (JDI) serves as the official and exclusive
-          distributor of BAIC vehicles in Indonesia. In this role, JDI oversees
-          the end-to-end management of the brand’s operations, including vehicle
-          sales and distribution, comprehensive after-sales services, spare
-          parts supply and logistics, as well as the development and training of
-          certified after-sales service personnel. Through a strong commitment
-          to operational excellence and customer satisfaction, JDI aims to
-          support sustainable growth and strengthen BAIC’s presence in the
-          Indonesian automotive market.
+          PT JIO Distribusi Indonesia (JDI) serves as the official and exclusive distributor of BAIC vehicles in Indonesia. In this role, JDI oversees the end-to-end management of the brand’s operations, including vehicle sales and distribution, comprehensive after-sales services, spare parts supply and logistics, as well as the development and training of certified after-sales service personnel. Through a strong commitment to operational excellence and customer satisfaction, JDI aims to support sustainable growth and strengthen BAIC’s presence in the Indonesian automotive market.
           <br />
           <br />
           <span className="text-black font-medium">JIO</span>
           <br />
-          JHL Internasional Otomotif (JIO) serves as the manufacturing entity
-          for the BAIC brand in Indonesia, with a strategic vision to establish
-          Indonesia as a key manufacturing hub for BAIC within the ASEAN market.
-          The company is committed to supporting regional growth through
-          localized production, advanced manufacturing capabilities, and the
-          development of a strong automotive ecosystem aligned with BAIC’s
-          global standards.
+          JHL Internasional Otomotif (JIO) serves as the manufacturing entity for the BAIC brand in Indonesia, with a strategic vision to establish Indonesia as a key manufacturing hub for BAIC within the ASEAN market. The company is committed to supporting regional growth through localized production, advanced manufacturing capabilities, and the development of a strong automotive ecosystem aligned with BAIC’s global standards.
         </p>
       </div>
 

@@ -23,7 +23,7 @@ const AccessoriesSection = () => {
       link: "/dealer/index.html",
     },
     {
-      id: 3,
+      id: 38,
       model: "BJ40 PLUS",
       title: "BJ40 Luggage Box - Side Backpack",
       price: "Rp 3,882,800",
@@ -33,7 +33,7 @@ const AccessoriesSection = () => {
       link: "/dealer/index.html",
     },
     {
-      id: 4,
+      id: 39,
       model: "BJ40 PLUS",
       title: "BJ40 Steel Tube Door",
       price: "Rp 9,421,900",

@@ -117,8 +117,8 @@ const AccessoriesCards = ({ accessories = [] }) => {
                           handleSlideChange(accessory.id, index);
                         }}
                         className={`w-2 h-2 rounded-full transition-all ${currentSlide === index
-                            ? "bg-red-600 w-6"
-                            : "bg-gray-300 hover:bg-gray-400"
+                          ? "bg-red-600 w-6"
+                          : "bg-gray-300 hover:bg-gray-400"
                           }`}
                         aria-label={`View image ${index + 1}`}
                       />
@@ -140,7 +140,7 @@ const AccessoriesCards = ({ accessories = [] }) => {
                 </p>
                 <Button
                   variant="dark"
-                  href="/buy-accessories/index.html"
+                  href={`/buy-accessories/index.html?model=${encodeURIComponent(accessory.model)}&accessory=${accessory.id}`}
                   className="w-full text-xs md:text-sm"
                 >
                   Buy Now

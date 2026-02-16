@@ -290,11 +290,16 @@ export default function ExploreCar() {
           <div className="max-w-6xl m-auto mt-8 ">
             <div className="overflow-x-auto scrollbar-hide">
               {activeSeries === "Arcfox" ? (
-                <div className="py-10 text-center text-gray-600">
-                  <p className="text-lg font-semibold">
-                    Arcfox is coming soon.
-                  </p>
-                  <p className="text-sm mt-1">Stay tuned for updates.</p>
+                <div
+                  className="w-full h-48 md:h-72 bg-cover bg-center rounded-lg overflow-hidden flex items-center"
+                  style={{ backgroundImage: "url(/arcfox-coming-soon.jpg)" }}
+                >
+                  <div className="bg-white bg-opacity-95 px-4 md:px-6 py-4 md:py-6 mx-4 md:mx-8 rounded-lg max-w-md">
+                    <h2 className="text-base font-bold text-black mb-1">
+                      Arcfox is coming soon
+                    </h2>
+                    <p className="text-sm text-gray-600">Stay tuned for updates</p>
+                  </div>
                 </div>
               ) : (
                 <div className="flex gap-6 justify-start md:justify-center">

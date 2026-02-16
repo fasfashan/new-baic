@@ -48,7 +48,7 @@ function App() {
         link: "/dealer/index.html",
       },
       {
-        id: 4,
+        id: 14,
         model: "BJ30",
         title: "BJ30 Steel Tube Door",
         price: "Rp 9,421,900",
@@ -59,7 +59,7 @@ function App() {
     ],
     "BJ40 PLUS": [
       {
-        id: 1,
+        id: 38,
         model: "BJ40 PLUS",
         title: "BJ40 Luggage Box - Side Backpack",
         price: "Rp 3,882,800",
@@ -69,7 +69,7 @@ function App() {
         link: "/dealer/index.html",
       },
       {
-        id: 2,
+        id: 39,
         model: "BJ40 PLUS",
         title: "BJ40 Steel Tube Door",
         price: "Rp 9,421,900",

@@ -64,7 +64,14 @@ function App() {
     const model = params.get("model");
     if (model === "bj30") return "BJ30";
     if (model === "bj40plus") return "BJ40 PLUS";
+    // Check for direct matches
+    if (model === "BJ40 PLUS") return "BJ40 PLUS";
     return "BJ30"; // default
+  };
+
+  const getAccessoryFromURL = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("accessory") || "";
   };
 
   // Accessories data based on model
@@ -137,6 +144,12 @@ function App() {
         code: "OP0128",
         title: "BJ30 Bike Bracket type 2",
         price: "Rp 4,326,000",
+      },
+      {
+        id: 14,
+        code: "OP0132",
+        title: "BJ30 Steel Tube Door",
+        price: "Rp 9,421,900",
       },
     ],
     "BJ40 PLUS": [
@@ -284,11 +297,23 @@ function App() {
         title: "BJ40 Plus Cargo Net",
         price: "Rp 400,000",
       },
+      {
+        id: 38,
+        code: "OP0130",
+        title: "BJ40 Luggage Box - Side Backpack",
+        price: "Rp 3,882,800",
+      },
+      {
+        id: 39,
+        code: "OP0131",
+        title: "BJ40 Steel Tube Door",
+        price: "Rp 9,421,900",
+      },
     ],
   };
 
   const [selectedModel, setSelectedModel] = useState(getModelFromURL());
-  const [selectedAccessory, setSelectedAccessory] = useState("");
+  const [selectedAccessory, setSelectedAccessory] = useState(getAccessoryFromURL());
   const [quantity, setQuantity] = useState(1);
   const [fullname, setFullname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -319,11 +344,6 @@ function App() {
       setDealer("");
     }
   }, [province]);
-
-  // Reset accessory when model changes
-  useEffect(() => {
-    setSelectedAccessory("");
-  }, [selectedModel]);
 
   // Get dealer WhatsApp number based on location
   const getDealerWhatsApp = (province, city) => {
@@ -465,7 +485,10 @@ Mohon informasi lebih lanjut. Terima kasih!`;
               </label>
               <select
                 value={selectedModel}
-                onChange={(e) => setSelectedModel(e.target.value)}
+                onChange={(e) => {
+                  setSelectedModel(e.target.value);
+                  setSelectedAccessory(""); // Reset accessory when model changes
+                }}
                 className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3"
               >
                 <option value="BJ30">BJ30</option>
@@ -565,8 +588,8 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                 onChange={(e) => setDealer(e.target.value)}
                 disabled={!city}
                 className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${!city
-                    ? "text-gray-400 cursor-not-allowed"
-                    : "text-gray-500"
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-gray-500"
                   }`}
               >
                 <option value="" disabled>

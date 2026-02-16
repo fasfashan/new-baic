@@ -100,7 +100,7 @@ function SingleNews() {
               </p>
 
               {/* Title */}
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
+              <h1 className="text-xl md:text-4xl font-bold text-gray-800 mb-8">
                 {newsDetail.title}
               </h1>
 

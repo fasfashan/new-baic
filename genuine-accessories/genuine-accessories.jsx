@@ -5,14 +5,15 @@ import CtaSection from "../src/components/CtaSection";
 import AccessoriesCards from "../src/components/AccessoriesCards";
 import "../src/index.css";
 import ButtonChat from "../src/components/ButtonChat";
+import Button from "../src/components/Button";
 
 function App() {
   const [selectedModel, setSelectedModel] = useState("BJ30");
   const modelOptions = [
     { value: "BJ30", label: "BJ30" },
     { value: "BJ40 PLUS", label: "BJ40 Plus" },
-    { value: "X55", label: "X55" },
-    { value: "Arcfox", label: "Arcfox (Coming soon)" },
+    // { value: "X55", label: "X55" },
+    // { value: "Arcfox", label: "Arcfox (Coming soon)" },
   ];
 
   const accessoryDataByModel = {
@@ -137,7 +138,7 @@ function App() {
       <section className="py-16 mt-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Title */}
-          <h2 className="md:text-3xl text-2xl font-bold text-center text-gray-900 mb-6">
+          <h2 className="md:text-3xl text-xl font-bold text-center text-gray-900 mb-6">
             Genuine Accessories
           </h2>
 
@@ -181,6 +182,40 @@ function App() {
               </p>
             </div>
           )}
+
+          {/* Download Brochure Button */}
+          <div className="mt-12 flex justify-center">
+            <Button
+              variant="dark"
+              href={
+                selectedModel === "BJ30"
+                  ? "/Accessories BJ30 2025 (GJAW).pdf"
+                  : "/Accessories BJ40 2025 (GJAW) (1).pdf"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={() => (
+                <svg
+                  className="flex-shrink-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              )}
+            >
+              Download {selectedModel} Accessories Brochure
+            </Button>
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import BJ40 from "../assets/BJ40-plus.png";
 import BJ30 from "../../public/BJ30-header.png";
-import X55 from "../assets/BAIC-X55-II.png";
+import X55Prime from "../../public/baic x55 prime.png";
+import X55Lite from "../../public/baic x55 lite-.png";
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import Button from "./Button";
@@ -35,8 +36,8 @@ export default function MobileMenu({ onClose }) {
     "BJ40 PLUS CBU": "Rp 698.000.000,-",
     "BJ40 PLUS CKD": "Rp 710.000.000,-",
     "X55 II Lite": "Rp 390.000.000,-",
-    "X55 II Prime": "Rp 390.000.000,-",
-    "X55 II": "Rp 390.000.000,-",
+    "X55 II Prime": "Rp 439.000.000,-",
+
   };
 
   // Helper to get base model name for specs mapping
@@ -78,12 +79,12 @@ export default function MobileMenu({ onClose }) {
     "X Series": [
       {
         name: "X55 II Lite",
-        image: X55,
+        image: X55Lite,
         exploreLink: "/x55-ii-lite/index.html",
       },
       {
         name: "X55 II Prime",
-        image: X55,
+        image: X55Prime,
         exploreLink: "/x55-ii-prime/index.html",
       },
     ],
@@ -128,8 +129,8 @@ export default function MobileMenu({ onClose }) {
                 <div className="flex gap-6 mb-4 overflow-x-auto scrollbar-hide">
                   <button
                     className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "BJ Series"
-                        ? "border-b-2 border-red-500 text-red-500 pb-2"
-                        : "text-gray-700 hover:text-gray-900 pb-2"
+                      ? "border-b-2 border-red-500 text-red-500 pb-2"
+                      : "text-gray-700 hover:text-gray-900 pb-2"
                       }`}
                     onClick={() => setActiveSeries("BJ Series")}
                   >
@@ -137,8 +138,8 @@ export default function MobileMenu({ onClose }) {
                   </button>
                   <button
                     className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "X Series"
-                        ? "border-b-2 border-red-500 text-red-500 pb-2"
-                        : "text-gray-700 hover:text-gray-900 pb-2"
+                      ? "border-b-2 border-red-500 text-red-500 pb-2"
+                      : "text-gray-700 hover:text-gray-900 pb-2"
                       }`}
                     onClick={() => setActiveSeries("X Series")}
                   >
@@ -146,16 +147,16 @@ export default function MobileMenu({ onClose }) {
                   </button>
                   <button
                     className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "Arcfox"
-                        ? "border-b-2 border-black text-black pb-2"
-                        : "text-gray-700 hover:text-gray-900 pb-2"
+                      ? "border-b-2 border-black text-black pb-2"
+                      : "text-gray-700 hover:text-gray-900 pb-2"
                       }`}
                     onClick={() => setActiveSeries("Arcfox")}
                   >
                     <span>Arcfox</span>
                     <span
                       className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${activeSeries === "Arcfox"
-                          ? "bg-black text-white"
-                          : "bg-gray-300 text-gray-700"
+                        ? "bg-black text-white"
+                        : "bg-gray-300 text-gray-700"
                         }`}
                     >
                       Coming soon

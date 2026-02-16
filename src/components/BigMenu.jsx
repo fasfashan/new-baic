@@ -50,8 +50,8 @@ const BigMenu = () => {
     "BJ40 PLUS CBU": "Rp 698.000.000,-",
     "BJ40 PLUS CKD": "Rp 710.000.000,-",
     "X55 II Lite": "Rp 390.000.000,-",
-    "X55 II Prime": "Rp 390.000.000,-",
-    "X55 II": "Rp 390.000.000,-",
+    "X55 II Prime": "Rp 439.000.000,-",
+
   };
 
   // Helper to get base model name for specs mapping

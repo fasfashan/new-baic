@@ -134,7 +134,7 @@ export default function ExploreCar() {
             <div className="text-center">
               <p className="text-gray-500 text-xs font-medium mb-1">Wheelbase</p>
               <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
-                2820
+                1910
               </p>
               <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                 MM
@@ -170,7 +170,7 @@ export default function ExploreCar() {
             <div className="text-center">
               <p className="text-gray-500 text-xs font-medium mb-1">Wheelbase</p>
               <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
-                2745
+                1925
               </p>
               <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                 MM
@@ -206,7 +206,7 @@ export default function ExploreCar() {
             <div className="text-center">
               <p className="text-gray-500 text-xs font-medium mb-1">Wheelbase</p>
               <p className="text-base sm:text-lg md:text-xl font-bold text-gray-800">
-                2735
+                1886
               </p>
               <p className="text-gray-400 text-[10px] sm:text-xs uppercase tracking-wider">
                 MM

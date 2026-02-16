@@ -2,6 +2,7 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import CtaSection from "../src/components/CtaSection";
 import ButtonChat from "../src/components/ButtonChat";
+import NewsCard from "../src/components/NewsCard";
 import { useState } from "react";
 import "../src/index.css";
 
@@ -114,43 +115,7 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {newsData.slice(0, visiblePosts).map((news, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
-              >
-                {/* Featured Image */}
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={news.image}
-                    alt={news.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Content Below Image */}
-                <div className="p-6">
-                  {/* Date */}
-                  <p className="text-gray-500 text-sm mb-3">{news.date}</p>
-
-                  {/* Title */}
-                  <h3 className="text-gray-900 text-lg font-bold mb-3 line-clamp-2">
-                    {news.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                    {news.description}
-                  </p>
-
-                  {/* Read More Button */}
-                  <a
-                    href={news.link}
-                    className="inline-block px-6 py-2 border border-gray-300 text-gray-900 text-sm font-semibold rounded hover:bg-black hover:text-white transition-colors"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
+              <NewsCard key={index} article={news} />
             ))}
           </div>
 

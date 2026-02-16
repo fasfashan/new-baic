@@ -1,4 +1,5 @@
 import Button from "./Button";
+import NewsCard from "./NewsCard";
 
 export default function NewsSection() {
   const newsArticles = [
@@ -45,40 +46,7 @@ export default function NewsSection() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {newsArticles.map((article) => (
-            <div
-              key={article.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
-            >
-              {/* Featured Image */}
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Content Below Image */}
-              <div className="p-6">
-                {/* Date */}
-                <p className="text-gray-500 text-sm mb-3">{article.date}</p>
-
-                {/* Title */}
-                <h3 className="text-gray-900 text-lg font-bold mb-3 line-clamp-2">
-                  {article.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {article.description}
-                </p>
-
-                {/* Read More Button */}
-                <Button variant="dark" href={article.link}>
-                  Read More
-                </Button>
-              </div>
-            </div>
+            <NewsCard key={article.id} article={article} />
           ))}
         </div>
 

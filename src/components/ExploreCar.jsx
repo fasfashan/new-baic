@@ -33,7 +33,7 @@ const colorToFolderBJ40 = {
 };
 
 const colorNamesBJ30 = {
-  "#8DB600": "Apple Green",
+  "#B6D6C9": "Apple Green",
   "#87CEEB": "Blue Sky",
   "#C0C0C0": "Bubble Grey",
   "#000000": "Jade Black",
@@ -42,7 +42,7 @@ const colorNamesBJ30 = {
 };
 
 const colorToFileBJ30 = {
-  "#8DB600": "apple-green.png",
+  "#B6D6C9": "apple-green.png",
   "#87CEEB": "blue-sky.png",
   "#C0C0C0": "bubble-grey.png",
   "#000000": "jade-black.png",
@@ -51,7 +51,7 @@ const colorToFileBJ30 = {
 };
 
 const colorsBJ30 = [
-  "#8DB600",
+  "#B6D6C9",
   "#87CEEB",
   "#C0C0C0",
   "#000000",

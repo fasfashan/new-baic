@@ -23,7 +23,7 @@ export default function NewsCard({ article, showButton = true }) {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-xs mb-4 line-clamp-3">
+                <p className="text-gray-600 text-xs mb-4 line-clamp-3 text-justify">
                     {article.description}
                 </p>
 

@@ -1,4 +1,4 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 import Button from "./Button";
 
 export default function AfterSalesSection() {
@@ -15,7 +15,7 @@ export default function AfterSalesSection() {
         <h2 className="md:text-4xl text-3xl font-bold mb-12">After Sales</h2>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-center flex-wrap">
+        <div className="flex gap-6 justify-center items-center flex-wrap">
           <Button
             variant="light"
             href="tel:08123456789"
@@ -35,6 +35,7 @@ export default function AfterSalesSection() {
           <Button
             variant="light"
             href="/aftersales/index.html"
+            icon={ArrowRight}
           >
             Learn More
           </Button>

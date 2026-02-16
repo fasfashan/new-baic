@@ -3,6 +3,7 @@ import Footer from "../src/components/Footer";
 import CtaSection from "../src/components/CtaSection";
 import ButtonChat from "../src/components/ButtonChat";
 import NewsCard from "../src/components/NewsCard";
+import Button from "../src/components/Button";
 import { useState } from "react";
 import "../src/index.css";
 
@@ -105,7 +106,7 @@ function App() {
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
-        <h1 className="relative text-white text-4xl md:text-6xl font-bold">
+        <h1 className="relative text-white text-xl md:text-4xl font-bold">
           News & Event
         </h1>
       </div>
@@ -122,12 +123,9 @@ function App() {
           {/* Load More / All Loaded State */}
           <div className="mt-12 text-center">
             {!allPostsLoaded ? (
-              <button
-                onClick={handleLoadMore}
-                className="px-8 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg hover:bg-black hover:text-white hover:border-red-600 transition-all font-semibold"
-              >
+              <Button onClick={handleLoadMore} variant="dark">
                 Load more
-              </button>
+              </Button>
             ) : (
               <div className="text-gray-500 font-medium">
                 <p className="text-lg">All news loaded</p>

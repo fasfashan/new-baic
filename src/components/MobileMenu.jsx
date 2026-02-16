@@ -30,8 +30,10 @@ export default function MobileMenu({ onClose }) {
   };
 
   const prices = {
-    BJ30: "Rp 529.000.000,-",
-    "BJ40 PLUS": "Rp 698.000.000,-",
+    "BJ30 HEV FWD": "Rp 529.000.000,-",
+    "BJ30 HEV AWD": "Rp 589.000.000,-",
+    "BJ40 PLUS CBU": "Rp 698.000.000,-",
+    "BJ40 PLUS CKD": "Rp 710.000.000,-",
     "X55 II Lite": "Rp 390.000.000,-",
     "X55 II Prime": "Rp 390.000.000,-",
     "X55 II": "Rp 390.000.000,-",
@@ -47,7 +49,7 @@ export default function MobileMenu({ onClose }) {
     return name;
   };
 
-  const getPrice = (name) => prices[getBaseModel(name)] || "";
+  const getPrice = (name) => prices[name] || "";
 
   // Vehicle data structure
   const vehicles = {
@@ -120,256 +122,252 @@ export default function MobileMenu({ onClose }) {
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               )}
             </div>
-          {isVehicleOpen && (
-            <div className="mt-4 space-y-4">
-              {/* Series Tabs */}
-              <div className="flex gap-6 mb-4 overflow-x-auto scrollbar-hide">
-                <button
-                  className={`font-semibold text-sm whitespace-nowrap ${
-                    activeSeries === "BJ Series"
-                      ? "border-b-2 border-red-500 text-red-500 pb-2"
-                      : "text-gray-700 hover:text-gray-900 pb-2"
-                  }`}
-                  onClick={() => setActiveSeries("BJ Series")}
-                >
-                  BJ Series
-                </button>
-                <button
-                  className={`font-semibold text-sm whitespace-nowrap ${
-                    activeSeries === "X Series"
-                      ? "border-b-2 border-red-500 text-red-500 pb-2"
-                      : "text-gray-700 hover:text-gray-900 pb-2"
-                  }`}
-                  onClick={() => setActiveSeries("X Series")}
-                >
-                  X Series
-                </button>
-                <button
-                  className={`font-semibold text-sm whitespace-nowrap ${
-                    activeSeries === "Arcfox"
-                      ? "border-b-2 border-black text-black pb-2"
-                      : "text-gray-700 hover:text-gray-900 pb-2"
-                  }`}
-                  onClick={() => setActiveSeries("Arcfox")}
-                >
-                  <span>Arcfox</span>
-                  <span
-                    className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${
-                      activeSeries === "Arcfox"
-                        ? "bg-black text-white"
-                        : "bg-gray-300 text-gray-700"
-                    }`}
+            {isVehicleOpen && (
+              <div className="mt-4 space-y-4">
+                {/* Series Tabs */}
+                <div className="flex gap-6 mb-4 overflow-x-auto scrollbar-hide">
+                  <button
+                    className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "BJ Series"
+                        ? "border-b-2 border-red-500 text-red-500 pb-2"
+                        : "text-gray-700 hover:text-gray-900 pb-2"
+                      }`}
+                    onClick={() => setActiveSeries("BJ Series")}
                   >
-                    Coming soon
-                  </span>
-                </button>
-              </div>
+                    BJ Series
+                  </button>
+                  <button
+                    className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "X Series"
+                        ? "border-b-2 border-red-500 text-red-500 pb-2"
+                        : "text-gray-700 hover:text-gray-900 pb-2"
+                      }`}
+                    onClick={() => setActiveSeries("X Series")}
+                  >
+                    X Series
+                  </button>
+                  <button
+                    className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "Arcfox"
+                        ? "border-b-2 border-black text-black pb-2"
+                        : "text-gray-700 hover:text-gray-900 pb-2"
+                      }`}
+                    onClick={() => setActiveSeries("Arcfox")}
+                  >
+                    <span>Arcfox</span>
+                    <span
+                      className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${activeSeries === "Arcfox"
+                          ? "bg-black text-white"
+                          : "bg-gray-300 text-gray-700"
+                        }`}
+                    >
+                      Coming soon
+                    </span>
+                  </button>
+                </div>
 
-              {/* Vehicles List - 2 columns with scroll */}
-              <div className="max-h-[60vh] overflow-y-auto">
-                {activeSeries === "Arcfox" ? (
-                  <div
-                    className="w-full h-48 bg-cover bg-center rounded-lg overflow-hidden flex items-center"
-                    style={{ backgroundImage: "url(/arcfox-coming-soon.jpg)" }}
-                  >
-                    <div className="bg-white bg-opacity-95 px-4 py-4 mx-2 rounded-lg max-w-xs">
-                      <h2 className="text-base font-bold text-black mb-1">
-                        Arcfox is coming soon
-                      </h2>
-                      <p className="text-sm text-gray-600">
-                        Stay tuned for updates
-                      </p>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-2 gap-3">
-                    {vehicles[activeSeries].map((vehicle) => (
-                      <div
-                        key={vehicle.name}
-                        className="flex flex-col p-4 border border-gray-300 rounded-md"
-                      >
-                        <img
-                          className="w-full h-auto"
-                          src={vehicle.image}
-                          alt={vehicle.name}
-                        />
-                        <h2 className="text-sm text-red-500 font-medium mt-2">
-                          BAIC {vehicle.name}
+                {/* Vehicles List - 2 columns with scroll */}
+                <div className="max-h-[60vh] overflow-y-auto">
+                  {activeSeries === "Arcfox" ? (
+                    <div
+                      className="w-full h-48 bg-cover bg-center rounded-lg overflow-hidden flex items-center"
+                      style={{ backgroundImage: "url(/arcfox-coming-soon.jpg)" }}
+                    >
+                      <div className="bg-white bg-opacity-95 px-4 py-4 mx-2 rounded-lg max-w-xs">
+                        <h2 className="text-base font-bold text-black mb-1">
+                          Arcfox is coming soon
                         </h2>
-                        <img
-                          src="/Award list BAIC - global.png"
-                          alt="BAIC Awards"
-                          className="mt-2 w-full max-w-[180px] mx-auto"
-                        />
-
-                        {/* Specifications - Stacked vertically */}
-                        <div className="mt-2 bg-gray-50 rounded-lg p-3 space-y-2">
-                          <div className="flex justify-between items-center">
-                            <span className="text-[10px] text-gray-500 uppercase">
-                              Wheelbase
-                            </span>
-                            <span className="text-[10px] font-semibold text-gray-800">
-                              {specs[getBaseModel(vehicle.name)].wheelbase} MM
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-[10px] text-gray-500 uppercase">
-                              Length
-                            </span>
-                            <span className="text-[10px] font-semibold text-gray-800">
-                              {specs[getBaseModel(vehicle.name)].length} MM
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-[10px] text-gray-500 uppercase">
-                              Height
-                            </span>
-                            <span className="text-[10px] font-semibold text-gray-800">
-                              {specs[getBaseModel(vehicle.name)].height} MM
-                            </span>
-                          </div>
-                        </div>
-
-                        <p className="mt-2 text-xs font-bold text-gray-700 text-center">
-                          {getPrice(vehicle.name)}
+                        <p className="text-sm text-gray-600">
+                          Stay tuned for updates
                         </p>
-
-                        <div className="flex mt-2 text-xs">
-                          <Button
-                            variant="dark"
-                            href={vehicle.exploreLink}
-                            className="w-full text-xs"
-                          >
-                            SEE DETAILS
-                          </Button>
-                        </div>
                       </div>
-                    ))}
-                  </div>
-                )}
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-3">
+                      {vehicles[activeSeries].map((vehicle) => (
+                        <div
+                          key={vehicle.name}
+                          className="flex flex-col p-4 border border-gray-300 rounded-md"
+                        >
+                          <img
+                            className="w-full h-auto"
+                            src={vehicle.image}
+                            alt={vehicle.name}
+                          />
+                          <h2 className="text-sm text-red-500 font-medium mt-2">
+                            BAIC {vehicle.name}
+                          </h2>
+                          <img
+                            src="/Award list BAIC - global.png"
+                            alt="BAIC Awards"
+                            className="mt-2 w-full max-w-[180px] mx-auto"
+                          />
+
+                          {/* Specifications - Stacked vertically */}
+                          <div className="mt-2 bg-gray-50 rounded-lg p-3 space-y-2">
+                            <div className="flex justify-between items-center">
+                              <span className="text-[10px] text-gray-500 uppercase">
+                                Wheelbase
+                              </span>
+                              <span className="text-[10px] font-semibold text-gray-800">
+                                {specs[getBaseModel(vehicle.name)].wheelbase} MM
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-[10px] text-gray-500 uppercase">
+                                Length
+                              </span>
+                              <span className="text-[10px] font-semibold text-gray-800">
+                                {specs[getBaseModel(vehicle.name)].length} MM
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-[10px] text-gray-500 uppercase">
+                                Height
+                              </span>
+                              <span className="text-[10px] font-semibold text-gray-800">
+                                {specs[getBaseModel(vehicle.name)].height} MM
+                              </span>
+                            </div>
+                          </div>
+
+                          <p className="mt-2 text-xs font-bold text-gray-700 text-center">
+                            {getPrice(vehicle.name)}
+                          </p>
+
+                          <div className="flex mt-2 text-xs">
+                            <Button
+                              variant="dark"
+                              href={vehicle.exploreLink}
+                              className="w-full text-xs"
+                            >
+                              SEE DETAILS
+                            </Button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-
-        {/* Customer Care Accordion */}
-        <div className="w-full py-4 border-b border-gray-100">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsCustomerCareOpen(!isCustomerCareOpen)}
-          >
-            <span className="text-base font-normal text-gray-900">Customer Care</span>
-            {isCustomerCareOpen ? (
-              <ChevronUp className="w-5 h-5 text-gray-600" />
-            ) : (
-              <ChevronDown className="w-5 h-5 text-gray-600" />
             )}
           </div>
-          {isCustomerCareOpen && (
-            <div className="mt-3 ml-4 space-y-2">
-              <a
-                href="/schedule-your-service/index.html"
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
-                Schedule your service
-              </a>
-              <a
-                href="/aftersales/index.html"
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
-                After Sales Program
-              </a>
+
+          {/* Customer Care Accordion */}
+          <div className="w-full py-4 border-b border-gray-100">
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => setIsCustomerCareOpen(!isCustomerCareOpen)}
+            >
+              <span className="text-base font-normal text-gray-900">Customer Care</span>
+              {isCustomerCareOpen ? (
+                <ChevronUp className="w-5 h-5 text-gray-600" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-gray-600" />
+              )}
             </div>
-          )}
-        </div>
-
-        {/* Accessories */}
-        <div className="w-full py-4 border-b border-gray-100">
-          <a className="flex justify-between items-center text-base font-normal text-gray-900" href="/genuine-accessories/index.html">
-            Accessories
-          </a>
-        </div>
-
-        {/* Dealer Link */}
-        <div className="w-full py-4 border-b border-gray-100">
-          <a className="flex justify-between items-center text-base font-normal text-gray-900" href="/dealer/index.html">
-            Dealer
-          </a>
-        </div>
-
-        {/* About Us Accordion */}
-        <div className="w-full py-4 border-b border-gray-100">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
-          >
-            <span className="text-base font-normal text-gray-900">About Us</span>
-            {isAboutUsOpen ? (
-              <ChevronUp className="w-5 h-5 text-gray-600" />
-            ) : (
-              <ChevronDown className="w-5 h-5 text-gray-600" />
+            {isCustomerCareOpen && (
+              <div className="mt-3 ml-4 space-y-2">
+                <a
+                  href="/schedule-your-service/index.html"
+                  className="block text-sm hover:text-red-600 text-gray-700"
+                >
+                  Schedule your service
+                </a>
+                <a
+                  href="/aftersales/index.html"
+                  className="block text-sm hover:text-red-600 text-gray-700"
+                >
+                  After Sales Program
+                </a>
+              </div>
             )}
           </div>
-          {isAboutUsOpen && (
-            <div className="mt-3 ml-4 space-y-2">
-              <a
-                href="/about-us/index.html"
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
-                Corporate
-              </a>
-              <a
-                href="/brand/index.html"
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
-                Brand
-              </a>
-              <a
-                href="/news/index.html"
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
-                Publication (News & Event)
-              </a>
-              <a
-                href="/career/index.html"
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
-                Career
-              </a>
-              <a
-                href="/contact/index.html"
-                className="block text-sm hover:text-red-600 text-gray-700"
-              >
-                Contact Us
-              </a>
-            </div>
-          )}
-        </div>
 
-        {/* Language Selector Accordion */}
-        <div className="w-full py-4 border-b border-gray-100">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-          >
-            <span className="text-base font-normal text-gray-900">Language</span>
-            {isLanguageOpen ? (
-              <ChevronUp className="w-5 h-5 text-gray-600" />
-            ) : (
-              <ChevronDown className="w-5 h-5 text-gray-600" />
+          {/* Accessories */}
+          <div className="w-full py-4 border-b border-gray-100">
+            <a className="flex justify-between items-center text-base font-normal text-gray-900" href="/genuine-accessories/index.html">
+              Accessories
+            </a>
+          </div>
+
+          {/* Dealer Link */}
+          <div className="w-full py-4 border-b border-gray-100">
+            <a className="flex justify-between items-center text-base font-normal text-gray-900" href="/dealer/index.html">
+              Dealer
+            </a>
+          </div>
+
+          {/* About Us Accordion */}
+          <div className="w-full py-4 border-b border-gray-100">
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
+            >
+              <span className="text-base font-normal text-gray-900">About Us</span>
+              {isAboutUsOpen ? (
+                <ChevronUp className="w-5 h-5 text-gray-600" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-gray-600" />
+              )}
+            </div>
+            {isAboutUsOpen && (
+              <div className="mt-3 ml-4 space-y-2">
+                <a
+                  href="/about-us/index.html"
+                  className="block text-sm hover:text-red-600 text-gray-700"
+                >
+                  Corporate
+                </a>
+                <a
+                  href="/brand/index.html"
+                  className="block text-sm hover:text-red-600 text-gray-700"
+                >
+                  Brand
+                </a>
+                <a
+                  href="/news/index.html"
+                  className="block text-sm hover:text-red-600 text-gray-700"
+                >
+                  Publication (News & Event)
+                </a>
+                <a
+                  href="/career/index.html"
+                  className="block text-sm hover:text-red-600 text-gray-700"
+                >
+                  Career
+                </a>
+                <a
+                  href="/contact/index.html"
+                  className="block text-sm hover:text-red-600 text-gray-700"
+                >
+                  Contact Us
+                </a>
+              </div>
             )}
           </div>
-          {isLanguageOpen && (
-            <div className="mt-3 ml-4 space-y-2">
-              <button className="block text-sm font-semibold text-black">
-                EN (English)
-              </button>
-              <button className="block text-sm hover:text-red-600 text-gray-700">
-                ID (Indonesia)
-              </button>
+
+          {/* Language Selector Accordion */}
+          <div className="w-full py-4 border-b border-gray-100">
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+            >
+              <span className="text-base font-normal text-gray-900">Language</span>
+              {isLanguageOpen ? (
+                <ChevronUp className="w-5 h-5 text-gray-600" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-gray-600" />
+              )}
             </div>
-          )}
-        </div>
+            {isLanguageOpen && (
+              <div className="mt-3 ml-4 space-y-2">
+                <button className="block text-sm font-semibold text-black">
+                  EN (English)
+                </button>
+                <button className="block text-sm hover:text-red-600 text-gray-700">
+                  ID (Indonesia)
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* CTA Buttons - Fixed at bottom */}

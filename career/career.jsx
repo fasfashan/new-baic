@@ -5,32 +5,8 @@ import ButtonChat from "../src/components/ButtonChat";
 import "../src/index.css";
 
 // Job positions data
-const jobPositions = [
-  {
-    id: 1,
-    position: "Staff",
-    department: "Finance & Accounting",
-    location: "Kota Tangerang",
-  },
-  {
-    id: 2,
-    position: "Supervisor",
-    department: "Part",
-    location: "Kab. Tangerang",
-  },
-  {
-    id: 3,
-    position: "Head of Department",
-    department: "Sales",
-    location: "Kab. Purwakarta",
-  },
-  {
-    id: 4,
-    position: "Specialist",
-    department: "Dealer Network Development",
-    location: "Free Text",
-  },
-];
+const jobPositions = [];
+
 
 function Career() {
   const [selectedDepartment, setSelectedDepartment] =

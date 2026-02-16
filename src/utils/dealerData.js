@@ -1,4 +1,5 @@
 // Shared dealer data and utility functions
+// Data synced from dealer/dealer.jsx
 
 const dummyCallCenter = "+62 21 1234 5678";
 
@@ -82,7 +83,7 @@ export const PROVINCE_CITY_MAP = {
     "Sumatera Selatan": ["Palembang"],
 };
 
-// All dealers data
+// All dealers data (synced from dealer.jsx)
 export const dealers = [
     buildDealer(
         "Alam Sutera",
@@ -312,6 +313,7 @@ export const dealers = [
         "BAIC Only",
         "",
     ),
+    // Dealers with "Coming Soon" city are excluded from selection
 ].map((dealer, index) => ({ ...dealer, id: index + 1 }));
 
 // Utility functions
@@ -324,11 +326,11 @@ export const getCitiesByProvince = (province) => {
 };
 
 export const getServiceDealers = () => {
-    // Filter only 3S and 4S dealers
+    // Filter only 3S and 4S dealers, exclude "Coming Soon"
     return dealers.filter(
         (dealer) =>
-            dealer.serviceCode === "3S" ||
-            dealer.serviceCode === "4S"
+            (dealer.serviceCode === "3S" || dealer.serviceCode === "4S") &&
+            dealer.city !== "Coming Soon"
     );
 };
 
@@ -343,4 +345,13 @@ export const getCityProvince = (city) => {
         }
     }
     return null;
+};
+
+// Functions for Book a Test Drive (show ALL dealers)
+export const getAllDealers = () => {
+  return dealers.filter((dealer) => dealer.city !== 'Coming Soon');
+};
+
+export const getAllDealersByCity = (city) => {
+  return getAllDealers().filter((dealer) => dealer.city === city);
 };

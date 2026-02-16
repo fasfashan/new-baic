@@ -58,8 +58,8 @@ const AccessoriesCards = ({ accessories = [] }) => {
     if (!currentAccessory) return;
 
     const images = [
-      currentAccessory.image,
       currentAccessory.installedImage,
+      currentAccessory.image,
     ].filter(Boolean);
     if (images.length === 0) return;
 
@@ -116,11 +116,10 @@ const AccessoriesCards = ({ accessories = [] }) => {
                           e.stopPropagation();
                           handleSlideChange(accessory.id, index);
                         }}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          currentSlide === index
+                        className={`w-2 h-2 rounded-full transition-all ${currentSlide === index
                             ? "bg-red-600 w-6"
                             : "bg-gray-300 hover:bg-gray-400"
-                        }`}
+                          }`}
                         aria-label={`View image ${index + 1}`}
                       />
                     ))}
@@ -192,9 +191,9 @@ const AccessoriesCards = ({ accessories = [] }) => {
                 );
                 const images = currentAccessory
                   ? [
-                      currentAccessory.image,
-                      currentAccessory.installedImage,
-                    ].filter(Boolean)
+                    currentAccessory.installedImage,
+                    currentAccessory.image,
+                  ].filter(Boolean)
                   : [];
 
                 return (
@@ -225,9 +224,9 @@ const AccessoriesCards = ({ accessories = [] }) => {
               );
               const images = currentAccessory
                 ? [
-                    currentAccessory.image,
-                    currentAccessory.installedImage,
-                  ].filter(Boolean)
+                  currentAccessory.installedImage,
+                  currentAccessory.image,
+                ].filter(Boolean)
                 : [];
 
               return (

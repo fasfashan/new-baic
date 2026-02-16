@@ -3,58 +3,12 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import ButtonChat from "../src/components/ButtonChat";
 import "../src/index.css";
+import {
+  getAllDealersByCity,
+  PROVINCE_CITY_MAP,
+  getAllDealers,
+} from "../src/utils/dealerData";
 
-// Province and Cities data structure
-const provinceData = {
-  banten: {
-    name: "Banten",
-    cities: ["Tangerang", "Tangerang Selatan", "Serpong", "Serang", "Cilegon"],
-  },
-  "dki-jakarta": {
-    name: "DKI Jakarta",
-    cities: [
-      "Jakarta Pusat",
-      "Jakarta Utara",
-      "Jakarta Selatan",
-      "Jakarta Timur",
-      "Jakarta Barat",
-      "PIK",
-    ],
-  },
-  "jawa-barat": {
-    name: "Jawa Barat",
-    cities: ["Bandung", "Bekasi", "Bogor", "Depok", "Cimahi"],
-  },
-  "jawa-tengah": {
-    name: "Jawa Tengah",
-    cities: ["Semarang", "Solo", "Yogyakarta", "Magelang"],
-  },
-  "jawa-timur": {
-    name: "Jawa Timur",
-    cities: ["Surabaya", "Malang", "Sidoarjo", "Gresik"],
-  },
-};
-
-// Dealer WhatsApp mapping based on province and city
-const dealerMapping = {
-  // Format: "province-city": "whatsapp_number"
-  "banten-tangerang": "6281234567890",
-  "banten-serpong": "6281234567891",
-  "dki-jakarta-jakarta-pusat": "6281234567892",
-  "dki-jakarta-pik": "6281234567893",
-  "jawa-barat-bandung": "6281234567894",
-  "jawa-barat-bekasi": "6281234567895",
-
-  // Province-level fallbacks
-  banten: "6281234567890",
-  "dki-jakarta": "6281234567892",
-  "jawa-barat": "6281234567894",
-  "jawa-tengah": "6281234567896",
-  "jawa-timur": "6281234567897",
-
-  // Default fallback
-  default: "6281234567800",
-};
 
 function App() {
   // Get model from URL parameter
@@ -76,6 +30,7 @@ function App() {
   const [email, setEmail] = useState("");
   const [province, setProvince] = useState("");
   const [city, setCity] = useState("");
+  const [dealer, setDealer] = useState("");
   const [availableCities, setAvailableCities] = useState([]);
   const [testDriveDate, setTestDriveDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -92,14 +47,40 @@ function App() {
     setSelectedModel(getModelFromURL());
   }, []);
 
+  // Auto-fill dealer info from URL parameters
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const dealerParam = params.get("dealer");
+    const cityParam = params.get("city");
+
+    if (dealerParam && cityParam) {
+      // Find the province from city
+      let foundProvince = null;
+      for (const [prov, cities] of Object.entries(PROVINCE_CITY_MAP)) {
+        if (cities.includes(cityParam)) {
+          foundProvince = prov;
+          break;
+        }
+      }
+
+      if (foundProvince) {
+        setProvince(foundProvince);
+        setCity(cityParam);
+        setDealer(dealerParam);
+      }
+    }
+  }, []);
+
   // Update available cities when province changes
   useEffect(() => {
     if (province) {
-      setAvailableCities(provinceData[province]?.cities || []);
+      setAvailableCities(PROVINCE_CITY_MAP[province] || []);
       setCity(""); // Reset city when province changes
+      setDealer(""); // Reset dealer when province changes
     } else {
       setAvailableCities([]);
       setCity("");
+      setDealer("");
     }
   }, [province]);
 
@@ -219,6 +200,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
       email,
       province,
       city,
+      dealer,
       testDriveDate,
       submittedAt: new Date().toISOString(),
     };
@@ -248,6 +230,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
       email.trim() !== "" &&
       province !== "" &&
       city !== "" &&
+      dealer !== "" &&
       testDriveDate !== ""
     );
   };
@@ -309,11 +292,13 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                   <option value="" disabled>
                     Choose Province
                   </option>
-                  {Object.keys(provinceData).map((key) => (
-                    <option key={key} value={key}>
-                      {provinceData[key].name}
-                    </option>
-                  ))}
+                  {Object.keys(PROVINCE_CITY_MAP)
+                    .sort()
+                    .map((provinceName) => (
+                      <option key={provinceName} value={provinceName}>
+                        {provinceName}
+                      </option>
+                    ))}
                 </select>
               </div>
               <div>
@@ -324,11 +309,10 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   disabled={!province}
-                  className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${
-                    !province
-                      ? "text-gray-400 cursor-not-allowed"
-                      : "text-gray-500"
-                  }`}
+                  className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${!province
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-gray-500"
+                    }`}
                 >
                   <option value="" disabled>
                     {!province ? "Select Province First" : "Select City"}
@@ -340,6 +324,32 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                   ))}
                 </select>
               </div>
+            </div>
+
+            {/* Dealer */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Select Dealer
+              </label>
+              <select
+                value={dealer}
+                onChange={(e) => setDealer(e.target.value)}
+                disabled={!city}
+                className={`bg-white border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 block w-full p-3 ${!city
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-gray-500"
+                  }`}
+              >
+                <option value="" disabled>
+                  {!city ? "Select City First" : "Select Dealer"}
+                </option>
+                {city &&
+                  getAllDealersByCity(city).map((d) => (
+                    <option key={d.id} value={d.name}>
+                      {d.name} - {d.serviceCode}
+                    </option>
+                  ))}
+              </select>
             </div>
 
             {/* Test Drive Date */}
@@ -409,11 +419,10 @@ Mohon informasi lebih lanjut. Terima kasih!`;
             {/* Submit Button */}
             <button
               type="submit"
-              className={`p-3 w-full bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all ${
-                !isFormComplete() || isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-black hover:text-white"
-              }`}
+              className={`p-3 w-full bg-transparent border-2 border-black text-black font-semibold rounded-lg transition-all ${!isFormComplete() || isLoading
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-black hover:text-white"
+                }`}
               disabled={!isFormComplete() || isLoading}
             >
               {isLoading ? (

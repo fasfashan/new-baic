@@ -3,13 +3,14 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import "../src/index.css";
 import ButtonChat from "../src/components/ButtonChat";
+import Button from "../src/components/Button";
 import heroImage from "/baic-authorized-dealer.jpg";
 import mapImage from "/baic-map.png";
 import dealerImage from "/baic-dealer.jpg";
 import baicLogo from "../src/assets/logo.svg";
 import { Phone, MapPin, Instagram } from "lucide-react";
 function App() {
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCity, setSelectedCity] = useState("All");
 
   const arcfoxLogo = "/arcfox-logo.png";
 
@@ -468,9 +469,10 @@ function App() {
     setSelectedCity(e.target.value);
   };
 
-  const filteredDealers = selectedCity
-    ? dealers.filter((dealer) => dealer.city === selectedCity)
-    : [];
+  const filteredDealers =
+    selectedCity === "All" || !selectedCity
+      ? dealers
+      : dealers.filter((dealer) => dealer.city === selectedCity);
   return (
     <>
       <Header />
@@ -502,11 +504,9 @@ function App() {
             <select
               value={selectedCity}
               onChange={handleCityChange}
-              className="w-full md:w-64 px-4 py-3 bg-white border border-neutral-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent text-neutral-700"
+              className="w-full md:w-64 px-4 py-3 bg-white border border-neutral-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent text-neutral-700 text-sm"
             >
-              <option value="" disabled>
-                Select city
-              </option>
+              <option value="All">All</option>
               {cities.map((city, index) => (
                 <option key={index} value={city}>
                   {city}
@@ -516,149 +516,146 @@ function App() {
           </div>
 
           {/* Dealers Grid */}
-          {selectedCity && (
-            <>
-              <div className="grid md:grid-cols-3 gap-6">
-                {filteredDealers.map((dealer) => (
-                  <div
-                    key={dealer.id}
-                    className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                  >
+          <div className="grid md:grid-cols-3 gap-6">
+            {filteredDealers.map((dealer) => (
+              <div
+                key={dealer.id}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+              >
+                <img
+                  src={dealer.image}
+                  alt={dealer.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6 space-y-4">
+                  {/* Logos Section - Above dealer name */}
+                  <div className="flex items-center gap-3 mb-2">
                     <img
-                      src={dealer.image}
-                      alt={dealer.name}
-                      className="w-full h-48 object-cover"
+                      src={baicLogo}
+                      alt="BAIC"
+                      title="BAIC available"
+                      className="h-4 object-contain"
                     />
-                    <div className="p-6 space-y-4">
-                      {/* Logos Section - Above dealer name */}
-                      <div className="flex items-center gap-3 mb-2">
+                    {isArcfoxDealer(dealer) && (
+                      <img
+                        src={arcfoxLogo}
+                        alt="Arcfox"
+                        title="Arcfox available"
+                        className="h-4 object-contain"
+                      />
+                    )}
+                  </div>
+
+                  {/* Dealer Name */}
+                  <h3 className="text-xl font-bold">{dealer.name}</h3>
+                  <p className="text-sm text-neutral-600 mb-3">
+                    {dealer.company}
+                  </p>
+                  <div className="flex gap-2 shrink-0">
+                    {getServiceKeys(dealer.services).map((key) => {
+                      const icon = serviceIconByKey[key];
+                      if (!icon) return null;
+                      return (
                         <img
-                          src={baicLogo}
-                          alt="BAIC"
-                          title="BAIC available"
-                          className="h-4 object-contain"
+                          key={key}
+                          src={icon.src}
+                          alt={icon.label}
+                          title={icon.label}
+                          className="w-10 h-10"
                         />
-                        {isArcfoxDealer(dealer) && (
-                          <img
-                            src={arcfoxLogo}
-                            alt="Arcfox"
-                            title="Arcfox available"
-                            className="h-4 object-contain"
-                          />
-                        )}
-                      </div>
-
-                      {/* Dealer Name */}
-                      <h3 className="text-xl font-bold">{dealer.name}</h3>
-                      <p className="text-sm text-neutral-600 mb-3">
-                        {dealer.company}
+                      );
+                    })}
+                  </div>
+                  <div className="space-y-3 mb-4">
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-700 mb-1">
+                        ADDRESS
                       </p>
-                      <div className="flex gap-2 shrink-0">
-                        {getServiceKeys(dealer.services).map((key) => {
-                          const icon = serviceIconByKey[key];
-                          if (!icon) return null;
-                          return (
-                            <img
-                              key={key}
-                              src={icon.src}
-                              alt={icon.label}
-                              title={icon.label}
-                              className="w-10 h-10"
-                            />
-                          );
-                        })}
-                      </div>
-                      <div className="space-y-3 mb-4">
-                        <div>
-                          <p className="text-sm font-semibold text-neutral-700 mb-1">
-                            ADDRESS
-                          </p>
-                          <p className="text-sm text-neutral-600">
-                            {dealer.address}
-                          </p>
-                        </div>
+                      <p className="text-sm text-neutral-600">
+                        {dealer.address}
+                      </p>
+                    </div>
 
-                        <div>
-                          <p className="text-sm font-semibold text-neutral-700 mb-1">
-                            BUSINESS HOURS
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-700 mb-1">
+                        BUSINESS HOURS
+                      </p>
+                      {dealer.hoursText && dealer.hoursText.length > 0 ? (
+                        dealer.hoursText.map((line, idx) => (
+                          <p key={idx} className="text-sm text-neutral-600">
+                            {line}
                           </p>
-                          {dealer.hoursText && dealer.hoursText.length > 0 ? (
-                            dealer.hoursText.map((line, idx) => (
-                              <p key={idx} className="text-sm text-neutral-600">
-                                {line}
-                              </p>
-                            ))
-                          ) : (
-                            <p className="text-sm text-neutral-500">
-                              To be confirmed
-                            </p>
-                          )}
-                        </div>
+                        ))
+                      ) : (
+                        <p className="text-sm text-neutral-500">
+                          To be confirmed
+                        </p>
+                      )}
+                    </div>
 
-                        <div>
-                          <p className="text-sm font-semibold text-neutral-700 mb-1">
-                            CONTACT
-                          </p>
-                          {dealer.phone && (
-                            <p className="text-sm text-neutral-600">
-                              Call Center: {dealer.phone}
-                            </p>
-                          )}
-                          {dealer.telp && (
-                            <p className="text-sm text-neutral-600">
-                              WhatsApp: {dealer.telp}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-7">
-                        <div className="flex gap-3">
-                          <a
-                            href={dealer.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
-                          >
-                            <Phone className="w-5 h-5 text-white" />
-                          </a>
-                          <a
-                            href={dealer.mapLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
-                          >
-                            <MapPin className="w-5 h-5 text-white" />
-                          </a>
-                          <a
-                            href={dealer.instagramLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
-                          >
-                            <Instagram className="w-5 h-5 text-white" />
-                          </a>
-                        </div>
-
-                        <a
-                          href="/book-a-test-drive/index.html"
-                          className="w-full py-2.5 px-4 text-center font-medium text-sm text-black border-2 border-black rounded-xl transition-all hover:bg-black hover:text-white"
-                        >
-                          BOOK A TEST DRIVE
-                        </a>
-                      </div>
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-700 mb-1">
+                        CONTACT
+                      </p>
+                      {dealer.phone && (
+                        <p className="text-sm text-neutral-600">
+                          Call Center: {dealer.phone}
+                        </p>
+                      )}
+                      {dealer.telp && (
+                        <p className="text-sm text-neutral-600">
+                          WhatsApp: {dealer.telp}
+                        </p>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
+                  <div className="flex flex-col gap-7">
+                    <div className="flex gap-3">
+                      <a
+                        href={dealer.whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                      >
+                        <Phone className="w-5 h-5 text-white" />
+                      </a>
+                      <a
+                        href={dealer.mapLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                      >
+                        <MapPin className="w-5 h-5 text-white" />
+                      </a>
+                      <a
+                        href={dealer.instagramLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                      >
+                        <Instagram className="w-5 h-5 text-white" />
+                      </a>
+                    </div>
 
-              {filteredDealers.length === 0 && (
-                <div className="text-center py-12">
-                  <p className="text-neutral-600">
-                    No dealers found for the selected city.
-                  </p>
+                    <Button
+                      href={`/book-a-test-drive/index.html?dealer=${encodeURIComponent(dealer.name)}&city=${encodeURIComponent(dealer.city)}`}
+                      variant="dark"
+                      className="w-full"
+                    >
+                      Book a Test Drive
+                    </Button>
+                  </div>
                 </div>
-              )}
-            </>
+              </div>
+            ))}
+          </div>
+
+          {filteredDealers.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-neutral-600">
+                No dealers found for the selected city.
+              </p>
+            </div>
           )}
         </div>
       </div>

@@ -3,25 +3,31 @@ import Button from "./Button";
 import BJ40Video from "../assets/BJ40-Video.mp4";
 import BJ30 from "../../public/BJ30Video.mp4";
 import X55Video from "../assets/X55-Video.mp4";
+import BJ40Mobile from "../../public/Mobile-example-1.mp4";
+import X55Mobile from "../../public/Mobile-example-X55.mp4";
+import BJ30Mobile from "../../public/Mobile-example-BJ30.mp4";
 
 const slides = [
   {
     id: 1,
-    video: BJ30,
+    videoDesktop: BJ30,
+    videoMobile: BJ30Mobile,
     title: "Feel the power. Drive it now",
     ctaText: "Explore BJ30",
     ctaLink: "/BJ40/index.html",
   },
   {
     id: 2,
-    video: BJ40Video,
+    videoDesktop: BJ40Video,
+    videoMobile: BJ40Mobile,
     title: "Feel the power. Drive it now",
     ctaText: "Explore BJ40 Plus",
     ctaLink: "/X55-Models/index.html",
   },
   {
     id: 3,
-    video: X55Video,
+    videoDesktop: X55Video,
+    videoMobile: X55Mobile,
     title: "Feel the power. Drive it now",
     ctaText: "Explore X55 Prime",
     ctaLink: "/X55-Models/index.html",
@@ -96,9 +102,8 @@ export default function VideoHeroSlider() {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
         >
           {/* Video Background */}
           <video
@@ -109,7 +114,16 @@ export default function VideoHeroSlider() {
             playsInline
             preload="metadata"
           >
-            <source src={slide.video} type="video/mp4" />
+            <source
+              src={slide.videoDesktop}
+              type="video/mp4"
+              media="(min-width: 768px)"
+            />
+            <source
+              src={slide.videoMobile}
+              type="video/mp4"
+              media="(max-width: 767px)"
+            />
             Your browser does not support the video tag.
           </video>
 
@@ -179,11 +193,10 @@ export default function VideoHeroSlider() {
               key={index}
               onClick={() => goToSlide(index)}
               disabled={isTransitioning}
-              className={`rounded-full transition-all duration-300 disabled:cursor-not-allowed ${
-                index === currentSlide
-                  ? "bg-red-600 w-10 h-2"
-                  : "bg-gray-300 hover:bg-gray-400 w-2 h-2"
-              }`}
+              className={`rounded-full transition-all duration-300 disabled:cursor-not-allowed ${index === currentSlide
+                ? "bg-red-600 w-10 h-2"
+                : "bg-gray-300 hover:bg-gray-400 w-2 h-2"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

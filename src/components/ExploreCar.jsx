@@ -505,7 +505,7 @@ export default function ExploreCar() {
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <Button
                       variant="dark"
-                      href="/book-a-test-drive/index.html?model=bj40plus"
+                      href={`/book-a-test-drive/index.html?model=${encodeURIComponent(activeModel)}`}
                       icon={CarFront}
                     >
                       Book a Test Drive
@@ -626,7 +626,11 @@ export default function ExploreCar() {
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <Button
                       variant="dark"
-                      href="/book-a-test-drive/index.html?model=bj30"
+                      href={`/book-a-test-drive/index.html?model=${encodeURIComponent(
+                        activeModel === "BJ30 Type 1"
+                          ? "BJ30 HEV AWD"
+                          : "BJ30 HEV FWD"
+                      )}`}
                       icon={CarFront}
                     >
                       Book a Test Drive
@@ -748,7 +752,7 @@ export default function ExploreCar() {
                   <div className="flex flex-row gap-4 w-full justify-center flex-wrap">
                     <Button
                       variant="dark"
-                      href="/book-a-test-drive/index.html?model=x55ii"
+                      href={`/book-a-test-drive/index.html?model=${encodeURIComponent(activeModel)}`}
                       icon={CarFront}
                     >
                       Book a Test Drive

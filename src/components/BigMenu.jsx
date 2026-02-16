@@ -6,6 +6,83 @@ import { useState } from "react";
 import Button from "./Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// Specifications data
+const specs = {
+  BJ30: { wheelbase: "2820", length: "4730", height: "1790" },
+  "BJ40 PLUS": { wheelbase: "2745", length: "4465", height: "1871" },
+  "X55 II Lite": { wheelbase: "2735", length: "4620", height: "1680" },
+  "X55 II Prime": { wheelbase: "2735", length: "4620", height: "1680" },
+  "X55 II": { wheelbase: "2735", length: "4620", height: "1680" },
+  "BJ60": { wheelbase: "2735", length: "4620", height: "1680" },
+};
+
+const prices = {
+  "BJ30 HEV FWD": "Rp 529.000.000,-",
+  "BJ30 HEV AWD": "Rp 589.000.000,-",
+  "BJ40 PLUS CBU": "Rp 698.000.000,-",
+  "BJ40 PLUS CKD": "Rp 710.000.000,-",
+  "X55 II Lite": "Rp 390.000.000,-",
+  "X55 II Prime": "Rp 439.000.000,-",
+};
+
+// Helper to get base model name for specs mapping
+const getBaseModel = (name) => {
+  if (name.startsWith("BJ30")) return "BJ30";
+  if (name.startsWith("BJ40 PLUS")) return "BJ40 PLUS";
+  if (name.startsWith("X55 II Lite")) return "X55 II Lite";
+  if (name.startsWith("X55 II Prime")) return "X55 II Prime";
+  if (name.startsWith("X55 II")) return "X55 II";
+  return name;
+};
+
+const getPrice = (name) => prices[name] || "";
+
+// Vehicle data structure
+const vehicles = {
+  "BJ Series": [
+    {
+      name: "BJ30 HEV AWD",
+      image: BJ30,
+      exploreLink: "/bj30-hev-awd/index.html",
+      brochureLink: "/brochure-bj40.pdf",
+    },
+    {
+      name: "BJ30 HEV FWD",
+      image: BJ30,
+      exploreLink: "/bj30-hev-fwd/index.html",
+      brochureLink: "/brochure-bj40.pdf",
+    },
+    {
+      name: "BJ40 PLUS CBU",
+      image: BJ40,
+      exploreLink: "/bj40-plus-cbu/index.html",
+      brochureLink: "/brochure-bj40.pdf",
+    },
+    {
+      name: "BJ40 PLUS CKD",
+      image: BJ40,
+      exploreLink: "/bj40-plus-ckd/index.html",
+      brochureLink: "/brochure-bj40.pdf",
+    },
+
+  ],
+  "X Series": [
+    {
+      name: "X55 II Lite",
+      image: X55Lite,
+      exploreLink: "/x55-ii-lite/index.html",
+      brochureLink: "/brochure-x55.pdf",
+    },
+    {
+      name: "X55 II Prime",
+      image: X55Prime,
+      exploreLink: "/x55-ii-prime/index.html",
+      brochureLink: "/brochure-x55.pdf",
+    },
+  ],
+  Arcfox: [],
+};
+
 const BigMenu = () => {
   const [activeSeries, setActiveSeries] = useState("BJ Series");
   const [sliderIndex, setSliderIndex] = useState({
@@ -22,100 +99,27 @@ const BigMenu = () => {
     setSliderIndex((prev) => {
       const currentIndex = prev[activeSeries];
       const totalVehicles = vehicles[activeSeries].length;
-      const maxIndex = Math.max(0, totalVehicles - 4);
 
       let newIndex = currentIndex;
       if (direction === "next") {
-        newIndex = Math.min(currentIndex + 1, maxIndex);
+        if (currentIndex + 4 < totalVehicles) {
+          newIndex = currentIndex + 4;
+        }
       } else {
-        newIndex = Math.max(currentIndex - 1, 0);
+        newIndex = Math.max(currentIndex - 4, 0);
       }
 
       return { ...prev, [activeSeries]: newIndex };
     });
   };
 
-  // Specifications data
-  const specs = {
-    BJ30: { wheelbase: "2820", length: "4730", height: "1790" },
-    "BJ40 PLUS": { wheelbase: "2745", length: "4465", height: "1871" },
-    "X55 II Lite": { wheelbase: "2735", length: "4620", height: "1680" },
-    "X55 II Prime": { wheelbase: "2735", length: "4620", height: "1680" },
-    "X55 II": { wheelbase: "2735", length: "4620", height: "1680" },
-  };
 
-  const prices = {
-    "BJ30 HEV FWD": "Rp 529.000.000,-",
-    "BJ30 HEV AWD": "Rp 589.000.000,-",
-    "BJ40 PLUS CBU": "Rp 698.000.000,-",
-    "BJ40 PLUS CKD": "Rp 710.000.000,-",
-    "X55 II Lite": "Rp 390.000.000,-",
-    "X55 II Prime": "Rp 439.000.000,-",
-
-  };
-
-  // Helper to get base model name for specs mapping
-  const getBaseModel = (name) => {
-    if (name.startsWith("BJ30")) return "BJ30";
-    if (name.startsWith("BJ40 PLUS")) return "BJ40 PLUS";
-    if (name.startsWith("X55 II Lite")) return "X55 II Lite";
-    if (name.startsWith("X55 II Prime")) return "X55 II Prime";
-    if (name.startsWith("X55 II")) return "X55 II";
-    return name;
-  };
-
-  const getPrice = (name) => prices[name] || "";
-
-  // Vehicle data structure
-  const vehicles = {
-    "BJ Series": [
-      {
-        name: "BJ30 HEV AWD",
-        image: BJ30,
-        exploreLink: "/bj30-hev-awd/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ30 HEV FWD",
-        image: BJ30,
-        exploreLink: "/bj30-hev-fwd/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ40 PLUS CBU",
-        image: BJ40,
-        exploreLink: "/bj40-plus-cbu/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-      {
-        name: "BJ40 PLUS CKD",
-        image: BJ40,
-        exploreLink: "/bj40-plus-ckd/index.html",
-        brochureLink: "/brochure-bj40.pdf",
-      },
-    ],
-    "X Series": [
-      {
-        name: "X55 II Lite",
-        image: X55Lite,
-        exploreLink: "/x55-ii-lite/index.html",
-        brochureLink: "/brochure-x55.pdf",
-      },
-      {
-        name: "X55 II Prime",
-        image: X55Prime,
-        exploreLink: "/x55-ii-prime/index.html",
-        brochureLink: "/brochure-x55.pdf",
-      },
-    ],
-    Arcfox: [],
-  };
 
   const currentIndex = sliderIndex[activeSeries];
   const currentVehicles = vehicles[activeSeries];
   const visibleVehicles = currentVehicles.slice(currentIndex, currentIndex + 4);
   const canGoPrev = currentIndex > 0;
-  const canGoNext = currentIndex < currentVehicles.length - 4;
+  const canGoNext = currentIndex + 4 < currentVehicles.length;
 
   return (
     <div className="border-b fixed top-[80px] rounded-md left-1/2 -translate-x-1/2 z-50 max-w-6xl w-full shadow-lg bg-white border-gray-400">

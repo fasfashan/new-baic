@@ -163,7 +163,7 @@ function App() {
               { desktop: Foto3, mobile: Foto3Mobile },
               { desktop: Foto4, mobile: Foto4Mobile },
             ].map((bg, i) => (
-              <div key={i} className="relative w-full h-screen md:h-[600px] overflow-hidden">
+              <div key={i} className="relative w-full h-full md:h-[600px] overflow-hidden">
                 {/* Background Image */}
                 <div className="absolute inset-0 h-full w-full">
                   <picture>

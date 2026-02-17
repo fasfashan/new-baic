@@ -9,6 +9,11 @@ import Foto1 from "../src/assets/BJ30-single-produk-1.png";
 import Foto2 from "../src/assets/BJ30-single-produk-2.jpg";
 import Foto3 from "../src/assets/BJ30-single-produk-3.jpg";
 import Foto4 from "../src/assets/BJ30-single-produk-4.jpg";
+// Mobile images
+import Foto1Mobile from "../src/assets/BJ30-single-produk-1-mobile.jpg";
+import Foto2Mobile from "../src/assets/BJ30-single-produk-2-mobile.jpg";
+import Foto3Mobile from "../src/assets/BJ30-single-produk-3-mobile.jpg";
+import Foto4Mobile from "../src/assets/BJ30-single-produk-4-mobile.jpg";
 import interior1 from "../src/assets/interior-1.jpg";
 import interior2 from "../src/assets/interior-2.jpg";
 import interior3 from "../src/assets/interior-3.jpg";
@@ -91,7 +96,7 @@ const carSpecifications = {
 
 function App() {
   const colors = [
-    "#8DB600",
+    "#B6D6C9",
     "#87CEEB",
     "#C0C0C0",
     "#000000",
@@ -100,7 +105,7 @@ function App() {
   ];
 
   const colorNamesBJ30 = {
-    "#8DB600": "Apple Green",
+    "#B6D6C9": "Apple Green",
     "#87CEEB": "Blue Sky",
     "#C0C0C0": "Bubble Grey",
     "#000000": "Jade Black",
@@ -109,7 +114,7 @@ function App() {
   };
 
   const colorToFileBJ30 = {
-    "#8DB600": "apple-green.png",
+    "#B6D6C9": "apple-green.png",
     "#87CEEB": "blue-sky.png",
     "#C0C0C0": "bubble-grey.png",
     "#000000": "jade-black.png",
@@ -152,59 +157,74 @@ function App() {
         <div className="bg-neutral-200">
           {/* ================= OVERVIEW ================= */}
           <div>
-            {[Foto1, Foto2, Foto3, Foto4].map((bg, i) => (
-              <div
-                key={i}
-                className="min-h-full bg-black bg-cover bg-center"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${bg})`
-                }}
-              >
-                <div
-                  className={`flex ${i % 2 === 1 ? "md:justify-end" : "justify-start"} max-w-6xl m-auto pb-20 items-start min-h-[500px]  text-white`}
-                >
-                  <div className="md:px-6 max-w-2xl px-5 mt-32 flex flex-col gap-4">
-                    {i === 0 && (
-                      <>
-                        <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
-                          HEART OF A HYBRID
-                        </h1>
-                        <h2 className="text-lg font-semibold uppercase">
-                          The five-hole daytime running light belt boasts both
-                          technological appeal and practical utility.
-                        </h2>
-                      </>
-                    )}
-                    {i === 1 && (
-                      <>
-                        <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
-                          LIGHT THE PATH AHEAD
-                        </h1>
-                        <h2 className="text-lg font-semibold uppercase">
-                          ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
-                        </h2>
-                      </>
-                    )}
-                    {i === 2 && (
-                      <>
-                        <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
-                          RUGGED REAR DESIGN
-                        </h1>
-                        <h2 className="text-lg font-semibold uppercase">
-                          BOLD FROM BEHIND
-                        </h2>
-                      </>
-                    )}
-                    {i === 3 && (
-                      <>
-                        <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
-                          TECHNOLOGY WITH THRUST
-                        </h1>
-                        <h2 className="text-lg font-semibold uppercase">
-                          COMFORT IN COMMAND
-                        </h2>
-                      </>
-                    )}
+            {[
+              { desktop: Foto1, mobile: Foto1Mobile },
+              { desktop: Foto2, mobile: Foto2Mobile },
+              { desktop: Foto3, mobile: Foto3Mobile },
+              { desktop: Foto4, mobile: Foto4Mobile },
+            ].map((bg, i) => (
+              <div key={i} className="relative w-full h-screen md:h-[600px] overflow-hidden">
+                {/* Background Image */}
+                <div className="absolute inset-0 h-full w-full">
+                  <picture>
+                    <source media="(min-width: 768px)" srcSet={bg.desktop} />
+                    <img
+                      src={bg.mobile}
+                      alt="Overview Background"
+                      className="w-full h-full object-cover"
+                    />
+                  </picture>
+                  <div className="absolute inset-0 bg-black/40"></div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 h-full w-full">
+                  <div
+                    className={`flex ${i % 2 === 1 ? "md:justify-end" : "justify-start"} max-w-6xl m-auto pb-20 items-start h-full text-white px-5 md:px-0`}
+                  >
+                    <div className="md:px-6 max-w-2xl mt-40 md:mt-32 flex flex-col gap-4">
+                      {i === 0 && (
+                        <>
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                            HEART OF A HYBRID
+                          </h1>
+                          <h2 className="text-lg font-semibold uppercase">
+                            The five-hole daytime running light belt boasts both
+                            technological appeal and practical utility.
+                          </h2>
+                        </>
+                      )}
+                      {i === 1 && (
+                        <>
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                            LIGHT THE PATH AHEAD
+                          </h1>
+                          <h2 className="text-lg font-semibold uppercase">
+                            ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
+                          </h2>
+                        </>
+                      )}
+                      {i === 2 && (
+                        <>
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                            RUGGED REAR DESIGN
+                          </h1>
+                          <h2 className="text-lg font-semibold uppercase">
+                            BOLD FROM BEHIND
+                          </h2>
+                        </>
+                      )}
+                      {i === 3 && (
+                        <>
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                            TECHNOLOGY WITH THRUST
+                          </h1>
+                          <h2 className="text-lg font-semibold uppercase">
+                            COMFORT IN COMMAND
+                          </h2>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

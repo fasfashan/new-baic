@@ -46,50 +46,71 @@ function AfterSales() {
 
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mb-16">
             {/* Service Berkala Card */}
-            <div className="bg-white p-8 space-y-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-neutral-200">
-              <Settings className="w-6 h-6 text-red-600" />
-
-              <h3 className="font-bold text-neutral-800 mb-2">
-                Service Berkala
-              </h3>
-              <p className="text-sm text-neutral-600">
-                Lakukan servis rutin untuk kendaraan Anda
-              </p>
+            <div className="relative rounded-lg overflow-hidden h-96">
+              <img
+                src="/BJ30 Modification3-0510-2-RGB-fin.jpg"
+                alt="Service Berkala"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="font-bold text-lg mb-2">Service Berkala</h3>
+                <p className="text-sm text-white/90">
+                  Lakukan servis rutin untuk kendaraan Anda
+                </p>
+              </div>
             </div>
 
             {/* Perawatan & Pemeliharaan Card */}
-            <div className="bg-white p-8 space-y-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-neutral-200">
-              <Wrench className="w-6 h-6 text-red-600" />
-
-              <h3 className="font-bold text-neutral-800 mb-2">
-                Perawatan & Pemeliharaan
-              </h3>
-              <p className="text-sm text-neutral-600">
-                Panduan perawatan untuk kendaraan Anda
-              </p>
+            <div className="relative rounded-lg overflow-hidden h-96">
+              <img
+                src="/BJ40 Plus Accessories - Luggage Box Side Backpack-installed.jpg"
+                alt="Perawatan & Pemeliharaan"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="font-bold text-lg mb-2">
+                  Perawatan & Pemeliharaan
+                </h3>
+                <p className="text-sm text-white/90">
+                  Panduan perawatan untuk kendaraan Anda
+                </p>
+              </div>
             </div>
 
             {/* Garansi Card */}
-            <div className="bg-white p-8 space-y-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-neutral-200">
-              <Shield className="w-6 h-6 text-red-600" />
-
-              <h3 className="font-bold text-neutral-800 mb-2">Garansi</h3>
-              <p className="text-sm text-neutral-600">
-                Perlindungan untuk investasi Anda
-              </p>
+            <div className="relative rounded-lg overflow-hidden h-96">
+              <img
+                src="/garansi-baterai.webp"
+                alt="Garansi"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="font-bold text-lg mb-2">Garansi</h3>
+                <p className="text-sm text-white/90">
+                  Perlindungan untuk investasi Anda
+                </p>
+              </div>
             </div>
 
             {/* Spare Parts Card */}
-            <div className="bg-white p-8 space-y-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-neutral-200">
-              <Package className="w-6 h-6 text-red-600" />
-
-              <h3 className="font-bold text-neutral-800 mb-2">
-                {" "}
-                Spare Parts & Aksesoris
-              </h3>
-              <p className="text-sm text-neutral-600">
-                Suku cadang asli untuk kendaraan
-              </p>
+            <div className="relative rounded-lg overflow-hidden h-96">
+              <img
+                src="/BJ30/blue-sky.png"
+                alt="Spare Parts & Aksesoris"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="font-bold text-lg mb-2">
+                  Spare Parts & Aksesoris
+                </h3>
+                <p className="text-sm text-white/90">
+                  Suku cadang asli untuk kendaraan
+                </p>
+              </div>
             </div>
           </div>
 
@@ -101,82 +122,80 @@ function AfterSales() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Garansi Mesin */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
-                  <img
-                    src="/BJ30 Modification3-0510-2-RGB-fin.jpg"
-                    alt="Garansi Mesin"
-                    className="w-full h-full object-cover"
-                  />
+              <div className="relative rounded-lg overflow-hidden h-96">
+                <img
+                  src="/BJ30 Modification3-0510-2-RGB-fin.jpg"
+                  alt="Garansi Mesin"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2">Garansi Mesin</h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>
+                      • Garansi mesin 5 tahun / 150.000 Km (mana yang tercapai
+                      lebih dulu)
+                    </li>
+                    <li>• Garansi mencakup komponen mesin</li>
+                    <li>• Perlindungan terhadap cacat pabrik</li>
+                  </ul>
                 </div>
-                <h3 className="font-bold text-neutral-800 mb-2">
-                  Garansi Mesin
-                </h3>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  <li>
-                    • Garansi mesin 5 tahun / 150.000 Km (mana yang tercapai
-                    lebih dulu)
-                  </li>
-                  <li>• Garansi mencakup komponen mesin</li>
-                  <li>• Perlindungan terhadap cacat pabrik</li>
-                </ul>
               </div>
 
               {/* Garansi Transmisi */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
-                  <img
-                    src="/BJ40 Plus Accessories - Luggage Box Side Backpack-installed.jpg"
-                    alt="Garansi Mesin"
-                    className="w-full h-full object-cover"
-                  />
+              <div className="relative rounded-lg overflow-hidden h-96">
+                <img
+                  src="/BJ40 Plus Accessories - Luggage Box Side Backpack-installed.jpg"
+                  alt="Garansi Transmisi"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2">Garansi Transmisi</h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>• Mencakup sistem transmisi lengkap</li>
+                    <li>• Perbaikan di dealer resmi BAIC</li>
+                    <li>• Dukungan teknis profesional</li>
+                  </ul>
                 </div>
-                <h3 className="font-bold text-neutral-800 mb-2">
-                  Garansi Transmisi
-                </h3>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  <li>• Mencakup sistem transmisi lengkap</li>
-                  <li>• Perbaikan di dealer resmi BAIC</li>
-                  <li>• Dukungan teknis profesional</li>
-                </ul>
               </div>
 
               {/* Garansi Baterai EV */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
-                  <img
-                    src="/garansi-baterai.webp"
-                    alt="Garansi Baterai"
-                    className="w-full h-full object-cover"
-                  />
+              <div className="relative rounded-lg overflow-hidden h-96">
+                <img
+                  src="/garansi-baterai.webp"
+                  alt="Garansi Baterai"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2">
+                    Garansi Baterai (Untuk EV)
+                  </h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>• Garansi khusus untuk kendaraan listrik</li>
+                    <li>• Perlindungan komponen baterai</li>
+                    <li>• Layanan penggantian jika diperlukan</li>
+                  </ul>
                 </div>
-                <h3 className="font-bold text-neutral-800 mb-2">
-                  Garansi Baterai (Untuk EV)
-                </h3>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  <li>• Garansi khusus untuk kendaraan listrik</li>
-                  <li>• Perlindungan komponen baterai</li>
-                  <li>• Layanan penggantian jika diperlukan</li>
-                </ul>
               </div>
 
-              {/* Garansi Spart Part */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <div className="w-full h-80 rounded-lg overflow-hidden bg-neutral-100 mb-4">
-                  <img
-                    src="/BJ30/blue-sky.png"
-                    alt="Garansi Spare Part"
-                    className="w-full h-full object-cover"
-                  />
+              {/* Garansi Spare Part */}
+              <div className="relative rounded-lg overflow-hidden h-96">
+                <img
+                  src="/BJ30/blue-sky.png"
+                  alt="Garansi Spare Part"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2">Garansi Spare Part</h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>• Suku cadang original berkualitas</li>
+                    <li>• Tersedia di seluruh dealer resmi</li>
+                    <li>• Jaminan keaslian produk</li>
+                  </ul>
                 </div>
-                <h3 className="font-bold text-neutral-800 mb-2">
-                  Garansi Spare Part
-                </h3>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  <li>• Suku cadang original berkualitas</li>
-                  <li>• Tersedia di seluruh dealer resmi</li>
-                  <li>• Jaminan keaslian produk</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -189,57 +208,75 @@ function AfterSales() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {/* Perawatan Rutin */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <h3 className="font-bold text-neutral-800 mb-3">
-                  Perawatan Rutin
-                </h3>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  <li>• Ganti oli secara teratur</li>
-                  <li>• Cek tekanan ban</li>
-                  <li>• Periksa cairan mesin</li>
-                  <li>• Bersihkan filter udara</li>
-                </ul>
+              <div className="relative rounded-lg overflow-hidden h-96">
+                <img
+                  src="/BJ30 Modification3-0510-2-RGB-fin.jpg"
+                  alt="Perawatan Rutin"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2">Perawatan Rutin</h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>• Ganti oli secara teratur</li>
+                    <li>• Cek tekanan ban</li>
+                    <li>• Periksa cairan mesin</li>
+                    <li>• Bersihkan filter udara</li>
+                  </ul>
+                </div>
               </div>
 
               {/* Perawatan Berkala */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <h3 className="font-bold text-neutral-800 mb-3">
-                  Perawatan Berkala
-                </h3>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  <li>• Service berkala di dealer</li>
-                  <li>• Pengecekan sistem rem</li>
-                  <li>• Rotasi ban berkala</li>
-                  <li>• Tune-up mesin</li>
-                </ul>
+              <div className="relative rounded-lg overflow-hidden h-96">
+                <img
+                  src="/BJ40 Plus Accessories - Luggage Box Side Backpack-installed.jpg"
+                  alt="Perawatan Berkala"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2">Perawatan Berkala</h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>• Service berkala di dealer</li>
+                    <li>• Pengecekan sistem rem</li>
+                    <li>• Rotasi ban berkala</li>
+                    <li>• Tune-up mesin</li>
+                  </ul>
+                </div>
               </div>
 
               {/* Perawatan & Tips Lainnya */}
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-neutral-200">
-                <h3 className="font-bold text-neutral-800 mb-3">
-                  Perawatan & Tips Lainnya
-                </h3>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  <li>• Cara merawat eksterior & interior</li>
-                  <li>• Tips efisiensi bahan bakar</li>
-                  <li>• Lindungi dari cuaca ekstrem</li>
-                  <li>• Cuci mobil dengan benar</li>
-                </ul>
+              <div className="relative rounded-lg overflow-hidden h-96">
+                <img
+                  src="/garansi-baterai.webp"
+                  alt="Perawatan & Tips Lainnya"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2">
+                    Perawatan & Tips Lainnya
+                  </h3>
+                  <ul className="space-y-1 text-sm text-white/90">
+                    <li>• Cara merawat eksterior & interior</li>
+                    <li>• Tips efisiensi bahan bakar</li>
+                    <li>• Lindungi dari cuaca ekstrem</li>
+                    <li>• Cuci mobil dengan benar</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Garansi Training */}
-          <div className="bg-red-600 mt-8 p-8 rounded-lg ">
+          <div className="bg-slate-800 mt-8 p-8 rounded-lg ">
             <h3 className="text-xl text-white font-bold text-center mb-4">
-              Garansi Training
+              Jaringan Layanan Purna Jual di Seluruh Dunia
             </h3>
             <p className="text-center text-white max-w-3xl mx-auto">
-              Kami berkomitmen memberikan layanan terbaik dengan menyediakan
-              training center yang melatih personel after-sales kami agar dapat
-              memberikan pelayanan profesional dan berkualitas tinggi untuk
-              setiap pelanggan BAIC.
+              45 saluran layanan purna jual dan 189 dealer servis
             </p>
+            <img src="/map.png" alt="" />
           </div>
 
           {/* FAQ Section */}

@@ -163,26 +163,27 @@ function App() {
               { desktop: Foto3, mobile: Foto3Mobile },
               { desktop: Foto4, mobile: Foto4Mobile },
             ].map((bg, i) => (
-              <div key={i} className="relative w-full h-full md:h-[600px] overflow-hidden">
-                {/* Background Image */}
-                <div className="absolute inset-0 h-full w-full">
+              <div key={i} className="relative w-full md:h-[600px] overflow-hidden">
+                {/* Background Image - Absolute on Desktop, Relative on Mobile */}
+                <div className="md:absolute md:inset-0 w-full md:h-full">
                   <picture>
                     <source media="(min-width: 768px)" srcSet={bg.desktop} />
                     <img
                       src={bg.mobile}
                       alt="Overview Background"
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto md:h-full md:object-cover block"
                     />
                   </picture>
+                  {/* Overlay - Absolute relative to image container on mobile */}
                   <div className="absolute inset-0 bg-black/40"></div>
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 h-full w-full">
+                <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
                   <div
-                    className={`flex ${i % 2 === 1 ? "md:justify-end" : "justify-start"} max-w-6xl m-auto pb-20 items-start h-full text-white px-5 md:px-0`}
+                    className={`flex ${i % 2 === 1 ? "md:justify-end" : "justify-start"} max-w-6xl m-auto pb-10 md:pb-20 items-start h-full text-white px-5 md:px-0`}
                   >
-                    <div className="md:px-6 max-w-2xl mt-40 md:mt-32 flex flex-col gap-4">
+                    <div className="md:px-6 max-w-2xl mt-10 md:mt-32 flex flex-col gap-4 pointer-events-auto">
                       {i === 0 && (
                         <>
                           <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">

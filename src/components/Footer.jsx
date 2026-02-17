@@ -114,7 +114,7 @@ export default function Footer() {
             href="/join-partner/index.html"
             className="text-gray-400 text-sm hover:text-white transition-all"
           >
-           Become Dealers
+            Become Dealers
           </a>
         </div>
 
@@ -167,9 +167,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex md:px-8 px-5 flex-wrap gap-y-4 mt-10 mb-10 text-white justify-between max-w-6xl m-auto">
-        <div className="flex items-start gap-6 w-full">
+        <div className="flex items-stretch w-full">
           {/* JDI Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 bg-black flex items-center justify-center px-6">
             <img width={80} src={logojdi} alt="Logo JDI" />
           </div>
           {/* Address */}
@@ -177,13 +177,12 @@ export default function Footer() {
             href="https://maps.app.goo.gl/Pp66WVdc9YGoLsPJ9"
             target="_blank"
             rel="noopener noreferrer"
-            className="space-y-2 hover:underline transition-all"
+            className="space-y-1 hover:underline transition-all pl-6 flex flex-col justify-center"
           >
             <p className="font-semibold text-sm">PT. JIO DISTRIBUSI INDONESIA</p>
-            <p className="text-sm">
-              BAIC Tower, 13th Fl <br /> Jl. Gading Serpong Boulevard Barat <br />{" "}
-              No.8, Gading, Kec. Serpong, Kabupaten <br /> Tangerang, Banten
-              15810.
+            <p className="text-sm leading-relaxed max-w-sm">
+              BAIC Tower, 13th Fl<br />
+              Jl. Gading Serpong Boulevard Barat No.8, Gading,  Kec. Serpong, Kabupaten Tangerang, Banten 15810.
             </p>
           </a>
         </div>

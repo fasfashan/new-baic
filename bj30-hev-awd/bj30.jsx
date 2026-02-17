@@ -186,7 +186,7 @@ function App() {
                     <div className="md:px-6 max-w-2xl mt-10 md:mt-32 flex flex-col gap-4 pointer-events-auto">
                       {i === 0 && (
                         <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
                             HEART OF A HYBRID
                           </h1>
                           <h2 className="text-lg font-semibold uppercase">
@@ -197,7 +197,7 @@ function App() {
                       )}
                       {i === 1 && (
                         <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
                             LIGHT THE PATH AHEAD
                           </h1>
                           <h2 className="text-lg font-semibold uppercase">
@@ -207,7 +207,7 @@ function App() {
                       )}
                       {i === 2 && (
                         <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
                             RUGGED REAR DESIGN
                           </h1>
                           <h2 className="text-lg font-semibold uppercase">
@@ -217,7 +217,7 @@ function App() {
                       )}
                       {i === 3 && (
                         <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase mt-20">
+                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
                             TECHNOLOGY WITH THRUST
                           </h1>
                           <h2 className="text-lg font-semibold uppercase">

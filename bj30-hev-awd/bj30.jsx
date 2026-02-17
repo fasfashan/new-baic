@@ -242,7 +242,7 @@ function App() {
               <div className="mt-6 flex justify-center">
                 <div className="text-center">
                   <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
-                    Rp 529.000.000,-
+                    Rp 589.000.000,-
                   </p>
                   <p className="text-gray-500 text-sm italic">OTR Jakarta</p>
                 </div>

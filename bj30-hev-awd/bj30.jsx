@@ -189,7 +189,7 @@ function App() {
                           <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
                             HEART OF A HYBRID
                           </h1>
-                          <h2 className="text-lg font-semibold uppercase">
+                          <h2 className="md:text-lg text-base  font-semibold uppercase">
                             The five-hole daytime running light belt boasts both
                             technological appeal and practical utility.
                           </h2>
@@ -200,7 +200,7 @@ function App() {
                           <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
                             LIGHT THE PATH AHEAD
                           </h1>
-                          <h2 className="text-lg font-semibold uppercase">
+                          <h2 className="md:text-lg text-base font-semibold uppercase">
                             ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
                           </h2>
                         </>
@@ -210,7 +210,7 @@ function App() {
                           <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
                             RUGGED REAR DESIGN
                           </h1>
-                          <h2 className="text-lg font-semibold uppercase">
+                          <h2 className=" md:text-lg text-base font-semibold uppercase">
                             BOLD FROM BEHIND
                           </h2>
                         </>

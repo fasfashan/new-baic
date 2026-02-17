@@ -38,7 +38,6 @@ function App() {
       <div className="bg-neutral-200 py-10   m-auto ">
         <img src="/JHL-Group-logo.png" className="m-auto mb-4" width={200} alt="" />
         <p className="max-w-6xl m-auto md:px-8 px-5 text-neutral-600 font-light text-justify">
-          <span className="text-black font-medium">JHL Group</span>
           <br />
           JHL Group is a national company with an international standard
           quality. We are a company that provide the best properties and
@@ -52,16 +51,85 @@ function App() {
       <div className="bg-neutral-200 py-10   m-auto ">
         <img src={logoJDI} className="m-auto mb-4" width={200} alt="" />
         <p className="max-w-6xl m-auto md:px-8 px-5 text-neutral-600 font-light text-justify">
-          <span className="text-black font-medium">JDI</span>
-          <br />
+
           PT JIO Distribusi Indonesia (JDI) serves as the official and exclusive distributor of BAIC vehicles in Indonesia. In this role, JDI oversees the end-to-end management of the brand’s operations, including vehicle sales and distribution, comprehensive after-sales services, spare parts supply and logistics, as well as the development and training of certified after-sales service personnel. Through a strong commitment to operational excellence and customer satisfaction, JDI aims to support sustainable growth and strengthen BAIC’s presence in the Indonesian automotive market.
-          <br />
-          <br />
-          <span className="text-black font-medium">JIO</span>
-          <br />
+
+        </p>
+      </div>
+      <div className="bg-neutral-200 py-10   m-auto ">
+        <img src="/LOGO JIO-Hitam.png" className="m-auto mb-4" width={200} alt="" />
+        <p className="max-w-6xl m-auto md:px-8 px-5 text-neutral-600 font-light text-justify">
+
           JHL Internasional Otomotif (JIO) serves as the manufacturing entity for the BAIC brand in Indonesia, with a strategic vision to establish Indonesia as a key manufacturing hub for BAIC within the ASEAN market. The company is committed to supporting regional growth through localized production, advanced manufacturing capabilities, and the development of a strong automotive ecosystem aligned with BAIC’s global standards.
         </p>
       </div>
+
+      {/* JHL Group Logo Slider */}
+      <div className="bg-neutral-200 py-10 overflow-hidden ">
+
+        <div className="relative ">
+          <div
+            className="flex items-center gap-16 w-max"
+            style={{
+              animation: "scrollLogos 20s linear infinite",
+            }}
+          >
+            {/* First set of logos */}
+            {[
+              "LOGO DEWACOCO SH(1).png",
+              "Logo Esports.ID.png",
+              "MP MEDIA LOGO-NEW CO(2).png",
+              "Vanilium_Logo_Gradient_Secondary(1).png",
+              "logo dewacoco store sq ijo tua (1)(1).png",
+              "logo mcm.png",
+              "logo side.png",
+              "logo-BOLASKOR.png",
+              "logo-kabaroto-hires-2 (1).png",
+              "logo-kamibijak-h-ori(1).png",
+              "logo-rumahwaletindonesia-1.png",
+            ].map((file, i) => (
+              <img
+                key={`logo-a-${i}`}
+                src={`/jhl-group/${file}`}
+                alt={file.replace(/\.[^.]+$/, "")}
+                className="md:h-12 h-8  w-auto object-contain flex-shrink-0"
+              />
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {[
+              "LOGO DEWACOCO SH(1).png",
+              "Logo Esports.ID.png",
+              "MP MEDIA LOGO-NEW CO(2).png",
+              "Vanilium_Logo_Gradient_Secondary(1).png",
+              "logo dewacoco store sq ijo tua (1)(1).png",
+              "logo mcm.png",
+              "logo side.png",
+              "logo-BOLASKOR.png",
+              "logo-kabaroto-hires-2 (1).png",
+              "logo-kamibijak-h-ori(1).png",
+              "logo-rumahwaletindonesia-1.png",
+            ].map((file, i) => (
+              <img
+                key={`logo-b-${i}`}
+                src={`/jhl-group/${file}`}
+                alt={file.replace(/\.[^.]+$/, "")}
+                className="h-14 w-auto object-contain flex-shrink-0"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes scrollLogos {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
 
       <Footer />
     </>

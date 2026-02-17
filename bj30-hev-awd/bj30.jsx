@@ -158,73 +158,72 @@ function App() {
           {/* ================= OVERVIEW ================= */}
           <div>
             {[
-              { desktop: Foto1, mobile: Foto1Mobile },
-              { desktop: Foto2, mobile: Foto2Mobile },
-              { desktop: Foto3, mobile: Foto3Mobile },
-              { desktop: Foto4, mobile: Foto4Mobile },
-            ].map((bg, i) => (
-              <div key={i} className="relative w-full md:h-[600px] overflow-hidden">
-                {/* Background Image - Absolute on Desktop, Relative on Mobile */}
-                <div className="md:absolute md:inset-0 w-full md:h-full">
-                  <picture>
-                    <source media="(min-width: 768px)" srcSet={bg.desktop} />
-                    <img
-                      src={bg.mobile}
-                      alt="Overview Background"
-                      className="w-full h-auto md:h-full md:object-cover block"
-                    />
-                  </picture>
-                  {/* Overlay - Absolute relative to image container on mobile */}
-                  <div className="absolute inset-0 bg-black/40"></div>
-                </div>
+              {
+                desktop: Foto1,
+                mobile: Foto1Mobile,
+                title: "HEART OF A HYBRID",
+                subtitle:
+                  "The five-hole daytime running light belt boasts both technological appeal and practical utility.",
+                align: "start",
+              },
+              {
+                desktop: Foto2,
+                mobile: Foto2Mobile,
+                title: "LIGHT THE PATH AHEAD",
+                subtitle:
+                  "ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE",
+                align: "end",
+              },
+              {
+                desktop: Foto3,
+                mobile: Foto3Mobile,
+                title: "RUGGED REAR DESIGN",
+                subtitle: "BOLD FROM BEHIND",
+                align: "start",
+              },
+              {
+                desktop: Foto4,
+                mobile: Foto4Mobile,
+                title: "TECHNOLOGY WITH THRUST",
+                subtitle: "COMFORT IN COMMAND",
+                align: "end",
+              },
+            ].map((slide, i) => (
+              <div
+                key={i}
+                className="relative w-full md:h-[650px] overflow-hidden"
+              >
+                {/* Background Image */}
+                <picture className="md:absolute md:inset-0 md:h-full md:w-full">
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={slide.desktop}
+                  />
+                  <img
+                    src={slide.mobile}
+                    alt={slide.title}
+                    className="w-full h-auto md:h-full md:w-full md:object-cover"
+                  />
+                </picture>
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/40" />
 
                 {/* Content */}
-                <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
+                <div className="absolute inset-0 z-10 flex items-start">
                   <div
-                    className={`flex ${i % 2 === 1 ? "md:justify-end" : "justify-start"} max-w-6xl m-auto pb-10 md:pb-20 items-start h-full text-white px-5 md:px-0`}
+                    className={`max-w-6xl mx-auto w-full px-5 md:px-6 flex ${slide.align === "end"
+                      ? "md:justify-end"
+                      : "justify-start"
+                      }`}
                   >
-                    <div className="md:px-6 max-w-2xl mt-10 md:mt-32 flex flex-col gap-4 pointer-events-auto">
-                      {i === 0 && (
-                        <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
-                            HEART OF A HYBRID
-                          </h1>
-                          <h2 className="md:text-lg text-base  font-semibold uppercase">
-                            The five-hole daytime running light belt boasts both
-                            technological appeal and practical utility.
-                          </h2>
-                        </>
-                      )}
-                      {i === 1 && (
-                        <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
-                            LIGHT THE PATH AHEAD
-                          </h1>
-                          <h2 className="md:text-lg text-base font-semibold uppercase">
-                            ULTIMATE PERFORMANCE FOR THE DRIVE OF YOUR LIFE
-                          </h2>
-                        </>
-                      )}
-                      {i === 2 && (
-                        <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
-                            RUGGED REAR DESIGN
-                          </h1>
-                          <h2 className=" md:text-lg text-base font-semibold uppercase">
-                            BOLD FROM BEHIND
-                          </h2>
-                        </>
-                      )}
-                      {i === 3 && (
-                        <>
-                          <h1 className="md:text-5xl text-2xl font-bold uppercase md:mt-20 mt-4">
-                            TECHNOLOGY WITH THRUST
-                          </h1>
-                          <h2 className="text-lg font-semibold uppercase">
-                            COMFORT IN COMMAND
-                          </h2>
-                        </>
-                      )}
+                    <div className="max-w-2xl mt-10  flex flex-col gap-4 text-white">
+                      <h2 className="md:text-5xl text-xl font-bold uppercase  mt-4">
+                        {slide.title}
+                      </h2>
+                      <p className="md:text-lg text-base font-semibold uppercase">
+                        {slide.subtitle}
+                      </p>
                     </div>
                   </div>
                 </div>

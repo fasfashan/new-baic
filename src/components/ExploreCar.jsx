@@ -248,33 +248,39 @@ export default function ExploreCar() {
         <div className="mt-6">
           <div className="flex gap-0 justify-start md:justify-center max-w-6xl m-auto overflow-x-auto md:flex-wrap">
             <button
-              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${activeSeries === "BJ Series"
-                ? "border-b-2 border-red-600 text-red-600"
-                : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
+              className={`py-3 px-6 sm:px-8 transition-all text-base whitespace-nowrap ${activeSeries === "BJ Series"
+                ? "font-semibold text-red-600"
+                : "font-normal text-gray-400 hover:text-gray-600"
                 }`}
               onClick={() => handleSeriesClick("BJ Series")}
             >
-              BJ Series
+              <span className={activeSeries === "BJ Series" ? "border-b-2 border-red-600 pb-1" : ""}>
+                BJ Series
+              </span>
             </button>
             <div className="w-px bg-gray-300 h-10 my-auto flex-shrink-0"></div>
             <button
-              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${activeSeries === "X Series"
-                ? "border-b-2 border-red-600 text-red-600"
-                : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
+              className={`py-3 px-6 sm:px-8 transition-all text-base whitespace-nowrap ${activeSeries === "X Series"
+                ? "font-semibold text-red-600"
+                : "font-normal text-gray-400 hover:text-gray-600"
                 }`}
               onClick={() => handleSeriesClick("X Series")}
             >
-              X Series
+              <span className={activeSeries === "X Series" ? "border-b-2 border-red-600 pb-1" : ""}>
+                X Series
+              </span>
             </button>
             <div className="w-px bg-gray-300 h-10 my-auto flex-shrink-0"></div>
             <button
-              className={`py-3 px-6 sm:px-8 transition-all font-semibold text-base whitespace-nowrap ${activeSeries === "Arcfox"
-                ? "border-b-2 border-black text-black"
-                : "border-b-2 border-transparent text-gray-400 font-normal hover:text-gray-600"
+              className={`py-3 px-6 sm:px-8 transition-all text-base whitespace-nowrap ${activeSeries === "Arcfox"
+                ? "font-semibold text-black"
+                : "font-normal text-gray-400 hover:text-gray-600"
                 }`}
               onClick={() => handleSeriesClick("Arcfox")}
             >
-              <span>Arcfox</span>
+              <span className={activeSeries === "Arcfox" ? "border-b-2 border-black pb-1" : ""}>
+                Arcfox
+              </span>
               <span
                 className={`ml-2 text-[11px] px-2 py-1 rounded-full font-semibold ${activeSeries === "Arcfox"
                   ? "bg-black text-white"

@@ -460,7 +460,7 @@ export default function ExploreCar() {
           <div className=" flex justify-center">
             {/* BJ40 PLUS */}
             {getBaseModel(activeModel) === "BJ40 PLUS" && (
-              <div className="mt-10 md:px-8">
+              <div className="mt-10 md:px-8 w-full max-w-6xl">
                 {/* Price */}
                 <div className="mb-6 flex justify-center">
                   <div className="text-center">
@@ -580,7 +580,7 @@ export default function ExploreCar() {
 
             {/* BJ30 - Using BJ40 PLUS images as placeholder */}
             {getBaseModel(activeModel) === "BJ30" && (
-              <div className="mt-10 md:px-8">
+              <div className="mt-10 md:px-8 w-full max-w-6xl">
                 {/* Price */}
                 <div className="mb-6 flex justify-center">
                   <div className="text-center">
@@ -705,7 +705,7 @@ export default function ExploreCar() {
 
             {/* X55 II */}
             {getBaseModel(activeModel) === "X55 II" && (
-              <div className="mt-10 md:px-8">
+              <div className="mt-10 md:px-8 w-full max-w-6xl">
                 {/* Price */}
                 <div className="mb-6 flex justify-center">
                   <div className="text-center">

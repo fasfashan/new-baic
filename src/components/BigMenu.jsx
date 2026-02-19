@@ -127,27 +127,27 @@ const BigMenu = () => {
         {/* Series Tabs */}
         <div className="flex gap-6 mb-4 overflow-x-auto scrollbar-hide">
           <button
-            className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "BJ Series"
-              ? "border-b-2 border-red-500 text-red-500 pb-1"
-              : "text-gray-700 hover:text-gray-900 pb-1"
+            className={`font-semibold text-sm whitespace-nowrap transition-all ${activeSeries === "BJ Series"
+              ? "text-red-600 underline underline-offset-8"
+              : "text-gray-400 hover:text-gray-600 font-normal"
               }`}
             onClick={() => handleSeriesClick("BJ Series")}
           >
             BJ Series
           </button>
           <button
-            className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "X Series"
-              ? "border-b-2 border-red-500 text-red-500 pb-1"
-              : "text-gray-700 hover:text-gray-900 pb-1"
+            className={`font-semibold text-sm whitespace-nowrap transition-all ${activeSeries === "X Series"
+              ? "text-red-600 underline underline-offset-8"
+              : "text-gray-400 hover:text-gray-600 font-normal"
               }`}
             onClick={() => handleSeriesClick("X Series")}
           >
             X Series
           </button>
           <button
-            className={`font-semibold text-sm whitespace-nowrap ${activeSeries === "Arcfox"
-              ? "border-b-2 border-black text-black pb-1"
-              : "text-gray-700 hover:text-gray-900 pb-1"
+            className={`font-semibold text-sm whitespace-nowrap transition-all ${activeSeries === "Arcfox"
+              ? "text-black underline underline-offset-8"
+              : "text-gray-400 hover:text-gray-600 font-normal"
               }`}
             onClick={() => handleSeriesClick("Arcfox")}
           >

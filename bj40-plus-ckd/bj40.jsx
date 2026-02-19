@@ -371,7 +371,7 @@ function App() {
           </div>
 
           {/* ================= GALLERY ================= */}
-          <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 ">
+          <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 mt-10 ">
             <h2 className="text-center md:text-3xl text-xl font-bold">
               GALLERY
             </h2>

@@ -533,7 +533,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
                 {city &&
                   getDealersByCity(city).map((d) => (
                     <option key={d.id} value={d.name}>
-                      {d.name} - {d.serviceCode}
+                      {d.name}
                     </option>
                   ))}
               </select>
@@ -605,8 +605,8 @@ Mohon informasi lebih lanjut. Terima kasih!`;
             <Button
               type="submit"
               className={`w-full ${!isFormComplete() || isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : ""
+                ? "opacity-50 cursor-not-allowed"
+                : ""
                 }`}
               disabled={!isFormComplete() || isLoading}
             >

@@ -122,7 +122,7 @@ function App() {
 
   const carImageByModel = {
     BJ30: "/bg-aksesoris.jpg",
-    "BJ40 PLUS": "/bj40-plus/flame_red/_0.png",
+    "BJ40 PLUS": "/bg-aksesoris.jpg",
     X55: "/x55/red_black/_0.png",
     Arcfox: "/BJ30-explore.png",
   };

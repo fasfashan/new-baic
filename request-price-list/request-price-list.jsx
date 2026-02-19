@@ -100,6 +100,26 @@ function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
+                <label className="block text-sm font-medium mb-2">
+                  Province
+                </label>
+                <select
+                  name="province"
+                  value={formData.province}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
+                  required
+                >
+                  <option value="">Select Province</option>
+                  <option value="dki-jakarta">DKI Jakarta</option>
+                  <option value="jawa-barat">Jawa Barat</option>
+                  <option value="jawa-timur">Jawa Timur</option>
+                  <option value="sumatera-utara">Sumatera Utara</option>
+                  <option value="jawa-tengah">Jawa Tengah</option>
+                </select>
+              </div>
+
+              <div>
                 <label className="block text-sm font-medium mb-2">City</label>
                 <select
                   name="city"
@@ -114,26 +134,6 @@ function App() {
                   <option value="surabaya">Surabaya</option>
                   <option value="medan">Medan</option>
                   <option value="semarang">Semarang</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Province
-                </label>
-                <select
-                  name="province"
-                  value={formData.province}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 bg-white"
-                  required
-                >
-                  <option value="">Pilih Provinsi</option>
-                  <option value="dki-jakarta">DKI Jakarta</option>
-                  <option value="jawa-barat">Jawa Barat</option>
-                  <option value="jawa-timur">Jawa Timur</option>
-                  <option value="sumatera-utara">Sumatera Utara</option>
-                  <option value="jawa-tengah">Jawa Tengah</option>
                 </select>
               </div>
             </div>
@@ -184,8 +184,8 @@ function App() {
             <Button
               type="submit"
               className={`w-full ${!isFormComplete() || isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : ""
+                ? "opacity-50 cursor-not-allowed"
+                : ""
                 }`}
               disabled={!isFormComplete() || isLoading}
             >

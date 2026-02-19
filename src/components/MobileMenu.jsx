@@ -6,11 +6,12 @@ import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import Button from "./Button";
 export default function MobileMenu({ onClose }) {
-  const [isVehicleOpen, setIsVehicleOpen] = useState(false);
+  const [openSection, setOpenSection] = useState("");
   const [activeSeries, setActiveSeries] = useState("BJ Series");
-  const [isCustomerCareOpen, setIsCustomerCareOpen] = useState(false);
-  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+
+  const toggleSection = (section) => {
+    setOpenSection(openSection === section ? "" : section);
+  };
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -114,16 +115,16 @@ export default function MobileMenu({ onClose }) {
           <div className="w-full py-4 border-b border-gray-100">
             <div
               className="flex justify-between items-center cursor-pointer"
-              onClick={() => setIsVehicleOpen(!isVehicleOpen)}
+              onClick={() => toggleSection("vehicle")}
             >
               <span className="text-base font-normal text-gray-900">Model</span>
-              {isVehicleOpen ? (
+              {openSection === "vehicle" ? (
                 <ChevronUp className="w-5 h-5 text-gray-600" />
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               )}
             </div>
-            {isVehicleOpen && (
+            {openSection === "vehicle" && (
               <div className="mt-4 space-y-4">
                 {/* Series Tabs */}
                 <div className="flex gap-6 mb-4 overflow-x-auto scrollbar-hide">
@@ -255,16 +256,16 @@ export default function MobileMenu({ onClose }) {
           <div className="w-full py-4 border-b border-gray-100">
             <div
               className="flex justify-between items-center cursor-pointer"
-              onClick={() => setIsCustomerCareOpen(!isCustomerCareOpen)}
+              onClick={() => toggleSection("customerCare")}
             >
               <span className="text-base font-normal text-gray-900">Customer Care</span>
-              {isCustomerCareOpen ? (
+              {openSection === "customerCare" ? (
                 <ChevronUp className="w-5 h-5 text-gray-600" />
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               )}
             </div>
-            {isCustomerCareOpen && (
+            {openSection === "customerCare" && (
               <div className="mt-3 ml-4 space-y-2">
                 <a
                   href="/schedule-your-service/index.html"
@@ -300,16 +301,16 @@ export default function MobileMenu({ onClose }) {
           <div className="w-full py-4 border-b border-gray-100">
             <div
               className="flex justify-between items-center cursor-pointer"
-              onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
+              onClick={() => toggleSection("aboutUs")}
             >
               <span className="text-base font-normal text-gray-900">About Us</span>
-              {isAboutUsOpen ? (
+              {openSection === "aboutUs" ? (
                 <ChevronUp className="w-5 h-5 text-gray-600" />
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               )}
             </div>
-            {isAboutUsOpen && (
+            {openSection === "aboutUs" && (
               <div className="mt-3 ml-4 space-y-2">
                 <a
                   href="/about-us/index.html"
@@ -349,16 +350,16 @@ export default function MobileMenu({ onClose }) {
           <div className="w-full py-4 border-b border-gray-100">
             <div
               className="flex justify-between items-center cursor-pointer"
-              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+              onClick={() => toggleSection("language")}
             >
               <span className="text-base font-normal text-gray-900">Language</span>
-              {isLanguageOpen ? (
+              {openSection === "language" ? (
                 <ChevronUp className="w-5 h-5 text-gray-600" />
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-600" />
               )}
             </div>
-            {isLanguageOpen && (
+            {openSection === "language" && (
               <div className="mt-3 ml-4 space-y-2">
                 <button className="block text-sm font-semibold text-black">
                   EN (English)

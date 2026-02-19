@@ -5,9 +5,8 @@ import { Instagram, Facebook, Youtube } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="pt-10 bg-neutral-900">
-      <div className="flex md:px-8 px-5 justify-between max-w-6xl m-auto">
+      <div className="flex md:px-8 px-5 justify-between max-w-6xl m-auto pb-4">
         <img width={100} src={logo} alt="Logo BAIC" />
-        <img width={100} src={logojdi} alt="Logo JDI" />
       </div>
       <div className="max-w-6xl  md:px-8 px-5 m-auto">
         <hr className="border border-red-800" />
@@ -169,8 +168,8 @@ export default function Footer() {
       <div className="flex md:px-8 px-5 flex-wrap gap-y-4 mt-10 mb-10 text-white justify-between max-w-6xl m-auto">
         <div className="flex items-stretch w-full">
           {/* JDI Logo */}
-          <div className="flex-shrink-0 bg-black flex items-center justify-center px-6">
-            <img width={80} src={logojdi} alt="Logo JDI" />
+          <div className="flex-shrink-0 flex items-center justify-center">
+            <img className="h-20 w-auto" src={logojdi} alt="Logo JDI" />
           </div>
           {/* Address */}
           <a

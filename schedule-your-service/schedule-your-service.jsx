@@ -251,7 +251,7 @@ function App() {
                 {city &&
                   getDealersByCity(city).map((d) => (
                     <option key={d.id} value={d.name}>
-                      {d.name} - {d.serviceCode}
+                      {d.name}
                     </option>
                   ))}
               </select>
@@ -293,8 +293,8 @@ function App() {
             <Button
               type="submit"
               className={`w-full ${!isFormComplete() || isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : ""
+                ? "opacity-50 cursor-not-allowed"
+                : ""
                 }`}
               disabled={!isFormComplete() || isLoading}
             >

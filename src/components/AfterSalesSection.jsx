@@ -4,7 +4,7 @@ import Button from "./Button";
 export default function AfterSalesSection() {
   return (
     <section
-      className="relative min-h-screen mt-20 bg-cover bg-center flex items-end justify-center pb-20"
+      className="relative min-h-screen mt-10 bg-cover bg-center flex items-end justify-center pb-20"
       style={{ backgroundImage: "url('/bg-book-a-test-drive.jpg')" }}
     >
       {/* Dark Overlay */}

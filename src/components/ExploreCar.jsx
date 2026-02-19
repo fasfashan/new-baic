@@ -465,7 +465,9 @@ export default function ExploreCar() {
                 <div className="-mb-4 md:-mb-32 relative z-10 flex justify-center pointer-events-none">
                   <div className="text-center pointer-events-auto">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
-                      Rp 698.000.000,-
+                      {activeModel === "BJ40 PLUS CKD"
+                        ? "Rp 710.000.000,-"
+                        : "Rp 698.000.000,-"}
                     </p>
                     <p className="text-gray-500 text-sm italic">
                       *4X2 (FWD) Variant & Price On The Road Jakarta
@@ -585,10 +587,13 @@ export default function ExploreCar() {
                 <div className="-mb-4 md:-mb-32 relative z-10 flex justify-center pointer-events-none">
                   <div className="text-center pointer-events-auto">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
-                      Rp 529.000.000,-
+                      {activeModel === "BJ30 Type 1"
+                        ? "Rp 589.000.000,-"
+                        : "Rp 529.000.000,-"}
                     </p>
                     <p className="text-gray-500 text-sm italic">
-                      *4X2 (FWD) Variant & Price On The Road Jakarta
+                      *{activeModel === "BJ30 Type 1" ? "4X4 (AWD)" : "4X2 (FWD)"}{" "}
+                      Variant & Price On The Road Jakarta
                     </p>
                   </div>
                 </div>
@@ -710,7 +715,9 @@ export default function ExploreCar() {
                 <div className="-mb-4 md:-mb-32 relative z-10 flex justify-center pointer-events-none">
                   <div className="text-center pointer-events-auto">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
-                      Rp 390.000.000,-
+                      {activeModel === "X55 II Prime"
+                        ? "Rp 439.000.000,-"
+                        : "Rp 390.000.000,-"}
                     </p>
                     <p className="text-gray-500 text-sm italic">
                       *4X2 (FWD) Variant & Price On The Road Jakarta

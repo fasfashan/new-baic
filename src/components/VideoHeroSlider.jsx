@@ -29,7 +29,7 @@ const slides = [
     videoDesktop: X55Video,
     videoMobile: X55Mobile,
     title: "Feel the power. Drive it now",
-    ctaText: "Explore X55 Prime",
+    ctaText: "Explore X55 II Prime",
     ctaLink: "/X55-Models/index.html",
   },
 ];

@@ -479,11 +479,11 @@ function App() {
       <ButtonChat />
 
       {/* Hero Section */}
-      <div className="relative w-full h-[320px] md:h-[500px]">
+      <div className="relative w-full h-[400px] md:h-[500px]">
         <img
           src={heroImage}
           alt="BAIC Authorized Dealer"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover"
         />
       </div>
 

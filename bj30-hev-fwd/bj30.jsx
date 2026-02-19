@@ -5,7 +5,7 @@ import Footer from "../src/components/Footer";
 import "../src/index.css";
 import { useState } from "react";
 import BJ40Video from "../src/assets/BJ40-Video.mp4";
-import Foto1 from "../src/assets/BJ30-single-produk-1.jpg";
+import Foto1 from "../src/assets/BJ30-single-produk-1.png";
 import Foto2 from "../src/assets/BJ30-single-produk-2.jpg";
 import Foto3 from "../src/assets/BJ30-single-produk-3.jpg";
 import Foto4 from "../src/assets/BJ30-single-produk-4.jpg";
@@ -213,11 +213,12 @@ function App() {
                 <div className="absolute inset-0 z-10 flex items-start">
                   <div
                     className={`max-w-6xl mx-auto w-full px-5 md:px-6 flex ${slide.align === "end"
-                      ? "md:justify-end"
+                      ? "justify-end"
                       : "justify-start"
                       }`}
                   >
-                    <div className="max-w-2xl mt-10  flex flex-col gap-4 text-white">
+                    <div className={`max-w-3xl mt-10 flex flex-col gap-4 text-white ${slide.align === "end" ? "items-end text-right" : "items-start text-left"
+                      }`}>
                       <h2 className="md:text-5xl text-xl font-bold uppercase  mt-4">
                         {slide.title}
                       </h2>
@@ -232,13 +233,13 @@ function App() {
           </div>
 
           {/* ================= PRICING & SPECS ================= */}
-          <div className="py-16 md:px-8 px-5 max-w-4xl m-auto">
+          <div className="mt-10 md:px-8 px-5 max-w-4xl m-auto">
             <h2 className="text-center md:text-3xl text-xl font-bold">
               PRICING & SPECS
             </h2>
 
             {/* COLOR SELECT */}
-            <div className="mt-10 space-y-4 mb-10">
+            <div className="mt-10 mb-10">
               <div className="flex space-x-3 justify-center">
                 {colors.map((color) => (
                   <div
@@ -253,14 +254,14 @@ function App() {
                 ))}
               </div>
 
-              <div className="select-none w-fit justify-center m-auto mt-4 mb-4 flex items-center">
+              <div className="select-none w-fit justify-center   m-auto mt-4 mb-4 flex items-center">
                 <h2 className="text-center transition-all px-4 py-2">
                   {colorNamesBJ30[selectedColor]}
                 </h2>
               </div>
 
-              <div className="mt-6 flex justify-center">
-                <div className="text-center">
+              <div className="mt-6 flex justify-center -mb-4 md:-mb-24 relative z-10 pointer-events-none">
+                <div className="text-center pointer-events-auto">
                   <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                     Rp 529.000.000,-
                   </p>
@@ -271,13 +272,13 @@ function App() {
               <img
                 src={`/BJ30/${colorToFileBJ30[selectedColor]}`}
                 alt={`BJ30 ${colorNamesBJ30[selectedColor]}`}
-                className={`w-full h-auto object-contain mx-auto transition-opacity duration-100 ${animating ? "opacity-0" : "opacity-100"
+                className={`w-full h-auto object-contain mx-auto transition-opacity duration-100 -mt-4 md:-mt-24 relative z-0 ${animating ? "opacity-0" : "opacity-100"
                   }`}
               />
               <img
                 src="/Award list BAIC - global.png"
                 alt="BAIC Awards"
-                className="mx-auto mt-4"
+                className="mx-auto -mt-4 md:-mt-24 relative z-10"
               />
             </div>
 
@@ -303,7 +304,8 @@ function App() {
           </div>
 
           {/* ================= GALLERY ================= */}
-          <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-16">
+          {/* ================= GALLERY ================= */}
+          <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 ">
             <h2 className="text-center md:text-3xl text-xl font-bold">
               GALLERY
             </h2>
@@ -442,7 +444,7 @@ function App() {
 
           {/* ================= ACCESSORIES ================= */}
           <section
-            className="relative min-h-screen bg-cover bg-center flex items-end justify-center pb-20 mt-10"
+            className="relative h-[400px] bg-cover bg-center flex items-end justify-center pb-20 mt-10"
             style={{ backgroundImage: "url('/bg-book-a-test-drive.jpg')" }}
           >
             {/* Dark Overlay */}

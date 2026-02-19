@@ -282,11 +282,12 @@ function App() {
                 <div className="absolute inset-0 z-10 flex items-start">
                   <div
                     className={`max-w-6xl mx-auto w-full px-5 md:px-6 flex ${slide.align === "end"
-                      ? "md:justify-end"
+                      ? "justify-end"
                       : "justify-start"
                       }`}
                   >
-                    <div className="max-w-2xl mt-10  flex flex-col gap-4 text-white">
+                    <div className={`max-w-3xl mt-10 flex flex-col gap-4 text-white ${slide.align === "end" ? "items-end text-right" : "items-start text-left"
+                      }`}>
                       <h2 className="md:text-5xl text-xl font-bold uppercase  mt-4">
                         {slide.title}
                       </h2>
@@ -301,13 +302,13 @@ function App() {
           </div>
 
           {/* ================= PRICING ================= */}
-          <div className="py-16 md:px-8 px-5 max-w-4xl m-auto">
+          <div className="mt-10 md:px-8 px-5 max-w-4xl m-auto">
             <h2 className="text-center md:text-3xl text-xl font-bold">
               PRICING & SPECS
             </h2>
 
             {/* COLOR SELECT */}
-            <div className="mt-10 space-y-4 mb-10">
+            <div className="mt-10 mb-10">
               <div className="flex space-x-3 justify-center">
                 {colors.map((color) => (
                   <div
@@ -328,8 +329,8 @@ function App() {
                 </h2>
               </div>
 
-              <div className="mt-6 flex justify-center">
-                <div className="text-center">
+              <div className="mt-6 flex justify-center -mb-4 md:-mb-24 relative z-10 pointer-events-none">
+                <div className="text-center pointer-events-auto">
                   <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                     Rp 710.000.000,-
                   </p>
@@ -339,12 +340,12 @@ function App() {
 
               <img
                 src={colorToImageMapBJ40[selectedColor][currentImageIndex]}
-                className="mx-auto"
+                className="mx-auto -mt-4 md:-mt-24 relative z-0"
               />
               <img
                 src="/Award list BAIC - global.png"
                 alt="BAIC Awards"
-                className="mx-auto mt-4"
+                className="mx-auto -mt-4 md:-mt-24 relative z-10"
               />
 
               <div className="flex justify-center gap-4">
@@ -370,8 +371,8 @@ function App() {
           </div>
 
           {/* ================= GALLERY ================= */}
-          <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 pt-16">
-            <h2 className="text-center md:text-4xl text-2xl font-bold">
+          <div className="md:px-8 px-5 max-w-6xl m-auto overflow-hidden bg-neutral-200 ">
+            <h2 className="text-center md:text-3xl text-xl font-bold">
               GALLERY
             </h2>
 
@@ -531,7 +532,7 @@ function App() {
 
           {/* ================= ACCESSORIES ================= */}
           <section
-            className="relative min-h-screen bg-cover bg-center flex items-end justify-center pb-20 mt-10"
+            className="relative h-[400px] bg-cover bg-center flex items-end justify-center pb-20 mt-10"
             style={{ backgroundImage: "url('/bg-book-a-test-drive.jpg')" }}
           >
             {/* Dark Overlay */}

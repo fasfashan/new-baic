@@ -19,7 +19,7 @@ function AfterSales() {
       <Header />
       <ButtonChat />
       <div
-        className="relative pt-32 min-h-screen bg-cover bg-center flex items-end justify-center pb-20"
+        className="relative pt-32 min-h-screen bg-cover bg-center flex items-end justify-center pb-40"
         style={{
           backgroundImage: "url('/bg-book-a-test-drive.jpg')",
         }}
@@ -189,7 +189,7 @@ function AfterSales() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-bold text-lg mb-2">Garansi Spare Part</h3>
+                  <h3 className="font-bold text-lg mb-2">Suku Cadang & Aksesoris</h3>
                   <ul className="space-y-1 text-sm text-white/90">
                     <li>• Suku cadang original berkualitas</li>
                     <li>• Tersedia di seluruh dealer resmi</li>

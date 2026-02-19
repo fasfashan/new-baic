@@ -462,8 +462,8 @@ export default function ExploreCar() {
             {getBaseModel(activeModel) === "BJ40 PLUS" && (
               <div className="mt-10 md:px-8 w-full max-w-6xl">
                 {/* Price */}
-                <div className="mb-6 flex justify-center">
-                  <div className="text-center">
+                <div className="-mb-4 md:-mb-32 relative z-10 flex justify-center pointer-events-none">
+                  <div className="text-center pointer-events-auto">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                       Rp 698.000.000,-
                     </p>
@@ -480,9 +480,7 @@ export default function ExploreCar() {
                   totalFrames={36}
                 />
 
-                {renderSpecs()}
-
-                <div className="flex space-x-3 justify-center mt-6">
+                <div className="flex space-x-3 justify-center -mt-4 md:-mt-32 relative z-10">
                   {colors.map((color) => (
                     <div
                       key={color}
@@ -501,6 +499,8 @@ export default function ExploreCar() {
                     {colorNamesBJ40[selectedColor]}
                   </h2>
                 </div>
+
+                {renderSpecs()}
 
 
 
@@ -582,8 +582,8 @@ export default function ExploreCar() {
             {getBaseModel(activeModel) === "BJ30" && (
               <div className="mt-10 md:px-8 w-full max-w-6xl">
                 {/* Price */}
-                <div className="mb-6 flex justify-center">
-                  <div className="text-center">
+                <div className="-mb-4 md:-mb-32 relative z-10 flex justify-center pointer-events-none">
+                  <div className="text-center pointer-events-auto">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                       Rp 529.000.000,-
                     </p>
@@ -602,9 +602,7 @@ export default function ExploreCar() {
                   />
                 </div>
 
-                {renderSpecs()}
-
-                <div className="flex space-x-3 justify-center mt-6">
+                <div className="flex space-x-3 justify-center -mt-4 md:-mt-32 relative z-10">
                   {colorsBJ30.map((color) => (
                     <div
                       key={color}
@@ -622,6 +620,8 @@ export default function ExploreCar() {
                     {colorNamesBJ30[selectedColorBJ30]}
                   </h2>
                 </div>
+
+                {renderSpecs()}
 
 
 
@@ -707,8 +707,8 @@ export default function ExploreCar() {
             {getBaseModel(activeModel) === "X55 II" && (
               <div className="mt-10 md:px-8 w-full max-w-6xl">
                 {/* Price */}
-                <div className="mb-6 flex justify-center">
-                  <div className="text-center">
+                <div className="-mb-4 md:-mb-32 relative z-10 flex justify-center pointer-events-none">
+                  <div className="text-center pointer-events-auto">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                       Rp 390.000.000,-
                     </p>
@@ -725,9 +725,7 @@ export default function ExploreCar() {
                   totalFrames={20}
                 />
 
-                {renderSpecs()}
-
-                <div className="flex flex-col items-center mt-6">
+                <div className="flex flex-col items-center -mt-4 md:-mt-32 relative z-10">
                   <div className="flex space-x-3 justify-center">
                     {colorsX55.map((color) => (
                       <div
@@ -750,6 +748,8 @@ export default function ExploreCar() {
 
 
                 </div>
+
+                {renderSpecs()}
 
                 <div className="mt-8 flex justify-center">
                   <img

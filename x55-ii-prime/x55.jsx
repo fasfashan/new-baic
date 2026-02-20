@@ -227,7 +227,7 @@ function App() {
                 desktop: Foto1,
                 mobile: Foto1Mobile,
                 title: "SMART TECHNOLOGY",
-                subtitle: "STANDARD FEATURES INCLUDE:",
+                subtitle: "STANDARD FEATURES",
                 align: "start",
               },
               {

@@ -10,6 +10,7 @@ import BJ30Mobile from "../../public/Mobile-example-BJ30.mp4";
 const slides = [
   {
     id: 1,
+    type: "video",
     videoDesktop: BJ30,
     videoMobile: BJ30Mobile,
     title: "Feel the power. Drive it now",
@@ -18,6 +19,7 @@ const slides = [
   },
   {
     id: 2,
+    type: "video",
     videoDesktop: BJ40Video,
     videoMobile: BJ40Mobile,
     title: "Feel the power. Drive it now",
@@ -26,11 +28,21 @@ const slides = [
   },
   {
     id: 3,
+    type: "video",
     videoDesktop: X55Video,
     videoMobile: X55Mobile,
     title: "Feel the power. Drive it now",
     ctaText: "Explore X55 II Prime",
     ctaLink: "/X55-Models/index.html",
+  },
+  {
+    id: 4,
+    type: "image",
+    imageDesktop: "https://placehold.co/1920x1080/444444/FFFFFF/png?text=Desktop+Banner+(1920x1080)",
+    imageMobile: "https://placehold.co/1080x1920/444444/FFFFFF/png?text=Mobile+Banner+(1080x1920)",
+    title: "Feel the power. Drive it now",
+    ctaText: "Explore Extra Models",
+    ctaLink: "#",
   },
 ];
 
@@ -66,27 +78,9 @@ export default function VideoHeroSlider() {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  // Handle video playback and auto advance when video ends
+  // Handle media playback and auto advance when media ends or timer finishes
   useEffect(() => {
-    const currentVideo = videoRefs.current[currentSlide];
-
-    if (currentVideo) {
-      currentVideo.currentTime = 0;
-      currentVideo.play().catch(console.error);
-
-      // Add event listener for when video ends
-      const handleVideoEnd = () => {
-        setIsTransitioning(true);
-        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-      };
-
-      currentVideo.addEventListener("ended", handleVideoEnd);
-
-      // Cleanup
-      return () => {
-        currentVideo.removeEventListener("ended", handleVideoEnd);
-      };
-    }
+    let cleanup = () => { };
 
     // Pause other videos
     videoRefs.current.forEach((video, index) => {
@@ -94,6 +88,39 @@ export default function VideoHeroSlider() {
         video.pause();
       }
     });
+
+    const isVideo = !slides[currentSlide].type || slides[currentSlide].type === "video";
+
+    if (isVideo) {
+      const currentVideo = videoRefs.current[currentSlide];
+
+      if (currentVideo) {
+        currentVideo.currentTime = 0;
+        currentVideo.play().catch(console.error);
+
+        // Add event listener for when video ends
+        const handleVideoEnd = () => {
+          setIsTransitioning(true);
+          setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+        };
+
+        currentVideo.addEventListener("ended", handleVideoEnd);
+
+        cleanup = () => {
+          currentVideo.removeEventListener("ended", handleVideoEnd);
+        };
+      }
+    } else {
+      // Auto advance image slides after 5 seconds
+      const timer = setTimeout(() => {
+        setIsTransitioning(true);
+        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+      }, 5000);
+
+      cleanup = () => clearTimeout(timer);
+    }
+
+    return cleanup;
   }, [currentSlide]);
 
   return (
@@ -105,27 +132,38 @@ export default function VideoHeroSlider() {
           className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
         >
-          {/* Video Background */}
-          <video
-            ref={(el) => (videoRefs.current[index] = el)}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay={index === currentSlide}
-            muted
-            playsInline
-            preload="metadata"
-          >
-            <source
-              src={slide.videoDesktop}
-              type="video/mp4"
-              media="(min-width: 768px)"
-            />
-            <source
-              src={slide.videoMobile}
-              type="video/mp4"
-              media="(max-width: 767px)"
-            />
-            Your browser does not support the video tag.
-          </video>
+          {/* Media Background */}
+          {(!slide.type || slide.type === "video") ? (
+            <video
+              ref={(el) => (videoRefs.current[index] = el)}
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay={index === currentSlide}
+              muted
+              playsInline
+              preload="metadata"
+            >
+              <source
+                src={slide.videoDesktop}
+                type="video/mp4"
+                media="(min-width: 768px)"
+              />
+              <source
+                src={slide.videoMobile}
+                type="video/mp4"
+                media="(max-width: 767px)"
+              />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <picture>
+              <source media="(min-width: 768px)" srcSet={slide.imageDesktop} />
+              <img
+                src={slide.imageMobile}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </picture>
+          )}
 
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>

@@ -12,6 +12,8 @@ export default function Header({ alwaysWhite = false }) {
   const [, setIsPartsAccessoriesOpen] = useState(false);
   const [, setIsDealerOpen] = useState(false);
   const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("EN");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -57,6 +59,11 @@ export default function Header({ alwaysWhite = false }) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleLanguageSelect = (language) => {
+    setSelectedLanguage(language);
+    setIsLanguageOpen(false);
+  };
+
   // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
@@ -84,6 +91,7 @@ export default function Header({ alwaysWhite = false }) {
           setIsPartsAccessoriesOpen(false);
           setIsDealerOpen(false);
           setIsAboutUsOpen(false);
+          setIsLanguageOpen(false);
           if (closeTimeout) {
             clearTimeout(closeTimeout);
             setCloseTimeout(null);
@@ -270,16 +278,44 @@ export default function Header({ alwaysWhite = false }) {
             >
               Request Price List
             </Button>
-            <button
-              className={`flex items-center gap-1 transition-colors ${
-                alwaysWhite || isScrolled
-                  ? "text-black hover:text-gray-600"
-                  : "text-white hover:text-gray-300"
-              }`}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsLanguageOpen(true)}
+              onMouseLeave={() => setIsLanguageOpen(false)}
             >
-              EN
-              <ChevronDown className="w-4 h-4" />
-            </button>
+              <button
+                className={`flex items-center gap-1 transition-colors ${
+                  alwaysWhite || isScrolled
+                    ? "text-black hover:text-gray-600"
+                    : "text-white hover:text-gray-300"
+                }`}
+              >
+                {selectedLanguage}
+                {isLanguageOpen ? (
+                  <ChevronUp className="w-4 h-4" />
+                ) : (
+                  <ChevronDown className="w-4 h-4" />
+                )}
+              </button>
+              {isLanguageOpen && (
+                <div className="absolute right-0 top-full pt-2 z-50">
+                  <div className="w-20 bg-white text-black rounded-lg shadow-lg py-2">
+                    <button
+                      onClick={() => handleLanguageSelect("EN")}
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
+                    >
+                      EN
+                    </button>
+                    <button
+                      onClick={() => handleLanguageSelect("ID")}
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
+                    >
+                      ID
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

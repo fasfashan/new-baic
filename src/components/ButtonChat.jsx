@@ -101,7 +101,7 @@ const ButtonChat = () => {
 
       <button
         type="button"
-        onClick={() => setIsOpen((v) => !v)}
+        onClick={() => { setIsChatPopupOpen(false); setIsOpen((v) => !v); }}
         className="w-[45px] h-[45px] sm:w-[60px] sm:h-[60px] rounded-full bg-red-600 hover:bg-red-700 transition-colors shadow-lg flex items-center justify-center"
         aria-label={isOpen ? "Close quick actions" : "Open quick actions"}
       >
@@ -110,7 +110,7 @@ const ButtonChat = () => {
 
       <button
         type="button"
-        onClick={() => setIsChatPopupOpen((v) => !v)}
+        onClick={() => { setIsOpen(false); setIsChatPopupOpen((v) => !v); }}
         className="block"
         aria-label="Chat now"
       >

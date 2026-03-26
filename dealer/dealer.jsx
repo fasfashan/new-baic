@@ -18,6 +18,7 @@ function App() {
     sales: { src: "/sales.png", label: "Sales" },
     service: { src: "/services.png", label: "Service" },
     spareparts: { src: "/sparepart.png", label: "Spareparts" },
+    carrepaint: { src: "/car-repaint.png", label: "Car Repaint" },
   };
 
   const getServiceKeys = (servicesText) => {
@@ -32,6 +33,7 @@ function App() {
         if (k === "sales") return "sales";
         if (k === "service" || k === "services") return "service";
         if (k === "spareparts" || k === "sparepart") return "spareparts";
+        if (k === "body & repaint" || k === "body and repaint" || k === "repaint" || k === "car repaint") return "carrepaint";
         return null;
       })
       .filter(Boolean);

@@ -41,14 +41,6 @@ const colorNamesBJ30 = {
   "#ffffff": "Snow White",
 };
 
-const colorToFileBJ30 = {
-  "#B6D6C9": "apple-green.png",
-  "#87CEEB": "blue-sky.png",
-  "#C0C0C0": "bubble-grey.png",
-  "#000000": "jade-black.png",
-  "#808080": "matte-grey.png",
-  "#ffffff": "snow-white.png",
-};
 
 const colorsBJ30 = [
   "#B6D6C9",
@@ -58,6 +50,15 @@ const colorsBJ30 = [
   "#808080",
   "#ffffff",
 ];
+
+const colorToFolderBJ30 = {
+  "#B6D6C9": "apple_green",
+  "#87CEEB": "sky_blue",
+  "#C0C0C0": "bubble_grey",
+  "#000000": "jade_black",
+  "#808080": "matte_grey",
+  "#ffffff": "snow_white",
+};
 
 const colorNamesX55 = {
   "#464C47": "Platinum Black",
@@ -326,7 +327,7 @@ export default function ExploreCar() {
                           BJ30 HEV AWD
                         </p>
                         <img
-                          src="/BJ30-explore.png"
+                          src="/BJ30/snow_white/_0.png"
                           alt="BJ30 Type 1"
                           className={`w-48 h-32 object-contain transition-opacity ${activeModel !== "BJ30 Type 1"
                             ? "opacity-30"
@@ -348,7 +349,7 @@ export default function ExploreCar() {
                           BJ30 HEV FWD
                         </p>
                         <img
-                          src="/BJ30-explore.png"
+                          src="/BJ30/snow_white/_0.png"
                           alt="BJ30 Type 2"
                           className={`w-48 h-32 object-contain transition-opacity ${activeModel !== "BJ30 Type 2"
                             ? "opacity-30"
@@ -584,7 +585,7 @@ export default function ExploreCar() {
             {getBaseModel(activeModel) === "BJ30" && (
               <div className="mt-10 md:px-8 w-full max-w-6xl">
                 {/* Price */}
-                <div className="-mb-4 md:-mb-32 relative z-10 flex justify-center pointer-events-none">
+                <div className="-mb-2 md:-mb-16 relative z-10 flex justify-center pointer-events-none">
                   <div className="text-center pointer-events-auto">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
                       {activeModel === "BJ30 Type 1"
@@ -598,16 +599,14 @@ export default function ExploreCar() {
                   </div>
                 </div>
 
-                {/* Side View Image */}
-                <div className="mt-8 flex justify-center">
-                  <img
-                    src={`/BJ30/${colorToFileBJ30[selectedColorBJ30]}`}
-                    alt={`BJ30 ${colorNamesBJ30[selectedColorBJ30]}`}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
+                <Car360Viewer
+                  modelKey="BJ30"
+                  colorKey={colorToFolderBJ30[selectedColorBJ30]}
+                  colorName={colorNamesBJ30[selectedColorBJ30]}
+                  totalFrames={36}
+                />
 
-                <div className="flex space-x-3 justify-center -mt-4 md:-mt-32 relative z-10">
+                <div className="flex space-x-3 justify-center -mt-2 md:-mt-16 relative z-10">
                   {colorsBJ30.map((color) => (
                     <div
                       key={color}

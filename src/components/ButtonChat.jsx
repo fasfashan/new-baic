@@ -78,15 +78,7 @@ const ButtonChat = () => {
             <span className="text-xs font-semibold">Find Dealer</span>
           </a>
 
-          <a
-            href="/book-a-test-drive/index.html"
-            className="flex flex-col items-center gap-2"
-          >
-            <div className="w-11 h-11 rounded-full bg-neutral-100 flex items-center justify-center border border-neutral-200">
-              <CarFront className="w-6 h-6" />
-            </div>
-            <span className="text-xs font-semibold">Test Drive</span>
-          </a>
+          
 
           <button
             type="button"

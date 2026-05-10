@@ -194,7 +194,7 @@ export default function MobileMenu({ onClose }) {
                             alt={vehicle.name}
                           />
                           <h2 className="text-sm text-red-500 font-medium mt-2">
-                            BAIC {vehicle.name}
+                             {vehicle.name}
                           </h2>
                           <img
                             src="/Award list BAIC - global.png"

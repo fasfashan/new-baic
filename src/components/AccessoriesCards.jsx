@@ -136,7 +136,7 @@ const AccessoriesCards = ({ accessories = [] }) => {
                   {accessory.price}
                 </p>
                 <p className="text-[10px] md:text-xs text-gray-500 mb-4">
-                  (Harga belum termasuk PPn dan Jasa pasang)
+                  Price excludes VAT and installation fee
                 </p>
                 <Button
                   variant="dark"
@@ -146,7 +146,7 @@ const AccessoriesCards = ({ accessories = [] }) => {
                   Buy Now
                 </Button>
                 <p className="text-[10px] md:text-xs text-gray-500 mt-2 ">
-                  *Gambar hanya ilustrasi.
+                  *Image is for illustration purposes only
                 </p>
               </div>
             </div>

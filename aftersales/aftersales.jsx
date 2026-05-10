@@ -30,8 +30,7 @@ function AfterSales() {
             After Sales
           </h1>
           <p className="relative text-white text-center max-w-2xl mx-auto text-base ">
-            Kami di BAIC berkomitmen untuk memberikan pengalaman kepemilikan
-            mobil yang optimal melalui layanan purna jual yang berkualitas.
+            We at BAIC are committed to providing an optimal car ownership experience through quality after-sales service.
           </p>
         </div>
       </div>
@@ -41,7 +40,7 @@ function AfterSales() {
         <div className="max-w-6xl m-auto md:px-8 px-5">
           {/* Layanan Purna Jual Lengkap */}
           <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">
-            Layanan Purna Jual Lengkap
+          Complete After Sales Service
           </h2>
 
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mb-16">

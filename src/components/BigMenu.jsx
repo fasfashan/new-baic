@@ -213,7 +213,7 @@ const BigMenu = () => {
                     alt={vehicle.name}
                   />
                   <h2 className="text-sm text-red-500 font-medium text-center">
-                    BAIC {vehicle.name}
+                     {vehicle.name}
                   </h2>
                   <img
                     src="/Award list BAIC - global.png"
